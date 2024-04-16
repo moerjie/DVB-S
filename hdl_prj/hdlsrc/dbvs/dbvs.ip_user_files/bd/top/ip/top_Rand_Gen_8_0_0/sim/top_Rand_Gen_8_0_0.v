@@ -47,34 +47,36 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:RS_EN_GEN:1.0
+// IP VLNV: xilinx.com:module_ref:Rand_Gen_8:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "RS_EN_GEN,Vivado 2018.3" *)
-(* CHECK_LICENSE_TYPE = "rs_en_test_RS_EN_GEN_0_0,RS_EN_GEN,{}" *)
-(* CORE_GENERATION_INFO = "rs_en_test_RS_EN_GEN_0_0,RS_EN_GEN,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=RS_EN_GEN,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+`timescale 1ns/1ps
+
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module rs_en_test_RS_EN_GEN_0_0 (
+module top_Rand_Gen_8_0_0 (
   clk,
   rst_n,
-  simstart,
-  simend
+  load,
+  seed,
+  rand_num
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN rs_en_test_sim_clk_gen_0_0_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN top_sim_clk_gen_0_0_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst_n RST" *)
 input wire rst_n;
-output wire simstart;
-output wire simend;
+input wire load;
+input wire [7 : 0] seed;
+output wire [7 : 0] rand_num;
 
-  RS_EN_GEN inst (
+  Rand_Gen_8 inst (
     .clk(clk),
     .rst_n(rst_n),
-    .simstart(simstart),
-    .simend(simend)
+    .load(load),
+    .seed(seed),
+    .rand_num(rand_num)
   );
 endmodule

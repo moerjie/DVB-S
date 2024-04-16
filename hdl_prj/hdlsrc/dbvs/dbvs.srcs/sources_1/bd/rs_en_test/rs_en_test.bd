@@ -5,8 +5,7 @@
       "device": "xc7z020clg400-3",
       "name": "rs_en_test",
       "synth_flow_mode": "None",
-      "tool_version": "2018.3",
-      "validated": "true"
+      "tool_version": "2018.3"
     },
     "design_tree": {
       "sim_clk_gen_0": "",
@@ -41,32 +40,19 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "rs_en_test_sim_clk_gen_0_0_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
+            "direction": "I"
           },
           "rst_n": {
             "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
+            "direction": "I"
           },
           "simstart": {
             "direction": "O"
           },
           "simend": {
+            "direction": "O"
+          },
+          "load": {
             "direction": "O"
           }
         }

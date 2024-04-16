@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 16 17:47:09 2024" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 16 19:54:07 2024" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="top" PACKAGE="clg400" SPEEDGRADE="-3"/>
 
@@ -101,6 +101,46 @@
             <CONNECTION INSTANCE="RS1_0" PORT="End_rsvd"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="load" SIGIS="undef" SIGNAME="RS_EN_GEN_0_load">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Rand_Gen_8_0" PORT="load"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Rand_Gen_8_0" HWVERSION="1.0" INSTANCE="Rand_Gen_8_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Rand_Gen_8" VLNV="xilinx.com:module_ref:Rand_Gen_8:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="top_Rand_Gen_8_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="sim_clk_gen_0_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sim_clk_gen_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst_n" SIGIS="rst" SIGNAME="sim_clk_gen_0_sync_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="sim_clk_gen_0" PORT="sync_rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="load" SIGIS="undef" SIGNAME="RS_EN_GEN_0_load">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_EN_GEN_0" PORT="load"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="seed" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="rand_num" RIGHT="0" SIGIS="undef" SIGNAME="Rand_Gen_8_0_rand_num">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="alpharandomization_0" PORT="SEQ_IN"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -126,9 +166,9 @@
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="SEQ_IN" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+        <PORT DIR="I" LEFT="7" NAME="SEQ_IN" RIGHT="0" SIGIS="undef" SIGNAME="Rand_Gen_8_0_rand_num">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
+            <CONNECTION INSTANCE="Rand_Gen_8_0" PORT="rand_num"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="alpharandomization_0_ce_out">
@@ -163,6 +203,7 @@
             <CONNECTION INSTANCE="alpharandomization_0" PORT="clk"/>
             <CONNECTION INSTANCE="RS1_0" PORT="clk"/>
             <CONNECTION INSTANCE="RS_EN_GEN_0" PORT="clk"/>
+            <CONNECTION INSTANCE="Rand_Gen_8_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="sync_rst" SIGIS="rst" SIGNAME="sim_clk_gen_0_sync_rst">
@@ -170,6 +211,7 @@
             <CONNECTION INSTANCE="alpharandomization_0" PORT="reset_n"/>
             <CONNECTION INSTANCE="RS1_0" PORT="reset_n"/>
             <CONNECTION INSTANCE="RS_EN_GEN_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="Rand_Gen_8_0" PORT="rst_n"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -197,14 +239,14 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x01"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x95"/>
         <PARAMETER NAME="Component_Name" VALUE="top_xlconstant_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
         <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="alpharandomization_0" PORT="SEQ_IN"/>
+            <CONNECTION INSTANCE="Rand_Gen_8_0" PORT="seed"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

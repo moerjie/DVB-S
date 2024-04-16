@@ -57,7 +57,7 @@
 #include "systemc.h"
 class top_xlconstant_0_1 : public sc_module {
   public:
-xlconstant_v1_1_5<8,1> mod;
+xlconstant_v1_1_5<8,149> mod;
   sc_out< sc_bv<8> > dout;
 top_xlconstant_0_1 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);

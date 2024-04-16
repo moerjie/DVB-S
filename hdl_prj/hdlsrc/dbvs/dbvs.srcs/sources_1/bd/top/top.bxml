@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="top" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1713260830"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1713260830"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1713260830"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1713260830"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1713268447"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1713268447"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1713268447"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1713268447"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\top_sim_clk_gen_0_0\top_sim_clk_gen_0_0.xci" Type="IP">
         <Instance HierarchyPath="sim_clk_gen_0"/>
@@ -42,14 +42,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\top_xlconstant_0_1\top_xlconstant_0_1.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\top_RS1_0_0\top_RS1_0_0.xci" Type="IP">
         <Instance HierarchyPath="RS1_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -60,6 +52,22 @@
       </File>
       <File Name="ip\top_RS_EN_GEN_0_0\top_RS_EN_GEN_0_0.xci" Type="IP">
         <Instance HierarchyPath="RS_EN_GEN_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\top_Rand_Gen_8_0_0\top_Rand_Gen_8_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Rand_Gen_8_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\top_xlconstant_0_1\top_xlconstant_0_1.xci" Type="IP">
+        <Instance HierarchyPath="xlconstant_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

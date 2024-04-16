@@ -24,13 +24,15 @@ module RS_EN_GEN(
     input clk,
     input rst_n,
     output simstart,
-    output simend
+    output simend,
+    output load
     );
 
 
 reg [7:0] cnt;
 reg simstart;
 reg simend;
+reg load;
 
 always @(posedge clk or negedge rst_n) begin
     if(rst_n==1'b0) begin
@@ -48,10 +50,12 @@ always @(posedge clk or negedge rst_n) begin
         end
 
         if(cnt==188)begin
-            simend<=1;
+            simend<=1'b1;
+            load<=1'b1;
         end
         else begin
             simend<=0;
+            load<=1'b0;
         end
 
         if(cnt==204)begin

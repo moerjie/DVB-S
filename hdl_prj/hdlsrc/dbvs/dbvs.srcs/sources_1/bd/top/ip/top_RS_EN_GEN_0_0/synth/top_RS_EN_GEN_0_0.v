@@ -59,7 +59,8 @@ module top_RS_EN_GEN_0_0 (
   clk,
   rst_n,
   simstart,
-  simend
+  simend,
+  load
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN top_sim_clk_gen_0_0_clk, INSERT_VIP 0" *)
@@ -70,11 +71,13 @@ input wire clk;
 input wire rst_n;
 output wire simstart;
 output wire simend;
+output wire load;
 
   RS_EN_GEN inst (
     .clk(clk),
     .rst_n(rst_n),
     .simstart(simstart),
-    .simend(simend)
+    .simend(simend),
+    .load(load)
   );
 endmodule
