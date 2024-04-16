@@ -1,0 +1,8 @@
+top_sim_clk_gen_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v,
+top.v,verilog,xil_defaultlib,../../../bd/top/sim/top.v,
+top_alpharandomization_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v,
+top_xlconstant_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v,
+top_xlconstant_0_1.v,verilog,xil_defaultlib,../../../bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v,
+top_RS1_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v,
+top_RS_EN_GEN_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v" \
+"../../../../dbvs.ip_user_files/bd/rs_en_test/ip/rs_en_test_RS_EN_GEN_0_0/sim/rs_en_test_RS_EN_GEN_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/rs_en_test/ip/rs_en_test_sim_clk_gen_0_0/sim/rs_en_test_sim_clk_gen_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/rs_en_test/sim/rs_en_test.v" \
+"../../../../dbvs.srcs/sources_1/bd/rs_en_test/hdl/rs_en_test_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

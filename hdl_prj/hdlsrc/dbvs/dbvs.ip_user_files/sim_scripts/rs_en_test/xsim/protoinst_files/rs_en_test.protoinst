@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"rs_en_test": {
+			"proto_instances": {
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../DVBS/alpharandomization.v" \
+"../../../../../DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v" \
+"../../../../../DVBS/RS1.v" \
+"../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/top/sim/top.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v" \
+"../../../../dbvs.ip_user_files/bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v" \
+"../../../../dbvs.srcs/sources_1/bd/top/hdl/top_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
