@@ -185,7 +185,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:08168182</spirit:value>
+            <spirit:value>9:0021d00b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -201,11 +201,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Apr 16 09:17:16 UTC 2024</spirit:value>
+            <spirit:value>Thu Apr 18 07:20:27 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:08168182</spirit:value>
+            <spirit:value>9:0021d00b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -225,7 +225,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:13b0e731</spirit:value>
+            <spirit:value>9:275104f3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -241,11 +241,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Apr 16 09:17:16 UTC 2024</spirit:value>
+            <spirit:value>Thu Apr 18 07:20:27 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:13b0e731</spirit:value>
+            <spirit:value>9:275104f3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -336,7 +336,7 @@
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
         <spirit:name>CLOCK_PERIOD</spirit:name>
         <spirit:displayName>Clock Period</spirit:displayName>
-        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLOCK_PERIOD">10</spirit:value>
+        <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLOCK_PERIOD">10.0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>INITIAL_RESET_CLOCK_CYCLES</spirit:name>
@@ -455,6 +455,7 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.FREQ_HZ" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SYNC_RST.POLARITY" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.FREQ_HZ" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.INITIAL_RESET_CLOCK_CYCLES" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.RESET_POLARITY" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>

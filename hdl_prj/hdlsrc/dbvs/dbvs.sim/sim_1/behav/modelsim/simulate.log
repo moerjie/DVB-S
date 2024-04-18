@@ -1,0 +1,185 @@
+# //  ModelSim SE-64 10.6d Feb 24 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do {top_wrapper_simulate.do}
+# vsim -voptargs=""+acc"" -L xil_defaultlib -L sim_clk_gen_v1_0_2 -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm -lib xil_defaultlib xil_defaultlib.top_wrapper xil_defaultlib.glbl 
+# Start time: 15:48:32 on Apr 18,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+# 1
+# 1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+add wave -position end  sim:/top_wrapper/top_i/RS1_0/clk
+add wave -position end  sim:/top_wrapper/top_i/Rand_Gen_8_0/rand_num
+run
+run
+run
+run
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Optimization canceled
+add wave -position end  sim:/top_wrapper/top_i/RS_EN_GEN_0/inst/simstart
+add wave -position end  sim:/top_wrapper/top_i/RS_EN_GEN_0/inst/simend
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+run
+add wave -position end  sim:/top_wrapper/top_i/RS_EN_GEN_0/inst/cnt
+# Causality operation skipped due to absence of debug database file
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+run
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+run
+vlib work
+vlog -reportprogress 300 -work work D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim/glbl.v
+# Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 15:57:12 on Apr 18,2024
+# vlog -reportprogress 300 -work work D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim/glbl.v 
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# End time: 15:57:12 on Apr 18,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_RS1_0_0(fast)
+# Loading work.RS1(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_RS_EN_GEN_0_0(fast)
+# Loading work.RS_EN_GEN(fast)
+# Loading work.top_Rand_Gen_8_0_0(fast)
+# Loading work.Rand_Gen_8(fast)
+# Loading work.top_alpharandomization_0_0(fast)
+# Loading work.alpharandomization(fast)
+# Loading work.top_sim_clk_gen_0_0(fast)
+# Loading sim_clk_gen_v1_0_2.sim_clk_gen(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast)
+# Loading work.top_xlconstant_0_1(fast)
+# Loading xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(fast__1)
+# Loading work.glbl(fast)
+run
+run
+run
+quit -sim
+# End time: 15:59:42 on Apr 18,2024, Elapsed time: 0:11:10
+# Errors: 1, Warnings: 1

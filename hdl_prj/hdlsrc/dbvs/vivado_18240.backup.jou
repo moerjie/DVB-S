@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Apr 18 15:41:41 2024
+# Process ID: 18240
+# Current directory: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6948 D:\desktop\FPGA\DVB\DVBS\hdl_prj\hdlsrc\dbvs\dbvs.xpr
+# Log file: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/vivado.log
+# Journal file: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.xprupdate_compile_order -fileset sources_1
+launch_simulation -install_path F:/EDA/modeltech64_10.6d/win64
+launch_simulation -install_path F:/EDA/modeltech64_10.6d/win64

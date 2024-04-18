@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Apr 18 15:41:41 2024
+# Process ID: 18240
+# Current directory: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6948 D:\desktop\FPGA\DVB\DVBS\hdl_prj\hdlsrc\dbvs\dbvs.xpr
+# Log file: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/vivado.log
+# Journal file: D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/FPGA/Xilinx_vivadlaunch_simulation -install_path F:/EDA/modeltech64_10.6d/win64
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-ModelSim-47] Finding simulator installation...
+INFO: [USF-ModelSim-50] Using simulator executables from 'F:/EDA/modeltech64_10.6d/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-modelsim-7] Finding pre-compiled libraries...
+ERROR: [USF-modelsim-25] The INI file specified with the MODELSIM environment variable is not accessible. Please check the file permissions.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+
+    while executing
+"send_msg_id USF-modelsim-025 ERROR  "The INI file specified with the MODELSIM environment variable is not accessible. Please check the file permission..."
+    (procedure "usf_modelsim_verify_compiled_lib" line 22)
+    invoked from within
+"usf_modelsim_verify_compiled_lib"
+    (procedure "usf_modelsim_setup_simulation" line 38)
+    invoked from within
+"usf_modelsim_setup_simulation"
+    (procedure "tclapp::xilinx::modelsim::setup" line 19)
+    invoked from within
+"tclapp::xilinx::modelsim::setup { -simset sim_1 -mode behavioral -run_dir D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim -..."
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation -install_path F:/EDA/modeltech64_10.6d/win64
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-ModelSim-47] Finding simulator installation...
+INFO: [USF-ModelSim-50] Using simulator executables from 'F:/EDA/modeltech64_10.6d/win64/vsim.exe'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-modelsim-7] Finding pre-compiled libraries...
+ERROR: [USF-modelsim-25] The INI file specified with the MODELSIM environment variable is not accessible. Please check the file permissions.
+ERROR: [Common 17-39] 'send_msg_id' failed due to earlier errors.
+
+    while executing
+"send_msg_id USF-modelsim-025 ERROR  "The INI file specified with the MODELSIM environment variable is not accessible. Please check the file permission..."
+    (procedure "usf_modelsim_verify_compiled_lib" line 22)
+    invoked from within
+"usf_modelsim_verify_compiled_lib"
+    (procedure "usf_modelsim_setup_simulation" line 38)
+    invoked from within
+"usf_modelsim_setup_simulation"
+    (procedure "tclapp::xilinx::modelsim::setup" line 19)
+    invoked from within
+"tclapp::xilinx::modelsim::setup { -simset sim_1 -mode behavioral -run_dir D:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim -..."
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 18 15:45:22 2024...

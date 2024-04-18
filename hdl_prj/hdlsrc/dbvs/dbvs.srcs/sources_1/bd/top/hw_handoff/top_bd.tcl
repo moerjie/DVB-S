@@ -214,6 +214,7 @@ proc create_root_design { parentCell } {
   # Create instance: sim_clk_gen_0, and set properties
   set sim_clk_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:sim_clk_gen:1.0 sim_clk_gen_0 ]
   set_property -dict [ list \
+   CONFIG.FREQ_HZ {100000000} \
    CONFIG.INITIAL_RESET_CLOCK_CYCLES {1000} \
    CONFIG.RESET_POLARITY {ACTIVE_LOW} \
  ] $sim_clk_gen_0

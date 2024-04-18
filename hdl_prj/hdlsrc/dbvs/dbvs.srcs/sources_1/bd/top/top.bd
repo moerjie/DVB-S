@@ -14,8 +14,8 @@
       "alpharandomization_0": "",
       "RS1_0": "",
       "xlconstant_1": "",
-      "RS_EN_GEN_0": "",
-      "Rand_Gen_8_0": ""
+      "Rand_Gen_8_0": "",
+      "RS_EN_GEN_0": ""
     },
     "ports": {
       "RS_Out_0": {
@@ -32,6 +32,9 @@
         "vlnv": "xilinx.com:ip:sim_clk_gen:1.0",
         "xci_name": "top_sim_clk_gen_0_0",
         "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
           "INITIAL_RESET_CLOCK_CYCLES": {
             "value": "1000"
           },
@@ -167,6 +170,54 @@
           }
         }
       },
+      "Rand_Gen_8_0": {
+        "vlnv": "xilinx.com:module_ref:Rand_Gen_8:1.0",
+        "xci_name": "top_Rand_Gen_8_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Rand_Gen_8",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "top_sim_clk_gen_0_0_clk",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "load": {
+            "direction": "I"
+          },
+          "seed": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "rand_num": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
       "RS_EN_GEN_0": {
         "vlnv": "xilinx.com:module_ref:RS_EN_GEN:1.0",
         "xci_name": "top_RS_EN_GEN_0_0",
@@ -207,83 +258,7 @@
             "direction": "O"
           },
           "load": {
-            "direction": "O",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "top_sim_clk_gen_0_1_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "10000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          }
-        }
-      },
-      "Rand_Gen_8_0": {
-        "vlnv": "xilinx.com:module_ref:Rand_Gen_8:1.0",
-        "xci_name": "top_Rand_Gen_8_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Rand_Gen_8",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "top_sim_clk_gen_0_0_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "rst_n": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "load": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "top_sim_clk_gen_0_1_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "10000000",
-                "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "seed": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "rand_num": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
+            "direction": "O"
           }
         }
       }
@@ -294,8 +269,8 @@
           "sim_clk_gen_0/sync_rst",
           "alpharandomization_0/reset_n",
           "RS1_0/reset_n",
-          "RS_EN_GEN_0/rst_n",
-          "Rand_Gen_8_0/rst_n"
+          "Rand_Gen_8_0/rst_n",
+          "RS_EN_GEN_0/rst_n"
         ]
       },
       "sim_clk_gen_0_clk": {
@@ -303,8 +278,8 @@
           "sim_clk_gen_0/clk",
           "alpharandomization_0/clk",
           "RS1_0/clk",
-          "RS_EN_GEN_0/clk",
-          "Rand_Gen_8_0/clk"
+          "Rand_Gen_8_0/clk",
+          "RS_EN_GEN_0/clk"
         ]
       },
       "xlconstant_0_dout": {

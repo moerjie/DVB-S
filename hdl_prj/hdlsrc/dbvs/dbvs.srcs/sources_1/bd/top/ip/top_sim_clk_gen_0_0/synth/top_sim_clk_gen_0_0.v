@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "sim_clk_gen,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "top_sim_clk_gen_0_0,sim_clk_gen,{}" *)
-(* CORE_GENERATION_INFO = "top_sim_clk_gen_0_0,sim_clk_gen,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sim_clk_gen,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLOCK_PERIOD=10,INITIAL_RESET_CLOCK_CYCLES=1000,RESET_POLARITY=0}" *)
+(* CORE_GENERATION_INFO = "top_sim_clk_gen_0_0,sim_clk_gen,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sim_clk_gen,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLOCK_PERIOD=10.0,INITIAL_RESET_CLOCK_CYCLES=1000,RESET_POLARITY=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module top_sim_clk_gen_0_0 (
   clk,
@@ -67,7 +67,7 @@ output wire clk;
 output wire sync_rst;
 
   sim_clk_gen #(
-    .CLOCK_PERIOD(10),
+    .CLOCK_PERIOD(10.0),
     .INITIAL_RESET_CLOCK_CYCLES(1000),
     .RESET_POLARITY(0)
   ) inst (

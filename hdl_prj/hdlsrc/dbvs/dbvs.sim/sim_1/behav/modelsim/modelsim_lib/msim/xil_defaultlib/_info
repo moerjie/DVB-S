@@ -1,0 +1,355 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/desktop/FPGA/DVB/DVBS/hdl_prj/hdlsrc/dbvs/dbvs.sim/sim_1/behav/modelsim
+T_opt
+!s110 1713426513
+VG7lgXb1g`AKhael[F]0dz3
+04 11 4 work top_wrapper fast 0
+04 4 4 work glbl fast 0
+=1-902e16ef41d1-6620d051-38-3c08
+o-quiet -auto_acc_if_foreign -work xil_defaultlib -L xil_defaultlib -L sim_clk_gen_v1_0_2 -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.6d;65
+valpharandomization
+!s10a 1713259004
+Z2 !s110 1713426361
+!i10b 1
+!s100 f?_XZJGAfhl2m?=`F6Wnk3
+IiVn1nhbCiHh<Ag`XaH@=Q1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1713259004
+8../../../../../DVBS/alpharandomization.v
+F../../../../../DVBS/alpharandomization.v
+Z4 L0 41
+Z5 OL;L;10.6d;65
+r1
+!s85 0
+31
+Z6 !s108 1713426361.000000
+Z7 !s107 ../../../../dbvs.srcs/sources_1/bd/top/hdl/top_wrapper.v|../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v|../../../../dbvs.ip_user_files/bd/top/ip/top_Rand_Gen_8_0_0/sim/top_Rand_Gen_8_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v|../../../../dbvs.ip_user_files/bd/top/sim/top.v|../../../../dbvs.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v|../../../../dbvs.srcs/sources_1/new/Random_Gen_8.v|../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v|../../../../../DVBS/RS1.v|../../../../../DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v|../../../../../DVBS/alpharandomization.v|
+Z8 !s90 -64|-incr|-work|xil_defaultlib|../../../../../DVBS/alpharandomization.v|../../../../../DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v|../../../../../DVBS/RS1.v|../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v|../../../../dbvs.srcs/sources_1/new/Random_Gen_8.v|../../../../dbvs.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v|../../../../dbvs.ip_user_files/bd/top/sim/top.v|../../../../dbvs.ip_user_files/bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_Rand_Gen_8_0_0/sim/top_Rand_Gen_8_0_0.v|../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v|../../../../dbvs.srcs/sources_1/bd/top/hdl/top_wrapper.v|
+!i113 0
+Z9 o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vglbl
+!s110 1713426498
+!i10b 1
+!s100 JWZ^meD<P7inSF0<1SiO32
+IAl?5;D^:bf?I5A^M>WzmU1
+R3
+R0
+w1544155481
+8glbl.v
+Fglbl.v
+L0 6
+R5
+r1
+!s85 0
+31
+!s108 1713426498.000000
+!s107 glbl.v|
+!s90 -work|xil_defaultlib|glbl.v|
+!i113 0
+R9
+R1
+vInteger_Input_RS_Encoder_HDL_Optimized
+Z10 !s10a 1713258846
+R2
+!i10b 1
+!s100 E1D0C6WDIB31;gd7nokhz0
+Im6<MAZc2VR<ZclX000QRK2
+R3
+R0
+Z11 w1713258846
+8../../../../../DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v
+F../../../../../DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v
+L0 24
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+n@integer_@input_@r@s_@encoder_@h@d@l_@optimized
+vRand_Gen_8
+!s10a 1713268382
+Z12 !s110 1713426362
+!i10b 1
+!s100 T]:HJIR9alTaj>n@7gOj^2
+I^<hMg=GJGHFR>lU<f@FO60
+R3
+R0
+w1713268382
+8../../../../dbvs.srcs/sources_1/new/Random_Gen_8.v
+F../../../../dbvs.srcs/sources_1/new/Random_Gen_8.v
+Z13 L0 23
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+n@rand_@gen_8
+vRS1
+R10
+R2
+!i10b 1
+!s100 ^@j7@U`DzUd2L6mhB[=<@0
+IBOLilJYN?];XKGOV405Sl1
+R3
+R0
+R11
+8../../../../../DVBS/RS1.v
+F../../../../../DVBS/RS1.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+n@r@s1
+vRS_EN_GEN
+!s110 1713426497
+!i10b 1
+!s100 1Go<_?OCDc_ZF_2C?k2dV0
+Ig:;__S7:fNSNj4@5mV_9g0
+R3
+R0
+w1713426456
+8../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v
+F../../../../dbvs.srcs/sources_1/new/RS_EN_GEN.v
+R13
+R5
+r1
+!s85 0
+31
+!s108 1713426497.000000
+R7
+R8
+!i113 0
+R9
+R1
+n@r@s_@e@n_@g@e@n
+vtop
+Z14 !s10a 1713426479
+R12
+!i10b 1
+!s100 3V^b<BJOP0QDn=D=8JgZO2
+IJc3;Yi>NYB?GbklzlFIB73
+R3
+R0
+Z15 w1713424827
+8../../../../dbvs.ip_user_files/bd/top/sim/top.v
+F../../../../dbvs.ip_user_files/bd/top/sim/top.v
+L0 13
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtop_alpharandomization_0_0
+Z16 !s10a 1713259381
+R12
+!i10b 1
+!s100 WD8Q1@z]i2;JJ77K`Dm7F1
+I6G7Pmg0b_AU]laV]N>8H:2
+R3
+R0
+Z17 w1713259381
+8../../../../dbvs.ip_user_files/bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_alpharandomization_0_0/sim/top_alpharandomization_0_0.v
+Z18 L0 57
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtop_Rand_Gen_8_0_0
+!s10a 1713268447
+R12
+!i10b 1
+!s100 T:bP416[IiEg8B2C<Nc_G2
+I`iNnUzhkSXhUC]H2V1>F_0
+R3
+R0
+w1713268447
+8../../../../dbvs.ip_user_files/bd/top/ip/top_Rand_Gen_8_0_0/sim/top_Rand_Gen_8_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_Rand_Gen_8_0_0/sim/top_Rand_Gen_8_0_0.v
+R18
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+ntop_@rand_@gen_8_0_0
+vtop_RS1_0_0
+R16
+R12
+!i10b 1
+!s100 bVN@gJhYTgF]VU148gZ4Y1
+In`z=^ia33ViR[6n4WnU9D2
+R3
+R0
+R17
+8../../../../dbvs.ip_user_files/bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_RS1_0_0/sim/top_RS1_0_0.v
+R18
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+ntop_@r@s1_0_0
+vtop_RS_EN_GEN_0_0
+R14
+R12
+!i10b 1
+!s100 mMXo@IhnG9?RB<OmzODM20
+IYW=ZM7fY<f8e?ZAz3=Hmb2
+R3
+R0
+w1713268209
+8../../../../dbvs.ip_user_files/bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_RS_EN_GEN_0_0/sim/top_RS_EN_GEN_0_0.v
+R18
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+ntop_@r@s_@e@n_@g@e@n_0_0
+vtop_sim_clk_gen_0_0
+!s10a 1713424827
+R12
+!i10b 1
+!s100 UCjz6>IzB;cfhSM2gfk:[3
+IQJ0mcal100fKaZ8Q3C_`m0
+R3
+R0
+R15
+8../../../../dbvs.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v
+Z19 L0 56
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtop_wrapper
+R14
+R12
+!i10b 1
+!s100 ]B9kL8?bJhfZaV<XL8KBz0
+ITdlS>hS[A]7UknEz3WfO[1
+R3
+R0
+R15
+8../../../../dbvs.srcs/sources_1/bd/top/hdl/top_wrapper.v
+F../../../../dbvs.srcs/sources_1/bd/top/hdl/top_wrapper.v
+L0 12
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtop_xlconstant_0_0
+!s10a 1713254389
+R12
+!i10b 1
+!s100 6cibJO3P_[9nmgFSIb?C@3
+IeAQld:3^>R`Z21hz0mdT90
+R3
+R0
+w1713254389
+8../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v
+R19
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+vtop_xlconstant_0_1
+!s10a 1713267743
+R12
+!i10b 1
+!s100 gV4NJYHDKomZ@<M8j:h171
+Il@fUdXkUof`9gU4GFTN;o3
+R3
+R0
+w1713267743
+8../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v
+F../../../../dbvs.ip_user_files/bd/top/ip/top_xlconstant_0_1/sim/top_xlconstant_0_1.v
+R19
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
