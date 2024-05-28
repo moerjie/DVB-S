@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="6,528.300 ns"></ZoomStartTime>
+      <ZoomEndTime time="9,703.301 ns"></ZoomEndTime>
+      <Cursor1Time time="8,028.300 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/top_tb/CLK_IN_D_0_clk_n" type="logic">
+      <obj_property name="ElementShortName">CLK_IN_D_0_clk_n</obj_property>
+      <obj_property name="ObjectShortName">CLK_IN_D_0_clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/CLK_IN_D_0_clk_p" type="logic">
+      <obj_property name="ElementShortName">CLK_IN_D_0_clk_p</obj_property>
+      <obj_property name="ObjectShortName">CLK_IN_D_0_clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/rst_n_0" type="logic">
+      <obj_property name="ElementShortName">rst_n_0</obj_property>
+      <obj_property name="ObjectShortName">rst_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/OUT_port_0" type="logic">
+      <obj_property name="ElementShortName">OUT_port_0</obj_property>
+      <obj_property name="ObjectShortName">OUT_port_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/sigSource_0/simDataIn" type="array">
+      <obj_property name="ElementShortName">simDataIn[7:0]</obj_property>
+      <obj_property name="ObjectShortName">simDataIn[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/alphaScramble_0/alphaScramble_OUT" type="array">
+      <obj_property name="ElementShortName">alphaScramble_OUT[7:0]</obj_property>
+      <obj_property name="ObjectShortName">alphaScramble_OUT[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/RS_0/RS_Out" type="array">
+      <obj_property name="ElementShortName">RS_Out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">RS_Out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/Con_Interleaver_0/Out1" type="array">
+      <obj_property name="ElementShortName">Out1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Out1[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/EN_Gen_0/sourceGen" type="logic">
+      <obj_property name="ElementShortName">sourceGen</obj_property>
+      <obj_property name="ObjectShortName">sourceGen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/BIN_OUT" type="logic">
+      <obj_property name="ElementShortName">BIN_OUT</obj_property>
+      <obj_property name="ObjectShortName">BIN_OUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/EN_Gen_0/dec2binGen" type="logic">
+      <obj_property name="ElementShortName">dec2binGen</obj_property>
+      <obj_property name="ObjectShortName">dec2binGen</obj_property>
+   </wvobject>
+   <wvobject fp_name="group24" type="group">
+      <obj_property name="label">New Group</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/PolarityShift_0/singleIn" type="logic">
+         <obj_property name="ElementShortName">singleIn</obj_property>
+         <obj_property name="ObjectShortName">singleIn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/PolarityShift_0/m_axis_data_tdata" type="array">
+         <obj_property name="ElementShortName">m_axis_data_tdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tdata[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/fir_compiler_0/m_axis_data_tdata" type="array">
+         <obj_property name="ElementShortName">m_axis_data_tdata[23:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tdata[23:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dds_compiler_0/m_axis_data_tdata" type="array">
+         <obj_property name="ElementShortName">m_axis_data_tdata[15:0]</obj_property>
+         <obj_property name="ObjectShortName">m_axis_data_tdata[15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/mult_gen_0/P" type="array">
+         <obj_property name="ElementShortName">P[40:0]</obj_property>
+         <obj_property name="ObjectShortName">P[40:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
