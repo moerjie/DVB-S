@@ -1,0 +1,2 @@
+DVBS/SimDataIn&ctrlSignal/MATLAB Function --> MATLAB_Function
+DVBS/SimDataIn&ctrlSignal --> SimDataIn_ctrlSignal

@@ -1,0 +1,12 @@
+xbip_utils_v3_0_vh_rfs.vhd,vhdl,xbip_utils_v3_0_11,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/9836/hdl/xbip_utils_v3_0_vh_rfs.vhd,
+axi_utils_v2_0_vh_rfs.vhd,vhdl,axi_utils_v2_0_7,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/e392/hdl/axi_utils_v2_0_vh_rfs.vhd,
+xbip_pipe_v3_0_vh_rfs.vhd,vhdl,xbip_pipe_v3_0_7,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/c4f2/hdl/xbip_pipe_v3_0_vh_rfs.vhd,
+xbip_bram18k_v3_0_vh_rfs.vhd,vhdl,xbip_bram18k_v3_0_7,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/7a2e/hdl/xbip_bram18k_v3_0_vh_rfs.vhd,
+mult_gen_v12_0_vh_rfs.vhd,vhdl,mult_gen_v12_0_19,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/e1b5/hdl/mult_gen_v12_0_vh_rfs.vhd,
+xbip_dsp48_wrapper_v3_0_vh_rfs.vhd,vhdl,xbip_dsp48_wrapper_v3_0_5,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/e5f6/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd,
+xbip_dsp48_addsub_v3_0_vh_rfs.vhd,vhdl,xbip_dsp48_addsub_v3_0_7,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/9cc0/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd,
+xbip_dsp48_multadd_v3_0_vh_rfs.vhd,vhdl,xbip_dsp48_multadd_v3_0_7,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/0fb3/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd,
+dds_compiler_v6_0_vh_rfs.vhd,vhdl,dds_compiler_v6_0_23,../../../../Mul_Wave.gen/sources_1/bd/top/ipshared/daca/hdl/dds_compiler_v6_0_vh_rfs.vhd,
+top_dds_compiler_0_0.vhd,vhdl,xil_defaultlib,../../../bd/top/ip/top_dds_compiler_0_0/sim/top_dds_compiler_0_0.vhd,
+top.v,verilog,xil_defaultlib,../../../bd/top/sim/top.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,254 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.sim/sim_1/behav/modelsim
+valphaScramble
+!s10a 1715582488
+Z1 !s110 1715743192
+!i10b 1
+!s100 S1eoV:n2KFb[PS0^1VPYk3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I1YGlnI[h1LaToQgjACnMd1
+R0
+w1715582488
+8../../../../../HDL_Gen/DVBS/alphaScramble.v
+F../../../../../HDL_Gen/DVBS/alphaScramble.v
+!i122 0
+L0 41 272
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z5 !s108 1715743192.000000
+Z6 !s107 ../../../../vivado.srcs/sim_1/new/top_tb.v|../../../../vivado.gen/sources_1/bd/top/hdl/top_wrapper.v|../../../../vivado.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v|../../../../vivado.ip_user_files/bd/top/sim/top.v|../../../../vivado.ip_user_files/bd/top/ip/top_SinDataIn_0_0/sim/top_SinDataIn_0_0.v|../../../../vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v|../../../../vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v|../../../../../HDL_Gen/DVBS/SinDataIn.v|../../../../../HDL_Gen/DVBS/alphaScramble.v|
+Z7 !s90 -incr|-mfcu|-work|xil_defaultlib|../../../../../HDL_Gen/DVBS/alphaScramble.v|../../../../../HDL_Gen/DVBS/SinDataIn.v|../../../../vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v|../../../../vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v|../../../../vivado.ip_user_files/bd/top/ip/top_SinDataIn_0_0/sim/top_SinDataIn_0_0.v|../../../../vivado.ip_user_files/bd/top/sim/top.v|../../../../vivado.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v|../../../../vivado.gen/sources_1/bd/top/hdl/top_wrapper.v|../../../../vivado.srcs/sim_1/new/top_tb.v|
+!i113 0
+Z8 o-mfcu -work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 tCvgOpt 0
+nalpha@scramble
+vglbl
+!s110 1715743318
+!i10b 1
+!s100 ZHmTNm_h3dd`6mIQLzSUN3
+R2
+IJT>_:<WW6a7KP^k3<8E3=1
+R0
+w1697210495
+8glbl.v
+Fglbl.v
+!i122 2
+L0 6 78
+R3
+R4
+r1
+!s85 0
+31
+!s108 1715743318.000000
+!s107 glbl.v|
+!s90 -work|xil_defaultlib|glbl.v|
+!i113 0
+o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+vSinDataIn
+!s10a 1715669450
+R1
+!i10b 1
+!s100 leY_z<?:JNJD6W=@VhXZd1
+R2
+IY5OJMb^D;U:Lzg@a?2WUB3
+R0
+w1715669450
+8../../../../../HDL_Gen/DVBS/SinDataIn.v
+F../../../../../HDL_Gen/DVBS/SinDataIn.v
+!i122 0
+L0 41 95
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+n@sin@data@in
+vtop
+Z10 !s10a 1715743180
+R1
+!i10b 1
+!s100 U=07SZoc]k6:eg^Y6bE7=0
+R2
+IkNEmJ<0DJ9UTONDjz4l1P2
+R0
+Z11 w1715743180
+8../../../../vivado.ip_user_files/bd/top/sim/top.v
+F../../../../vivado.ip_user_files/bd/top/sim/top.v
+!i122 0
+L0 14 35
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vtop_alphaScramble_0_0
+Z12 !s10a 1715693283
+R1
+!i10b 1
+!s100 WXVeEU68L0jU:7[`g>Ulm1
+R2
+IfciDRM8WBcI9An`O^3C_=3
+R0
+Z13 w1715693283
+8../../../../vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v
+F../../../../vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v
+!i122 0
+L0 57 29
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+ntop_alpha@scramble_0_0
+vtop_sim_clk_gen_0_0
+R10
+R1
+!i10b 1
+!s100 B;SA]T^L;Kz@]6Z@E1KF81
+R2
+IZ7D4B`?7R5o5;e>;[C4EM2
+R0
+R11
+8../../../../vivado.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v
+F../../../../vivado.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v
+!i122 0
+L0 56 24
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vtop_SinDataIn_0_0
+!s10a 1715693284
+R1
+!i10b 1
+!s100 f^A6iedafF1C]<0RZ4i]_3
+R2
+Ig@LOfY^^]bKV4;`ENI68Q1
+R0
+w1715693284
+8../../../../vivado.ip_user_files/bd/top/ip/top_SinDataIn_0_0/sim/top_SinDataIn_0_0.v
+F../../../../vivado.ip_user_files/bd/top/ip/top_SinDataIn_0_0/sim/top_SinDataIn_0_0.v
+!i122 0
+L0 57 26
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+ntop_@sin@data@in_0_0
+vtop_tb
+!s10a 1715743020
+R1
+!i10b 1
+!s100 SgS`1e[hNdMB70U;]0jPz3
+R2
+IlD78?E5o:W_;NT3l5de]A3
+R0
+w1715743020
+8../../../../vivado.srcs/sim_1/new/top_tb.v
+F../../../../vivado.srcs/sim_1/new/top_tb.v
+!i122 0
+L0 3 40
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vtop_wrapper
+R10
+R1
+!i10b 1
+!s100 mm3kEM4o:fDT?JFCWib?V3
+R2
+IUokca<9N8TS4^`@:DE`R]3
+R0
+R11
+8../../../../vivado.gen/sources_1/bd/top/hdl/top_wrapper.v
+F../../../../vivado.gen/sources_1/bd/top/hdl/top_wrapper.v
+!i122 0
+L0 13 13
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vtop_xlconstant_0_0
+R12
+R1
+!i10b 1
+!s100 MO6V`[o9Gd?6ObnS?@;]20
+R2
+I;jj0^i`[i`H9TmdiSSNfX2
+R0
+R13
+8../../../../vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v
+F../../../../vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v
+!i122 0
+L0 56 13
+R3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9

@@ -1,0 +1,2 @@
+DVBS/sigSource1/MATLAB Function --> MATLAB_Function
+DVBS/sigSource1 --> sigSource1

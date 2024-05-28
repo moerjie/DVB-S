@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../HDL_Gen/DVBS/alphaScramble.v" \
+"../../../../../HDL_Gen/DVBS/SimDataAndCtrlIN1.v" \
+"../../../../../HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v" \
+"../../../../../HDL_Gen/DVBS/RS.v" \
+"../../../../vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v" \
+"../../../../vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
+"../../../../vivado.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
+"../../../../vivado.ip_user_files/bd/top/ip/top_SimDataAndCtrlIN1_0_0/sim/top_SimDataAndCtrlIN1_0_0.v" \
+"../../../../vivado.ip_user_files/bd/top/ip/top_RS_0_0/sim/top_RS_0_0.v" \
+"../../../../vivado.ip_user_files/bd/top/sim/top.v" \
+"../../../../vivado.gen/sources_1/bd/top/hdl/top_wrapper.v" \
+"../../../../vivado.srcs/sim_1/new/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

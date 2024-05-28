@@ -1,0 +1,92 @@
+==============================================================================
+Library 'secureip' compilation error(s)
+==============================================================================
+Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+vmap secureip F:/FPGA/vivadoModelsimLib/secureip 
+Modifying modelsim.ini
+
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 10:25:29 on May 15,2024
+vlog -work secureip -f F:\FPGA\vivadoModelsimLib/secureip/.cxl.ver.secureip.secureip.cmf 
+-- Compiling module GTHE2_CHANNEL_FAST_WRAP
+-- Compiling module GTXE2_CHANNEL_FAST_WRAP
+-- Compiling module GTXE2_CHANNEL_WRAP
+-- Compiling module GTXE2_COMMON_WRAP
+-- Compiling module PCIE_2_1_WRAP
+-- Compiling module ISERDESE2_WRAP
+-- Compiling module B_ISERDESE2
+-- Compiling module OSERDESE2_WRAP
+-- Compiling module B_OSERDESE2
+-- Compiling module SIP_IN_FIFO
+-- Compiling module SIP_OUT_FIFO
+-- Compiling module SIP_PHY_CONTROL
+-- Compiling module SIP_PHASER_IN
+-- Compiling module SIP_PHASER_OUT
+-- Compiling module GTHE2_CHANNEL_WRAP
+-- Compiling module GTHE2_COMMON_WRAP
+-- Compiling module PCIE_3_0_WRAP
+
+Top level modules:
+	GTHE2_CHANNEL_FAST_WRAP
+	GTXE2_CHANNEL_FAST_WRAP
+	GTXE2_CHANNEL_WRAP
+	GTXE2_COMMON_WRAP
+	PCIE_2_1_WRAP
+	ISERDESE2_WRAP
+	OSERDESE2_WRAP
+	SIP_IN_FIFO
+	SIP_OUT_FIFO
+	SIP_PHY_CONTROL
+	SIP_PHASER_IN
+	SIP_PHASER_OUT
+	GTHE2_CHANNEL_WRAP
+	GTHE2_COMMON_WRAP
+	PCIE_3_0_WRAP
+End time: 10:25:51 on May 15,2024, Elapsed time: 0:00:22
+Errors: 0, Warnings: 0
+
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 10:25:51 on May 15,2024
+vlog -sv -svinputport=relaxed -suppress vlog-2583 -work secureip -f F:\FPGA\vivadoModelsimLib/secureip/.cxl.sv.secureip.secureip.cmf 
+    The vlog command compiles Verilog source code and SystemVerilog extensions
+    into a specified working library (or to the work library by default).
+    Compressed SystemVerilog source files (those compressed with zlib) are
+    accepted.
+    
+    The vlog command may be invoked from within Questa SIM or from the
+    operating system command prompt. It may also be invoked during simulation.
+    Compiled libraries are major-version dependent. When moving between major
+    version, you have to refresh compiled libraries using the -refresh argument
+    to vlog. This is not true for minor versions (letter releases).
+    
+    All arguments to the vlog command are case sensitive. For example, -WORK
+    and -work are not equivalent.
+    
+    SystemVerilog requires that the default behavior of the vlog command is to
+    treat each Verilog design file listed on the command line as a separate
+    compilation unit. To treat multiple files listed within a single command
+    line as a single compilation unit, use either the vlog -mfcu argument or
+    the MultiFileCompilationUnit in the User's Manual
+    
+    Try the following to get help on specific options or categories: 
+
+    vlog -help all            : List all categories and options
+    vlog -help category       : List all categories
+    vlog -help <option>       : Help on an option
+    vlog -help <command-line> : Help on all options in a command-line
+    vlog -help <category>     : List all options in a category
+
+    Category:       The list of categories in vlog tool.
+
+    General         List most common general options
+    Analog          List options supporting analog mixed-signal (AMS)
+    Coverage        List options for Coverage
+    Cpp             List options supporting SystemC module
+    Debug           List options for debug, and assertion
+    GLS             List options for Gate Level Simulation
+    Language        List all options supported by hardware language Verilog/VHDL
+    Library         List options for design, work library
+    Messages        List all warn, error, note, fatal messages options
+    Optimize        List options for optimization
+
+

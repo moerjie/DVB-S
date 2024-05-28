@@ -1,0 +1,12 @@
+verilog xil_defaultlib --include "../../../../vivado.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" --include "../../../../vivado.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" --include "../../../../vivado.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" --include "../../../../vivado.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
+"../../../bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v" \
+"../../../bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
+"../../../bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
+"../../../bd/top/ip/top_SimDataAndCtrlIN1_0_0/sim/top_SimDataAndCtrlIN1_0_0.v" \
+"../../../bd/top/ip/top_RS_0_0/sim/top_RS_0_0.v" \
+"../../../bd/top/sim/top.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

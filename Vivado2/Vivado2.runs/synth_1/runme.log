@@ -1,0 +1,367 @@
+
+*** Running vivado
+    with args -log top_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_wrapper.tcl
+
+
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source top_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 463.676 ; gain = 184.555
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/FPGA/Vivado23/Vivado/2023.2/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/utils_1/imports/synth_1/top_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/utils_1/imports/synth_1/top_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top_wrapper -part xc7z020clg400-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15436
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1367.887 ; gain = 445.121
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_wrapper' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'top' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:13]
+INFO: [Synth 8-6157] synthesizing module 'top_Con_Encoder_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_Con_Encoder_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_Con_Encoder_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_Con_Encoder_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ce_out' of module 'top_Con_Encoder_0_0' is unconnected for instance 'Con_Encoder_0' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:56]
+WARNING: [Synth 8-7023] instance 'Con_Encoder_0' of module 'top_Con_Encoder_0_0' has 7 connections declared, but only 6 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:56]
+INFO: [Synth 8-6157] synthesizing module 'top_Con_Interleaver_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_Con_Interleaver_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_Con_Interleaver_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_Con_Interleaver_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ce_out' of module 'top_Con_Interleaver_0_0' is unconnected for instance 'Con_Interleaver_0' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:63]
+WARNING: [Synth 8-7023] instance 'Con_Interleaver_0' of module 'top_Con_Interleaver_0_0' has 6 connections declared, but only 5 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:63]
+INFO: [Synth 8-6157] synthesizing module 'top_EN_Gen_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_EN_Gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_EN_Gen_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_EN_Gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_PolarityShift_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_PolarityShift_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_1_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_PolarityShift_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_1_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_PolarityShift_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_RS_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_RS_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_RS_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_RS_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_alphaScramble_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_alphaScramble_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_alphaScramble_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_alphaScramble_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_c_addsub_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_c_addsub_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_dds_compiler_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dds_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_dds_compiler_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dds_compiler_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_dds_compiler_0_0' is unconnected for instance 'dds_compiler_0' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:108]
+WARNING: [Synth 8-7023] instance 'dds_compiler_0' of module 'top_dds_compiler_0_0' has 3 connections declared, but only 2 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:108]
+INFO: [Synth 8-6157] synthesizing module 'top_dds_compiler_0_1' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dds_compiler_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_dds_compiler_0_1' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dds_compiler_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_dds_compiler_0_1' is unconnected for instance 'dds_compiler_1' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:111]
+WARNING: [Synth 8-7023] instance 'dds_compiler_1' of module 'top_dds_compiler_0_1' has 3 connections declared, but only 2 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:111]
+INFO: [Synth 8-6157] synthesizing module 'top_dec2bin_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dec2bin_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_dec2bin_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_dec2bin_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_fir_compiler_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_fir_compiler_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_fir_compiler_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'top_fir_compiler_0_0' is unconnected for instance 'fir_compiler_0' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:121]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_fir_compiler_0_0' is unconnected for instance 'fir_compiler_0' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:121]
+WARNING: [Synth 8-7023] instance 'fir_compiler_0' of module 'top_fir_compiler_0_0' has 6 connections declared, but only 4 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:121]
+INFO: [Synth 8-6157] synthesizing module 'top_fir_compiler_0_1' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_fir_compiler_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_fir_compiler_0_1' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_fir_compiler_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'top_fir_compiler_0_1' is unconnected for instance 'fir_compiler_1' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:126]
+WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_fir_compiler_0_1' is unconnected for instance 'fir_compiler_1' [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:126]
+WARNING: [Synth 8-7023] instance 'fir_compiler_1' of module 'top_fir_compiler_0_1' has 6 connections declared, but only 4 given [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:126]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:131]
+INFO: [Synth 8-6157] synthesizing module 'top_ila_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_ila_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_mult_gen_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_mult_gen_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_mult_gen_0_3' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_mult_gen_0_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_mult_gen_0_3' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_mult_gen_0_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_sigSource_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_sigSource_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_sigSource_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_sigSource_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_terminal_0_0' [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_terminal_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_terminal_0_0' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/.Xil/Vivado-10448-MOERJIE_PC/realtime/top_terminal_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'top_wrapper' (0#1) [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sigSource_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:147]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:131]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'alphaScramble_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:96]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'RS_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:86]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'Con_Interleaver_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:63]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dec2bin_0'. This will prevent further optimization [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/synth/top.v:114]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1479.164 ; gain = 556.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1479.164 ; gain = 556.398
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1479.164 ; gain = 556.398
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1479.164 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_alphaScramble_0_0/top_alphaScramble_0_0/top_alphaScramble_0_0_in_context.xdc] for cell 'top_i/alphaScramble_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_alphaScramble_0_0/top_alphaScramble_0_0/top_alphaScramble_0_0_in_context.xdc] for cell 'top_i/alphaScramble_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_RS_0_0/top_RS_0_0/top_RS_0_0_in_context.xdc] for cell 'top_i/RS_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_RS_0_0/top_RS_0_0/top_RS_0_0_in_context.xdc] for cell 'top_i/RS_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_sigSource_0_0/top_sigSource_0_0/top_sigSource_0_0_in_context.xdc] for cell 'top_i/sigSource_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_sigSource_0_0/top_sigSource_0_0/top_sigSource_0_0_in_context.xdc] for cell 'top_i/sigSource_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_Con_Interleaver_0_0/top_Con_Interleaver_0_0/top_Con_Interleaver_0_0_in_context.xdc] for cell 'top_i/Con_Interleaver_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_Con_Interleaver_0_0/top_Con_Interleaver_0_0/top_Con_Interleaver_0_0_in_context.xdc] for cell 'top_i/Con_Interleaver_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dec2bin_0_0/top_dec2bin_0_0/top_dec2bin_0_0_in_context.xdc] for cell 'top_i/dec2bin_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dec2bin_0_0/top_dec2bin_0_0/top_dec2bin_0_0_in_context.xdc] for cell 'top_i/dec2bin_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0/top_Con_Encoder_0_0_in_context.xdc] for cell 'top_i/Con_Encoder_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0/top_Con_Encoder_0_0_in_context.xdc] for cell 'top_i/Con_Encoder_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/top_PolarityShift_0_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/top_PolarityShift_0_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/top_PolarityShift_1_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_1'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/top_PolarityShift_1_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_1'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/top_dds_compiler_0_0/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/top_dds_compiler_0_0/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/top_dds_compiler_0_1/top_dds_compiler_0_1_in_context.xdc] for cell 'top_i/dds_compiler_1'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/top_dds_compiler_0_1/top_dds_compiler_0_1_in_context.xdc] for cell 'top_i/dds_compiler_1'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0/top_c_addsub_0_0_in_context.xdc] for cell 'top_i/c_addsub_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0/top_c_addsub_0_0_in_context.xdc] for cell 'top_i/c_addsub_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_EN_Gen_0_0/top_EN_Gen_0_0/top_EN_Gen_0_0_in_context.xdc] for cell 'top_i/EN_Gen_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_EN_Gen_0_0/top_EN_Gen_0_0/top_EN_Gen_0_0_in_context.xdc] for cell 'top_i/EN_Gen_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/top_fir_compiler_0_0/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/top_fir_compiler_0_0/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_fir_compiler_0_1/top_fir_compiler_0_1/top_fir_compiler_0_1_in_context.xdc] for cell 'top_i/fir_compiler_1'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_fir_compiler_0_1/top_fir_compiler_0_1/top_fir_compiler_0_1_in_context.xdc] for cell 'top_i/fir_compiler_1'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_mult_gen_0_3/top_mult_gen_0_3/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_1'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_mult_gen_0_3/top_mult_gen_0_3/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_1'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_terminal_0_0/top_terminal_0_0/top_terminal_0_0_in_context.xdc] for cell 'top_i/terminal_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_terminal_0_0/top_terminal_0_0/top_terminal_0_0_in_context.xdc] for cell 'top_i/terminal_0'
+Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_ila_0_0/top_ila_0_0/top_ila_0_0_in_context.xdc] for cell 'top_i/ila_0'
+Finished Parsing XDC File [f:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.gen/sources_1/bd/top/ip/top_ila_0_0/top_ila_0_0/top_ila_0_0_in_context.xdc] for cell 'top_i/ila_0'
+Parsing XDC File [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/constrs_1/new/topCons.xdc]
+Finished Parsing XDC File [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/constrs_1/new/topCons.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/constrs_1/new/topCons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1493.125 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系统找不到指定的路径。
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1493.125 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for top_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/alphaScramble_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/RS_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/sigSource_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/Con_Interleaver_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/dec2bin_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/Con_Encoder_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/PolarityShift_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/PolarityShift_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/dds_compiler_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/dds_compiler_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/mult_gen_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/c_addsub_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/EN_Gen_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/fir_compiler_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/fir_compiler_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/mult_gen_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/terminal_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/ila_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------+----------+
+|      |BlackBox name           |Instances |
++------+------------------------+----------+
+|1     |top_Con_Encoder_0_0     |         1|
+|2     |top_Con_Interleaver_0_0 |         1|
+|3     |top_EN_Gen_0_0          |         1|
+|4     |top_PolarityShift_0_0   |         1|
+|5     |top_PolarityShift_1_0   |         1|
+|6     |top_RS_0_0              |         1|
+|7     |top_alphaScramble_0_0   |         1|
+|8     |top_c_addsub_0_0        |         1|
+|9     |top_dds_compiler_0_0    |         1|
+|10    |top_dds_compiler_0_1    |         1|
+|11    |top_dec2bin_0_0         |         1|
+|12    |top_fir_compiler_0_0    |         1|
+|13    |top_fir_compiler_0_1    |         1|
+|14    |top_ila_0_0             |         1|
+|15    |top_mult_gen_0_0        |         1|
+|16    |top_mult_gen_0_3        |         1|
+|17    |top_sigSource_0_0       |         1|
+|18    |top_terminal_0_0        |         1|
++------+------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |top_Con_Encoder_0     |     1|
+|2     |top_Con_Interleaver_0 |     1|
+|3     |top_EN_Gen_0          |     1|
+|4     |top_PolarityShift_0   |     1|
+|5     |top_PolarityShift_1   |     1|
+|6     |top_RS_0              |     1|
+|7     |top_alphaScramble_0   |     1|
+|8     |top_c_addsub_0        |     1|
+|9     |top_dds_compiler_0    |     2|
+|11    |top_dec2bin_0         |     1|
+|12    |top_fir_compiler_0    |     2|
+|14    |top_ila_0             |     1|
+|15    |top_mult_gen_0        |     2|
+|17    |top_sigSource_0       |     1|
+|18    |top_terminal_0        |     1|
+|19    |IBUF                  |     2|
+|20    |OBUF                  |     1|
++------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1493.125 ; gain = 556.398
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1493.125 ; gain = 570.359
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1504.438 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1513.016 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系统找不到指定的路径。
+Synth Design complete | Checksum: c71f2010
+INFO: [Common 17-83] Releasing license: Synthesis
+68 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1513.016 ; gain = 1005.270
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1513.016 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.runs/synth_1/top_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun May 26 15:00:38 2024...

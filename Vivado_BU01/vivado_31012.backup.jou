@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue May 21 15:13:54 2024
+# Process ID: 31012
+# Current directory: F:/Git_Repository/FPGA_myself/DVB-S/Vivado2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent30240 F:\Git_Repository\FPGA_myself\DVB-S\Vivado2\Vivado2.xpr
+# Log file: F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/vivado.log
+# Journal file: F:/Git_Repository/FPGA_myself/DVB-S/Vivado2\vivado.jou
+# Running On: MOERJIE_PC, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 6, Host memory: 34132 MB
+#-----------------------------------------------------------
+start_gui
+open_project F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.xpr
+open_bd_design {F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/Vivado2.srcs/sources_1/bd/top/top.bd}
+launch_simulation
+open_wave_config F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/top_tb_behav.wcfg
+source top_tb.tcl
+update_compile_order -fileset sources_1
+restart
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+save_wave_config {F:/Git_Repository/FPGA_myself/DVB-S/Vivado2/top_tb_behav.wcfg}
+close_sim

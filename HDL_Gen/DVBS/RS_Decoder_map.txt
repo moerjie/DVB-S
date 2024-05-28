@@ -1,0 +1,3 @@
+DVBS/RS Decoder/Integer-Output RS Decoder HDL Optimized/SimpleDualPortRAM_generic --> SimpleDualPortRAM_generic
+DVBS/RS Decoder/Integer-Output RS Decoder HDL Optimized --> Integer_Output_RS_Decoder_HDL_Optimized
+DVBS/RS Decoder --> RS_Decoder

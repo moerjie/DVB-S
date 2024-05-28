@@ -1,0 +1,6 @@
+waveMulTest/mulWave/NCO/DitherGen --> DitherGen
+waveMulTest/mulWave/NCO/WaveformGen/LookUpTableGen/Lookup Table --> Lookup_Table
+waveMulTest/mulWave/NCO/WaveformGen/LookUpTableGen --> LookUpTableGen
+waveMulTest/mulWave/NCO/WaveformGen --> WaveformGen
+waveMulTest/mulWave/NCO --> NCO
+waveMulTest/mulWave --> mulWave

@@ -1,0 +1,26 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/alphaScramble.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alphaScramble
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/SimDataAndCtrlIN1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SimDataAndCtrlIN1
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Integer_Input_RS_Encoder_HDL_Optimized
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/RS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RS
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_alphaScramble_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_xlconstant_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_ila_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_SimDataAndCtrlIN1_0_0/sim/top_SimDataAndCtrlIN1_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_SimDataAndCtrlIN1_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_RS_0_0/sim/top_RS_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_RS_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/sim/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.gen/sources_1/bd/top/hdl/top_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.srcs/sim_1/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

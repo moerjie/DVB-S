@@ -1,0 +1,919 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_mult_gen_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_mult_gen_0_3 (xilinx.com:ip:mult_gen:12.0 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_mult_gen_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_mult_gen_0_0 (xilinx.com:ip:mult_gen:12.0 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_ila_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_ila_0_0 (xilinx.com:ip:ila:6.2 (Rev. 14)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_fir_compiler_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of top_fir_compiler_0_1 (xilinx.com:ip:fir_compiler:7.2 (Rev. 20)) to current project options.
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'ColumnConfig' from '41' to '0,0,41' has been ignored for IP 'top_fir_compiler_0_1'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:fir_compiler:7.2 -user_name top_fir_compiler_0_1
+set_property -dict "\
+  CONFIG.BestPrecision {false} \
+  CONFIG.Blank_Output {false} \
+  CONFIG.Channel_Sequence {Basic} \
+  CONFIG.Clock_Frequency {200} \
+  CONFIG.CoefficientSource {COE_File} \
+  CONFIG.CoefficientVector {6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6} \
+  CONFIG.Coefficient_Buffer_Type {Automatic} \
+  CONFIG.Coefficient_Fanout {false} \
+  CONFIG.Coefficient_File {../../../../../../../matlab/rcos.coe} \
+  CONFIG.Coefficient_Fractional_Bits {0} \
+  CONFIG.Coefficient_Reload {false} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Signed} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {16} \
+  CONFIG.ColumnConfig {0,0,41} \
+  CONFIG.Component_Name {top_fir_compiler_0_1} \
+  CONFIG.Control_Broadcast_Fanout {false} \
+  CONFIG.Control_Column_Fanout {false} \
+  CONFIG.Control_LUT_Pipeline {false} \
+  CONFIG.Control_Path_Fanout {false} \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.DATA_TUSER_Width {1} \
+  CONFIG.Data_Buffer_Type {Automatic} \
+  CONFIG.Data_Fractional_Bits {0} \
+  CONFIG.Data_Path_Broadcast {false} \
+  CONFIG.Data_Path_Fanout {false} \
+  CONFIG.Data_Sign {Signed} \
+  CONFIG.Data_Width {2} \
+  CONFIG.Decimation_Rate {1} \
+  CONFIG.Disable_Half_Band_Centre_Tap {false} \
+  CONFIG.DisplayReloadOrder {false} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Filter_Selection {1} \
+  CONFIG.Filter_Type {Single_Rate} \
+  CONFIG.GUI_Behaviour {Coregen} \
+  CONFIG.Gen_MIF_Files {false} \
+  CONFIG.Gen_MIF_from_COE {false} \
+  CONFIG.Gen_MIF_from_Spec {false} \
+  CONFIG.HardwareOversamplingRate {1} \
+  CONFIG.Has_ACLKEN {false} \
+  CONFIG.Has_ARESETn {false} \
+  CONFIG.Input_Buffer_Type {Automatic} \
+  CONFIG.Inter_Column_Pipe_Length {6} \
+  CONFIG.Interpolation_Rate {1} \
+  CONFIG.M_AXIS_DATA.CLK_DOMAIN {top_clk_0} \
+  CONFIG.M_AXIS_DATA.FREQ_HZ {200000000} \
+  CONFIG.M_AXIS_DATA.HAS_TKEEP {0} \
+  CONFIG.M_AXIS_DATA.HAS_TLAST {0} \
+  CONFIG.M_AXIS_DATA.HAS_TREADY {0} \
+  CONFIG.M_AXIS_DATA.HAS_TSTRB {0} \
+  CONFIG.M_AXIS_DATA.INSERT_VIP {0} \
+  CONFIG.M_AXIS_DATA.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value chan} size {attribs {resolve_type generated dependency chan_size format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency chan_stride format long minimum {} maximum {}} value 24} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value path} size {attribs {resolve_type generated dependency path_size format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency path_stride format long minimum {} maximum {}} value 24} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency out_width format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type generated dependency out_fractwidth format long minimum {} maximum {}} value 0} signed {attribs {resolve_type generated dependency out_signed format bool minimum {} maximum {}} value true}}}}}}}}} TDATA_WIDTH 24 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_data_valid {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data_valid} enabled {attribs {resolve_type generated dependency data_valid_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency data_valid_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} field_chanid {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value chanid} enabled {attribs {resolve_type generated dependency chanid_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency chanid_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency chanid_bitoffset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_user {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value user} enabled {attribs {resolve_type generated dependency user_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency user_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency user_bitoffset format long minimum {} maximum {}} value 0}}}}}} TUSER_WIDTH 0}} \
+  CONFIG.M_AXIS_DATA.PHASE {0.0} \
+  CONFIG.M_AXIS_DATA.TDATA_NUM_BYTES {3} \
+  CONFIG.M_AXIS_DATA.TDEST_WIDTH {0} \
+  CONFIG.M_AXIS_DATA.TID_WIDTH {0} \
+  CONFIG.M_AXIS_DATA.TUSER_WIDTH {0} \
+  CONFIG.M_DATA_Has_TREADY {false} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Multi_Column_Support {Automatic} \
+  CONFIG.No_BRAM_Read_First_Mode {false} \
+  CONFIG.No_SRL_Attributes {false} \
+  CONFIG.Num_Reload_Slots {1} \
+  CONFIG.Number_Channels {1} \
+  CONFIG.Number_Paths {1} \
+  CONFIG.Optimal_Column_Lengths {false} \
+  CONFIG.Optimization_Goal {Area} \
+  CONFIG.Optimization_List {None} \
+  CONFIG.Optimization_Selection {None} \
+  CONFIG.Other {false} \
+  CONFIG.Output_Buffer_Type {Automatic} \
+  CONFIG.Output_Rounding_Mode {Truncate_LSBs} \
+  CONFIG.Output_Width {20} \
+  CONFIG.Passband_Max {0.5} \
+  CONFIG.Passband_Min {0.0} \
+  CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4} \
+  CONFIG.Pre_Adder_Pipeline {false} \
+  CONFIG.Preference_For_Other_Storage {Automatic} \
+  CONFIG.Quantization {Integer_Coefficients} \
+  CONFIG.RateSpecification {Frequency_Specification} \
+  CONFIG.Rate_Change_Type {Integer} \
+  CONFIG.Reload_File {no_coe_file_loaded} \
+  CONFIG.Reset_Data_Vector {true} \
+  CONFIG.S_AXIS_DATA.CLK_DOMAIN {top_clk_0} \
+  CONFIG.S_AXIS_DATA.FREQ_HZ {200000000} \
+  CONFIG.S_AXIS_DATA.HAS_TKEEP {0} \
+  CONFIG.S_AXIS_DATA.HAS_TLAST {0} \
+  CONFIG.S_AXIS_DATA.HAS_TREADY {1} \
+  CONFIG.S_AXIS_DATA.HAS_TSTRB {0} \
+  CONFIG.S_AXIS_DATA.INSERT_VIP {0} \
+  CONFIG.S_AXIS_DATA.LAYERED_METADATA {undef} \
+  CONFIG.S_AXIS_DATA.PHASE {0.0} \
+  CONFIG.S_AXIS_DATA.TDATA_NUM_BYTES {1} \
+  CONFIG.S_AXIS_DATA.TDEST_WIDTH {0} \
+  CONFIG.S_AXIS_DATA.TID_WIDTH {0} \
+  CONFIG.S_AXIS_DATA.TUSER_WIDTH {0} \
+  CONFIG.S_CONFIG_Method {Single} \
+  CONFIG.S_CONFIG_Sync_Mode {On_Vector} \
+  CONFIG.S_DATA_Has_FIFO {false} \
+  CONFIG.S_DATA_Has_TUSER {Not_Required} \
+  CONFIG.SamplePeriod {1} \
+  CONFIG.Sample_Frequency {200} \
+  CONFIG.Select_Pattern {All} \
+  CONFIG.Stopband_Max {1.0} \
+  CONFIG.Stopband_Min {0.5} \
+  CONFIG.Zero_Pack_Factor {1} \
+  CONFIG.aclk_intf.ASSOCIATED_BUSIF {S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_DATA:S_AXIS_RELOAD} \
+  CONFIG.aclk_intf.ASSOCIATED_CLKEN {aclken} \
+  CONFIG.aclk_intf.ASSOCIATED_PORT {} \
+  CONFIG.aclk_intf.ASSOCIATED_RESET {aresetn} \
+  CONFIG.aclk_intf.CLK_DOMAIN {top_clk_0} \
+  CONFIG.aclk_intf.FREQ_HZ {200000000} \
+  CONFIG.aclk_intf.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.aclk_intf.INSERT_VIP {0} \
+  CONFIG.aclk_intf.PHASE {0.0} \
+  CONFIG.aclken_intf.POLARITY {ACTIVE_HIGH} \
+  CONFIG.aresetn_intf.INSERT_VIP {0} \
+  CONFIG.aresetn_intf.POLARITY {ACTIVE_LOW} \
+  CONFIG.event_s_config_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_config_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_config_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_config_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_chanid_incorrect_intf.PortWidth {1} \
+  CONFIG.event_s_data_chanid_incorrect_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_data_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_data_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_reload_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_reload_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_reload_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_reload_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} " [get_ips top_fir_compiler_0_1]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_fir_compiler_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of top_fir_compiler_0_0 (xilinx.com:ip:fir_compiler:7.2 (Rev. 20)) to current project options.
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'ColumnConfig' from '41' to '0,0,41' has been ignored for IP 'top_fir_compiler_0_0'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:fir_compiler:7.2 -user_name top_fir_compiler_0_0
+set_property -dict "\
+  CONFIG.BestPrecision {false} \
+  CONFIG.Blank_Output {false} \
+  CONFIG.Channel_Sequence {Basic} \
+  CONFIG.Clock_Frequency {200} \
+  CONFIG.CoefficientSource {COE_File} \
+  CONFIG.CoefficientVector {6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6} \
+  CONFIG.Coefficient_Buffer_Type {Block} \
+  CONFIG.Coefficient_Fanout {false} \
+  CONFIG.Coefficient_File {../../../../../../../matlab/rcos.coe} \
+  CONFIG.Coefficient_Fractional_Bits {0} \
+  CONFIG.Coefficient_Reload {false} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Signed} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {16} \
+  CONFIG.ColumnConfig {0,0,41} \
+  CONFIG.Component_Name {top_fir_compiler_0_0} \
+  CONFIG.Control_Broadcast_Fanout {false} \
+  CONFIG.Control_Column_Fanout {false} \
+  CONFIG.Control_LUT_Pipeline {false} \
+  CONFIG.Control_Path_Fanout {false} \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.DATA_TUSER_Width {1} \
+  CONFIG.Data_Buffer_Type {Automatic} \
+  CONFIG.Data_Fractional_Bits {0} \
+  CONFIG.Data_Path_Broadcast {false} \
+  CONFIG.Data_Path_Fanout {false} \
+  CONFIG.Data_Sign {Signed} \
+  CONFIG.Data_Width {2} \
+  CONFIG.Decimation_Rate {1} \
+  CONFIG.Disable_Half_Band_Centre_Tap {false} \
+  CONFIG.DisplayReloadOrder {false} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.Filter_Selection {1} \
+  CONFIG.Filter_Type {Single_Rate} \
+  CONFIG.GUI_Behaviour {Coregen} \
+  CONFIG.Gen_MIF_Files {false} \
+  CONFIG.Gen_MIF_from_COE {false} \
+  CONFIG.Gen_MIF_from_Spec {false} \
+  CONFIG.HardwareOversamplingRate {1} \
+  CONFIG.Has_ACLKEN {false} \
+  CONFIG.Has_ARESETn {false} \
+  CONFIG.Input_Buffer_Type {Automatic} \
+  CONFIG.Inter_Column_Pipe_Length {6} \
+  CONFIG.Interpolation_Rate {1} \
+  CONFIG.M_AXIS_DATA.CLK_DOMAIN {top_clk_0} \
+  CONFIG.M_AXIS_DATA.FREQ_HZ {200000000} \
+  CONFIG.M_AXIS_DATA.HAS_TKEEP {0} \
+  CONFIG.M_AXIS_DATA.HAS_TLAST {0} \
+  CONFIG.M_AXIS_DATA.HAS_TREADY {0} \
+  CONFIG.M_AXIS_DATA.HAS_TSTRB {0} \
+  CONFIG.M_AXIS_DATA.INSERT_VIP {0} \
+  CONFIG.M_AXIS_DATA.LAYERED_METADATA {xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value chan} size {attribs {resolve_type generated dependency chan_size format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency chan_stride format long minimum {} maximum {}} value 24} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value path} size {attribs {resolve_type generated dependency path_size format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency path_stride format long minimum {} maximum {}} value 24} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency out_width format long minimum {} maximum {}} value 20} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type generated dependency out_fractwidth format long minimum {} maximum {}} value 0} signed {attribs {resolve_type generated dependency out_signed format bool minimum {} maximum {}} value true}}}}}}}}} TDATA_WIDTH 24 TUSER {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_data_valid {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data_valid} enabled {attribs {resolve_type generated dependency data_valid_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency data_valid_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0}}} field_chanid {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value chanid} enabled {attribs {resolve_type generated dependency chanid_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency chanid_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency chanid_bitoffset format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} field_user {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value user} enabled {attribs {resolve_type generated dependency user_enabled format bool minimum {} maximum {}} value false} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency user_bitwidth format long minimum {} maximum {}} value 0} bitoffset {attribs {resolve_type generated dependency user_bitoffset format long minimum {} maximum {}} value 0}}}}}} TUSER_WIDTH 0}} \
+  CONFIG.M_AXIS_DATA.PHASE {0.0} \
+  CONFIG.M_AXIS_DATA.TDATA_NUM_BYTES {3} \
+  CONFIG.M_AXIS_DATA.TDEST_WIDTH {0} \
+  CONFIG.M_AXIS_DATA.TID_WIDTH {0} \
+  CONFIG.M_AXIS_DATA.TUSER_WIDTH {0} \
+  CONFIG.M_DATA_Has_TREADY {false} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Multi_Column_Support {Automatic} \
+  CONFIG.No_BRAM_Read_First_Mode {false} \
+  CONFIG.No_SRL_Attributes {false} \
+  CONFIG.Num_Reload_Slots {1} \
+  CONFIG.Number_Channels {1} \
+  CONFIG.Number_Paths {1} \
+  CONFIG.Optimal_Column_Lengths {false} \
+  CONFIG.Optimization_Goal {Area} \
+  CONFIG.Optimization_List {None} \
+  CONFIG.Optimization_Selection {None} \
+  CONFIG.Other {false} \
+  CONFIG.Output_Buffer_Type {Block} \
+  CONFIG.Output_Rounding_Mode {Truncate_LSBs} \
+  CONFIG.Output_Width {20} \
+  CONFIG.Passband_Max {0.5} \
+  CONFIG.Passband_Min {0.0} \
+  CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4} \
+  CONFIG.Pre_Adder_Pipeline {false} \
+  CONFIG.Preference_For_Other_Storage {Automatic} \
+  CONFIG.Quantization {Integer_Coefficients} \
+  CONFIG.RateSpecification {Frequency_Specification} \
+  CONFIG.Rate_Change_Type {Integer} \
+  CONFIG.Reload_File {no_coe_file_loaded} \
+  CONFIG.Reset_Data_Vector {true} \
+  CONFIG.S_AXIS_DATA.CLK_DOMAIN {top_clk_0} \
+  CONFIG.S_AXIS_DATA.FREQ_HZ {200000000} \
+  CONFIG.S_AXIS_DATA.HAS_TKEEP {0} \
+  CONFIG.S_AXIS_DATA.HAS_TLAST {0} \
+  CONFIG.S_AXIS_DATA.HAS_TREADY {1} \
+  CONFIG.S_AXIS_DATA.HAS_TSTRB {0} \
+  CONFIG.S_AXIS_DATA.INSERT_VIP {0} \
+  CONFIG.S_AXIS_DATA.LAYERED_METADATA {undef} \
+  CONFIG.S_AXIS_DATA.PHASE {0.0} \
+  CONFIG.S_AXIS_DATA.TDATA_NUM_BYTES {1} \
+  CONFIG.S_AXIS_DATA.TDEST_WIDTH {0} \
+  CONFIG.S_AXIS_DATA.TID_WIDTH {0} \
+  CONFIG.S_AXIS_DATA.TUSER_WIDTH {0} \
+  CONFIG.S_CONFIG_Method {Single} \
+  CONFIG.S_CONFIG_Sync_Mode {On_Vector} \
+  CONFIG.S_DATA_Has_FIFO {false} \
+  CONFIG.S_DATA_Has_TUSER {Not_Required} \
+  CONFIG.SamplePeriod {1} \
+  CONFIG.Sample_Frequency {200} \
+  CONFIG.Select_Pattern {All} \
+  CONFIG.Stopband_Max {1.0} \
+  CONFIG.Stopband_Min {0.5} \
+  CONFIG.Zero_Pack_Factor {1} \
+  CONFIG.aclk_intf.ASSOCIATED_BUSIF {S_AXIS_CONFIG:M_AXIS_DATA:S_AXIS_DATA:S_AXIS_RELOAD} \
+  CONFIG.aclk_intf.ASSOCIATED_CLKEN {aclken} \
+  CONFIG.aclk_intf.ASSOCIATED_PORT {} \
+  CONFIG.aclk_intf.ASSOCIATED_RESET {aresetn} \
+  CONFIG.aclk_intf.CLK_DOMAIN {top_clk_0} \
+  CONFIG.aclk_intf.FREQ_HZ {200000000} \
+  CONFIG.aclk_intf.FREQ_TOLERANCE_HZ {0} \
+  CONFIG.aclk_intf.INSERT_VIP {0} \
+  CONFIG.aclk_intf.PHASE {0.0} \
+  CONFIG.aclken_intf.POLARITY {ACTIVE_HIGH} \
+  CONFIG.aresetn_intf.INSERT_VIP {0} \
+  CONFIG.aresetn_intf.POLARITY {ACTIVE_LOW} \
+  CONFIG.event_s_config_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_config_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_config_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_config_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_chanid_incorrect_intf.PortWidth {1} \
+  CONFIG.event_s_data_chanid_incorrect_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_data_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_data_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_data_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_reload_tlast_missing_intf.PortWidth {1} \
+  CONFIG.event_s_reload_tlast_missing_intf.SENSITIVITY {EDGE_RISING} \
+  CONFIG.event_s_reload_tlast_unexpected_intf.PortWidth {1} \
+  CONFIG.event_s_reload_tlast_unexpected_intf.SENSITIVITY {EDGE_RISING} " [get_ips top_fir_compiler_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_dds_compiler_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_dds_compiler_0_1 (xilinx.com:ip:dds_compiler:6.0 (Rev. 23)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_dds_compiler_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_dds_compiler_0_0 (xilinx.com:ip:dds_compiler:6.0 (Rev. 23)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Tue May 28 13:56:31 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_c_addsub_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_c_addsub_0_0 (xilinx.com:ip:c_addsub:12.0 (Rev. 16)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_xlconstant_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_xlconstant_0_0 (xilinx.com:ip:xlconstant:1.1 (Rev. 8)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_util_vector_logic_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_util_vector_logic_0_0 (xilinx.com:ip:util_vector_logic:2.0 (Rev. 3)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_mult_gen_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_mult_gen_0_2 (xilinx.com:ip:mult_gen:12.0 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_mult_gen_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_mult_gen_0_0 (xilinx.com:ip:mult_gen:12.0 (Rev. 19)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_dds_compiler_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_dds_compiler_0_1 (xilinx.com:ip:dds_compiler:6.0 (Rev. 23)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_dds_compiler_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_dds_compiler_0_0 (xilinx.com:ip:dds_compiler:6.0 (Rev. 23)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_clk_wiz_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of top_clk_wiz_0_0 (xilinx.com:ip:clk_wiz:6.0 (Rev. 13)) to current project options.
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'CLKOUT2_REQUESTED_OUT_FREQ' from '100.000' to '5' has been ignored for IP 'top_clk_wiz_0_0'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:clk_wiz:6.0 -user_name top_clk_wiz_0_0
+set_property -dict "\
+  CONFIG.AUTO_PRIMITIVE {MMCM} \
+  CONFIG.AXI_DRP {false} \
+  CONFIG.CALC_DONE {empty} \
+  CONFIG.CDDCDONE_PORT {cddcdone} \
+  CONFIG.CDDCREQ_PORT {cddcreq} \
+  CONFIG.CLKFB_IN_N_PORT {clkfb_in_n} \
+  CONFIG.CLKFB_IN_PORT {clkfb_in} \
+  CONFIG.CLKFB_IN_P_PORT {clkfb_in_p} \
+  CONFIG.CLKFB_IN_SIGNALING {SINGLE} \
+  CONFIG.CLKFB_OUT_N_PORT {clkfb_out_n} \
+  CONFIG.CLKFB_OUT_PORT {clkfb_out} \
+  CONFIG.CLKFB_OUT_P_PORT {clkfb_out_p} \
+  CONFIG.CLKFB_STOPPED_PORT {clkfb_stopped} \
+  CONFIG.CLKIN1_JITTER_PS {1000.0} \
+  CONFIG.CLKIN1_UI_JITTER {0.010} \
+  CONFIG.CLKIN2_JITTER_PS {100.0} \
+  CONFIG.CLKIN2_UI_JITTER {0.010} \
+  CONFIG.CLKOUT1_DRIVES {BUFG} \
+  CONFIG.CLKOUT1_JITTER {595.907} \
+  CONFIG.CLKOUT1_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT1_PHASE_ERROR {883.386} \
+  CONFIG.CLKOUT1_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {200} \
+  CONFIG.CLKOUT1_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT1_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT1_USED {true} \
+  CONFIG.CLKOUT2_DRIVES {BUFG} \
+  CONFIG.CLKOUT2_JITTER {1045.072} \
+  CONFIG.CLKOUT2_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT2_PHASE_ERROR {883.386} \
+  CONFIG.CLKOUT2_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {5} \
+  CONFIG.CLKOUT2_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT2_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT2_USED {false} \
+  CONFIG.CLKOUT3_DRIVES {BUFG} \
+  CONFIG.CLKOUT3_JITTER {0.0} \
+  CONFIG.CLKOUT3_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT3_PHASE_ERROR {0.0} \
+  CONFIG.CLKOUT3_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT3_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT3_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT3_USED {false} \
+  CONFIG.CLKOUT4_DRIVES {BUFG} \
+  CONFIG.CLKOUT4_JITTER {0.0} \
+  CONFIG.CLKOUT4_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT4_PHASE_ERROR {0.0} \
+  CONFIG.CLKOUT4_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT4_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT4_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT4_USED {false} \
+  CONFIG.CLKOUT5_DRIVES {BUFG} \
+  CONFIG.CLKOUT5_JITTER {0.0} \
+  CONFIG.CLKOUT5_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT5_PHASE_ERROR {0.0} \
+  CONFIG.CLKOUT5_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT5_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT5_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT5_USED {false} \
+  CONFIG.CLKOUT6_DRIVES {BUFG} \
+  CONFIG.CLKOUT6_JITTER {0.0} \
+  CONFIG.CLKOUT6_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT6_PHASE_ERROR {0.0} \
+  CONFIG.CLKOUT6_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT6_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT6_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT6_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT6_USED {false} \
+  CONFIG.CLKOUT7_DRIVES {BUFG} \
+  CONFIG.CLKOUT7_JITTER {0.0} \
+  CONFIG.CLKOUT7_MATCHED_ROUTING {false} \
+  CONFIG.CLKOUT7_PHASE_ERROR {0.0} \
+  CONFIG.CLKOUT7_REQUESTED_DUTY_CYCLE {50.000} \
+  CONFIG.CLKOUT7_REQUESTED_OUT_FREQ {100.000} \
+  CONFIG.CLKOUT7_REQUESTED_PHASE {0.000} \
+  CONFIG.CLKOUT7_SEQUENCE_NUMBER {1} \
+  CONFIG.CLKOUT7_USED {false} \
+  CONFIG.CLKOUTPHY_REQUESTED_FREQ {600.000} \
+  CONFIG.CLK_IN1_BOARD_INTERFACE {Custom} \
+  CONFIG.CLK_IN2_BOARD_INTERFACE {Custom} \
+  CONFIG.CLK_IN_SEL_PORT {clk_in_sel} \
+  CONFIG.CLK_OUT1_PORT {clk_out1} \
+  CONFIG.CLK_OUT1_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT2_PORT {clk_out2} \
+  CONFIG.CLK_OUT2_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT3_PORT {clk_out3} \
+  CONFIG.CLK_OUT3_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT4_PORT {clk_out4} \
+  CONFIG.CLK_OUT4_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT5_PORT {clk_out5} \
+  CONFIG.CLK_OUT5_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT6_PORT {clk_out6} \
+  CONFIG.CLK_OUT6_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_OUT7_PORT {clk_out7} \
+  CONFIG.CLK_OUT7_USE_FINE_PS_GUI {false} \
+  CONFIG.CLK_VALID_PORT {CLK_VALID} \
+  CONFIG.CLOCK_MGR_TYPE {auto} \
+  CONFIG.Component_Name {top_clk_wiz_0_0} \
+  CONFIG.DADDR_PORT {daddr} \
+  CONFIG.DCLK_PORT {dclk} \
+  CONFIG.DEN_PORT {den} \
+  CONFIG.DIFF_CLK_IN1_BOARD_INTERFACE {Custom} \
+  CONFIG.DIFF_CLK_IN2_BOARD_INTERFACE {Custom} \
+  CONFIG.DIN_PORT {din} \
+  CONFIG.DOUT_PORT {dout} \
+  CONFIG.DRDY_PORT {drdy} \
+  CONFIG.DWE_PORT {dwe} \
+  CONFIG.ENABLE_CDDC {false} \
+  CONFIG.ENABLE_CLKOUTPHY {false} \
+  CONFIG.ENABLE_CLOCK_MONITOR {false} \
+  CONFIG.ENABLE_USER_CLOCK0 {false} \
+  CONFIG.ENABLE_USER_CLOCK1 {false} \
+  CONFIG.ENABLE_USER_CLOCK2 {false} \
+  CONFIG.ENABLE_USER_CLOCK3 {false} \
+  CONFIG.Enable_PLL0 {false} \
+  CONFIG.Enable_PLL1 {false} \
+  CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+  CONFIG.INPUT_CLK_STOPPED_PORT {input_clk_stopped} \
+  CONFIG.INPUT_MODE {frequency} \
+  CONFIG.INTERFACE_SELECTION {Enable_AXI} \
+  CONFIG.IN_FREQ_UNITS {Units_MHz} \
+  CONFIG.IN_JITTER_UNITS {Units_UI} \
+  CONFIG.JITTER_OPTIONS {UI} \
+  CONFIG.JITTER_SEL {No_Jitter} \
+  CONFIG.LOCKED_PORT {locked} \
+  CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
+  CONFIG.MMCM_CLKFBOUT_MULT_F {62.500} \
+  CONFIG.MMCM_CLKFBOUT_PHASE {0.000} \
+  CONFIG.MMCM_CLKFBOUT_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKIN1_PERIOD {100.000} \
+  CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+  CONFIG.MMCM_CLKOUT0_DIVIDE_F {3.125} \
+  CONFIG.MMCM_CLKOUT0_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT0_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT0_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT1_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT1_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT1_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT2_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT2_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT2_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT3_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT3_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT3_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT4_CASCADE {false} \
+  CONFIG.MMCM_CLKOUT4_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT4_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT4_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT4_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT5_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT5_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT5_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT5_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLKOUT6_DIVIDE {1} \
+  CONFIG.MMCM_CLKOUT6_DUTY_CYCLE {0.500} \
+  CONFIG.MMCM_CLKOUT6_PHASE {0.000} \
+  CONFIG.MMCM_CLKOUT6_USE_FINE_PS {false} \
+  CONFIG.MMCM_CLOCK_HOLD {false} \
+  CONFIG.MMCM_COMPENSATION {ZHOLD} \
+  CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+  CONFIG.MMCM_NOTES {None} \
+  CONFIG.MMCM_REF_JITTER1 {0.010} \
+  CONFIG.MMCM_REF_JITTER2 {0.010} \
+  CONFIG.MMCM_STARTUP_WAIT {false} \
+  CONFIG.NUM_OUT_CLKS {1} \
+  CONFIG.OPTIMIZE_CLOCKING_STRUCTURE_EN {false} \
+  CONFIG.OVERRIDE_MMCM {false} \
+  CONFIG.OVERRIDE_PLL {false} \
+  CONFIG.PHASESHIFT_MODE {WAVEFORM} \
+  CONFIG.PHASE_DUTY_CONFIG {false} \
+  CONFIG.PLATFORM {UNKNOWN} \
+  CONFIG.PLL_BANDWIDTH {OPTIMIZED} \
+  CONFIG.PLL_CLKFBOUT_MULT {4} \
+  CONFIG.PLL_CLKFBOUT_PHASE {0.000} \
+  CONFIG.PLL_CLKIN_PERIOD {10.000} \
+  CONFIG.PLL_CLKOUT0_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT0_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT0_PHASE {0.000} \
+  CONFIG.PLL_CLKOUT1_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT1_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT1_PHASE {0.000} \
+  CONFIG.PLL_CLKOUT2_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT2_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT2_PHASE {0.000} \
+  CONFIG.PLL_CLKOUT3_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT3_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT3_PHASE {0.000} \
+  CONFIG.PLL_CLKOUT4_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT4_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT4_PHASE {0.000} \
+  CONFIG.PLL_CLKOUT5_DIVIDE {1} \
+  CONFIG.PLL_CLKOUT5_DUTY_CYCLE {0.500} \
+  CONFIG.PLL_CLKOUT5_PHASE {0.000} \
+  CONFIG.PLL_CLK_FEEDBACK {CLKFBOUT} \
+  CONFIG.PLL_COMPENSATION {SYSTEM_SYNCHRONOUS} \
+  CONFIG.PLL_DIVCLK_DIVIDE {1} \
+  CONFIG.PLL_NOTES {None} \
+  CONFIG.PLL_REF_JITTER {0.010} \
+  CONFIG.POWER_DOWN_PORT {power_down} \
+  CONFIG.PRECISION {1} \
+  CONFIG.PRIMARY_PORT {clk_in1} \
+  CONFIG.PRIMITIVE {MMCM} \
+  CONFIG.PRIMTYPE_SEL {mmcm_adv} \
+  CONFIG.PRIM_IN_FREQ {10} \
+  CONFIG.PRIM_IN_JITTER {0.010} \
+  CONFIG.PRIM_IN_TIMEPERIOD {10.000} \
+  CONFIG.PRIM_SOURCE {No_buffer} \
+  CONFIG.PSCLK_PORT {psclk} \
+  CONFIG.PSDONE_PORT {psdone} \
+  CONFIG.PSEN_PORT {psen} \
+  CONFIG.PSINCDEC_PORT {psincdec} \
+  CONFIG.REF_CLK_FREQ {100.0} \
+  CONFIG.RELATIVE_INCLK {REL_PRIMARY} \
+  CONFIG.RESET_BOARD_INTERFACE {Custom} \
+  CONFIG.RESET_PORT {reset} \
+  CONFIG.RESET_TYPE {ACTIVE_HIGH} \
+  CONFIG.SECONDARY_IN_FREQ {100.000} \
+  CONFIG.SECONDARY_IN_JITTER {0.010} \
+  CONFIG.SECONDARY_IN_TIMEPERIOD {10.000} \
+  CONFIG.SECONDARY_PORT {clk_in2} \
+  CONFIG.SECONDARY_SOURCE {Single_ended_clock_capable_pin} \
+  CONFIG.SS_MODE {CENTER_HIGH} \
+  CONFIG.SS_MOD_FREQ {250} \
+  CONFIG.SS_MOD_TIME {0.004} \
+  CONFIG.STATUS_PORT {STATUS} \
+  CONFIG.SUMMARY_STRINGS {empty} \
+  CONFIG.USER_CLK_FREQ0 {100.0} \
+  CONFIG.USER_CLK_FREQ1 {100.0} \
+  CONFIG.USER_CLK_FREQ2 {100.0} \
+  CONFIG.USER_CLK_FREQ3 {100.0} \
+  CONFIG.USE_BOARD_FLOW {false} \
+  CONFIG.USE_CLKFB_STOPPED {false} \
+  CONFIG.USE_CLK_VALID {false} \
+  CONFIG.USE_CLOCK_SEQUENCING {false} \
+  CONFIG.USE_DYN_PHASE_SHIFT {false} \
+  CONFIG.USE_DYN_RECONFIG {false} \
+  CONFIG.USE_FREEZE {false} \
+  CONFIG.USE_FREQ_SYNTH {true} \
+  CONFIG.USE_INCLK_STOPPED {false} \
+  CONFIG.USE_INCLK_SWITCHOVER {false} \
+  CONFIG.USE_LOCKED {true} \
+  CONFIG.USE_MAX_I_JITTER {false} \
+  CONFIG.USE_MIN_O_JITTER {false} \
+  CONFIG.USE_MIN_POWER {false} \
+  CONFIG.USE_PHASE_ALIGNMENT {true} \
+  CONFIG.USE_POWER_DOWN {false} \
+  CONFIG.USE_RESET {true} \
+  CONFIG.USE_SAFE_CLOCK_STARTUP {false} \
+  CONFIG.USE_SPREAD_SPECTRUM {false} \
+  CONFIG.USE_STATUS {false} \
+  CONFIG.reset.BOARD.ASSOCIATED_PARAM {RESET_BOARD_INTERFACE} \
+  CONFIG.reset.INSERT_VIP {0} \
+  CONFIG.reset.POLARITY {ACTIVE_HIGH} " [get_ips top_clk_wiz_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon May 20 19:26:18 2024
+| Host         : MOERJIE_PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-2
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'top_c_addsub_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of top_c_addsub_0_0 (xilinx.com:ip:c_addsub:12.0 (Rev. 16)) to current project options.
+

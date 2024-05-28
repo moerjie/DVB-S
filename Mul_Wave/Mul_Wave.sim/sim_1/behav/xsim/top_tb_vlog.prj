@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Mul_Wave.ip_user_files/bd/top/sim/top.v" \
+"../../../../Mul_Wave.gen/sources_1/bd/top/hdl/top_wrapper.v" \
+"../../../../Mul_Wave.srcs/sim_1/new/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

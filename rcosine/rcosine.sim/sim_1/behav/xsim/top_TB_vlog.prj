@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../rcosine.ip_user_files/bd/top/sim/top.v" \
+"../../../../rcosine.gen/sources_1/bd/top/hdl/top_wrapper.v" \
+"../../../../rcosine.srcs/sim_1/new/top_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

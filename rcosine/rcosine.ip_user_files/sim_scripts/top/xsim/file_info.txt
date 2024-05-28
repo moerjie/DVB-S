@@ -1,0 +1,3 @@
+top_fir_compiler_0_0.vhd,vhdl,xil_defaultlib,../../../bd/top/ip/top_fir_compiler_0_0/sim/top_fir_compiler_0_0.vhd,
+top.v,verilog,xil_defaultlib,../../../bd/top/sim/top.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

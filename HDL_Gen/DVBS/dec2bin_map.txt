@@ -1,0 +1,5 @@
+dec2bin_tc --> dec2bin_tc
+DVBS/dec2bin/Counter Limited/Increment Real World --> Increment_Real_World
+DVBS/dec2bin/Counter Limited/Wrap To Zero --> Wrap_To_Zero
+DVBS/dec2bin/Counter Limited --> Counter_Limited
+DVBS/dec2bin --> dec2bin

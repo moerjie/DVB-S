@@ -1,0 +1,52 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: F:/FPGA/Vivado23/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_11 -L axi_utils_v2_0_7 -L xbip_pipe_v3_0_7 -L xbip_bram18k_v3_0_7 -L mult_gen_v12_0_19 -L xbip_dsp48_wrapper_v3_0_5 -L xbip_dsp48_addsub_v3_0_7 -L xbip_dsp48_multadd_v3_0_7 -L dds_compiler_v6_0_23 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_tb_behav xil_defaultlib.top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_11.xbip_utils_v3_0_11_pkg
+Compiling package xbip_utils_v3_0_11.xcc_utils_v3_0
+Compiling package dds_compiler_v6_0_23.dds_compiler_v6_0_23_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package dds_compiler_v6_0_23.pkg_dds_compiler_v6_0_23
+Compiling package dds_compiler_v6_0_23.dds_compiler_v6_0_23_hdl_comps
+Compiling package xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv_comp
+Compiling package axi_utils_v2_0_7.axi_utils_v2_0_7_pkg
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_7.global_util_pkg
+Compiling package axi_utils_v2_0_7.axi_utils_comps
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_unsigned
+Compiling package dds_compiler_v6_0_23.pkg_betas
+Compiling package dds_compiler_v6_0_23.pkg_alphas
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23_rdy [\dds_compiler_v6_0_23_rdy(c_has_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.pipe_add [\pipe_add(c_width=28,c_seg_width...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.accum [\accum(c_xdevicefamily="zynq",c_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.sin_cos [\sin_cos(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_has_ce=1...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23_core [\dds_compiler_v6_0_23_core(c_xde...]
+Compiling architecture synth of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23_viv [\dds_compiler_v6_0_23_viv(c_xdev...]
+Compiling architecture xilinx of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23 [\dds_compiler_v6_0_23(c_xdevicef...]
+Compiling architecture top_dds_compiler_0_0_arch of entity xil_defaultlib.top_dds_compiler_0_0 [top_dds_compiler_0_0_default]
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.top_wrapper
+Compiling module xil_defaultlib.top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_tb_behav

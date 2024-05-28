@@ -1,0 +1,9 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.gen/sources_1/bd/top/hdl/top_wrapper.v,1716203139,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.srcs/sim_1/new/top_tb.v,,top_wrapper,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.ip_user_files/bd/top/ip/top_dds_compiler_0_0/sim/top_dds_compiler_0_0.vhd,1716203139,vhdl,,,,top_dds_compiler_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.ip_user_files/bd/top/sim/top.v,1716443360,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.gen/sources_1/bd/top/hdl/top_wrapper.v,,top,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.srcs/sim_1/new/top_tb.v,1716202733,verilog,,,,top_tb,,,,,,,,

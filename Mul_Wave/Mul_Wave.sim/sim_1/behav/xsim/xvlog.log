@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.ip_user_files/bd/top/sim/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.gen/sources_1/bd/top/hdl/top_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/FPGA_myself/DVB-S/Mul_Wave/Mul_Wave.srcs/sim_1/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_tb

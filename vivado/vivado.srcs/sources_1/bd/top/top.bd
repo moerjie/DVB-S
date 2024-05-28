@@ -1,0 +1,354 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBB3483BA6719D37E",
+      "device": "xc7z020clg400-3",
+      "gen_directory": "../../../../vivado.gen/sources_1/bd/top",
+      "name": "top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "alphaScramble_0": "",
+      "xlconstant_0": "",
+      "ila_0": "",
+      "SimDataAndCtrlIN1_0": "",
+      "RS_0": ""
+    },
+    "ports": {
+      "alphaScramble_OUT_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "ce_out_0": {
+        "direction": "O"
+      },
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "top_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_n_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "RS_Out_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "vliOut_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "alphaScramble_0": {
+        "vlnv": "xilinx.com:module_ref:alphaScramble:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_alphaScramble_0_0",
+        "xci_path": "ip\\top_alphaScramble_0_0\\top_alphaScramble_0_0.xci",
+        "inst_hier_path": "alphaScramble_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alphaScramble",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "SEQ_IN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "alphaScramble_OUT": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "top_xlconstant_0_0",
+        "xci_path": "ip\\top_xlconstant_0_0\\top_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "14",
+        "xci_name": "top_ila_0_0",
+        "xci_path": "ip\\top_ila_0_0\\top_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "ALL_PROBE_SAME_MU_CNT": {
+            "value": "1"
+          },
+          "C_DATA_DEPTH": {
+            "value": "4096"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "2"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "8"
+          },
+          "C_TRIGIN_EN": {
+            "value": "false"
+          }
+        }
+      },
+      "SimDataAndCtrlIN1_0": {
+        "vlnv": "xilinx.com:module_ref:SimDataAndCtrlIN1:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_SimDataAndCtrlIN1_0_0",
+        "xci_path": "ip\\top_SimDataAndCtrlIN1_0_0\\top_SimDataAndCtrlIN1_0_0.xci",
+        "inst_hier_path": "SimDataAndCtrlIN1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SimDataAndCtrlIN1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "simDataIn": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "simStart": {
+            "direction": "O"
+          },
+          "simEnd": {
+            "direction": "O"
+          },
+          "simVld": {
+            "direction": "O"
+          }
+        }
+      },
+      "RS_0": {
+        "vlnv": "xilinx.com:module_ref:RS:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_RS_0_0",
+        "xci_path": "ip\\top_RS_0_0\\top_RS_0_0.xci",
+        "inst_hier_path": "RS_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RS",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "top_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "RS_In": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "RS_Start": {
+            "direction": "I"
+          },
+          "RS_End": {
+            "direction": "I"
+          },
+          "RS_VLD": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "RS_Out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "vldOut": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "RS_0_RS_Out": {
+        "ports": [
+          "RS_0/RS_Out",
+          "RS_Out_0",
+          "ila_0/probe1"
+        ]
+      },
+      "RS_0_ce_out": {
+        "ports": [
+          "RS_0/ce_out",
+          "ce_out_0"
+        ]
+      },
+      "RS_0_vldOut": {
+        "ports": [
+          "RS_0/vldOut",
+          "vliOut_0"
+        ]
+      },
+      "SimDataAndCtrlIN1_0_ce_out": {
+        "ports": [
+          "SimDataAndCtrlIN1_0/ce_out",
+          "alphaScramble_0/clk_enable"
+        ]
+      },
+      "SimDataAndCtrlIN1_0_simDataIn": {
+        "ports": [
+          "SimDataAndCtrlIN1_0/simDataIn",
+          "alphaScramble_0/SEQ_IN"
+        ]
+      },
+      "SimDataAndCtrlIN1_0_simEnd": {
+        "ports": [
+          "SimDataAndCtrlIN1_0/simEnd",
+          "RS_0/RS_End"
+        ]
+      },
+      "SimDataAndCtrlIN1_0_simStart": {
+        "ports": [
+          "SimDataAndCtrlIN1_0/simStart",
+          "RS_0/RS_Start"
+        ]
+      },
+      "SimDataAndCtrlIN1_0_simVld": {
+        "ports": [
+          "SimDataAndCtrlIN1_0/simVld",
+          "RS_0/RS_VLD"
+        ]
+      },
+      "alphaScramble_0_alphaScramble_OUT": {
+        "ports": [
+          "alphaScramble_0/alphaScramble_OUT",
+          "alphaScramble_OUT_0",
+          "ila_0/probe0",
+          "RS_0/RS_In"
+        ]
+      },
+      "alphaScramble_0_ce_out": {
+        "ports": [
+          "alphaScramble_0/ce_out",
+          "RS_0/clk_enable"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "ila_0/clk",
+          "alphaScramble_0/clk",
+          "SimDataAndCtrlIN1_0/clk",
+          "RS_0/clk"
+        ]
+      },
+      "reset_n_0_1": {
+        "ports": [
+          "reset_n_0",
+          "alphaScramble_0/reset_n",
+          "SimDataAndCtrlIN1_0/reset_n",
+          "RS_0/reset_n"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "SimDataAndCtrlIN1_0/clk_enable"
+        ]
+      }
+    }
+  }
+}

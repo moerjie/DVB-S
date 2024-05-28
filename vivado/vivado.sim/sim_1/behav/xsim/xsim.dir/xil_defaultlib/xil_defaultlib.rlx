@@ -1,0 +1,17 @@
+0.7
+2020.2
+Oct 13 2023
+20:47:58
+F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v,1715771006,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/RS.v,,Integer_Input_RS_Encoder_HDL_Optimized,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/RS.v,1715771006,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v,,RS,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/SimDataAndCtrlIN1.v,1715762382,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v,,SimDataAndCtrlIN1,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/alphaScramble.v,1715582488,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/HDL_Gen/DVBS/SimDataAndCtrlIN1.v,,alphaScramble,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.gen/sources_1/bd/top/hdl/top_wrapper.v,1715771883,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.srcs/sim_1/new/top_tb.v,,top_wrapper,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_RS_0_0/sim/top_RS_0_0.v,1715771884,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/sim/top.v,,top_RS_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_SimDataAndCtrlIN1_0_0/sim/top_SimDataAndCtrlIN1_0_0.v,1715771884,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_RS_0_0/sim/top_RS_0_0.v,,top_SimDataAndCtrlIN1_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_alphaScramble_0_0/sim/top_alphaScramble_0_0.v,1715771883,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v,,top_alphaScramble_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v,1715771884,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_SimDataAndCtrlIN1_0_0/sim/top_SimDataAndCtrlIN1_0_0.v,,top_ila_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v,1715756119,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v,,top_xlconstant_0_0,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.ip_user_files/bd/top/sim/top.v,1715771883,verilog,,F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.gen/sources_1/bd/top/hdl/top_wrapper.v,,top,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
+F:/Git_Repository/FPGA_myself/DVB-S/vivado/vivado.srcs/sim_1/new/top_tb.v,1715771975,verilog,,,,top_tb,,,,,,,,
