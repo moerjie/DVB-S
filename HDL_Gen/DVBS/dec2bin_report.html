@@ -48,27 +48,15 @@
  <div class="page_container"><div class="content_frame">
 <h1>HDL Code Generation Check Report for 'DVBS/dec2bin'
 <a href="matlab:open_system('DVBS/dec2bin');">open model 'DVBS/dec2bin'</a><BR>
-Generated on 2024-05-15 21:10:25</h1>
-<H2>HDL check for 'DVBS' complete with 0 errors, 1 warnings, and 2 messages.</H2><BR>
+Generated on 2024-05-31 15:46:26</h1>
+<H2>HDL check for 'DVBS' complete with 0 errors, 1 warnings, and 0 messages.</H2><BR>
 <H3>The following table describes blocks for which errors, warnings or messages were reported.</H3><BR>
 <TABLE>
 <TR><TD> <B>Simulink Blocks and resources</B> </TD><TD> <B>Level</B> </TD><TD> <B>Description</B> </TD></TR><TR bgcolor="#F0F0F0"><TD>
-<a alt="HDLShared:hdlshared:MultirateSolver" href="matlab:hilite(get_param(char([68 86 66 83]),'object'),'none');open_system(char([68 86 66 83 47 100 101 99 50 98 105 110]))">DVBS/dec2bin</a>
+<a alt="hdlcoder:validate:UnsupportedAutoInsertRateTransition" href="matlab:hilite(get_param(char([68 86 66 83]),'object'),'none');open_system(char([68 86 66 83]))">DVBS</a>
 </TD>
 <TD>Warning</TD>
-<TD>HDL test bench generation for multirate models requires a fixed step, discrete solver in single tasking mode. In the Solver pane of the configuration parameters dialog box, ensure the solver type is set to "Fixed-step" and solver to "discrete". To configure the solver to single tasking mode, under Solver details, clear the options "Treat each discrete rate as a separate task" and "Automatically handle rate transition for data transfer".</TD>
-</TR>
-<TR bgcolor="#FFFFFF"><TD>
-<a alt="hdlcoder:workflow:AdaptivePipelineOffMessage" href="matlab:hilite(get_param(char([68 86 66 83]),'object'),'none');open_system(char([68 86 66 83]))">DVBS</a>
-</TD>
-<TD>Message</TD>
-<TD><a href="matlab:configset.internal.open('DVBS','AdaptivePipelining')">'AdaptivePipelining'</a> is set to 'Off' for the model. 'AdaptivePipelining' can improve the achievable clock frequency and reduce the area usage on FPGA boards. To enable adaptive pipelining, please set the option to 'On'. When adaptive pipelining is enabled, it inserts pipeline registers to create patterns that efficiently map blocks to DSP units on the target FPGA device.</TD>
-</TR>
-<TR bgcolor="#F0F0F0"><TD>
-<a alt="hdlcoder:workflow:LUTMapToRAMOffMessage" href="matlab:hilite(get_param(char([68 86 66 83]),'object'),'none');open_system(char([68 86 66 83]))">DVBS</a>
-</TD>
-<TD>Message</TD>
-<TD><a href="matlab:configset.internal.open('DVBS','LUTMapToRAM')">'LUTMapToRAM'</a> is set to 'On' for the model. This option is used to map lookup tables to a block RAM in hardware.  To disable pipeline insertion for mapping lookup tables to RAM, please set the option to 'Off'.</TD>
+<TD>HDL Code Generation is not supported with implicit rate transitions. Consider turning off Simulink Solver setting <a href="matlab:configset.internal.open('DVBS','AutoInsertRateTranBlk')">"Automatically handle rate transition for data transfer"</a> and detect such implicit transitions and add explicit rate conversion blocks with valid sample times.</TD>
 </TR>
 </TABLE>
 <BR><BR> </div></div></div></div>

@@ -6,18 +6,12 @@
       "gen_directory": "../../../../FPGA_BU01.gen/sources_1/bd/top",
       "name": "top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "None",
+      "synth_flow_mode": "Hierarchical",
       "tool_version": "2023.2",
       "validated": "true"
     },
     "design_tree": {
       "util_ds_buf_0": "",
-      "sigSource_0": "",
-      "EN_Gen_0": "",
-      "alphaScramble_0": "",
-      "RS_0": "",
-      "Con_Interleaver_0": "",
-      "dec2bin_0": "",
       "Con_Encoder_0": "",
       "dds_compiler_0": "",
       "fir_compiler_0": "",
@@ -28,7 +22,12 @@
       "mult_gen_0": "",
       "mult_gen_1": "",
       "c_addsub_0": "",
-      "terminal_0": ""
+      "terminal_0": "",
+      "xlconstant_0": "",
+      "RS_Enc_0": "",
+      "DataSource_Scrambler_0": "",
+      "dec2bin_0": "",
+      "Interleaver_0": ""
     },
     "interface_ports": {
       "CLK_IN_D_0": {
@@ -87,301 +86,6 @@
         "xci_name": "top_util_ds_buf_0_0",
         "xci_path": "ip\\top_util_ds_buf_0_0\\top_util_ds_buf_0_0.xci",
         "inst_hier_path": "util_ds_buf_0"
-      },
-      "sigSource_0": {
-        "vlnv": "xilinx.com:module_ref:sigSource:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_sigSource_0_0",
-        "xci_path": "ip\\top_sigSource_0_0\\top_sigSource_0_0.xci",
-        "inst_hier_path": "sigSource_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "sigSource",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset_n": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clk_enable": {
-            "direction": "I"
-          },
-          "ce_out": {
-            "direction": "O"
-          },
-          "simStart": {
-            "direction": "O"
-          },
-          "simEnd": {
-            "direction": "O"
-          },
-          "simEN": {
-            "direction": "O"
-          },
-          "simDataIn": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
-      "EN_Gen_0": {
-        "vlnv": "xilinx.com:module_ref:EN_Gen:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_EN_Gen_0_0",
-        "xci_path": "ip\\top_EN_Gen_0_0\\top_EN_Gen_0_0.xci",
-        "inst_hier_path": "EN_Gen_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "EN_Gen",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "rst_n": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "sourceGen": {
-            "direction": "O"
-          },
-          "dec2binGen": {
-            "direction": "O"
-          }
-        }
-      },
-      "alphaScramble_0": {
-        "vlnv": "xilinx.com:module_ref:alphaScramble:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_alphaScramble_0_0",
-        "xci_path": "ip\\top_alphaScramble_0_0\\top_alphaScramble_0_0.xci",
-        "inst_hier_path": "alphaScramble_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "alphaScramble",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset_n": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clk_enable": {
-            "direction": "I"
-          },
-          "SEQ_IN": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "ce_out": {
-            "direction": "O"
-          },
-          "alphaScramble_OUT": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
-      "RS_0": {
-        "vlnv": "xilinx.com:module_ref:RS:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_RS_0_0",
-        "xci_path": "ip\\top_RS_0_0\\top_RS_0_0.xci",
-        "inst_hier_path": "RS_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "RS",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset_n": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clk_enable": {
-            "direction": "I"
-          },
-          "RS_In": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "RS_Start": {
-            "direction": "I"
-          },
-          "RS_End": {
-            "direction": "I"
-          },
-          "RS_VLD": {
-            "direction": "I"
-          },
-          "ce_out": {
-            "direction": "O"
-          },
-          "RS_Out": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
-      "Con_Interleaver_0": {
-        "vlnv": "xilinx.com:module_ref:Con_Interleaver:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_Con_Interleaver_0_0",
-        "xci_path": "ip\\top_Con_Interleaver_0_0\\top_Con_Interleaver_0_0.xci",
-        "inst_hier_path": "Con_Interleaver_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Con_Interleaver",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset_n": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clk_enable": {
-            "direction": "I"
-          },
-          "In1": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "ce_out": {
-            "direction": "O"
-          },
-          "Out1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
-      "dec2bin_0": {
-        "vlnv": "xilinx.com:module_ref:dec2bin:1.0",
-        "ip_revision": "1",
-        "xci_name": "top_dec2bin_0_0",
-        "xci_path": "ip\\top_dec2bin_0_0\\top_dec2bin_0_0.xci",
-        "inst_hier_path": "dec2bin_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "dec2bin",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "top_util_ds_buf_0_0_IBUF_OUT",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset_n": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "clk_enable": {
-            "direction": "I"
-          },
-          "DEC_IN": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "ce_out": {
-            "direction": "O"
-          },
-          "BIN_OUT": {
-            "direction": "O"
-          }
-        }
       },
       "Con_Encoder_0": {
         "vlnv": "xilinx.com:module_ref:Con_Encoder:1.0",
@@ -854,7 +558,7 @@
             "value": "40"
           },
           "PipeStages": {
-            "value": "3"
+            "value": "4"
           },
           "PortAWidth": {
             "value": "16"
@@ -881,7 +585,7 @@
             "value": "40"
           },
           "PipeStages": {
-            "value": "3"
+            "value": "4"
           },
           "PortAWidth": {
             "value": "16"
@@ -917,16 +621,16 @@
             "value": "false"
           },
           "Implementation": {
-            "value": "Fabric"
+            "value": "DSP48"
           },
           "Latency": {
-            "value": "4"
+            "value": "2"
           },
           "Latency_Configuration": {
             "value": "Automatic"
           },
           "Out_Width": {
-            "value": "42"
+            "value": "41"
           }
         }
       },
@@ -958,15 +662,15 @@
           },
           "IN_port": {
             "direction": "I",
-            "left": "41",
+            "left": "40",
             "right": "0",
             "parameters": {
               "LAYERED_METADATA": {
                 "value": [
                   "xilinx.com:interface:datatypes:1.0 {",
                   "DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum",
-                  "{} maximum {}} value 42} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format",
-                  "bool minimum {} maximum {}} value TRUE}}}} DATA_WIDTH 42",
+                  "{} maximum {}} value 41} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format",
+                  "bool minimum {} maximum {}} value TRUE}}}} DATA_WIDTH 41",
                   "}"
                 ],
                 "value_src": "ip_prop"
@@ -975,6 +679,228 @@
           },
           "OUT_port": {
             "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "top_xlconstant_0_0",
+        "xci_path": "ip\\top_xlconstant_0_0\\top_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      },
+      "RS_Enc_0": {
+        "vlnv": "xilinx.com:module_ref:RS_Enc:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_RS_Enc_0_0",
+        "xci_path": "ip\\top_RS_Enc_0_0\\top_RS_Enc_0_0.xci",
+        "inst_hier_path": "RS_Enc_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RS_Enc",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_util_ds_buf_0_0_IBUF_OUT",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "EN": {
+            "direction": "I"
+          },
+          "RS_In": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "RS_Start": {
+            "direction": "I"
+          },
+          "RS_End": {
+            "direction": "I"
+          },
+          "RS_VLD": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "RS_Out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "DataSource_Scrambler_0": {
+        "vlnv": "xilinx.com:module_ref:DataSource_Scrambler:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_DataSource_Scrambler_0_1",
+        "xci_path": "ip\\top_DataSource_Scrambler_0_1\\top_DataSource_Scrambler_0_1.xci",
+        "inst_hier_path": "DataSource_Scrambler_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DataSource_Scrambler",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_util_ds_buf_0_0_IBUF_OUT",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "simStart": {
+            "direction": "O"
+          },
+          "simEnd": {
+            "direction": "O"
+          },
+          "simEN": {
+            "direction": "O"
+          },
+          "ScramblerOut": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "BinEn": {
+            "direction": "O"
+          },
+          "DataGenEn": {
+            "direction": "O"
+          }
+        }
+      },
+      "dec2bin_0": {
+        "vlnv": "xilinx.com:module_ref:dec2bin:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_dec2bin_0_3",
+        "xci_path": "ip\\top_dec2bin_0_3\\top_dec2bin_0_3.xci",
+        "inst_hier_path": "dec2bin_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "dec2bin",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_util_ds_buf_0_0_IBUF_OUT",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "DEC_IN": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "BIN_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "Interleaver_0": {
+        "vlnv": "xilinx.com:module_ref:Interleaver:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_Interleaver_0_0",
+        "xci_path": "ip\\top_Interleaver_0_0\\top_Interleaver_0_0.xci",
+        "inst_hier_path": "Interleaver_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Interleaver",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_util_ds_buf_0_0_IBUF_OUT",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "Trigger": {
+            "direction": "I"
+          },
+          "DataIn": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "InterOut": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
           }
         }
       }
@@ -1012,46 +938,65 @@
           "PolarityShift_1/singleIn"
         ]
       },
-      "Con_Interleaver_0_Out1": {
+      "DataSource_Scrambler_0_DataGenEn": {
         "ports": [
-          "Con_Interleaver_0/Out1",
+          "DataSource_Scrambler_0/DataGenEn",
+          "Interleaver_0/Trigger",
+          "RS_Enc_0/EN"
+        ]
+      },
+      "DataSource_Scrambler_0_ScramblerOut": {
+        "ports": [
+          "DataSource_Scrambler_0/ScramblerOut",
+          "RS_Enc_0/RS_In"
+        ]
+      },
+      "DataSource_Scrambler_0_ce_out": {
+        "ports": [
+          "DataSource_Scrambler_0/ce_out",
+          "RS_Enc_0/clk_enable"
+        ]
+      },
+      "DataSource_Scrambler_0_simEN": {
+        "ports": [
+          "DataSource_Scrambler_0/simEN",
+          "RS_Enc_0/RS_VLD"
+        ]
+      },
+      "DataSource_Scrambler_0_simEnd": {
+        "ports": [
+          "DataSource_Scrambler_0/simEnd",
+          "RS_Enc_0/RS_End"
+        ]
+      },
+      "DataSource_Scrambler_0_simStart": {
+        "ports": [
+          "DataSource_Scrambler_0/simStart",
+          "RS_Enc_0/RS_Start"
+        ]
+      },
+      "Interleaver_0_InterOut": {
+        "ports": [
+          "Interleaver_0/InterOut",
           "dec2bin_0/DEC_IN"
         ]
       },
-      "EN_Gen_0_dec2binGen": {
+      "Interleaver_0_ce_out": {
         "ports": [
-          "EN_Gen_0/dec2binGen",
+          "Interleaver_0/ce_out",
           "dec2bin_0/clk_enable"
         ]
       },
-      "EN_Gen_0_sourceGen": {
+      "RS_Enc_0_RS_Out": {
         "ports": [
-          "EN_Gen_0/sourceGen",
-          "sigSource_0/clk_enable"
+          "RS_Enc_0/RS_Out",
+          "Interleaver_0/DataIn"
         ]
       },
-      "RS_0_RS_Out": {
+      "RS_Enc_0_ce_out": {
         "ports": [
-          "RS_0/RS_Out",
-          "Con_Interleaver_0/In1"
-        ]
-      },
-      "RS_0_ce_out": {
-        "ports": [
-          "RS_0/ce_out",
-          "Con_Interleaver_0/clk_enable"
-        ]
-      },
-      "alphaScramble_0_alphaScramble_OUT": {
-        "ports": [
-          "alphaScramble_0/alphaScramble_OUT",
-          "RS_0/RS_In"
-        ]
-      },
-      "alphaScramble_0_ce_out": {
-        "ports": [
-          "alphaScramble_0/ce_out",
-          "RS_0/clk_enable"
+          "RS_Enc_0/ce_out",
+          "Interleaver_0/clk_enable"
         ]
       },
       "c_addsub_0_S": {
@@ -1111,45 +1056,13 @@
       "rst_n_0_1": {
         "ports": [
           "rst_n_0",
-          "EN_Gen_0/rst_n",
-          "sigSource_0/reset_n",
-          "alphaScramble_0/reset_n",
-          "RS_0/reset_n",
-          "Con_Interleaver_0/reset_n",
-          "dec2bin_0/reset_n",
           "Con_Encoder_0/reset_n",
+          "RS_Enc_0/reset_n",
           "PolarityShift_0/rst_n",
-          "PolarityShift_1/rst_n"
-        ]
-      },
-      "sigSource_0_ce_out": {
-        "ports": [
-          "sigSource_0/ce_out",
-          "alphaScramble_0/clk_enable"
-        ]
-      },
-      "sigSource_0_simDataIn": {
-        "ports": [
-          "sigSource_0/simDataIn",
-          "alphaScramble_0/SEQ_IN"
-        ]
-      },
-      "sigSource_0_simEN": {
-        "ports": [
-          "sigSource_0/simEN",
-          "RS_0/RS_VLD"
-        ]
-      },
-      "sigSource_0_simEnd": {
-        "ports": [
-          "sigSource_0/simEnd",
-          "RS_0/RS_End"
-        ]
-      },
-      "sigSource_0_simStart": {
-        "ports": [
-          "sigSource_0/simStart",
-          "RS_0/RS_Start"
+          "PolarityShift_1/rst_n",
+          "dec2bin_0/reset_n",
+          "Interleaver_0/reset_n",
+          "DataSource_Scrambler_0/reset_n"
         ]
       },
       "terminal_0_OUT_port": {
@@ -1161,23 +1074,27 @@
       "util_ds_buf_0_IBUF_OUT": {
         "ports": [
           "util_ds_buf_0/IBUF_OUT",
-          "sigSource_0/clk",
-          "EN_Gen_0/clk",
-          "alphaScramble_0/clk",
-          "RS_0/clk",
-          "Con_Interleaver_0/clk",
-          "dec2bin_0/clk",
-          "Con_Encoder_0/clk",
           "fir_compiler_0/aclk",
           "dds_compiler_0/aclk",
-          "PolarityShift_0/clk",
-          "PolarityShift_1/clk",
           "dds_compiler_1/aclk",
           "fir_compiler_1/aclk",
           "mult_gen_0/CLK",
           "mult_gen_1/CLK",
           "c_addsub_0/CLK",
-          "terminal_0/clk"
+          "Con_Encoder_0/clk",
+          "RS_Enc_0/clk",
+          "PolarityShift_0/clk",
+          "PolarityShift_1/clk",
+          "terminal_0/clk",
+          "dec2bin_0/clk",
+          "Interleaver_0/clk",
+          "DataSource_Scrambler_0/clk"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "DataSource_Scrambler_0/clk_enable"
         ]
       }
     }

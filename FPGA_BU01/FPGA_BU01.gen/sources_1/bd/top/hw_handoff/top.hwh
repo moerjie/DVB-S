@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue May 28 21:37:26 2024" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 31 21:04:04 2024" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="kintex7" DEVICE="7k325t" NAME="top" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -21,15 +21,13 @@
     </PORT>
     <PORT DIR="I" NAME="rst_n_0" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="EN_Gen_0" PORT="rst_n"/>
-        <CONNECTION INSTANCE="sigSource_0" PORT="reset_n"/>
-        <CONNECTION INSTANCE="alphaScramble_0" PORT="reset_n"/>
-        <CONNECTION INSTANCE="RS_0" PORT="reset_n"/>
-        <CONNECTION INSTANCE="Con_Interleaver_0" PORT="reset_n"/>
-        <CONNECTION INSTANCE="dec2bin_0" PORT="reset_n"/>
         <CONNECTION INSTANCE="Con_Encoder_0" PORT="reset_n"/>
+        <CONNECTION INSTANCE="RS_Enc_0" PORT="reset_n"/>
         <CONNECTION INSTANCE="PolarityShift_0" PORT="rst_n"/>
         <CONNECTION INSTANCE="PolarityShift_1" PORT="rst_n"/>
+        <CONNECTION INSTANCE="dec2bin_0" PORT="reset_n"/>
+        <CONNECTION INSTANCE="Interleaver_0" PORT="reset_n"/>
+        <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="reset_n"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -87,32 +85,38 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/Con_Interleaver_0" HWVERSION="1.0" INSTANCE="Con_Interleaver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Con_Interleaver" VLNV="xilinx.com:module_ref:Con_Interleaver:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/DataSource_Scrambler_0" HWVERSION="1.0" INSTANCE="DataSource_Scrambler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="DataSource_Scrambler" VLNV="xilinx.com:module_ref:DataSource_Scrambler:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_Con_Interleaver_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_DataSource_Scrambler_0_1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="RS_0_RS_Out">
+        <PORT DIR="O" NAME="BinEn" SIGIS="undef"/>
+        <PORT DIR="O" NAME="DataGenEn" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_DataGenEn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="RS_Out"/>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="Trigger"/>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="EN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="Out1" RIGHT="0" SIGIS="undef" SIGNAME="Con_Interleaver_0_Out1">
+        <PORT DIR="O" LEFT="7" NAME="ScramblerOut" RIGHT="0" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_ScramblerOut">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dec2bin_0" PORT="DEC_IN"/>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="RS_In"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="ce_out" SIGIS="undef"/>
+        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_ce_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="clk_enable"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="RS_0_ce_out">
+        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="ce_out"/>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
@@ -120,34 +124,64 @@
             <CONNECTION INSTANCE="External_Ports" PORT="rst_n_0"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="simEN" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simEN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="RS_VLD"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="simEnd" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simEnd">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="RS_End"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="simStart" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simStart">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="RS_Start"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/EN_Gen_0" HWVERSION="1.0" INSTANCE="EN_Gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="EN_Gen" VLNV="xilinx.com:module_ref:EN_Gen:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/Interleaver_0" HWVERSION="1.0" INSTANCE="Interleaver_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Interleaver" VLNV="xilinx.com:module_ref:Interleaver:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_EN_Gen_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_Interleaver_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="DataIn" RIGHT="0" SIGIS="undef" SIGNAME="RS_Enc_0_RS_Out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="RS_Out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="InterOut" RIGHT="0" SIGIS="undef" SIGNAME="Interleaver_0_InterOut">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dec2bin_0" PORT="DEC_IN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="Trigger" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_DataGenEn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="DataGenEn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="Interleaver_0_ce_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="dec2bin_0" PORT="clk_enable"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
           <CONNECTIONS>
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="dec2binGen" SIGIS="undef" SIGNAME="EN_Gen_0_dec2binGen">
+        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="RS_Enc_0_ce_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="dec2bin_0" PORT="clk_enable"/>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="ce_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rst_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
+        <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="rst_n_0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="sourceGen" SIGIS="undef" SIGNAME="EN_Gen_0_sourceGen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="clk_enable"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -263,41 +297,46 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/RS_0" HWVERSION="1.0" INSTANCE="RS_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="RS" VLNV="xilinx.com:module_ref:RS:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/RS_Enc_0" HWVERSION="1.0" INSTANCE="RS_Enc_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="RS_Enc" VLNV="xilinx.com:module_ref:RS_Enc:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_RS_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_RS_Enc_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="RS_End" SIGIS="undef" SIGNAME="sigSource_0_simEnd">
+        <PORT DIR="I" NAME="EN" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_DataGenEn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="simEnd"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="DataGenEn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="RS_In" RIGHT="0" SIGIS="undef" SIGNAME="alphaScramble_0_alphaScramble_OUT">
+        <PORT DIR="I" NAME="RS_End" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simEnd">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="alphaScramble_0" PORT="alphaScramble_OUT"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="simEnd"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="RS_Out" RIGHT="0" SIGIS="undef" SIGNAME="RS_0_RS_Out">
+        <PORT DIR="I" LEFT="7" NAME="RS_In" RIGHT="0" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_ScramblerOut">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Con_Interleaver_0" PORT="In1"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="ScramblerOut"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RS_Start" SIGIS="undef" SIGNAME="sigSource_0_simStart">
+        <PORT DIR="O" LEFT="7" NAME="RS_Out" RIGHT="0" SIGIS="undef" SIGNAME="RS_Enc_0_RS_Out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="simStart"/>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="DataIn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="RS_VLD" SIGIS="undef" SIGNAME="sigSource_0_simEN">
+        <PORT DIR="I" NAME="RS_Start" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simStart">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="simEN"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="simStart"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="RS_0_ce_out">
+        <PORT DIR="I" NAME="RS_VLD" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_simEN">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Con_Interleaver_0" PORT="clk_enable"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="simEN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="RS_Enc_0_ce_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="clk_enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
@@ -305,49 +344,9 @@
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="alphaScramble_0_ce_out">
+        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="DataSource_Scrambler_0_ce_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="alphaScramble_0" PORT="ce_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="rst_n_0"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/alphaScramble_0" HWVERSION="1.0" INSTANCE="alphaScramble_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="alphaScramble" VLNV="xilinx.com:module_ref:alphaScramble:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_alphaScramble_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="SEQ_IN" RIGHT="0" SIGIS="undef" SIGNAME="sigSource_0_simDataIn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="simDataIn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="alphaScramble_OUT" RIGHT="0" SIGIS="undef" SIGNAME="alphaScramble_0_alphaScramble_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="RS_In"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="alphaScramble_0_ce_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="clk_enable"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="sigSource_0_ce_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="ce_out"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="ce_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
@@ -382,9 +381,9 @@
         <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
         <PARAMETER NAME="C_HAS_SINIT" VALUE="0"/>
         <PARAMETER NAME="C_HAS_SSET" VALUE="0"/>
-        <PARAMETER NAME="C_IMPLEMENTATION" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="4"/>
-        <PARAMETER NAME="C_OUT_WIDTH" VALUE="42"/>
+        <PARAMETER NAME="C_IMPLEMENTATION" VALUE="1"/>
+        <PARAMETER NAME="C_LATENCY" VALUE="2"/>
+        <PARAMETER NAME="C_OUT_WIDTH" VALUE="41"/>
         <PARAMETER NAME="C_SCLR_OVERRIDES_SSET" VALUE="1"/>
         <PARAMETER NAME="C_SINIT_VAL" VALUE="0"/>
         <PARAMETER NAME="C_VERBOSITY" VALUE="0"/>
@@ -405,10 +404,10 @@
         <PARAMETER NAME="C_In" VALUE="false"/>
         <PARAMETER NAME="C_Out" VALUE="false"/>
         <PARAMETER NAME="Component_Name" VALUE="top_c_addsub_0_0"/>
-        <PARAMETER NAME="Implementation" VALUE="Fabric"/>
-        <PARAMETER NAME="Latency" VALUE="4"/>
+        <PARAMETER NAME="Implementation" VALUE="DSP48"/>
+        <PARAMETER NAME="Latency" VALUE="2"/>
         <PARAMETER NAME="Latency_Configuration" VALUE="Automatic"/>
-        <PARAMETER NAME="Out_Width" VALUE="42"/>
+        <PARAMETER NAME="Out_Width" VALUE="41"/>
         <PARAMETER NAME="SCLR" VALUE="false"/>
         <PARAMETER NAME="SINIT" VALUE="false"/>
         <PARAMETER NAME="SINIT_Value" VALUE="0"/>
@@ -433,7 +432,7 @@
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="41" NAME="S" RIGHT="0" SIGIS="data" SIGNAME="c_addsub_0_S">
+        <PORT DIR="O" LEFT="40" NAME="S" RIGHT="0" SIGIS="data" SIGNAME="c_addsub_0_S">
           <CONNECTIONS>
             <CONNECTION INSTANCE="terminal_0" PORT="IN_port"/>
           </CONNECTIONS>
@@ -828,7 +827,7 @@
     <MODULE COREREVISION="1" FULLNAME="/dec2bin_0" HWVERSION="1.0" INSTANCE="dec2bin_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dec2bin" VLNV="xilinx.com:module_ref:dec2bin:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_dec2bin_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_dec2bin_0_3"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -837,9 +836,9 @@
             <CONNECTION INSTANCE="Con_Encoder_0" PORT="In1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="DEC_IN" RIGHT="0" SIGIS="undef" SIGNAME="Con_Interleaver_0_Out1">
+        <PORT DIR="I" LEFT="7" NAME="DEC_IN" RIGHT="0" SIGIS="undef" SIGNAME="Interleaver_0_InterOut">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Con_Interleaver_0" PORT="Out1"/>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="InterOut"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="dec2bin_0_ce_out">
@@ -852,9 +851,9 @@
             <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="EN_Gen_0_dec2binGen">
+        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="Interleaver_0_ce_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="EN_Gen_0" PORT="dec2binGen"/>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="ce_out"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
@@ -1324,7 +1323,7 @@
         <PARAMETER NAME="C_HAS_CE" VALUE="0"/>
         <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
         <PARAMETER NAME="C_HAS_ZERO_DETECT" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="3"/>
+        <PARAMETER NAME="C_LATENCY" VALUE="4"/>
         <PARAMETER NAME="C_MODEL_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_MULT_TYPE" VALUE="1"/>
         <PARAMETER NAME="C_OPTIMIZE_GOAL" VALUE="1"/>
@@ -1344,7 +1343,7 @@
         <PARAMETER NAME="OptGoal" VALUE="Speed"/>
         <PARAMETER NAME="OutputWidthHigh" VALUE="40"/>
         <PARAMETER NAME="OutputWidthLow" VALUE="0"/>
-        <PARAMETER NAME="PipeStages" VALUE="3"/>
+        <PARAMETER NAME="PipeStages" VALUE="4"/>
         <PARAMETER NAME="PortAType" VALUE="Signed"/>
         <PARAMETER NAME="PortAWidth" VALUE="16"/>
         <PARAMETER NAME="PortBType" VALUE="Signed"/>
@@ -1396,7 +1395,7 @@
         <PARAMETER NAME="C_HAS_CE" VALUE="0"/>
         <PARAMETER NAME="C_HAS_SCLR" VALUE="0"/>
         <PARAMETER NAME="C_HAS_ZERO_DETECT" VALUE="0"/>
-        <PARAMETER NAME="C_LATENCY" VALUE="3"/>
+        <PARAMETER NAME="C_LATENCY" VALUE="4"/>
         <PARAMETER NAME="C_MODEL_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_MULT_TYPE" VALUE="1"/>
         <PARAMETER NAME="C_OPTIMIZE_GOAL" VALUE="1"/>
@@ -1416,7 +1415,7 @@
         <PARAMETER NAME="OptGoal" VALUE="Speed"/>
         <PARAMETER NAME="OutputWidthHigh" VALUE="40"/>
         <PARAMETER NAME="OutputWidthLow" VALUE="0"/>
-        <PARAMETER NAME="PipeStages" VALUE="3"/>
+        <PARAMETER NAME="PipeStages" VALUE="4"/>
         <PARAMETER NAME="PortAType" VALUE="Signed"/>
         <PARAMETER NAME="PortAWidth" VALUE="16"/>
         <PARAMETER NAME="PortBType" VALUE="Signed"/>
@@ -1453,56 +1452,6 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/sigSource_0" HWVERSION="1.0" INSTANCE="sigSource_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="sigSource" VLNV="xilinx.com:module_ref:sigSource:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="top_sigSource_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" NAME="ce_out" SIGIS="undef" SIGNAME="sigSource_0_ce_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="alphaScramble_0" PORT="clk_enable"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="util_ds_buf_0" PORT="IBUF_OUT"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="clk_enable" SIGIS="undef" SIGNAME="EN_Gen_0_sourceGen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="EN_Gen_0" PORT="sourceGen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_rst_n_0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="rst_n_0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="7" NAME="simDataIn" RIGHT="0" SIGIS="undef" SIGNAME="sigSource_0_simDataIn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="alphaScramble_0" PORT="SEQ_IN"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="simEN" SIGIS="undef" SIGNAME="sigSource_0_simEN">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="RS_VLD"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="simEnd" SIGIS="undef" SIGNAME="sigSource_0_simEnd">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="RS_End"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="simStart" SIGIS="undef" SIGNAME="sigSource_0_simStart">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="RS_0" PORT="RS_Start"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/terminal_0" HWVERSION="1.0" INSTANCE="terminal_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="terminal" VLNV="xilinx.com:module_ref:terminal:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -1510,7 +1459,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="41" NAME="IN_port" RIGHT="0" SIGIS="undef" SIGNAME="c_addsub_0_S">
+        <PORT DIR="I" LEFT="40" NAME="IN_port" RIGHT="0" SIGIS="undef" SIGNAME="c_addsub_0_S">
           <CONNECTIONS>
             <CONNECTION INSTANCE="c_addsub_0" PORT="S"/>
           </CONNECTIONS>
@@ -1558,23 +1507,21 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="IBUF_OUT" RIGHT="0" SIGIS="clk" SIGNAME="util_ds_buf_0_IBUF_OUT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="sigSource_0" PORT="clk"/>
-            <CONNECTION INSTANCE="EN_Gen_0" PORT="clk"/>
-            <CONNECTION INSTANCE="alphaScramble_0" PORT="clk"/>
-            <CONNECTION INSTANCE="RS_0" PORT="clk"/>
-            <CONNECTION INSTANCE="Con_Interleaver_0" PORT="clk"/>
-            <CONNECTION INSTANCE="dec2bin_0" PORT="clk"/>
-            <CONNECTION INSTANCE="Con_Encoder_0" PORT="clk"/>
             <CONNECTION INSTANCE="fir_compiler_0" PORT="aclk"/>
             <CONNECTION INSTANCE="dds_compiler_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="PolarityShift_0" PORT="clk"/>
-            <CONNECTION INSTANCE="PolarityShift_1" PORT="clk"/>
             <CONNECTION INSTANCE="dds_compiler_1" PORT="aclk"/>
             <CONNECTION INSTANCE="fir_compiler_1" PORT="aclk"/>
             <CONNECTION INSTANCE="mult_gen_0" PORT="CLK"/>
             <CONNECTION INSTANCE="mult_gen_1" PORT="CLK"/>
             <CONNECTION INSTANCE="c_addsub_0" PORT="CLK"/>
+            <CONNECTION INSTANCE="Con_Encoder_0" PORT="clk"/>
+            <CONNECTION INSTANCE="RS_Enc_0" PORT="clk"/>
+            <CONNECTION INSTANCE="PolarityShift_0" PORT="clk"/>
+            <CONNECTION INSTANCE="PolarityShift_1" PORT="clk"/>
             <CONNECTION INSTANCE="terminal_0" PORT="clk"/>
+            <CONNECTION INSTANCE="dec2bin_0" PORT="clk"/>
+            <CONNECTION INSTANCE="Interleaver_0" PORT="clk"/>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1588,6 +1535,23 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
+    </MODULE>
+    <MODULE COREREVISION="8" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="DataSource_Scrambler_0" PORT="clk_enable"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
     </MODULE>
   </MODULES>
 

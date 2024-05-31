@@ -24,11 +24,11 @@ module EN_Gen(
     input clk,  //200MHz
     input rst_n,
     output reg sourceGen, //5MHz
+    output wire vdd,
     output reg dec2binGen //40MHz
     );
 
     reg [7:0] cntR;
-    reg [2:0] cntDec;
     reg [2:0] dec2bin_cnt; // Counter to track dec2binGen high count
 
     always @(posedge clk or negedge rst_n) begin
@@ -56,4 +56,6 @@ module EN_Gen(
             sourceGen <= 1'b0;
         end
     end
+    
+    assign vdd=1'b1;
 endmodule

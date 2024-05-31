@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/constrs_1/new/topConstrain.xdc rfile:../../../FPGA_BU01.srcs/constrs_1/new/topConstrain.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN AD12 [get_ports {CLK_IN_D_0_clk_p[0]}]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C29 [get_ports rst_n_0]
+set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN D28 [get_ports OUT_port_0]

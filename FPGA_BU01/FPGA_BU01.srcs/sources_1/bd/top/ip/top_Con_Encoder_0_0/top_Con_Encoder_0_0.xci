@@ -31,7 +31,7 @@
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2023.2" } ],
-        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
       }
     },
     "boundary": {

@@ -61,7 +61,7 @@ ENTITY top_c_addsub_0_0 IS
     A : IN STD_LOGIC_VECTOR(40 DOWNTO 0);
     B : IN STD_LOGIC_VECTOR(40 DOWNTO 0);
     CLK : IN STD_LOGIC;
-    S : OUT STD_LOGIC_VECTOR(41 DOWNTO 0)
+    S : OUT STD_LOGIC_VECTOR(40 DOWNTO 0)
   );
 END top_c_addsub_0_0;
 
@@ -109,7 +109,7 @@ ARCHITECTURE top_c_addsub_0_0_arch OF top_c_addsub_0_0 IS
       SSET : IN STD_LOGIC;
       SINIT : IN STD_LOGIC;
       C_OUT : OUT STD_LOGIC;
-      S : OUT STD_LOGIC_VECTOR(41 DOWNTO 0)
+      S : OUT STD_LOGIC_VECTOR(40 DOWNTO 0)
     );
   END COMPONENT c_addsub_v12_0_16;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -122,22 +122,22 @@ ARCHITECTURE top_c_addsub_0_0_arch OF top_c_addsub_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF B: SIGNAL IS "xilinx.com:signal:data:1.0 b_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF s_intf:c_out_intf:sinit_intf:sset_intf:bypass_intf:c_in_intf:add_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF S: SIGNAL IS "XIL_INTERFACENAME s_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 42} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format bool minimum {} maximu" & 
-"m {}} value TRUE}}}} DATA_WIDTH 42}";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF S: SIGNAL IS "XIL_INTERFACENAME s_intf, LAYERED_METADATA xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 41} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format bool minimum {} maximu" & 
+"m {}} value TRUE}}}} DATA_WIDTH 41}";
   ATTRIBUTE X_INTERFACE_INFO OF S: SIGNAL IS "xilinx.com:signal:data:1.0 s_intf DATA";
 BEGIN
   U0 : c_addsub_v12_0_16
     GENERIC MAP (
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "kintex7",
-      C_IMPLEMENTATION => 0,
+      C_IMPLEMENTATION => 1,
       C_A_WIDTH => 41,
       C_B_WIDTH => 41,
-      C_OUT_WIDTH => 42,
+      C_OUT_WIDTH => 41,
       C_CE_OVERRIDES_SCLR => 0,
       C_A_TYPE => 0,
       C_B_TYPE => 0,
-      C_LATENCY => 4,
+      C_LATENCY => 2,
       C_ADD_MODE => 0,
       C_B_CONSTANT => 0,
       C_B_VALUE => "00000000000000000000000000000000000000000",

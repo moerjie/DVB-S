@@ -1,0 +1,9 @@
+DVBS/DataSource_Scrambler/CLKdivide/Detect Rise Positive/Positive --> Positive
+DVBS/DataSource_Scrambler/CLKdivide/Detect Rise Positive --> Detect_Rise_Positive
+DVBS/DataSource_Scrambler/CLKdivide --> CLKdivide
+DVBS/DataSource_Scrambler/HeaderProcess --> HeaderProcess
+DVBS/DataSource_Scrambler/myScrambler --> myScrambler
+DVBS/DataSource_Scrambler/sigSource/RS_Gen/MATLAB Function --> MATLAB_Function
+DVBS/DataSource_Scrambler/sigSource/RS_Gen --> RS_Gen
+DVBS/DataSource_Scrambler/sigSource --> sigSource
+DVBS/DataSource_Scrambler --> DataSource_Scrambler

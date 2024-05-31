@@ -1,0 +1,8 @@
+SuFrame_Scrambler/DataSource_Scrambler/CLKdivide/Detect Rise Positive/Positive --> Positive
+SuFrame_Scrambler/DataSource_Scrambler/CLKdivide/Detect Rise Positive --> Detect_Rise_Positive
+SuFrame_Scrambler/DataSource_Scrambler/CLKdivide --> CLKdivide
+SuFrame_Scrambler/DataSource_Scrambler/myScrambler --> myScrambler
+SuFrame_Scrambler/DataSource_Scrambler/sigSource/MATLAB Function --> MATLAB_Function
+SuFrame_Scrambler/DataSource_Scrambler/sigSource --> sigSource
+SuFrame_Scrambler/DataSource_Scrambler/HeaderProcess --> HeaderProcess
+SuFrame_Scrambler/DataSource_Scrambler --> DataSource_Scrambler

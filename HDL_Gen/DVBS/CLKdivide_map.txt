@@ -1,0 +1,3 @@
+DVBS/DataSource_Scrambler/CLKdivide/Detect Rise Positive/Positive --> Positive
+DVBS/DataSource_Scrambler/CLKdivide/Detect Rise Positive --> Detect_Rise_Positive
+DVBS/DataSource_Scrambler/CLKdivide --> CLKdivide

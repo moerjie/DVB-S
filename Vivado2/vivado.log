@@ -87,3 +87,5 @@ Adding component instance block -- xilinx.com:module_ref:terminal:1.0 - terminal
 Adding component instance block -- xilinx.com:ip:ila:6.2 - ila_0
 INFO: [xilinx.com:ip:ila:6.2-6] /ila_0: AMD recommends using the System ILA IP in IP Integrator. The System ILA IP is functionally equivalent to an ILA and offers additional benefits in debugging interfaces both within IP Integrator and the Hardware Manager. Consult the Programming and Debug User Guide UG908 for further details.
 Successfully read diagram <top> from block design file <F:/Git_Repository/DVB-S/Vivado2/Vivado2.srcs/sources_1/bd/top/top.bd>
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue May 28 22:03:07 2024...

@@ -1,0 +1,193 @@
+
+*** Running vivado
+    with args -log top_PolarityShift_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_PolarityShift_0_0.tcl
+
+
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source top_PolarityShift_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 475.715 ; gain = 177.617
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/FPGA/Vivado23/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: top_PolarityShift_0_0
+Command: synth_design -top top_PolarityShift_0_0 -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13852
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 941.629 ; gain = 442.578
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/synth/top_PolarityShift_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'PolarityShift' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/PolarityShift.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PolarityShift' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/PolarityShift.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/synth/top_PolarityShift_0_0.v:53]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1047.750 ; gain = 548.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1047.750 ; gain = 548.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1047.750 ; gain = 548.699
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1047.750 ; gain = 548.699
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design top_PolarityShift_0_0 has port m_axis_data_tvalid driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |FDCE |     2|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+--------------+------+
+|      |Instance |Module        |Cells |
++------+---------+--------------+------+
+|1     |top      |              |     3|
+|2     |  inst   |PolarityShift |     3|
++------+---------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1281.777 ; gain = 782.727
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1286.668 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1395.320 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+系统找不到指定的路径。
+Synth Design complete | Checksum: 1ec46032
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1395.320 ; gain = 904.098
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_PolarityShift_0_0_synth_1/top_PolarityShift_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1677.938 ; gain = 282.617
+INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_PolarityShift_0_0_synth_1/top_PolarityShift_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_PolarityShift_0_0_utilization_synth.rpt -pb top_PolarityShift_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 31 20:30:48 2024...

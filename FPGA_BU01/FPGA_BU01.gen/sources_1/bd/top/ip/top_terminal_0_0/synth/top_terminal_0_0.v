@@ -64,7 +64,7 @@ module top_terminal_0_0 (
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-input wire [41 : 0] IN_port;
+input wire [40 : 0] IN_port;
 output wire OUT_port;
 
   terminal inst (

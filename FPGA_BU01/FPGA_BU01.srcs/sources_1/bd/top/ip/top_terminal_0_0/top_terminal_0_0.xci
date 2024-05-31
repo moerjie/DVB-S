@@ -31,13 +31,13 @@
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2023.2" } ],
-        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
       }
     },
     "boundary": {
       "ports": {
         "clk": [ { "direction": "in" } ],
-        "IN_port": [ { "direction": "in", "size_left": "41", "size_right": "0" } ],
+        "IN_port": [ { "direction": "in", "size_left": "40", "size_right": "0" } ],
         "OUT_port": [ { "direction": "out" } ]
       },
       "interfaces": {

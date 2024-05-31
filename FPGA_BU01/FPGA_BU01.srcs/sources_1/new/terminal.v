@@ -21,17 +21,15 @@
 
 
 module terminal(
-    clk,
-    IN_port,
-    OUT_port
+    input clk,
+    input [40:0] IN_port,
+    output reg OUT_port
     );
-    input clk;
-    input [41:0] IN_port;
-    output reg OUT_port;
-    reg [41:0] temp;
+    
+    wire [40:0] temp;
 
-    always @(posedge clk ) begin
-        temp     <=IN_port;
-        OUT_port <=temp[1];
+    assign temp=IN_port;
+    always @(posedge clk) begin
+        OUT_port<=temp[0];
     end
 endmodule

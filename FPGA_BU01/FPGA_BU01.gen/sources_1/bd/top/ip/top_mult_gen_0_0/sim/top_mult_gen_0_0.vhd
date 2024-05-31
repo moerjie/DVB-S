@@ -120,7 +120,7 @@ BEGIN
       C_XDEVICEFAMILY => "kintex7",
       C_HAS_CE => 0,
       C_HAS_SCLR => 0,
-      C_LATENCY => 3,
+      C_LATENCY => 4,
       C_A_WIDTH => 16,
       C_A_TYPE => 0,
       C_B_WIDTH => 24,

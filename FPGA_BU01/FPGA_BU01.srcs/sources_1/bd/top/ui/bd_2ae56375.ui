@@ -1,62 +1,60 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.36485",
-   "Default View_TopLeft":"-239,360",
+   "Default View_ScaleFactor":"0.869785",
+   "Default View_TopLeft":"-135,-76",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port CLK_IN_D_0 -pg 1 -lvl 0 -x 0 -y 590 -defaultsOSRD
-preplace port port-id_rst_n_0 -pg 1 -lvl 0 -x 0 -y 650 -defaultsOSRD
-preplace port port-id_OUT_port_0 -pg 1 -lvl 14 -x 3530 -y 130 -defaultsOSRD
-preplace inst util_ds_buf_0 -pg 1 -lvl 1 -x 150 -y 590 -defaultsOSRD
-preplace inst sigSource_0 -pg 1 -lvl 3 -x 660 -y 610 -defaultsOSRD
-preplace inst EN_Gen_0 -pg 1 -lvl 2 -x 400 -y 700 -defaultsOSRD
-preplace inst alphaScramble_0 -pg 1 -lvl 4 -x 980 -y 500 -defaultsOSRD
-preplace inst RS_0 -pg 1 -lvl 5 -x 1310 -y 570 -defaultsOSRD
-preplace inst Con_Interleaver_0 -pg 1 -lvl 6 -x 1570 -y 550 -defaultsOSRD
-preplace inst dec2bin_0 -pg 1 -lvl 7 -x 1840 -y 530 -defaultsOSRD
-preplace inst Con_Encoder_0 -pg 1 -lvl 8 -x 2110 -y 510 -defaultsOSRD
-preplace inst dds_compiler_0 -pg 1 -lvl 10 -x 2690 -y 70 -defaultsOSRD
-preplace inst fir_compiler_0 -pg 1 -lvl 10 -x 2690 -y 500 -defaultsOSRD
-preplace inst PolarityShift_0 -pg 1 -lvl 9 -x 2390 -y 490 -defaultsOSRD
-preplace inst PolarityShift_1 -pg 1 -lvl 9 -x 2390 -y 350 -defaultsOSRD
-preplace inst fir_compiler_1 -pg 1 -lvl 10 -x 2690 -y 360 -defaultsOSRD
-preplace inst dds_compiler_1 -pg 1 -lvl 10 -x 2690 -y 200 -defaultsOSRD
-preplace inst mult_gen_0 -pg 1 -lvl 11 -x 2970 -y 490 -defaultsOSRD
-preplace inst mult_gen_1 -pg 1 -lvl 11 -x 2970 -y 200 -defaultsOSRD
-preplace inst c_addsub_0 -pg 1 -lvl 12 -x 3160 -y 200 -defaultsOSRD
-preplace inst terminal_0 -pg 1 -lvl 13 -x 3380 -y 130 -defaultsOSRD
-preplace netloc util_ds_buf_0_IBUF_OUT 1 1 12 280 590 520 500 800 410 1170 440 1450 440 1700 440 1980 420 2240 270 2520 280 2880 120 3060 120 N
-preplace netloc EN_Gen_0_sourceGen 1 2 1 530 630n
-preplace netloc sigSource_0_ce_out 1 3 1 800 510n
-preplace netloc sigSource_0_simDataIn 1 3 1 810 530n
-preplace netloc alphaScramble_0_ce_out 1 4 1 1160 490n
-preplace netloc alphaScramble_0_alphaScramble_OUT 1 4 1 1150 510n
-preplace netloc sigSource_0_simStart 1 3 2 NJ 590 N
-preplace netloc sigSource_0_simEnd 1 3 2 NJ 610 N
-preplace netloc sigSource_0_simEN 1 3 2 NJ 630 N
-preplace netloc RS_0_ce_out 1 5 1 N 560
-preplace netloc RS_0_RS_Out 1 5 1 N 580
-preplace netloc Con_Interleaver_0_Out1 1 6 1 N 560
-preplace netloc EN_Gen_0_dec2binGen 1 2 5 510J 390 NJ 390 NJ 390 NJ 390 1690
-preplace netloc rst_n_0_1 1 0 9 NJ 650 290 610 530 510 790 400 1180 450 1440 450 1710 430 1970 410 2250
-preplace netloc dec2bin_0_BIN_OUT 1 7 1 N 540
-preplace netloc dec2bin_0_ce_out 1 7 1 N 520
-preplace netloc Con_Encoder_0_ConvOut_0 1 8 1 N 510
-preplace netloc Con_Encoder_0_ConvOut_1 1 8 1 2260 370n
-preplace netloc dds_compiler_0_m_axis_data_tdata 1 10 1 2860 80n
-preplace netloc fir_compiler_0_m_axis_data_tdata 1 10 1 N 510
-preplace netloc fir_compiler_1_m_axis_data_tdata 1 10 1 2870 220n
-preplace netloc dds_compiler_1_m_axis_data_tdata 1 10 1 N 200
-preplace netloc mult_gen_0_P 1 11 1 3070 180n
-preplace netloc mult_gen_1_P 1 11 1 N 200
-preplace netloc c_addsub_0_S 1 12 1 3250 140n
-preplace netloc terminal_0_OUT_port 1 13 1 N 130
-preplace netloc CLK_IN_D_0_1 1 0 1 NJ 590
-preplace netloc PolarityShift_0_m_axis_data 1 9 1 N 490
-preplace netloc PolarityShift_1_m_axis_data 1 9 1 N 350
-levelinfo -pg 1 0 150 400 660 980 1310 1570 1840 2110 2390 2690 2970 3160 3380 3530
-pagesize -pg 1 -db -bbox -sgen -140 0 3660 770
+preplace port CLK_IN_D_0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_rst_n_0 -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_OUT_port_0 -pg 1 -lvl 12 -x 3000 -y 190 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 1 -x 150 -y 80 -defaultsOSRD
+preplace inst Con_Encoder_0 -pg 1 -lvl 6 -x 1590 -y 260 -defaultsOSRD
+preplace inst dds_compiler_0 -pg 1 -lvl 8 -x 2170 -y 130 -defaultsOSRD
+preplace inst fir_compiler_0 -pg 1 -lvl 8 -x 2170 -y 250 -defaultsOSRD
+preplace inst PolarityShift_0 -pg 1 -lvl 7 -x 1870 -y 240 -defaultsOSRD
+preplace inst PolarityShift_1 -pg 1 -lvl 7 -x 1870 -y 520 -defaultsOSRD
+preplace inst fir_compiler_1 -pg 1 -lvl 8 -x 2170 -y 530 -defaultsOSRD
+preplace inst dds_compiler_1 -pg 1 -lvl 8 -x 2170 -y 390 -defaultsOSRD
+preplace inst mult_gen_0 -pg 1 -lvl 9 -x 2440 -y 240 -defaultsOSRD
+preplace inst mult_gen_1 -pg 1 -lvl 9 -x 2440 -y 400 -defaultsOSRD
+preplace inst c_addsub_0 -pg 1 -lvl 10 -x 2630 -y 260 -defaultsOSRD
+preplace inst terminal_0 -pg 1 -lvl 11 -x 2850 -y 190 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 150 -y 240 -defaultsOSRD
+preplace inst RS_Enc_0 -pg 1 -lvl 3 -x 740 -y 150 -defaultsOSRD
+preplace inst DataSource_Scrambler_0 -pg 1 -lvl 2 -x 430 -y 220 -defaultsOSRD
+preplace inst dec2bin_0 -pg 1 -lvl 5 -x 1320 -y 280 -defaultsOSRD
+preplace inst Interleaver_0 -pg 1 -lvl 4 -x 1030 -y 120 -defaultsOSRD
+preplace netloc Con_Encoder_0_ConvOut_0 1 6 1 N 260
+preplace netloc Con_Encoder_0_ConvOut_1 1 6 1 1720 280n
+preplace netloc DataSource_Scrambler_0_ScramblerOut 1 2 1 580 160n
+preplace netloc DataSource_Scrambler_0_ce_out 1 2 1 570 120n
+preplace netloc DataSource_Scrambler_0_simEN 1 2 1 N 220
+preplace netloc DataSource_Scrambler_0_simEnd 1 2 1 N 200
+preplace netloc DataSource_Scrambler_0_simStart 1 2 1 N 180
+preplace netloc c_addsub_0_S 1 10 1 2720 200n
+preplace netloc dds_compiler_0_m_axis_data_tdata 1 8 1 2340 140n
+preplace netloc dds_compiler_1_m_axis_data_tdata 1 8 1 N 400
+preplace netloc dec2bin_0_BIN_OUT 1 5 1 N 290
+preplace netloc dec2bin_0_ce_out 1 5 1 N 270
+preplace netloc fir_compiler_0_m_axis_data_tdata 1 8 1 N 260
+preplace netloc fir_compiler_1_m_axis_data_tdata 1 8 1 2340 420n
+preplace netloc mult_gen_0_P 1 9 1 N 240
+preplace netloc mult_gen_1_P 1 9 1 2540 260n
+preplace netloc rst_n_0_1 1 0 7 NJ 180 290 100 590 10 900 20 1180 170 1450 170 1730
+preplace netloc terminal_0_OUT_port 1 11 1 N 190
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 10 280 80 610 20 880 220 1190 190 1460 160 1740 160 2000 60 2350 160 2530 180 NJ
+preplace netloc xlconstant_0_dout 1 1 1 NJ 240
+preplace netloc Interleaver_0_InterOut 1 4 1 1160 130n
+preplace netloc RS_Enc_0_RS_Out 1 3 1 N 160
+preplace netloc DataSource_Scrambler_0_DataGenEn 1 2 2 610 280 900J
+preplace netloc RS_Enc_0_ce_out 1 3 1 890 120n
+preplace netloc Interleaver_0_ce_out 1 4 1 1170 110n
+preplace netloc CLK_IN_D_0_1 1 0 1 NJ 80
+preplace netloc PolarityShift_0_m_axis_data 1 7 1 N 240
+preplace netloc PolarityShift_1_m_axis_data 1 7 1 N 520
+levelinfo -pg 1 0 150 430 740 1030 1320 1590 1870 2170 2440 2630 2850 3000
+pagesize -pg 1 -db -bbox -sgen -140 0 3130 600
 "
 }
-
+0

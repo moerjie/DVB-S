@@ -1,7 +1,7 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: F:/FPGA/Vivado23/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_11 -L axi_utils_v2_0_7 -L xbip_pipe_v3_0_7 -L xbip_bram18k_v3_0_7 -L mult_gen_v12_0_19 -L xbip_dsp48_wrapper_v3_0_5 -L xbip_dsp48_addsub_v3_0_7 -L xbip_dsp48_multadd_v3_0_7 -L dds_compiler_v6_0_23 -L fir_compiler_v7_2_20 -L c_reg_fd_v12_0_7 -L xbip_addsub_v3_0_7 -L c_addsub_v12_0_16 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_tb_behav xil_defaultlib.top_tb xil_defaultlib.glbl -log elaborate.log 
+Running: F:/FPGA/Vivado23/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_11 -L axi_utils_v2_0_7 -L xbip_pipe_v3_0_7 -L xbip_bram18k_v3_0_7 -L mult_gen_v12_0_19 -L xbip_dsp48_wrapper_v3_0_5 -L xbip_dsp48_addsub_v3_0_7 -L xbip_dsp48_multadd_v3_0_7 -L dds_compiler_v6_0_23 -L fir_compiler_v7_2_20 -L c_reg_fd_v12_0_7 -L xbip_addsub_v3_0_7 -L c_addsub_v12_0_16 -L xlconstant_v1_1_8 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_tb_behav xil_defaultlib.top_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -23,12 +23,17 @@ Compiling package xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv_comp
 Compiling package xbip_addsub_v3_0_7.xbip_addsub_v3_0_7_viv_comp
 Compiling package c_addsub_v12_0_16.c_addsub_v12_0_16_pkg
 Compiling package c_addsub_v12_0_16.c_addsub_v12_0_16_pkg_legacy
-Compiling package c_reg_fd_v12_0_7.c_reg_fd_v12_0_7_viv_comp
+Compiling package xbip_dsp48_addsub_v3_0_7.xbip_dsp48_addsub_v3_0_7_viv_com...
+Compiling package ieee.std_logic_arith
+Compiling package xbip_dsp48_addsub_v3_0_7.xbip_dsp48_addsub_v3_0_7_pkg
+Compiling package xbip_dsp48_wrapper_v3_0_5.xbip_dsp48_wrapper_v3_0_5_pkg
 Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_signed
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
 Compiling package xbip_utils_v3_0_11.xcc_utils_v3_0
 Compiling package dds_compiler_v6_0_23.dds_compiler_v6_0_23_viv_comp
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_signed
 Compiling package dds_compiler_v6_0_23.pkg_dds_compiler_v6_0_23
 Compiling package dds_compiler_v6_0_23.dds_compiler_v6_0_23_hdl_comps
 Compiling package axi_utils_v2_0_7.axi_utils_v2_0_7_pkg
@@ -42,46 +47,39 @@ Compiling package fir_compiler_v7_2_20.fir_compiler_v7_2_20_viv_comp
 Compiling package ieee.std_logic_textio
 Compiling package fir_compiler_v7_2_20.globals_pkg
 Compiling package fir_compiler_v7_2_20.components
-Compiling package ieee.vital_timing
-Compiling package ieee.vital_primitives
-Compiling package unisim.vpkg
 Compiling package mult_gen_v12_0_19.mult_gen_v12_0_19_viv_comp
 Compiling package mult_gen_v12_0_19.mult_gen_v12_0_19_pkg
 Compiling package mult_gen_v12_0_19.dsp_pkg
 Compiling module xil_defaultlib.Convolutional_Encoder2
 Compiling module xil_defaultlib.Con_Encoder
 Compiling module xil_defaultlib.top_Con_Encoder_0_0
+Compiling module xil_defaultlib.Positive
+Compiling module xil_defaultlib.Detect_Rise_Positive
+Compiling module xil_defaultlib.CLKdivide
+Compiling module xil_defaultlib.HeaderProcess
+Compiling module xil_defaultlib.MATLAB_Function
+Compiling module xil_defaultlib.RS_Gen
+Compiling module xil_defaultlib.sigSource
+Compiling module xil_defaultlib.myScrambler
+Compiling module xil_defaultlib.DataSource_Scrambler
+Compiling module xil_defaultlib.top_DataSource_Scrambler_0_1
 Compiling module xil_defaultlib.Convolutional_Interleaver
 Compiling module xil_defaultlib.Con_Interleaver
-Compiling module xil_defaultlib.top_Con_Interleaver_0_0
-Compiling module xil_defaultlib.EN_Gen
-Compiling module xil_defaultlib.top_EN_Gen_0_0
+Compiling module xil_defaultlib.Interleaver
+Compiling module xil_defaultlib.top_Interleaver_0_0
 Compiling module xil_defaultlib.PolarityShift
 Compiling module xil_defaultlib.top_PolarityShift_0_0
 Compiling module xil_defaultlib.top_PolarityShift_1_0
 Compiling module xil_defaultlib.Integer_Input_RS_Encoder_HDL_Opt...
 Compiling module xil_defaultlib.RS
-Compiling module xil_defaultlib.top_RS_0_0
-Compiling module xil_defaultlib.alphaScramble
-Compiling module xil_defaultlib.top_alphaScramble_0_0
-Compiling architecture structural of entity c_reg_fd_v12_0_7.c_reg_fd_v12_0_7_viv [\c_reg_fd_v12_0_7_viv(c_sync_pri...]
-Compiling architecture structural of entity c_reg_fd_v12_0_7.c_reg_fd_v12_0_7_viv [\c_reg_fd_v12_0_7_viv(c_width=10...]
-Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
-Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture structural of entity c_reg_fd_v12_0_7.c_reg_fd_v12_0_7_viv [\c_reg_fd_v12_0_7_viv(c_width=11...]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture rtl of entity c_addsub_v12_0_16.c_addsub_v12_0_16_lut6_legacy [\c_addsub_v12_0_16_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_fabric_legacy [\c_addsub_v12_0_16_fabric_legacy...]
-Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_legacy [\c_addsub_v12_0_16_legacy(c_fami...]
+Compiling module xil_defaultlib.RS_Enc
+Compiling module xil_defaultlib.top_RS_Enc_0_0
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(inmodereg=0,mreg=0,use_...]
+Compiling architecture synth of entity xbip_dsp48_wrapper_v3_0_5.xbip_dsp48e1_wrapper_v3_0 [\xbip_dsp48e1_wrapper_v3_0(areg=...]
+Compiling architecture synth of entity xbip_dsp48_addsub_v3_0_7.xbip_dsp48_addsub_synth [\xbip_dsp48_addsub_synth(c_xdevi...]
+Compiling architecture synth of entity xbip_dsp48_addsub_v3_0_7.xbip_dsp48_addsub_v3_0_7_viv [\xbip_dsp48_addsub_v3_0_7_viv(c_...]
+Compiling architecture synth of entity xbip_addsub_v3_0_7.xbip_addsub_v3_0_7_viv [\xbip_addsub_v3_0_7_viv(c_xdevic...]
+Compiling architecture synth of entity xbip_pipe_v3_0_7.xbip_pipe_v3_0_7_viv [\xbip_pipe_v3_0_7_viv(c_latency=...]
 Compiling architecture synth of entity c_addsub_v12_0_16.c_addsub_v12_0_16_viv [\c_addsub_v12_0_16_viv(c_xdevice...]
 Compiling architecture xilinx of entity c_addsub_v12_0_16.c_addsub_v12_0_16 [\c_addsub_v12_0_16(c_xdevicefami...]
 Compiling architecture top_c_addsub_0_0_arch of entity xil_defaultlib.top_c_addsub_0_0 [top_c_addsub_0_0_default]
@@ -107,12 +105,8 @@ Compiling architecture synth of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23
 Compiling architecture xilinx of entity dds_compiler_v6_0_23.dds_compiler_v6_0_23 [\dds_compiler_v6_0_23(c_xdevicef...]
 Compiling architecture top_dds_compiler_0_0_arch of entity xil_defaultlib.top_dds_compiler_0_0 [top_dds_compiler_0_0_default]
 Compiling architecture top_dds_compiler_0_1_arch of entity xil_defaultlib.top_dds_compiler_0_1 [top_dds_compiler_0_1_default]
-Compiling module xil_defaultlib.dec2bin_tc
-Compiling module xil_defaultlib.Increment_Real_World
-Compiling module xil_defaultlib.Wrap_To_Zero
-Compiling module xil_defaultlib.Counter_Limited
 Compiling module xil_defaultlib.dec2bin
-Compiling module xil_defaultlib.top_dec2bin_0_0
+Compiling module xil_defaultlib.top_dec2bin_0_3
 Compiling architecture xilinx of entity axi_utils_v2_0_7.glb_srl_fifo [\glb_srl_fifo(width=2,has_ifx=tr...]
 Compiling architecture xilinx of entity axi_utils_v2_0_7.glb_ifx_slave [\glb_ifx_slave(width=2,has_ifx=t...]
 Compiling architecture synth of entity fir_compiler_v7_2_20.cntrl_delay [\cntrl_delay(c_delay_len=0,c_mem...]
@@ -244,14 +238,13 @@ Compiling architecture xilinx of entity mult_gen_v12_0_19.mult_gen_v12_0_19_viv 
 Compiling architecture xilinx of entity mult_gen_v12_0_19.mult_gen_v12_0_19 [\mult_gen_v12_0_19(c_xdevicefami...]
 Compiling architecture top_mult_gen_0_0_arch of entity xil_defaultlib.top_mult_gen_0_0 [top_mult_gen_0_0_default]
 Compiling architecture top_mult_gen_0_1_arch of entity xil_defaultlib.top_mult_gen_0_1 [top_mult_gen_0_1_default]
-Compiling module xil_defaultlib.MATLAB_Function
-Compiling module xil_defaultlib.sigSource
-Compiling module xil_defaultlib.top_sigSource_0_0
 Compiling module xil_defaultlib.terminal
 Compiling module xil_defaultlib.top_terminal_0_0
 Compiling architecture ibufds_v of entity unisim.IBUFDS [\IBUFDS(1,9)(1,5)(1,1)(1,4)(1,7)...]
 Compiling architecture imp of entity xil_defaultlib.util_ds_buf [\util_ds_buf(c_bufgce_div=1)(1,6...]
 Compiling architecture top_util_ds_buf_0_0_arch of entity xil_defaultlib.top_util_ds_buf_0_0 [top_util_ds_buf_0_0_default]
+Compiling module xlconstant_v1_1_8.xlconstant_v1_1_8_xlconstant(CON...
+Compiling module xil_defaultlib.top_xlconstant_0_0
 Compiling module xil_defaultlib.top
 Compiling module xil_defaultlib.top_wrapper
 Compiling module xil_defaultlib.top_tb

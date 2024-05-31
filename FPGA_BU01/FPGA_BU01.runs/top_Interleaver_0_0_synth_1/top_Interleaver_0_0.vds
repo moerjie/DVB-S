@@ -1,0 +1,240 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri May 31 20:29:37 2024
+# Process ID: 22092
+# Current directory: F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_Interleaver_0_0_synth_1
+# Command line: vivado.exe -log top_Interleaver_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_Interleaver_0_0.tcl
+# Log file: F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_Interleaver_0_0_synth_1/top_Interleaver_0_0.vds
+# Journal file: F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_Interleaver_0_0_synth_1\vivado.jou
+# Running On: MOERJIE_PC, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 6, Host memory: 34132 MB
+#-----------------------------------------------------------
+source top_Interleaver_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 474.887 ; gain = 177.773
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/FPGA/Vivado23/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: top_Interleaver_0_0
+Command: synth_design -top top_Interleaver_0_0 -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 10772
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 940.723 ; gain = 441.203
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_Interleaver_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/synth/top_Interleaver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Interleaver.v:41]
+INFO: [Synth 8-6157] synthesizing module 'Con_Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Interleaver.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Convolutional_Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Interleaver.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Convolutional_Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Interleaver.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Con_Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Interleaver.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Interleaver.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top_Interleaver_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/synth/top_Interleaver_0_0.v:53]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1147.988 ; gain = 648.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1147.988 ; gain = 648.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1147.988 ; gain = 648.469
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1171.844 ; gain = 672.324
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1123  
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------------+------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name         | RTL Name                                                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------------+------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_1_reg_reg[16][7]   | 17     | 8     | YES          | NO                 | YES               | 8      | 0       | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_2_reg_reg[33][7]   | 34     | 8     | YES          | NO                 | YES               | 0      | 8       | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_3_reg_reg[50][7]   | 51     | 8     | YES          | NO                 | YES               | 0      | 16      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_4_reg_reg[67][7]   | 68     | 8     | YES          | NO                 | YES               | 0      | 24      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_5_reg_reg[84][7]   | 85     | 8     | YES          | NO                 | YES               | 0      | 24      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_6_reg_reg[101][7]  | 102    | 8     | YES          | NO                 | YES               | 0      | 32      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_7_reg_reg[118][7]  | 119    | 8     | YES          | NO                 | YES               | 0      | 32      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_8_reg_reg[135][7]  | 136    | 8     | YES          | NO                 | YES               | 0      | 40      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_9_reg_reg[152][7]  | 153    | 8     | YES          | NO                 | YES               | 0      | 40      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_10_reg_reg[169][7] | 170    | 8     | YES          | NO                 | YES               | 0      | 48      | 
+|top_Interleaver_0_0 | inst/u_Con_Interleaver/u_Convolutional_Interleaver/branch_11_reg_reg[186][7] | 187    | 8     | YES          | NO                 | YES               | 0      | 48      | 
++--------------------+------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |LUT1    |     1|
+|2     |LUT2    |    88|
+|3     |LUT3    |     3|
+|4     |LUT4    |    11|
+|5     |LUT5    |    11|
+|6     |LUT6    |    32|
+|7     |SRL16E  |     8|
+|8     |SRLC32E |   312|
+|9     |FDCE    |  1211|
+|10    |FDPE    |     1|
+|11    |FDRE    |    88|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------------------------------+--------------------------+------+
+|      |Instance                          |Module                    |Cells |
++------+----------------------------------+--------------------------+------+
+|1     |top                               |                          |  1766|
+|2     |  inst                            |Interleaver               |  1766|
+|3     |    u_Con_Interleaver             |Con_Interleaver           |  1766|
+|4     |      u_Convolutional_Interleaver |Convolutional_Interleaver |  1756|
++------+----------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1326.902 ; gain = 827.383
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1330.617 ; gain = 0.000
+WARNING: [Netlist 29-101] Netlist 'top_Interleaver_0_0' is not ideal for floorplanning, since the cellview 'Convolutional_Interleaver' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1424.895 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 67d7aafa
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 1424.895 ; gain = 934.680
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1778.055 ; gain = 0.043
+INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_Interleaver_0_0_synth_1/top_Interleaver_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1778.055 ; gain = 353.160
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP top_Interleaver_0_0, cache-ID = 0b485b3fcdb85b5c
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1778.516 ; gain = 0.094
+INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/top_Interleaver_0_0_synth_1/top_Interleaver_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_Interleaver_0_0_utilization_synth.rpt -pb top_Interleaver_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May 31 20:30:58 2024...
