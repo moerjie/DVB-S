@@ -14,7 +14,7 @@ ECHO 处于关闭状态。
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 474.988 ; gain = 179.387
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 475.129 ; gain = 177.754
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/FPGA/Vivado23/Vivado/2023.2/data/ip'.
@@ -30,147 +30,734 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 32448
+INFO: [Synth 8-7075] Helper process launched with PID 20104
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1391.637 ; gain = 440.664
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1392.992 ; gain = 442.883
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_wrapper' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'top' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:13]
-INFO: [Synth 8-6157] synthesizing module 'top_Con_Encoder_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_Con_Encoder_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_Con_Encoder_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_Con_Encoder_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_Con_Encoder_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/synth/top_Con_Encoder_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Con_Encoder' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Encoder.v:42]
+INFO: [Synth 8-6157] synthesizing module 'Convolutional_Encoder2' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Encoder2.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Convolutional_Encoder2' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Encoder2.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Con_Encoder' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Encoder.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'top_Con_Encoder_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/synth/top_Con_Encoder_0_0.v:53]
 WARNING: [Synth 8-7071] port 'ce_out' of module 'top_Con_Encoder_0_0' is unconnected for instance 'Con_Encoder_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:60]
 WARNING: [Synth 8-7023] instance 'Con_Encoder_0' of module 'top_Con_Encoder_0_0' has 7 connections declared, but only 6 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:60]
-INFO: [Synth 8-6157] synthesizing module 'top_DataSource_Scrambler_0_1' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_DataSource_Scrambler_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_DataSource_Scrambler_0_1' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_DataSource_Scrambler_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_DataSource_Scrambler_0_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/synth/top_DataSource_Scrambler_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'DataSource_Scrambler' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/DataSource_Scrambler.v:46]
+INFO: [Synth 8-6157] synthesizing module 'CLKdivide' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/CLKdivide.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Detect_Rise_Positive' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Positive' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Positive' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Detect_Rise_Positive' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'CLKdivide' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/CLKdivide.v:22]
+INFO: [Synth 8-6157] synthesizing module 'HeaderProcess' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/HeaderProcess.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'HeaderProcess' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/HeaderProcess.v:22]
+INFO: [Synth 8-6157] synthesizing module 'sigSource' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/sigSource.v:22]
+INFO: [Synth 8-6157] synthesizing module 'RS_Gen' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Gen.v:22]
+INFO: [Synth 8-6157] synthesizing module 'MATLAB_Function' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/MATLAB_Function.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'MATLAB_Function' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/MATLAB_Function.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'RS_Gen' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Gen.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'sigSource' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/sigSource.v:22]
+INFO: [Synth 8-6157] synthesizing module 'myScrambler' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/myScrambler.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'myScrambler' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/myScrambler.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'DataSource_Scrambler' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/DataSource_Scrambler.v:46]
+INFO: [Synth 8-6155] done synthesizing module 'top_DataSource_Scrambler_0_1' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/synth/top_DataSource_Scrambler_0_1.v:53]
 WARNING: [Synth 8-7071] port 'BinEn' of module 'top_DataSource_Scrambler_0_1' is unconnected for instance 'DataSource_Scrambler_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:67]
 WARNING: [Synth 8-7023] instance 'DataSource_Scrambler_0' of module 'top_DataSource_Scrambler_0_1' has 10 connections declared, but only 9 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:67]
-INFO: [Synth 8-6157] synthesizing module 'top_Interleaver_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_Interleaver_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_Interleaver_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_Interleaver_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_PolarityShift_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_PolarityShift_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_1_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_PolarityShift_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_1_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_PolarityShift_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_RS_Enc_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_RS_Enc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_RS_Enc_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_RS_Enc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_c_addsub_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_c_addsub_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_c_addsub_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_c_addsub_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_dds_compiler_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dds_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_dds_compiler_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dds_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_Interleaver_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/synth/top_Interleaver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Interleaver.v:41]
+INFO: [Synth 8-6157] synthesizing module 'Con_Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Interleaver.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Convolutional_Interleaver' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Interleaver.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Convolutional_Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Interleaver.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'Con_Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Interleaver.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'Interleaver' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Interleaver.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top_Interleaver_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/synth/top_Interleaver_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/synth/top_PolarityShift_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'PolarityShift' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/PolarityShift.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PolarityShift' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/PolarityShift.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/synth/top_PolarityShift_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'top_PolarityShift_1_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/synth/top_PolarityShift_1_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'top_PolarityShift_1_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/synth/top_PolarityShift_1_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'top_RS_Enc_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/synth/top_RS_Enc_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'RS_Enc' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Enc.v:41]
+INFO: [Synth 8-6157] synthesizing module 'RS' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS.v:22]
+INFO: [Synth 8-6157] synthesizing module 'Integer_Input_RS_Encoder_HDL_Optimized' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Integer_Input_RS_Encoder_HDL_Optimized' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'RS' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'RS_Enc' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Enc.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top_RS_Enc_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/synth/top_RS_Enc_0_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'top_c_addsub_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/synth/top_c_addsub_0_0.vhd:68]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_IMPLEMENTATION bound to: 1 - type: integer 
+	Parameter C_A_WIDTH bound to: 41 - type: integer 
+	Parameter C_B_WIDTH bound to: 41 - type: integer 
+	Parameter C_OUT_WIDTH bound to: 41 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 2 - type: integer 
+	Parameter C_ADD_MODE bound to: 0 - type: integer 
+	Parameter C_B_CONSTANT bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 00000000000000000000000000000000000000000 - type: string 
+	Parameter C_AINIT_VAL bound to: 0 - type: string 
+	Parameter C_SINIT_VAL bound to: 0 - type: string 
+	Parameter C_CE_OVERRIDES_BYPASS bound to: 1 - type: integer 
+	Parameter C_BYPASS_LOW bound to: 0 - type: integer 
+	Parameter C_SCLR_OVERRIDES_SSET bound to: 1 - type: integer 
+	Parameter C_HAS_C_IN bound to: 0 - type: integer 
+	Parameter C_HAS_C_OUT bound to: 0 - type: integer 
+	Parameter C_BORROW_LOW bound to: 1 - type: integer 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_BYPASS bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_HAS_SSET bound to: 0 - type: integer 
+	Parameter C_HAS_SINIT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'c_addsub_v12_0_16' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/6c3a/hdl/c_addsub_v12_0_vh_rfs.vhd:7006' bound to instance 'U0' of component 'c_addsub_v12_0_16' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/synth/top_c_addsub_0_0.vhd:136]
+INFO: [Synth 8-256] done synthesizing module 'top_c_addsub_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/synth/top_c_addsub_0_0.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'top_dds_compiler_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:67]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 29 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 1 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 8 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 1 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 14 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 12 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 2 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 1000000000000000000000000000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 0 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_23' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/daca/hdl/dds_compiler_v6_0_vh_rfs.vhd:46995' bound to instance 'U0' of component 'dds_compiler_v6_0_23' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:177]
+INFO: [Synth 8-256] done synthesizing module 'top_dds_compiler_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/synth/top_dds_compiler_0_0.vhd:67]
 WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_dds_compiler_0_0' is unconnected for instance 'dds_compiler_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:113]
 WARNING: [Synth 8-7023] instance 'dds_compiler_0' of module 'top_dds_compiler_0_0' has 3 connections declared, but only 2 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:113]
-INFO: [Synth 8-6157] synthesizing module 'top_dds_compiler_0_1' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dds_compiler_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_dds_compiler_0_1' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dds_compiler_0_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'top_dds_compiler_0_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:67]
+WARNING: [Synth 8-5640] Port 'debug_axi_pinc_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_poff_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_resync_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_axi_chan_in' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_core_nd' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+WARNING: [Synth 8-5640] Port 'debug_phase_nd' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_MODE_OF_OPERATION bound to: 0 - type: integer 
+	Parameter C_MODULUS bound to: 9 - type: integer 
+	Parameter C_ACCUMULATOR_WIDTH bound to: 29 - type: integer 
+	Parameter C_CHANNELS bound to: 1 - type: integer 
+	Parameter C_HAS_PHASE_OUT bound to: 0 - type: integer 
+	Parameter C_HAS_PHASEGEN bound to: 1 - type: integer 
+	Parameter C_HAS_SINCOS bound to: 1 - type: integer 
+	Parameter C_LATENCY bound to: 8 - type: integer 
+	Parameter C_MEM_TYPE bound to: 1 - type: integer 
+	Parameter C_NEGATIVE_COSINE bound to: 0 - type: integer 
+	Parameter C_NEGATIVE_SINE bound to: 0 - type: integer 
+	Parameter C_NOISE_SHAPING bound to: 1 - type: integer 
+	Parameter C_OUTPUTS_REQUIRED bound to: 0 - type: integer 
+	Parameter C_OUTPUT_FORM bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 14 - type: integer 
+	Parameter C_PHASE_ANGLE_WIDTH bound to: 12 - type: integer 
+	Parameter C_PHASE_INCREMENT bound to: 2 - type: integer 
+	Parameter C_PHASE_INCREMENT_VALUE bound to: 1000000000000000000000000000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_RESYNC bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET bound to: 0 - type: integer 
+	Parameter C_PHASE_OFFSET_VALUE bound to: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 - type: string 
+	Parameter C_OPTIMISE_GOAL bound to: 0 - type: integer 
+	Parameter C_USE_DSP48 bound to: 0 - type: integer 
+	Parameter C_POR_MODE bound to: 0 - type: integer 
+	Parameter C_AMPLITUDE bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_HAS_S_PHASE bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_CONFIG bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_S_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_DATA bound to: 1 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_M_PHASE bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_PHASE_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_CHAN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dds_compiler_v6_0_23' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/daca/hdl/dds_compiler_v6_0_vh_rfs.vhd:46995' bound to instance 'U0' of component 'dds_compiler_v6_0_23' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:177]
+INFO: [Synth 8-256] done synthesizing module 'top_dds_compiler_0_1' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/synth/top_dds_compiler_0_1.vhd:67]
 WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_dds_compiler_0_1' is unconnected for instance 'dds_compiler_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:116]
 WARNING: [Synth 8-7023] instance 'dds_compiler_1' of module 'top_dds_compiler_0_1' has 3 connections declared, but only 2 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:116]
-INFO: [Synth 8-6157] synthesizing module 'top_dec2bin_0_3' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dec2bin_0_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_dec2bin_0_3' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_dec2bin_0_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_fir_compiler_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_fir_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_fir_compiler_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_dec2bin_0_3' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dec2bin_0_3/synth/top_dec2bin_0_3.v:53]
+INFO: [Synth 8-6157] synthesizing module 'dec2bin' [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/dec2bin.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'dec2bin' (0#1) [F:/Git_Repository/DVB-S/HDL_Gen/DVBS/dec2bin.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'top_dec2bin_0_3' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dec2bin_0_3/synth/top_dec2bin_0_3.v:53]
+INFO: [Synth 8-638] synthesizing module 'top_fir_compiler_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/synth/top_fir_compiler_0_0.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: top_fir_compiler_0_0 - type: string 
+	Parameter C_COEF_FILE bound to: top_fir_compiler_0_0.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 41 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 1 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 81 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 1 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 41 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 21 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 20 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 20 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 21 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 41 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 1 - type: integer 
+	Parameter C_INPUT_RATE bound to: 1 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 1 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 47 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_20' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/1055/hdl/fir_compiler_v7_2_vh_rfs.vhd:67059' bound to instance 'U0' of component 'fir_compiler_v7_2_20' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/synth/top_fir_compiler_0_0.vhd:206]
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-256] done synthesizing module 'top_fir_compiler_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/synth/top_fir_compiler_0_0.vhd:70]
 WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'top_fir_compiler_0_0' is unconnected for instance 'fir_compiler_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:126]
 WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_fir_compiler_0_0' is unconnected for instance 'fir_compiler_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:126]
 WARNING: [Synth 8-7023] instance 'fir_compiler_0' of module 'top_fir_compiler_0_0' has 6 connections declared, but only 4 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:126]
-INFO: [Synth 8-6157] synthesizing module 'top_fir_compiler_0_2' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_fir_compiler_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_fir_compiler_0_2' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_fir_compiler_0_2_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'top_fir_compiler_0_2' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/synth/top_fir_compiler_0_2.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: top_fir_compiler_0_2 - type: string 
+	Parameter C_COEF_FILE bound to: top_fir_compiler_0_2.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 41 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 0 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 1 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 81 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 1 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 41 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 2 - type: string 
+	Parameter C_DATA_WIDTH bound to: 2 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 21 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 20 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 20 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 21 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 41 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 1 - type: integer 
+	Parameter C_INPUT_RATE bound to: 1 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 1 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 47 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_20' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/1055/hdl/fir_compiler_v7_2_vh_rfs.vhd:67059' bound to instance 'U0' of component 'fir_compiler_v7_2_20' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/synth/top_fir_compiler_0_2.vhd:206]
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-3919] null assignment ignored
+INFO: [Synth 8-256] done synthesizing module 'top_fir_compiler_0_2' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/synth/top_fir_compiler_0_2.vhd:70]
 WARNING: [Synth 8-7071] port 's_axis_data_tready' of module 'top_fir_compiler_0_2' is unconnected for instance 'fir_compiler_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:131]
 WARNING: [Synth 8-7071] port 'm_axis_data_tvalid' of module 'top_fir_compiler_0_2' is unconnected for instance 'fir_compiler_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:131]
 WARNING: [Synth 8-7023] instance 'fir_compiler_1' of module 'top_fir_compiler_0_2' has 6 connections declared, but only 4 given [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:131]
-INFO: [Synth 8-6157] synthesizing module 'top_mult_gen_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_mult_gen_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_mult_gen_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_mult_gen_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_mult_gen_0_1' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_mult_gen_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_mult_gen_0_1' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_mult_gen_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_terminal_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_terminal_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_terminal_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_terminal_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_util_ds_buf_0_0' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_util_ds_buf_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_util_ds_buf_0_0' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/.Xil/Vivado-30956-MOERJIE_PC/realtime/top_util_ds_buf_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'top_mult_gen_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc_ext' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 4 - type: integer 
+	Parameter C_A_WIDTH bound to: 16 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 24 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 40 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_19' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/e1b5/hdl/mult_gen_v12_0_vh_rfs.vhd:21510' bound to instance 'U0' of component 'mult_gen_v12_0_19' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:121]
+INFO: [Synth 8-256] done synthesizing module 'top_mult_gen_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/synth/top_mult_gen_0_0.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'top_mult_gen_0_1' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc_ext' is missing in component declaration [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: kintex7 - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 4 - type: integer 
+	Parameter C_A_WIDTH bound to: 16 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 24 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 40 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_19' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/e1b5/hdl/mult_gen_v12_0_vh_rfs.vhd:21510' bound to instance 'U0' of component 'mult_gen_v12_0_19' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:121]
+INFO: [Synth 8-256] done synthesizing module 'top_mult_gen_0_1' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/synth/top_mult_gen_0_1.vhd:68]
+INFO: [Synth 8-6157] synthesizing module 'top_terminal_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_terminal_0_0/synth/top_terminal_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'terminal' [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/terminal.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'terminal' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/terminal.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_terminal_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_terminal_0_0/synth/top_terminal_0_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'top_util_ds_buf_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/synth/top_util_ds_buf_0_0.vhd:64]
+	Parameter C_BUF_TYPE bound to: IBUFDS - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+	Parameter C_BUFGCE_DIV bound to: 1 - type: integer 
+	Parameter C_BUFG_GT_SYNC bound to: 0 - type: integer 
+	Parameter C_SIM_DEVICE bound to: VERSAL_AI_CORE_ES1 - type: string 
+	Parameter C_OBUFDS_GTE5_ADV bound to: 2'b00 
+	Parameter C_REFCLK_ICNTL_TX bound to: 5'b00000 
+INFO: [Synth 8-3491] module 'util_ds_buf' declared at 'f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:73' bound to instance 'U0' of component 'util_ds_buf' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/synth/top_util_ds_buf_0_0.vhd:201]
+INFO: [Synth 8-638] synthesizing module 'util_ds_buf' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-113] binding component instance 'IBUFDS_I' to cell 'IBUFDS' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:377]
+INFO: [Synth 8-256] done synthesizing module 'util_ds_buf' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:252]
+INFO: [Synth 8-256] done synthesizing module 'top_util_ds_buf_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/synth/top_util_ds_buf_0_0.vhd:64]
 INFO: [Synth 8-6157] synthesizing module 'top_xlconstant_0_0' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_xlconstant_0_0/synth/top_xlconstant_0_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant' [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
 INFO: [Synth 8-6155] done synthesizing module 'top_xlconstant_0_0' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_xlconstant_0_0/synth/top_xlconstant_0_0.v:53]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/synth/top.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'top_wrapper' (0#1) [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
+WARNING: [Synth 8-3848] Net BUFG_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:110]
+WARNING: [Synth 8-3848] Net BUFGCE_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:115]
+WARNING: [Synth 8-3848] Net BUFH_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:120]
+WARNING: [Synth 8-3848] Net BUFHCE_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:125]
+WARNING: [Synth 8-3848] Net BUFG_FABRIC_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:129]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:134]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:135]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:140]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE5_ADV_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:141]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:147]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:148]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:153]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE3_ADV_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:154]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:160]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:161]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:166]
+WARNING: [Synth 8-3848] Net OBUFDS_GTE4_ADV_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:167]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:171]
+WARNING: [Synth 8-3848] Net IBUFDS_GTM_ODIV2 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:172]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:178]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:179]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:186]
+WARNING: [Synth 8-3848] Net OBUFDS_GTM_ADV_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:187]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:190]
+WARNING: [Synth 8-3848] Net IBUFDS_GTME5_ODIV2 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:191]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:199]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:200]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:206]
+WARNING: [Synth 8-3848] Net OBUFDS_GTME5_ADV_OB in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:207]
+WARNING: [Synth 8-3848] Net BUFG_GT_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:217]
+WARNING: [Synth 8-3848] Net BUFG_PS_O in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:221]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O1 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:233]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O2 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:234]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O3 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:235]
+WARNING: [Synth 8-3848] Net MBUFG_GT_O4 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:236]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O1 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:241]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O2 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:242]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O3 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:243]
+WARNING: [Synth 8-3848] Net MBUFG_PS_O4 in module/entity util_ds_buf does not have driver. [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd:244]
+WARNING: [Synth 8-7129] Port BUFG_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_ODIV2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_OB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_GT_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_PS_O[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_GT_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O1[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O2[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O3[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MBUFG_PS_O4[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_IO[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUF_DS_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUF_IN[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_T[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IOBUF_IO_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CE[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFGCE_CLR[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFH_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFHCE_CE[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BUFG_FABRIC_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_I[3] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_I[2] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_RXRECCLKSEL[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE5_ADV_RXRECCLKSEL[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_I[3] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_I[2] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE3_ADV_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RXRECCLK_SEL_GTE3_ADV[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RXRECCLK_SEL_GTE3_ADV[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_I[3] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_I[2] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTE4_ADV_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RXRECCLK_SEL_GTE4_ADV[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RXRECCLK_SEL_GTE4_ADV[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTM_IB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_I[3] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_I[2] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTM_ADV_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port IBUFDS_GTME5_IB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_CEB[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_I[3] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_I[2] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_I[1] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_I[0] in module util_ds_buf is either unconnected or has no load
+WARNING: [Synth 8-7129] Port OBUFDS_GTME5_ADV_RXRECCLKSEL[1] in module util_ds_buf is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1498.910 ; gain = 547.938
+Finished RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1835.945 ; gain = 885.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1498.910 ; gain = 547.938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1835.945 ; gain = 885.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1498.910 ; gain = 547.938
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1835.945 ; gain = 885.836
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1498.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.355 . Memory (MB): peak = 1835.945 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 84 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: top_i/util_ds_buf_0/U0/<const0>.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc] for cell 'top_i/util_ds_buf_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc] for cell 'top_i/util_ds_buf_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0/top_Con_Encoder_0_0_in_context.xdc] for cell 'top_i/Con_Encoder_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0/top_Con_Encoder_0_0_in_context.xdc] for cell 'top_i/Con_Encoder_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/top_dds_compiler_0_0/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/top_dds_compiler_0_0/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/top_fir_compiler_0_0/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/top_fir_compiler_0_0/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/top_PolarityShift_0_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/top_PolarityShift_0_0/top_PolarityShift_0_0_in_context.xdc] for cell 'top_i/PolarityShift_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/top_PolarityShift_1_0/top_PolarityShift_1_0_in_context.xdc] for cell 'top_i/PolarityShift_1'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/top_PolarityShift_1_0/top_PolarityShift_1_0_in_context.xdc] for cell 'top_i/PolarityShift_1'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/top_fir_compiler_0_2/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_1'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/top_fir_compiler_0_2/top_fir_compiler_0_0_in_context.xdc] for cell 'top_i/fir_compiler_1'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/top_dds_compiler_0_1/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_1'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/top_dds_compiler_0_1/top_dds_compiler_0_0_in_context.xdc] for cell 'top_i/dds_compiler_1'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/top_mult_gen_0_1/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_1'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/top_mult_gen_0_1/top_mult_gen_0_0_in_context.xdc] for cell 'top_i/mult_gen_1'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0/top_c_addsub_0_0_in_context.xdc] for cell 'top_i/c_addsub_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0/top_c_addsub_0_0_in_context.xdc] for cell 'top_i/c_addsub_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_terminal_0_0/top_terminal_0_0/top_terminal_0_0_in_context.xdc] for cell 'top_i/terminal_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_terminal_0_0/top_terminal_0_0/top_terminal_0_0_in_context.xdc] for cell 'top_i/terminal_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/top_RS_Enc_0_0/top_RS_Enc_0_0_in_context.xdc] for cell 'top_i/RS_Enc_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/top_RS_Enc_0_0/top_RS_Enc_0_0_in_context.xdc] for cell 'top_i/RS_Enc_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1_in_context.xdc] for cell 'top_i/DataSource_Scrambler_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1_in_context.xdc] for cell 'top_i/DataSource_Scrambler_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dec2bin_0_3/top_dec2bin_0_3/top_dec2bin_0_3_in_context.xdc] for cell 'top_i/dec2bin_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dec2bin_0_3/top_dec2bin_0_3/top_dec2bin_0_3_in_context.xdc] for cell 'top_i/dec2bin_0'
-Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0/top_Interleaver_0_0_in_context.xdc] for cell 'top_i/Interleaver_0'
-Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0/top_Interleaver_0_0_in_context.xdc] for cell 'top_i/Interleaver_0'
+Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_board.xdc] for cell 'top_i/util_ds_buf_0/U0'
+Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_board.xdc] for cell 'top_i/util_ds_buf_0/U0'
+Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/constraints/fir_compiler_v7_2.xdc] for cell 'top_i/fir_compiler_0/U0'
+Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/constraints/fir_compiler_v7_2.xdc] for cell 'top_i/fir_compiler_0/U0'
+Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/constraints/fir_compiler_v7_2.xdc] for cell 'top_i/fir_compiler_1/U0'
+Finished Parsing XDC File [f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/constraints/fir_compiler_v7_2.xdc] for cell 'top_i/fir_compiler_1/U0'
 Parsing XDC File [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/constrs_1/new/topConstrain.xdc]
 Finished Parsing XDC File [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/constrs_1/new/topConstrain.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/constrs_1/new/topConstrain.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1514.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1904.453 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 系统找不到指定的路径。
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1514.719 ; gain = 0.000
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'top_i/util_ds_buf_0' at clock pin 'IBUF_DS_P[0]' is different from the actual clock period '5.000', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 1904.453 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Constraint Validation : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK_IN_D_0_clk_n[0]. (constraint file  f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc, line 2).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_IN_D_0_clk_n[0]. (constraint file  f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc, line 3).
-Applied set_property IO_BUFFER_TYPE = NONE for CLK_IN_D_0_clk_p[0]. (constraint file  f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK_IN_D_0_clk_p[0]. (constraint file  f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0/top_util_ds_buf_0_0_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/util_ds_buf_0/U0. (constraint file  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc, line 61).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/fir_compiler_0/U0. (constraint file  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc, line 66).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/fir_compiler_1/U0. (constraint file  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/dont_touch.xdc, line 69).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/util_ds_buf_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/Con_Encoder_0. (constraint file  auto generated constraint).
@@ -190,15 +777,15 @@ Applied set_property KEEP_HIERARCHY = SOFT for top_i/DataSource_Scrambler_0. (co
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/dec2bin_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/Interleaver_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-6040] Register i_rtl.i_quarter_table.i_has_sin.i_addr_mod_stage1.mod_sin_addr_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-Detailed RTL Component Info : 
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -216,25 +803,41 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:27 ; elapsed = 00:03:31 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
+ Sort Area is  gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg_0 : 0 0 : 3346 3346 : Used 1 time 100
+ Sort Area is  gDSP.gDSP_only.iDSP/inferred_dsp.use_p_reg.p_reg_reg_2 : 0 0 : 3346 3346 : Used 1 time 100
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:34 ; elapsed = 00:03:38 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Timing Optimization : Time (s): cpu = 00:03:37 ; elapsed = 00:03:42 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg15_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg14_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg13_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg12_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg11_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg10_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg9_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg8_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg7_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg6_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg5_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg4_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg3_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance top_i/RS_Enc_0/inst/u_RS/u_Integer_Input_RS_Encoder_HDL_Optimized/gftablereg2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Technology Mapping : Time (s): cpu = 00:03:42 ; elapsed = 00:03:46 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -252,105 +855,189 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished IO Insertion : Time (s): cpu = 00:03:46 ; elapsed = 00:03:51 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:46 ; elapsed = 00:03:51 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:47 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:47 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:47 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:47 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
+DSP Final Report (the ' indicates corresponding REG is set)
++--------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name               | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|xbip_dsp48e1_wrapper_v3_0 | (C'+A':B')'            | 30     | 18     | 48     | -      | 48     | 1    | 1    | 1    | -    | -     | 0    | 1    | 
+|calc_443                  | (PCIN+((D'+A')'*B')')' | 30     | 6      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_442                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_441                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_440                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_439                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_438                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_437                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_436                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_435                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_434                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_433                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_432                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_431                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_430                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_429                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_428                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_427                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_426                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_425                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_424                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_423                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_422                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_421                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_420                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_419                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_418                  | (PCIN+((D'+A')'*B')')' | 30     | 12     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_417                  | (PCIN+((D'+A')'*B')')' | 30     | 13     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_416                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_415                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_414                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_413                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_412                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_411                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_410                  | (PCIN+((D'+A')'*B')')' | 30     | 9      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_409                  | (C'+((D'+B')')'        | -      | 15     | 0      | 25     | 48     | -    | 1    | 1    | 1    | 1     | 1    | 1    | 
+|calc_408                  | (PCIN+((D'+A')'*B')')' | 30     | 9      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_407                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_406                  | (PCIN+((D'+A')'*B')')' | 30     | 7      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_405                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_404                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_403                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_159                  | (PCIN+((D'+A')'*B')')' | 30     | 6      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_158                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_157                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_156                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_155                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_154                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_153                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_152                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_151                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_150                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_149                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_148                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_147                  | (PCIN+((D'+A')'*B')')' | 30     | 11     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_146                  | (PCIN+((D'+A')'*B')')' | 30     | 10     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_145                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_144                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_143                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_142                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_141                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_140                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_139                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_138                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_137                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_136                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_135                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_134                  | (PCIN+((D'+A')'*B')')' | 30     | 12     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_133                  | (PCIN+((D'+A')'*B')')' | 30     | 13     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_132                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_131                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_130                  | (PCIN+((D'+A')'*B')')' | 30     | 14     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_129                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_128                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_127                  | (PCIN+((D'+A')'*B')')' | 30     | 15     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_126                  | (PCIN+((D'+A')'*B')')' | 30     | 9      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_125                  | (C'+((D'+B')')'        | -      | 15     | 0      | 25     | 48     | -    | 1    | 1    | 1    | 1     | 1    | 1    | 
+|calc_124                  | (PCIN+((D'+A')'*B')')' | 30     | 9      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_123                  | (PCIN+((D'+A')'*B')')' | 30     | 8      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_122                  | (PCIN+((D'+A')'*B')')' | 30     | 7      | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_121                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc_120                  | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|calc                      | (PCIN+((D'+A')'*B')')' | 30     | 18     | -      | 25     | 48     | 1    | 1    | -    | 1    | 1     | 1    | 1    | 
+|dsp                       | ((A'*B')')'            | 30     | 18     | -      | -      | 40     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp                       | ((A'*B')')'            | 30     | 18     | -      | -      | 40     | 1    | 1    | -    | -    | -     | 1    | 1    | 
++--------------------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
 Report BlackBoxes: 
-+------+-----------------------------+----------+
-|      |BlackBox name                |Instances |
-+------+-----------------------------+----------+
-|1     |top_Con_Encoder_0_0          |         1|
-|2     |top_DataSource_Scrambler_0_1 |         1|
-|3     |top_Interleaver_0_0          |         1|
-|4     |top_PolarityShift_0_0        |         1|
-|5     |top_PolarityShift_1_0        |         1|
-|6     |top_RS_Enc_0_0               |         1|
-|7     |top_c_addsub_0_0             |         1|
-|8     |top_dds_compiler_0_0         |         1|
-|9     |top_dds_compiler_0_1         |         1|
-|10    |top_dec2bin_0_3              |         1|
-|11    |top_fir_compiler_0_0         |         1|
-|12    |top_fir_compiler_0_2         |         1|
-|13    |top_mult_gen_0_0             |         1|
-|14    |top_mult_gen_0_1             |         1|
-|15    |top_terminal_0_0             |         1|
-|16    |top_util_ds_buf_0_0          |         1|
-+------+-----------------------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
-+------+---------------------------+------+
-|      |Cell                       |Count |
-+------+---------------------------+------+
-|1     |top_Con_Encoder_0          |     1|
-|2     |top_DataSource_Scrambler_0 |     1|
-|3     |top_Interleaver_0          |     1|
-|4     |top_PolarityShift_0        |     1|
-|5     |top_PolarityShift_1        |     1|
-|6     |top_RS_Enc_0               |     1|
-|7     |top_c_addsub_0             |     1|
-|8     |top_dds_compiler_0         |     2|
-|10    |top_dec2bin_0              |     1|
-|11    |top_fir_compiler_0         |     2|
-|13    |top_mult_gen_0             |     2|
-|15    |top_terminal_0             |     1|
-|16    |top_util_ds_buf_0          |     1|
-|17    |IBUF                       |     1|
-|18    |OBUF                       |     1|
-+------+---------------------------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    26|
+|3     |DSP48E1  |    85|
+|6     |LUT1     |    13|
+|7     |LUT2     |   360|
+|8     |LUT3     |    75|
+|9     |LUT4     |   103|
+|10    |LUT5     |   197|
+|11    |LUT6     |  2783|
+|12    |MUXF7    |  1280|
+|13    |MUXF8    |   120|
+|14    |RAMB18E1 |    16|
+|29    |SRL16E   |   240|
+|30    |SRLC32E  |   436|
+|31    |FDCE     |  1520|
+|32    |FDPE     |     7|
+|33    |FDRE     |  1176|
+|34    |IBUF     |     1|
+|35    |IBUFDS   |     1|
+|36    |OBUF     |     1|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:47 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1514.719 ; gain = 547.938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1514.719 ; gain = 563.746
+Synthesis finished with 0 errors, 0 critical warnings and 1862 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:13 ; elapsed = 00:03:43 . Memory (MB): peak = 1904.453 ; gain = 885.836
+Synthesis Optimization Complete : Time (s): cpu = 00:03:48 ; elapsed = 00:03:52 . Memory (MB): peak = 1904.453 ; gain = 954.344
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1522.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.161 . Memory (MB): peak = 1904.453 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1528 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-1115] Found multi-term driver net: top_i/util_ds_buf_0/U0/<const0>.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1537.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1904.453 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 系统找不到指定的路径。
-Synth Design complete | Checksum: faaafc6
+Synth Design complete | Checksum: f1b2a8d
 INFO: [Common 17-83] Releasing license: Synthesis
-62 Infos, 16 Warnings, 0 Critical Warnings and 0 Errors encountered.
+225 Infos, 177 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1537.328 ; gain = 1047.445
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1537.328 ; gain = 0.000
+synth_design: Time (s): cpu = 00:03:54 ; elapsed = 00:04:00 . Memory (MB): peak = 1904.453 ; gain = 1414.965
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1904.453 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.runs/synth_1/top_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May 31 21:11:54 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  1 12:30:43 2024...

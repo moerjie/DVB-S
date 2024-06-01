@@ -57,4 +57,15 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_dec2bin
 # IP: bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_Interleaver_0_0 || ORIG_REF_NAME==top_Interleaver_0_0} -quiet] -quiet
 
+# XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_board.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==top_util_ds_buf_0_0 || ORIG_REF_NAME==top_util_ds_buf_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_ooc.xdc
+
+# XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/constraints/fir_compiler_v7_2.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==top_fir_compiler_0_0 || ORIG_REF_NAME==top_fir_compiler_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/constraints/fir_compiler_v7_2.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==top_fir_compiler_0_2 || ORIG_REF_NAME==top_fir_compiler_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
 # XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/top_ooc.xdc

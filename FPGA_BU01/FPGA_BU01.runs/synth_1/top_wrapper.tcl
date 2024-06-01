@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k325tffg900-2
 
@@ -88,19 +86,34 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files F:/Git_Repository/DVB-S/matlab/rcos.coe
-read_verilog -library xil_defaultlib F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v
+read_verilog -library xil_defaultlib {
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Encoder2.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Encoder.v
+  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/PolarityShift.v
+  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/new/terminal.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Enc.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/CLKdivide.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/HeaderProcess.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/MATLAB_Function.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Gen.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/myScrambler.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/sigSource.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/DataSource_Scrambler.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/dec2bin.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Con_Interleaver.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Convolutional_Interleaver.v
+  F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Interleaver.v
+  F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v
+}
 add_files F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sources_1/bd/top/top.bd
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_util_ds_buf_0_0/top_util_ds_buf_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_0/top_dds_compiler_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/constraints/fir_compiler_v7_2.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_0/top_fir_compiler_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/constraints/fir_compiler_v7_2.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_fir_compiler_0_2/top_fir_compiler_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dds_compiler_0_1/top_dds_compiler_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/top_mult_gen_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/top_ooc.xdc]
 
 OPTRACE "Adding files" END { }

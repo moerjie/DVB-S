@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7.391667 us"></ZoomStartTime>
-      <ZoomEndTime time="13.861668 us"></ZoomEndTime>
-      <Cursor1Time time="8.470000 us"></Cursor1Time>
+      <ZoomStartTime time="1,446.600000 us"></ZoomStartTime>
+      <ZoomEndTime time="1,690.400001 us"></ZoomEndTime>
+      <Cursor1Time time="1,631.975000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="group27" type="group">
       <wvobject fp_name="/top_tb/CLK_IN_D_0_clk_n" type="logic">
          <obj_property name="ElementShortName">CLK_IN_D_0_clk_n</obj_property>
@@ -110,6 +110,10 @@
          <obj_property name="ElementShortName">ScramblerOut[7:0]</obj_property>
          <obj_property name="ObjectShortName">ScramblerOut[7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/inst/u_myScrambler/DataIn" type="array">
+         <obj_property name="ElementShortName">DataIn[7:0]</obj_property>
+         <obj_property name="ObjectShortName">DataIn[7:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/DEC_IN" type="array">
       <obj_property name="ElementShortName">DEC_IN[7:0]</obj_property>
@@ -122,5 +126,13 @@
    <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/clk_enable" type="logic">
       <obj_property name="ElementShortName">clk_enable</obj_property>
       <obj_property name="ObjectShortName">clk_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/Interleaver_0/InterOut" type="array">
+      <obj_property name="ElementShortName">InterOut[7:0]</obj_property>
+      <obj_property name="ObjectShortName">InterOut[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/u_top_wrapper/top_i/Interleaver_0/Trigger" type="logic">
+      <obj_property name="ElementShortName">Trigger</obj_property>
+      <obj_property name="ObjectShortName">Trigger</obj_property>
    </wvobject>
 </wave_config>
