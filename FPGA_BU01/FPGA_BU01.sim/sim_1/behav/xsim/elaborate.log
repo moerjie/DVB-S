@@ -5,10 +5,10 @@ Running: F:/FPGA/Vivado23/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr -
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'm_axis_data_tvalid' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:113]
-WARNING: [VRFC 10-5021] port 'm_axis_data_tvalid' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:116]
-WARNING: [VRFC 10-5021] port 's_axis_data_tready' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:126]
-WARNING: [VRFC 10-5021] port 's_axis_data_tready' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:131]
+WARNING: [VRFC 10-5021] port 'm_axis_data_tvalid' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:115]
+WARNING: [VRFC 10-5021] port 'm_axis_data_tvalid' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:118]
+WARNING: [VRFC 10-5021] port 's_axis_data_tready' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:128]
+WARNING: [VRFC 10-5021] port 's_axis_data_tready' is not connected on this instance [F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v:133]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -231,6 +231,7 @@ Compiling architecture synth of entity fir_compiler_v7_2_20.single_rate [\single
 Compiling architecture synth of entity fir_compiler_v7_2_20.fir_compiler_v7_2_20_viv [\fir_compiler_v7_2_20_viv(c_xdev...]
 Compiling architecture xilinx of entity fir_compiler_v7_2_20.fir_compiler_v7_2_20 [\fir_compiler_v7_2_20(c_xdevicef...]
 Compiling architecture top_fir_compiler_0_2_arch of entity xil_defaultlib.top_fir_compiler_0_2 [top_fir_compiler_0_2_default]
+Compiling module xil_defaultlib.top_ila_0_0
 Compiling architecture xilinx of entity mult_gen_v12_0_19.delay_line [\delay_line(c_xdevicefamily="kin...]
 Compiling architecture xilinx of entity mult_gen_v12_0_19.op_resize [\op_resize(bi_width=24,swap_oper...]
 Compiling architecture xilinx of entity mult_gen_v12_0_19.dsp [\dsp(c_xdevicefamily="kintex7",c...]

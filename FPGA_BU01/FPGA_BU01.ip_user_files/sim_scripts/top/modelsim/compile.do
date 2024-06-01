@@ -1,6 +1,7 @@
 vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
+vlib modelsim_lib/msim/xpm
 vlib modelsim_lib/msim/xil_defaultlib
 vlib modelsim_lib/msim/xbip_utils_v3_0_11
 vlib modelsim_lib/msim/axi_utils_v2_0_7
@@ -17,6 +18,7 @@ vlib modelsim_lib/msim/xbip_addsub_v3_0_7
 vlib modelsim_lib/msim/c_addsub_v12_0_16
 vlib modelsim_lib/msim/xlconstant_v1_1_8
 
+vmap xpm modelsim_lib/msim/xpm
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 vmap xbip_utils_v3_0_11 modelsim_lib/msim/xbip_utils_v3_0_11
 vmap axi_utils_v2_0_7 modelsim_lib/msim/axi_utils_v2_0_7
@@ -33,11 +35,18 @@ vmap xbip_addsub_v3_0_7 modelsim_lib/msim/xbip_addsub_v3_0_7
 vmap c_addsub_v12_0_16 modelsim_lib/msim/c_addsub_v12_0_16
 vmap xlconstant_v1_1_8 modelsim_lib/msim/xlconstant_v1_1_8
 
+vlog -work xpm  -incr -mfcu  -sv "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm  -93  \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
+
 vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd" \
 "../../../bd/top/ip/top_util_ds_buf_0_0/sim/top_util_ds_buf_0_0.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
 "../../../bd/top/ip/top_Con_Encoder_0_0/sim/top_Con_Encoder_0_0.v" \
 
 vcom -work xbip_utils_v3_0_11  -93  \
@@ -76,7 +85,7 @@ vcom -work fir_compiler_v7_2_20  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_fir_compiler_0_0/sim/top_fir_compiler_0_0.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
 "../../../bd/top/ip/top_PolarityShift_0_0/sim/top_PolarityShift_0_0.v" \
 "../../../bd/top/ip/top_PolarityShift_1_0/sim/top_PolarityShift_1_0.v" \
 
@@ -98,18 +107,19 @@ vcom -work c_addsub_v12_0_16  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_c_addsub_0_0/sim/top_c_addsub_0_0.vhd" \
 
-vlog -work xil_defaultlib  -incr -mfcu  \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
 "../../../bd/top/ip/top_terminal_0_0/sim/top_terminal_0_0.v" \
 
-vlog -work xlconstant_v1_1_8  -incr -mfcu  \
+vlog -work xlconstant_v1_1_8  -incr -mfcu  "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
 "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib  -incr -mfcu  \
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
 "../../../bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
 "../../../bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v" \
 "../../../bd/top/ip/top_DataSource_Scrambler_0_1/sim/top_DataSource_Scrambler_0_1.v" \
 "../../../bd/top/ip/top_dec2bin_0_3/sim/top_dec2bin_0_3.v" \
 "../../../bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v" \
+"../../../bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
 "../../../bd/top/sim/top.v" \
 
 vlog -work xil_defaultlib \

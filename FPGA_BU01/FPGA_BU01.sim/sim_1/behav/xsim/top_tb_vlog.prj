@@ -28,8 +28,9 @@ verilog xil_defaultlib  \
 "../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v" \
 "../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_DataSource_Scrambler_0_1/sim/top_DataSource_Scrambler_0_1.v" \
 "../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_dec2bin_0_3/sim/top_dec2bin_0_3.v" \
-"../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v" \
 "../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v" \
+"../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
+"../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v" \
 "../../../../FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v" \
 "../../../../FPGA_BU01.srcs/sim_1/new/top_tb.v" \
 

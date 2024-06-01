@@ -4,6 +4,7 @@ onerror {quit -force}
 transcript on
 
 vlib work
+vlib activehdl/xpm
 vlib activehdl/xil_defaultlib
 vlib activehdl/xbip_utils_v3_0_11
 vlib activehdl/axi_utils_v2_0_7
@@ -20,6 +21,7 @@ vlib activehdl/xbip_addsub_v3_0_7
 vlib activehdl/c_addsub_v12_0_16
 vlib activehdl/xlconstant_v1_1_8
 
+vmap xpm activehdl/xpm
 vmap xil_defaultlib activehdl/xil_defaultlib
 vmap xbip_utils_v3_0_11 activehdl/xbip_utils_v3_0_11
 vmap axi_utils_v2_0_7 activehdl/axi_utils_v2_0_7
@@ -36,11 +38,18 @@ vmap xbip_addsub_v3_0_7 activehdl/xbip_addsub_v3_0_7
 vmap c_addsub_v12_0_16 activehdl/c_addsub_v12_0_16
 vmap xlconstant_v1_1_8 activehdl/xlconstant_v1_1_8
 
+vlog -work xpm  -sv2k12 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+vcom -work xpm -93  \
+"F:/FPGA/Vivado23/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
+
 vcom -work xil_defaultlib -93  \
 "../../../bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd" \
 "../../../bd/top/ip/top_util_ds_buf_0_0/sim/top_util_ds_buf_0_0.vhd" \
 
-vlog -work xil_defaultlib  -v2k5 -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
 "../../../bd/top/ip/top_Con_Encoder_0_0/sim/top_Con_Encoder_0_0.v" \
 
 vcom -work xbip_utils_v3_0_11 -93  \
@@ -79,7 +88,7 @@ vcom -work fir_compiler_v7_2_20 -93  \
 vcom -work xil_defaultlib -93  \
 "../../../bd/top/ip/top_fir_compiler_0_0/sim/top_fir_compiler_0_0.vhd" \
 
-vlog -work xil_defaultlib  -v2k5 -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
 "../../../bd/top/ip/top_PolarityShift_0_0/sim/top_PolarityShift_0_0.v" \
 "../../../bd/top/ip/top_PolarityShift_1_0/sim/top_PolarityShift_1_0.v" \
 
@@ -101,18 +110,19 @@ vcom -work c_addsub_v12_0_16 -93  \
 vcom -work xil_defaultlib -93  \
 "../../../bd/top/ip/top_c_addsub_0_0/sim/top_c_addsub_0_0.vhd" \
 
-vlog -work xil_defaultlib  -v2k5 -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
 "../../../bd/top/ip/top_terminal_0_0/sim/top_terminal_0_0.v" \
 
-vlog -work xlconstant_v1_1_8  -v2k5 -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+vlog -work xlconstant_v1_1_8  -v2k5 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
 "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v" \
 
-vlog -work xil_defaultlib  -v2k5 -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" "+incdir+../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" -l xpm -l xil_defaultlib -l xbip_utils_v3_0_11 -l axi_utils_v2_0_7 -l xbip_pipe_v3_0_7 -l xbip_bram18k_v3_0_7 -l mult_gen_v12_0_19 -l xbip_dsp48_wrapper_v3_0_5 -l xbip_dsp48_addsub_v3_0_7 -l xbip_dsp48_multadd_v3_0_7 -l dds_compiler_v6_0_23 -l fir_compiler_v7_2_20 -l c_reg_fd_v12_0_7 -l xbip_addsub_v3_0_7 -l c_addsub_v12_0_16 -l xlconstant_v1_1_8 \
 "../../../bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
 "../../../bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v" \
 "../../../bd/top/ip/top_DataSource_Scrambler_0_1/sim/top_DataSource_Scrambler_0_1.v" \
 "../../../bd/top/ip/top_dec2bin_0_3/sim/top_dec2bin_0_3.v" \
 "../../../bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v" \
+"../../../bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
 "../../../bd/top/sim/top.v" \
 
 vlog -work xil_defaultlib \

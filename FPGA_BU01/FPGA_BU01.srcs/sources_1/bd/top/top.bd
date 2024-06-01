@@ -6,7 +6,7 @@
       "gen_directory": "../../../../FPGA_BU01.gen/sources_1/bd/top",
       "name": "top",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
-      "synth_flow_mode": "None",
+      "synth_flow_mode": "Hierarchical",
       "tool_version": "2023.2",
       "validated": "true"
     },
@@ -27,7 +27,8 @@
       "RS_Enc_0": "",
       "DataSource_Scrambler_0": "",
       "dec2bin_0": "",
-      "Interleaver_0": ""
+      "Interleaver_0": "",
+      "ila_0": ""
     },
     "interface_ports": {
       "CLK_IN_D_0": {
@@ -804,6 +805,11 @@
           },
           "DataGenEn": {
             "direction": "O"
+          },
+          "TSout": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
           }
         }
       },
@@ -903,6 +909,42 @@
             "right": "0"
           }
         }
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "ip_revision": "14",
+        "xci_name": "top_ila_0_0",
+        "xci_path": "ip\\top_ila_0_0\\top_ila_0_0.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_DATA_DEPTH": {
+            "value": "32768"
+          },
+          "C_INPUT_PIPE_STAGES": {
+            "value": "1"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "5"
+          },
+          "C_PROBE0_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "8"
+          },
+          "C_PROBE4_WIDTH": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -948,7 +990,14 @@
       "DataSource_Scrambler_0_ScramblerOut": {
         "ports": [
           "DataSource_Scrambler_0/ScramblerOut",
-          "RS_Enc_0/RS_In"
+          "RS_Enc_0/RS_In",
+          "ila_0/probe1"
+        ]
+      },
+      "DataSource_Scrambler_0_TSout": {
+        "ports": [
+          "DataSource_Scrambler_0/TSout",
+          "ila_0/probe0"
         ]
       },
       "DataSource_Scrambler_0_ce_out": {
@@ -978,7 +1027,8 @@
       "Interleaver_0_InterOut": {
         "ports": [
           "Interleaver_0/InterOut",
-          "dec2bin_0/DEC_IN"
+          "dec2bin_0/DEC_IN",
+          "ila_0/probe3"
         ]
       },
       "Interleaver_0_ce_out": {
@@ -990,7 +1040,8 @@
       "RS_Enc_0_RS_Out": {
         "ports": [
           "RS_Enc_0/RS_Out",
-          "Interleaver_0/DataIn"
+          "Interleaver_0/DataIn",
+          "ila_0/probe2"
         ]
       },
       "RS_Enc_0_ce_out": {
@@ -1020,7 +1071,8 @@
       "dec2bin_0_BIN_OUT": {
         "ports": [
           "dec2bin_0/BIN_OUT",
-          "Con_Encoder_0/In1"
+          "Con_Encoder_0/In1",
+          "ila_0/probe4"
         ]
       },
       "dec2bin_0_ce_out": {
@@ -1088,7 +1140,8 @@
           "terminal_0/clk",
           "dec2bin_0/clk",
           "Interleaver_0/clk",
-          "DataSource_Scrambler_0/clk"
+          "DataSource_Scrambler_0/clk",
+          "ila_0/clk"
         ]
       },
       "xlconstant_0_dout": {

@@ -1,0 +1,18 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'util_ds_buf'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_util_ds_buf_0_0/sim/top_util_ds_buf_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_util_ds_buf_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_dds_compiler_0_0/sim/top_dds_compiler_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_dds_compiler_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_fir_compiler_0_0/sim/top_fir_compiler_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_fir_compiler_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_fir_compiler_0_2/sim/top_fir_compiler_0_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_fir_compiler_0_2'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_dds_compiler_0_1/sim/top_dds_compiler_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_dds_compiler_0_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_mult_gen_0_0/sim/top_mult_gen_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_mult_gen_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_mult_gen_0_1/sim/top_mult_gen_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_mult_gen_0_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_c_addsub_0_0/sim/top_c_addsub_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_c_addsub_0_0'
