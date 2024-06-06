@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 31 20:30:47 2024
+// Date        : Thu Jun  6 15:09:42 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_Con_Encoder_0_0 -prefix
-//               top_Con_Encoder_0_0_ top_Con_Encoder_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0_sim_netlist.v
 // Design      : top_Con_Encoder_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,20 +13,63 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "top_Con_Encoder_0_0,Con_Encoder,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "Con_Encoder,Vivado 2023.2" *) 
+(* NotValidForBitStream *)
+module top_Con_Encoder_0_0
+   (clk,
+    reset_n,
+    clk_enable,
+    In1,
+    VldIn,
+    ce_out,
+    ConvOut_0,
+    ConvOut_1);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
+  input clk_enable;
+  input In1;
+  input VldIn;
+  output ce_out;
+  output ConvOut_0;
+  output ConvOut_1;
+
+  wire ConvOut_0;
+  wire ConvOut_1;
+  wire In1;
+  wire VldIn;
+  wire clk;
+  wire clk_enable;
+  wire reset_n;
+
+  assign ce_out = clk_enable;
+  top_Con_Encoder_0_0_Con_Encoder inst
+       (.In1(In1),
+        .Q({ConvOut_1,ConvOut_0}),
+        .VldIn(VldIn),
+        .clk(clk),
+        .clk_enable(clk_enable),
+        .reset_n(reset_n));
+endmodule
+
+(* ORIG_REF_NAME = "Con_Encoder" *) 
 module top_Con_Encoder_0_0_Con_Encoder
    (Q,
     clk_enable,
+    VldIn,
     clk,
     In1,
     reset_n);
   output [1:0]Q;
   input clk_enable;
+  input VldIn;
   input clk;
   input In1;
   input reset_n;
 
   wire In1;
   wire [1:0]Q;
+  wire VldIn;
   wire clk;
   wire clk_enable;
   wire reset_n;
@@ -34,25 +77,30 @@ module top_Con_Encoder_0_0_Con_Encoder
   top_Con_Encoder_0_0_Convolutional_Encoder2 u_Convolutional_Encoder2
        (.In1(In1),
         .Q(Q),
+        .VldIn(VldIn),
         .clk(clk),
         .clk_enable(clk_enable),
         .reset_n(reset_n));
 endmodule
 
+(* ORIG_REF_NAME = "Convolutional_Encoder2" *) 
 module top_Con_Encoder_0_0_Convolutional_Encoder2
    (Q,
     clk_enable,
+    VldIn,
     clk,
     In1,
     reset_n);
   output [1:0]Q;
   input clk_enable;
+  input VldIn;
   input clk;
   input In1;
   input reset_n;
 
   wire In1;
   wire [1:0]Q;
+  wire VldIn;
   wire bitinreg_1;
   wire bitinreg_1_i_1_n_0;
   wire clk;
@@ -126,7 +174,7 @@ module top_Con_Encoder_0_0_Convolutional_Encoder2
        (.C(clk),
         .CE(clk_enable),
         .CLR(\dataOut[0]_i_2_n_0 ),
-        .D(1'b1),
+        .D(VldIn),
         .Q(enbSig_1));
   FDCE \shiftreg_reg[0] 
        (.C(clk),
@@ -164,41 +212,6 @@ module top_Con_Encoder_0_0_Convolutional_Encoder2
         .CLR(\dataOut[0]_i_2_n_0 ),
         .D(shiftreg_4),
         .Q(shiftreg_5));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "top_Con_Encoder_0_0,Con_Encoder,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "Con_Encoder,Vivado 2023.2" *) 
-(* NotValidForBitStream *)
-module top_Con_Encoder_0_0
-   (clk,
-    reset_n,
-    clk_enable,
-    In1,
-    ce_out,
-    ConvOut_0,
-    ConvOut_1);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
-  input clk_enable;
-  input In1;
-  output ce_out;
-  output ConvOut_0;
-  output ConvOut_1;
-
-  wire ConvOut_0;
-  wire ConvOut_1;
-  wire In1;
-  wire clk;
-  wire clk_enable;
-  wire reset_n;
-
-  assign ce_out = clk_enable;
-  top_Con_Encoder_0_0_Con_Encoder inst
-       (.In1(In1),
-        .Q({ConvOut_1,ConvOut_0}),
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .reset_n(reset_n));
 endmodule
 `ifndef GLBL
 `define GLBL

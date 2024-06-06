@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="32.750001 us"></ZoomEndTime>
-      <Cursor1Time time="203.975000 us"></Cursor1Time>
+      <ZoomStartTime time="118.880000 us"></ZoomStartTime>
+      <ZoomEndTime time="242.380001 us"></ZoomEndTime>
+      <Cursor1Time time="205.875000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
    <wvobject fp_name="group27" type="group">
@@ -81,13 +81,13 @@
       <obj_property name="label">scramble</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/TSout" type="array">
+         <obj_property name="ElementShortName">TSout[7:0]</obj_property>
+         <obj_property name="ObjectShortName">TSout[7:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/inst/ScramblerOut" type="array">
          <obj_property name="ElementShortName">ScramblerOut[7:0]</obj_property>
          <obj_property name="ObjectShortName">ScramblerOut[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/inst/u_sigSource/simDataIn" type="array">
-         <obj_property name="ElementShortName">simDataIn[7:0]</obj_property>
-         <obj_property name="ObjectShortName">simDataIn[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/clk_enable" type="logic">
          <obj_property name="ElementShortName">clk_enable</obj_property>
@@ -122,10 +122,23 @@
          <obj_property name="ElementShortName">RS_Out[7:0]</obj_property>
          <obj_property name="ObjectShortName">RS_Out[7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/simStart" type="logic">
+         <obj_property name="ElementShortName">simStart</obj_property>
+         <obj_property name="ObjectShortName">simStart</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/simEnd" type="logic">
+         <obj_property name="ElementShortName">simEnd</obj_property>
+         <obj_property name="ObjectShortName">simEnd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/simEN" type="logic">
+         <obj_property name="ElementShortName">simEN</obj_property>
+         <obj_property name="ObjectShortName">simEN</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group34" type="group">
       <obj_property name="label">Interleaver</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/Interleaver_0/InterOut" type="array">
          <obj_property name="ElementShortName">InterOut[7:0]</obj_property>
          <obj_property name="ObjectShortName">InterOut[7:0]</obj_property>
@@ -134,6 +147,7 @@
    <wvobject fp_name="group35" type="group">
       <obj_property name="label">Dec2Bin</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/BIN_OUT" type="logic">
          <obj_property name="ElementShortName">BIN_OUT</obj_property>
          <obj_property name="ObjectShortName">BIN_OUT</obj_property>
@@ -141,6 +155,7 @@
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/DEC_IN" type="array">
          <obj_property name="ElementShortName">DEC_IN[7:0]</obj_property>
          <obj_property name="ObjectShortName">DEC_IN[7:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

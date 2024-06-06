@@ -60,6 +60,7 @@ module top_Con_Encoder_0_0 (
   reset_n,
   clk_enable,
   In1,
+  VldIn,
   ce_out,
   ConvOut_0,
   ConvOut_1
@@ -73,6 +74,7 @@ input wire clk;
 input wire reset_n;
 input wire clk_enable;
 input wire In1;
+input wire VldIn;
 output wire ce_out;
 output wire ConvOut_0;
 output wire ConvOut_1;
@@ -82,6 +84,7 @@ output wire ConvOut_1;
     .reset_n(reset_n),
     .clk_enable(clk_enable),
     .In1(In1),
+    .VldIn(VldIn),
     .ce_out(ce_out),
     .ConvOut_0(ConvOut_0),
     .ConvOut_1(ConvOut_1)

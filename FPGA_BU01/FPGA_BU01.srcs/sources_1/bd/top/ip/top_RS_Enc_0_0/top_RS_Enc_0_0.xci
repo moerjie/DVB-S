@@ -39,7 +39,7 @@
         "clk": [ { "direction": "in" } ],
         "reset_n": [ { "direction": "in" } ],
         "clk_enable": [ { "direction": "in" } ],
-        "EN": [ { "direction": "in" } ],
+        "Trigger": [ { "direction": "in" } ],
         "RS_In": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
         "RS_Start": [ { "direction": "in" } ],
         "RS_End": [ { "direction": "in" } ],

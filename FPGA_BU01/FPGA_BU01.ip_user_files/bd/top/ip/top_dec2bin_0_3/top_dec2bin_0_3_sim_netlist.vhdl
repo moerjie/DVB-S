@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:30:47 2024
+-- Date        : Thu Jun  6 15:09:42 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_dec2bin_0_3 -prefix
---               top_dec2bin_0_3_ top_dec2bin_0_3_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_dec2bin_0_3/top_dec2bin_0_3_sim_netlist.vhdl
 -- Design      : top_dec2bin_0_3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,9 +20,12 @@ entity top_dec2bin_0_3_dec2bin is
     BIN_OUT : out STD_LOGIC;
     clk_enable : in STD_LOGIC;
     clk : in STD_LOGIC;
+    BinGen : in STD_LOGIC;
     DEC_IN : in STD_LOGIC_VECTOR ( 7 downto 0 );
     reset_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_dec2bin_0_3_dec2bin : entity is "dec2bin";
 end top_dec2bin_0_3_dec2bin;
 
 architecture STRUCTURE of top_dec2bin_0_3_dec2bin is
@@ -31,108 +34,109 @@ architecture STRUCTURE of top_dec2bin_0_3_dec2bin is
   signal BIN_OUT_INST_0_i_3_n_0 : STD_LOGIC;
   signal BIN_OUT_INST_0_i_4_n_0 : STD_LOGIC;
   signal BIN_OUT_INST_0_i_5_n_0 : STD_LOGIC;
+  signal BIN_OUT_INST_0_i_6_n_0 : STD_LOGIC;
+  signal HDL_Counter1_ctrl_delay_out : STD_LOGIC;
   signal HDL_Counter1_ctrl_delay_out_i_1_n_0 : STD_LOGIC;
   signal HDL_Counter1_out : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \HDL_Counter1_out[0]_i_1_n_0\ : STD_LOGIC;
   signal \HDL_Counter1_out[3]_i_2_n_0\ : STD_LOGIC;
   signal \HDL_Counter1_out[3]_i_3_n_0\ : STD_LOGIC;
-  signal \HDL_Counter1_out[6]_i_2_n_0\ : STD_LOGIC;
+  signal \HDL_Counter1_out[4]_i_2_n_0\ : STD_LOGIC;
   signal \HDL_Counter1_out[7]_i_2_n_0\ : STD_LOGIC;
-  signal HDL_Counter_ctrl_delay_out : STD_LOGIC;
-  signal HDL_Counter_out : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \HDL_Counter_out[4]_i_2_n_0\ : STD_LOGIC;
-  signal \HDL_Counter_out[4]_i_3_n_0\ : STD_LOGIC;
-  signal \HDL_Counter_out[4]_i_4_n_0\ : STD_LOGIC;
-  signal \HDL_Counter_out[7]_i_2_n_0\ : STD_LOGIC;
-  signal count_2 : STD_LOGIC_VECTOR ( 7 downto 1 );
-  signal count_value : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal count_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of BIN_OUT_INST_0_i_3 : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of BIN_OUT_INST_0_i_4 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of BIN_OUT_INST_0_i_5 : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[0]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of BIN_OUT_INST_0_i_5 : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \HDL_Counter1_out[0]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \HDL_Counter1_out[1]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \HDL_Counter1_out[2]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[3]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[4]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[5]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[6]_i_2\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \HDL_Counter1_out[7]_i_2\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[0]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[2]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[4]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[4]_i_2\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[6]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \HDL_Counter_out[7]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \HDL_Counter1_out[3]_i_2\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \HDL_Counter1_out[5]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \HDL_Counter1_out[6]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \HDL_Counter1_out[7]_i_1\ : label is "soft_lutpair0";
 begin
 BIN_OUT_INST_0: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"B8BBBBBBB8888888"
+      INIT => X"BBABBAAABAAABAAA"
     )
         port map (
-      I0 => DEC_IN(0),
-      I1 => BIN_OUT_INST_0_i_1_n_0,
-      I2 => BIN_OUT_INST_0_i_2_n_0,
-      I3 => HDL_Counter_ctrl_delay_out,
-      I4 => HDL_Counter1_out(2),
-      I5 => BIN_OUT_INST_0_i_3_n_0,
+      I0 => BIN_OUT_INST_0_i_1_n_0,
+      I1 => BIN_OUT_INST_0_i_2_n_0,
+      I2 => HDL_Counter1_out(0),
+      I3 => BIN_OUT_INST_0_i_3_n_0,
+      I4 => HDL_Counter1_ctrl_delay_out,
+      I5 => BIN_OUT_INST_0_i_4_n_0,
       O => BIN_OUT
     );
 BIN_OUT_INST_0_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFE00000000"
-    )
-        port map (
-      I0 => HDL_Counter1_out(7),
-      I1 => HDL_Counter1_out(6),
-      I2 => HDL_Counter1_out(4),
-      I3 => HDL_Counter1_out(5),
-      I4 => HDL_Counter1_out(3),
-      I5 => HDL_Counter_ctrl_delay_out,
-      O => BIN_OUT_INST_0_i_1_n_0
-    );
-BIN_OUT_INST_0_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => DEC_IN(4),
-      I1 => DEC_IN(3),
-      I2 => BIN_OUT_INST_0_i_4_n_0,
-      I3 => DEC_IN(2),
-      I4 => BIN_OUT_INST_0_i_5_n_0,
-      I5 => DEC_IN(1),
-      O => BIN_OUT_INST_0_i_2_n_0
-    );
-BIN_OUT_INST_0_i_3: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
+      INIT => X"888AFFFF888A0000"
     )
         port map (
       I0 => DEC_IN(0),
-      I1 => DEC_IN(7),
-      I2 => BIN_OUT_INST_0_i_4_n_0,
-      I3 => DEC_IN(6),
-      I4 => BIN_OUT_INST_0_i_5_n_0,
-      I5 => DEC_IN(5),
-      O => BIN_OUT_INST_0_i_3_n_0
+      I1 => BIN_OUT_INST_0_i_2_n_0,
+      I2 => BIN_OUT_INST_0_i_5_n_0,
+      I3 => HDL_Counter1_out(0),
+      I4 => HDL_Counter1_ctrl_delay_out,
+      I5 => DEC_IN(7),
+      O => BIN_OUT_INST_0_i_1_n_0
     );
-BIN_OUT_INST_0_i_4: unisim.vcomponents.LUT2
+BIN_OUT_INST_0_i_2: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"7"
+      INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => HDL_Counter_ctrl_delay_out,
+      I0 => HDL_Counter1_out(6),
+      I1 => HDL_Counter1_out(7),
+      I2 => HDL_Counter1_out(4),
+      I3 => HDL_Counter1_out(5),
+      I4 => HDL_Counter1_out(3),
+      O => BIN_OUT_INST_0_i_2_n_0
+    );
+BIN_OUT_INST_0_i_3: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"ABAA"
+    )
+        port map (
+      I0 => BIN_OUT_INST_0_i_6_n_0,
       I1 => HDL_Counter1_out(1),
+      I2 => HDL_Counter1_out(2),
+      I3 => DEC_IN(7),
+      O => BIN_OUT_INST_0_i_3_n_0
+    );
+BIN_OUT_INST_0_i_4: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"B8CCB800"
+    )
+        port map (
+      I0 => DEC_IN(2),
+      I1 => HDL_Counter1_out(2),
+      I2 => DEC_IN(6),
+      I3 => HDL_Counter1_out(1),
+      I4 => DEC_IN(4),
       O => BIN_OUT_INST_0_i_4_n_0
     );
 BIN_OUT_INST_0_i_5: unisim.vcomponents.LUT2
     generic map(
-      INIT => X"2"
+      INIT => X"E"
     )
         port map (
-      I0 => HDL_Counter_ctrl_delay_out,
-      I1 => HDL_Counter1_out(0),
+      I0 => HDL_Counter1_out(1),
+      I1 => HDL_Counter1_out(2),
       O => BIN_OUT_INST_0_i_5_n_0
+    );
+BIN_OUT_INST_0_i_6: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EEC022C000000000"
+    )
+        port map (
+      I0 => DEC_IN(3),
+      I1 => HDL_Counter1_out(1),
+      I2 => DEC_IN(5),
+      I3 => HDL_Counter1_out(2),
+      I4 => DEC_IN(1),
+      I5 => HDL_Counter1_ctrl_delay_out,
+      O => BIN_OUT_INST_0_i_6_n_0
     );
 HDL_Counter1_ctrl_delay_out_i_1: unisim.vcomponents.LUT1
     generic map(
@@ -148,146 +152,142 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
       D => '1',
-      Q => HDL_Counter_ctrl_delay_out
+      Q => HDL_Counter1_ctrl_delay_out
     );
 \HDL_Counter1_out[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"4B"
+      INIT => X"2D"
     )
         port map (
-      I0 => HDL_Counter1_out(0),
-      I1 => HDL_Counter_ctrl_delay_out,
-      I2 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => \HDL_Counter1_out[0]_i_1_n_0\
+      I0 => HDL_Counter1_ctrl_delay_out,
+      I1 => HDL_Counter1_out(0),
+      I2 => BinGen,
+      O => count_1(0)
     );
 \HDL_Counter1_out[1]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7C8C"
+      INIT => X"7D88"
     )
         port map (
-      I0 => HDL_Counter1_out(0),
-      I1 => \HDL_Counter_out[4]_i_3_n_0\,
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter1_out(1),
-      O => count_2(1)
+      I0 => HDL_Counter1_ctrl_delay_out,
+      I1 => HDL_Counter1_out(1),
+      I2 => HDL_Counter1_out(0),
+      I3 => BinGen,
+      O => count_1(1)
     );
 \HDL_Counter1_out[2]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"60A0A0A0"
-    )
-        port map (
-      I0 => HDL_Counter1_out(2),
-      I1 => HDL_Counter1_out(1),
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter1_out(0),
-      I4 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => count_2(2)
-    );
-\HDL_Counter1_out[3]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"B888"
-    )
-        port map (
-      I0 => \HDL_Counter1_out[3]_i_2_n_0\,
-      I1 => \HDL_Counter_out[4]_i_3_n_0\,
-      I2 => HDL_Counter1_out(3),
-      I3 => HDL_Counter_ctrl_delay_out,
-      O => count_2(3)
-    );
-\HDL_Counter1_out[3]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"3F00FE00C0000000"
-    )
-        port map (
-      I0 => \HDL_Counter1_out[3]_i_3_n_0\,
-      I1 => HDL_Counter1_out(2),
-      I2 => HDL_Counter1_out(0),
-      I3 => HDL_Counter_ctrl_delay_out,
-      I4 => HDL_Counter1_out(1),
-      I5 => HDL_Counter1_out(3),
-      O => \HDL_Counter1_out[3]_i_2_n_0\
-    );
-\HDL_Counter1_out[3]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"F0F0F0E0"
-    )
-        port map (
-      I0 => HDL_Counter1_out(5),
-      I1 => HDL_Counter1_out(4),
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter1_out(6),
-      I4 => HDL_Counter1_out(7),
-      O => \HDL_Counter1_out[3]_i_3_n_0\
-    );
-\HDL_Counter1_out[4]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7888"
-    )
-        port map (
-      I0 => \HDL_Counter1_out[6]_i_2_n_0\,
-      I1 => \HDL_Counter_out[4]_i_3_n_0\,
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter1_out(4),
-      O => count_2(4)
-    );
-\HDL_Counter1_out[5]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"78888888"
-    )
-        port map (
-      I0 => HDL_Counter1_out(5),
-      I1 => HDL_Counter_ctrl_delay_out,
-      I2 => \HDL_Counter_out[4]_i_3_n_0\,
-      I3 => \HDL_Counter1_out[6]_i_2_n_0\,
-      I4 => HDL_Counter1_out(4),
-      O => count_2(5)
-    );
-\HDL_Counter1_out[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"7FFF000080000000"
-    )
-        port map (
-      I0 => HDL_Counter1_out(4),
-      I1 => \HDL_Counter1_out[6]_i_2_n_0\,
-      I2 => HDL_Counter1_out(5),
-      I3 => \HDL_Counter_out[4]_i_3_n_0\,
-      I4 => HDL_Counter_ctrl_delay_out,
-      I5 => HDL_Counter1_out(6),
-      O => count_2(6)
-    );
-\HDL_Counter1_out[6]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"80000000"
-    )
-        port map (
-      I0 => HDL_Counter1_out(0),
-      I1 => HDL_Counter1_out(1),
-      I2 => HDL_Counter1_out(2),
-      I3 => HDL_Counter_ctrl_delay_out,
-      I4 => HDL_Counter1_out(3),
-      O => \HDL_Counter1_out[6]_i_2_n_0\
-    );
-\HDL_Counter1_out[7]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"7F008000"
     )
         port map (
-      I0 => \HDL_Counter1_out[7]_i_2_n_0\,
-      I1 => HDL_Counter1_out(6),
-      I2 => \HDL_Counter_out[4]_i_3_n_0\,
-      I3 => HDL_Counter_ctrl_delay_out,
-      I4 => HDL_Counter1_out(7),
-      O => count_2(7)
+      I0 => BinGen,
+      I1 => HDL_Counter1_out(0),
+      I2 => HDL_Counter1_out(1),
+      I3 => HDL_Counter1_ctrl_delay_out,
+      I4 => HDL_Counter1_out(2),
+      O => count_1(2)
     );
-\HDL_Counter1_out[7]_i_2\: unisim.vcomponents.LUT4
+\HDL_Counter1_out[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8000"
+      INIT => X"DD220000F5000000"
+    )
+        port map (
+      I0 => BinGen,
+      I1 => \HDL_Counter1_out[3]_i_2_n_0\,
+      I2 => \HDL_Counter1_out[3]_i_3_n_0\,
+      I3 => HDL_Counter1_out(3),
+      I4 => HDL_Counter1_ctrl_delay_out,
+      I5 => HDL_Counter1_out(0),
+      O => count_1(3)
+    );
+\HDL_Counter1_out[3]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => HDL_Counter1_out(1),
+      I1 => HDL_Counter1_out(2),
+      O => \HDL_Counter1_out[3]_i_2_n_0\
+    );
+\HDL_Counter1_out[3]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFFFE"
+    )
+        port map (
+      I0 => HDL_Counter1_out(2),
+      I1 => HDL_Counter1_out(1),
+      I2 => HDL_Counter1_out(6),
+      I3 => HDL_Counter1_out(7),
+      I4 => HDL_Counter1_out(4),
+      I5 => HDL_Counter1_out(5),
+      O => \HDL_Counter1_out[3]_i_3_n_0\
+    );
+\HDL_Counter1_out[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"BFFF000040000000"
+    )
+        port map (
+      I0 => \HDL_Counter1_out[4]_i_2_n_0\,
+      I1 => HDL_Counter1_out(1),
+      I2 => HDL_Counter1_out(2),
+      I3 => HDL_Counter1_out(3),
+      I4 => HDL_Counter1_ctrl_delay_out,
+      I5 => HDL_Counter1_out(4),
+      O => count_1(4)
+    );
+\HDL_Counter1_out[4]_i_2\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
+    )
+        port map (
+      I0 => HDL_Counter1_out(0),
+      I1 => BinGen,
+      O => \HDL_Counter1_out[4]_i_2_n_0\
+    );
+\HDL_Counter1_out[5]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"84"
+    )
+        port map (
+      I0 => \HDL_Counter1_out[7]_i_2_n_0\,
+      I1 => HDL_Counter1_ctrl_delay_out,
+      I2 => HDL_Counter1_out(5),
+      O => count_1(5)
+    );
+\HDL_Counter1_out[6]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"B040"
+    )
+        port map (
+      I0 => \HDL_Counter1_out[7]_i_2_n_0\,
+      I1 => HDL_Counter1_out(5),
+      I2 => HDL_Counter1_ctrl_delay_out,
+      I3 => HDL_Counter1_out(6),
+      O => count_1(6)
+    );
+\HDL_Counter1_out[7]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"DF002000"
     )
         port map (
       I0 => HDL_Counter1_out(5),
-      I1 => \HDL_Counter1_out[6]_i_2_n_0\,
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter1_out(4),
+      I1 => \HDL_Counter1_out[7]_i_2_n_0\,
+      I2 => HDL_Counter1_out(6),
+      I3 => HDL_Counter1_ctrl_delay_out,
+      I4 => HDL_Counter1_out(7),
+      O => count_1(7)
+    );
+\HDL_Counter1_out[7]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => HDL_Counter1_out(3),
+      I1 => HDL_Counter1_out(2),
+      I2 => HDL_Counter1_out(1),
+      I3 => BinGen,
+      I4 => HDL_Counter1_out(0),
+      I5 => HDL_Counter1_out(4),
       O => \HDL_Counter1_out[7]_i_2_n_0\
     );
 \HDL_Counter1_out_reg[0]\: unisim.vcomponents.FDCE
@@ -295,7 +295,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => \HDL_Counter1_out[0]_i_1_n_0\,
+      D => count_1(0),
       Q => HDL_Counter1_out(0)
     );
 \HDL_Counter1_out_reg[1]\: unisim.vcomponents.FDCE
@@ -303,7 +303,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(1),
+      D => count_1(1),
       Q => HDL_Counter1_out(1)
     );
 \HDL_Counter1_out_reg[2]\: unisim.vcomponents.FDCE
@@ -311,7 +311,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(2),
+      D => count_1(2),
       Q => HDL_Counter1_out(2)
     );
 \HDL_Counter1_out_reg[3]\: unisim.vcomponents.FDCE
@@ -319,7 +319,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(3),
+      D => count_1(3),
       Q => HDL_Counter1_out(3)
     );
 \HDL_Counter1_out_reg[4]\: unisim.vcomponents.FDCE
@@ -327,7 +327,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(4),
+      D => count_1(4),
       Q => HDL_Counter1_out(4)
     );
 \HDL_Counter1_out_reg[5]\: unisim.vcomponents.FDCE
@@ -335,7 +335,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(5),
+      D => count_1(5),
       Q => HDL_Counter1_out(5)
     );
 \HDL_Counter1_out_reg[6]\: unisim.vcomponents.FDCE
@@ -343,7 +343,7 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(6),
+      D => count_1(6),
       Q => HDL_Counter1_out(6)
     );
 \HDL_Counter1_out_reg[7]\: unisim.vcomponents.FDCE
@@ -351,210 +351,8 @@ HDL_Counter1_ctrl_delay_out_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_2(7),
+      D => count_1(7),
       Q => HDL_Counter1_out(7)
-    );
-\HDL_Counter_out[0]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"F4"
-    )
-        port map (
-      I0 => HDL_Counter_out(0),
-      I1 => HDL_Counter_ctrl_delay_out,
-      I2 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => count_value(0)
-    );
-\HDL_Counter_out[1]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"007D"
-    )
-        port map (
-      I0 => HDL_Counter_ctrl_delay_out,
-      I1 => HDL_Counter_out(0),
-      I2 => HDL_Counter_out(1),
-      I3 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => count_value(1)
-    );
-\HDL_Counter_out[2]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7800"
-    )
-        port map (
-      I0 => HDL_Counter_out(0),
-      I1 => HDL_Counter_out(1),
-      I2 => HDL_Counter_out(2),
-      I3 => HDL_Counter_ctrl_delay_out,
-      O => count_value(2)
-    );
-\HDL_Counter_out[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000028888888"
-    )
-        port map (
-      I0 => HDL_Counter_ctrl_delay_out,
-      I1 => HDL_Counter_out(3),
-      I2 => HDL_Counter_out(0),
-      I3 => HDL_Counter_out(1),
-      I4 => HDL_Counter_out(2),
-      I5 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => count_value(3)
-    );
-\HDL_Counter_out[4]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0087"
-    )
-        port map (
-      I0 => HDL_Counter_ctrl_delay_out,
-      I1 => HDL_Counter_out(4),
-      I2 => \HDL_Counter_out[4]_i_2_n_0\,
-      I3 => \HDL_Counter_out[4]_i_3_n_0\,
-      O => count_value(4)
-    );
-\HDL_Counter_out[4]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFFFFFF"
-    )
-        port map (
-      I0 => HDL_Counter_out(2),
-      I1 => HDL_Counter_out(1),
-      I2 => HDL_Counter_out(0),
-      I3 => HDL_Counter_out(3),
-      I4 => HDL_Counter_ctrl_delay_out,
-      O => \HDL_Counter_out[4]_i_2_n_0\
-    );
-\HDL_Counter_out[4]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"00000008"
-    )
-        port map (
-      I0 => HDL_Counter_out(0),
-      I1 => HDL_Counter_out(3),
-      I2 => HDL_Counter_out(1),
-      I3 => HDL_Counter_out(2),
-      I4 => \HDL_Counter_out[4]_i_4_n_0\,
-      O => \HDL_Counter_out[4]_i_3_n_0\
-    );
-\HDL_Counter_out[4]_i_4\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFFEFFF"
-    )
-        port map (
-      I0 => HDL_Counter_out(6),
-      I1 => HDL_Counter_out(5),
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => HDL_Counter_out(4),
-      I4 => HDL_Counter_out(7),
-      O => \HDL_Counter_out[4]_i_4_n_0\
-    );
-\HDL_Counter_out[5]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"78"
-    )
-        port map (
-      I0 => HDL_Counter_out(5),
-      I1 => HDL_Counter_ctrl_delay_out,
-      I2 => \HDL_Counter_out[7]_i_2_n_0\,
-      O => count_value(5)
-    );
-\HDL_Counter_out[6]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7800"
-    )
-        port map (
-      I0 => \HDL_Counter_out[7]_i_2_n_0\,
-      I1 => HDL_Counter_out(5),
-      I2 => HDL_Counter_out(6),
-      I3 => HDL_Counter_ctrl_delay_out,
-      O => count_value(6)
-    );
-\HDL_Counter_out[7]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"60A0A0A0"
-    )
-        port map (
-      I0 => HDL_Counter_out(7),
-      I1 => HDL_Counter_out(5),
-      I2 => HDL_Counter_ctrl_delay_out,
-      I3 => \HDL_Counter_out[7]_i_2_n_0\,
-      I4 => HDL_Counter_out(6),
-      O => count_value(7)
-    );
-\HDL_Counter_out[7]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => HDL_Counter_out(4),
-      I1 => HDL_Counter_ctrl_delay_out,
-      I2 => HDL_Counter_out(3),
-      I3 => HDL_Counter_out(0),
-      I4 => HDL_Counter_out(1),
-      I5 => HDL_Counter_out(2),
-      O => \HDL_Counter_out[7]_i_2_n_0\
-    );
-\HDL_Counter_out_reg[0]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(0),
-      Q => HDL_Counter_out(0)
-    );
-\HDL_Counter_out_reg[1]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(1),
-      Q => HDL_Counter_out(1)
-    );
-\HDL_Counter_out_reg[2]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(2),
-      Q => HDL_Counter_out(2)
-    );
-\HDL_Counter_out_reg[3]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(3),
-      Q => HDL_Counter_out(3)
-    );
-\HDL_Counter_out_reg[4]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(4),
-      Q => HDL_Counter_out(4)
-    );
-\HDL_Counter_out_reg[5]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(5),
-      Q => HDL_Counter_out(5)
-    );
-\HDL_Counter_out_reg[6]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(6),
-      Q => HDL_Counter_out(6)
-    );
-\HDL_Counter_out_reg[7]\: unisim.vcomponents.FDCE
-     port map (
-      C => clk,
-      CE => clk_enable,
-      CLR => HDL_Counter1_ctrl_delay_out_i_1_n_0,
-      D => count_value(7),
-      Q => HDL_Counter_out(7)
     );
 end STRUCTURE;
 library IEEE;
@@ -567,6 +365,7 @@ entity top_dec2bin_0_3 is
     reset_n : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
     DEC_IN : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    BinGen : in STD_LOGIC;
     ce_out : out STD_LOGIC;
     BIN_OUT : out STD_LOGIC
   );
@@ -596,6 +395,7 @@ begin
 inst: entity work.top_dec2bin_0_3_dec2bin
      port map (
       BIN_OUT => BIN_OUT,
+      BinGen => BinGen,
       DEC_IN(7 downto 0) => DEC_IN(7 downto 0),
       clk => clk,
       clk_enable => \^clk_enable\,

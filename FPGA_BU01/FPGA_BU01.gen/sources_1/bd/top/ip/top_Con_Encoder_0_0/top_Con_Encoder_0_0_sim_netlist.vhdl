@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:30:47 2024
+-- Date        : Thu Jun  6 15:09:42 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_Con_Encoder_0_0 -prefix
---               top_Con_Encoder_0_0_ top_Con_Encoder_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Con_Encoder_0_0/top_Con_Encoder_0_0_sim_netlist.vhdl
 -- Design      : top_Con_Encoder_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,10 +19,13 @@ entity top_Con_Encoder_0_0_Convolutional_Encoder2 is
   port (
     Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clk_enable : in STD_LOGIC;
+    VldIn : in STD_LOGIC;
     clk : in STD_LOGIC;
     In1 : in STD_LOGIC;
     reset_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_Con_Encoder_0_0_Convolutional_Encoder2 : entity is "Convolutional_Encoder2";
 end top_Con_Encoder_0_0_Convolutional_Encoder2;
 
 architecture STRUCTURE of top_Con_Encoder_0_0_Convolutional_Encoder2 is
@@ -117,7 +120,7 @@ enbSig_1_reg: unisim.vcomponents.FDCE
       C => clk,
       CE => clk_enable,
       CLR => \dataOut[0]_i_2_n_0\,
-      D => '1',
+      D => VldIn,
       Q => enbSig_1
     );
 \shiftreg_reg[0]\: unisim.vcomponents.FDCE
@@ -177,10 +180,13 @@ entity top_Con_Encoder_0_0_Con_Encoder is
   port (
     Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clk_enable : in STD_LOGIC;
+    VldIn : in STD_LOGIC;
     clk : in STD_LOGIC;
     In1 : in STD_LOGIC;
     reset_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_Con_Encoder_0_0_Con_Encoder : entity is "Con_Encoder";
 end top_Con_Encoder_0_0_Con_Encoder;
 
 architecture STRUCTURE of top_Con_Encoder_0_0_Con_Encoder is
@@ -189,6 +195,7 @@ u_Convolutional_Encoder2: entity work.top_Con_Encoder_0_0_Convolutional_Encoder2
      port map (
       In1 => In1,
       Q(1 downto 0) => Q(1 downto 0),
+      VldIn => VldIn,
       clk => clk,
       clk_enable => clk_enable,
       reset_n => reset_n
@@ -204,6 +211,7 @@ entity top_Con_Encoder_0_0 is
     reset_n : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
     In1 : in STD_LOGIC;
+    VldIn : in STD_LOGIC;
     ce_out : out STD_LOGIC;
     ConvOut_0 : out STD_LOGIC;
     ConvOut_1 : out STD_LOGIC
@@ -236,6 +244,7 @@ inst: entity work.top_Con_Encoder_0_0_Con_Encoder
       In1 => In1,
       Q(1) => ConvOut_1,
       Q(0) => ConvOut_0,
+      VldIn => VldIn,
       clk => clk,
       clk_enable => \^clk_enable\,
       reset_n => reset_n

@@ -27,8 +27,7 @@
       "RS_Enc_0": "",
       "DataSource_Scrambler_0": "",
       "dec2bin_0": "",
-      "Interleaver_0": "",
-      "ila_0": ""
+      "Interleaver_0": ""
     },
     "interface_ports": {
       "CLK_IN_D_0": {
@@ -122,6 +121,9 @@
             "direction": "I"
           },
           "In1": {
+            "direction": "I"
+          },
+          "VldIn": {
             "direction": "I"
           },
           "ce_out": {
@@ -723,7 +725,7 @@
           "clk_enable": {
             "direction": "I"
           },
-          "EN": {
+          "Trigger": {
             "direction": "I"
           },
           "RS_In": {
@@ -805,11 +807,6 @@
           },
           "DataGenEn": {
             "direction": "O"
-          },
-          "TSout": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
           }
         }
       },
@@ -850,6 +847,9 @@
             "direction": "I",
             "left": "7",
             "right": "0"
+          },
+          "BinGen": {
+            "direction": "I"
           },
           "ce_out": {
             "direction": "O"
@@ -909,42 +909,6 @@
             "right": "0"
           }
         }
-      },
-      "ila_0": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "ip_revision": "14",
-        "xci_name": "top_ila_0_0",
-        "xci_path": "ip\\top_ila_0_0\\top_ila_0_0.xci",
-        "inst_hier_path": "ila_0",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "32768"
-          },
-          "C_INPUT_PIPE_STAGES": {
-            "value": "1"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "Native"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "5"
-          },
-          "C_PROBE0_WIDTH": {
-            "value": "8"
-          },
-          "C_PROBE1_WIDTH": {
-            "value": "8"
-          },
-          "C_PROBE2_WIDTH": {
-            "value": "8"
-          },
-          "C_PROBE3_WIDTH": {
-            "value": "8"
-          },
-          "C_PROBE4_WIDTH": {
-            "value": "1"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -980,24 +944,23 @@
           "PolarityShift_1/singleIn"
         ]
       },
+      "DataSource_Scrambler_0_BinEn": {
+        "ports": [
+          "DataSource_Scrambler_0/BinEn",
+          "dec2bin_0/BinGen"
+        ]
+      },
       "DataSource_Scrambler_0_DataGenEn": {
         "ports": [
           "DataSource_Scrambler_0/DataGenEn",
           "Interleaver_0/Trigger",
-          "RS_Enc_0/EN"
+          "RS_Enc_0/Trigger"
         ]
       },
       "DataSource_Scrambler_0_ScramblerOut": {
         "ports": [
           "DataSource_Scrambler_0/ScramblerOut",
-          "RS_Enc_0/RS_In",
-          "ila_0/probe1"
-        ]
-      },
-      "DataSource_Scrambler_0_TSout": {
-        "ports": [
-          "DataSource_Scrambler_0/TSout",
-          "ila_0/probe0"
+          "RS_Enc_0/RS_In"
         ]
       },
       "DataSource_Scrambler_0_ce_out": {
@@ -1027,8 +990,7 @@
       "Interleaver_0_InterOut": {
         "ports": [
           "Interleaver_0/InterOut",
-          "dec2bin_0/DEC_IN",
-          "ila_0/probe3"
+          "dec2bin_0/DEC_IN"
         ]
       },
       "Interleaver_0_ce_out": {
@@ -1040,8 +1002,7 @@
       "RS_Enc_0_RS_Out": {
         "ports": [
           "RS_Enc_0/RS_Out",
-          "Interleaver_0/DataIn",
-          "ila_0/probe2"
+          "Interleaver_0/DataIn"
         ]
       },
       "RS_Enc_0_ce_out": {
@@ -1071,14 +1032,14 @@
       "dec2bin_0_BIN_OUT": {
         "ports": [
           "dec2bin_0/BIN_OUT",
-          "Con_Encoder_0/In1",
-          "ila_0/probe4"
+          "Con_Encoder_0/In1"
         ]
       },
       "dec2bin_0_ce_out": {
         "ports": [
           "dec2bin_0/ce_out",
-          "Con_Encoder_0/clk_enable"
+          "Con_Encoder_0/clk_enable",
+          "Con_Encoder_0/VldIn"
         ]
       },
       "fir_compiler_0_m_axis_data_tdata": {
@@ -1108,12 +1069,12 @@
       "rst_n_0_1": {
         "ports": [
           "rst_n_0",
-          "Con_Encoder_0/reset_n",
-          "RS_Enc_0/reset_n",
           "PolarityShift_0/rst_n",
           "PolarityShift_1/rst_n",
-          "dec2bin_0/reset_n",
           "Interleaver_0/reset_n",
+          "dec2bin_0/reset_n",
+          "Con_Encoder_0/reset_n",
+          "RS_Enc_0/reset_n",
           "DataSource_Scrambler_0/reset_n"
         ]
       },
@@ -1133,15 +1094,14 @@
           "mult_gen_0/CLK",
           "mult_gen_1/CLK",
           "c_addsub_0/CLK",
-          "Con_Encoder_0/clk",
-          "RS_Enc_0/clk",
           "PolarityShift_0/clk",
           "PolarityShift_1/clk",
           "terminal_0/clk",
-          "dec2bin_0/clk",
           "Interleaver_0/clk",
-          "DataSource_Scrambler_0/clk",
-          "ila_0/clk"
+          "dec2bin_0/clk",
+          "Con_Encoder_0/clk",
+          "RS_Enc_0/clk",
+          "DataSource_Scrambler_0/clk"
         ]
       },
       "xlconstant_0_dout": {

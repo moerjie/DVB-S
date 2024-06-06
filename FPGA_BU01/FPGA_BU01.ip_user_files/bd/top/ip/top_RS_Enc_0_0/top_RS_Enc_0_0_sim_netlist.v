@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 31 20:30:52 2024
+// Date        : Thu Jun  6 18:58:33 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_RS_Enc_0_0 -prefix
-//               top_RS_Enc_0_0_ top_RS_Enc_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/top_RS_Enc_0_0_sim_netlist.v
 // Design      : top_RS_Enc_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,6 +13,207 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "top_RS_Enc_0_0,RS_Enc,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "RS_Enc,Vivado 2023.2" *) 
+(* NotValidForBitStream *)
+module top_RS_Enc_0_0
+   (clk,
+    reset_n,
+    clk_enable,
+    Trigger,
+    RS_In,
+    RS_Start,
+    RS_End,
+    RS_VLD,
+    ce_out,
+    RS_Out);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
+  input clk_enable;
+  input Trigger;
+  input [7:0]RS_In;
+  input RS_Start;
+  input RS_End;
+  input RS_VLD;
+  output ce_out;
+  output [7:0]RS_Out;
+
+  wire RS_End;
+  wire [7:0]RS_In;
+  wire [7:0]RS_Out;
+  wire RS_Start;
+  wire RS_VLD;
+  wire Trigger;
+  wire clk;
+  wire clk_enable;
+  wire gftablereg16_reg_i_10_n_0;
+  wire inst_n_0;
+  wire inst_n_1;
+  wire inst_n_10;
+  wire inst_n_11;
+  wire inst_n_12;
+  wire inst_n_13;
+  wire inst_n_14;
+  wire inst_n_15;
+  wire inst_n_2;
+  wire inst_n_3;
+  wire inst_n_4;
+  wire inst_n_5;
+  wire inst_n_6;
+  wire inst_n_7;
+  wire inst_n_8;
+  wire inst_n_9;
+  wire \parityreg10_reg[7]_i_2_n_0 ;
+  wire \parityreg11_reg[7]_i_2_n_0 ;
+  wire \parityreg12_reg[7]_i_2_n_0 ;
+  wire \parityreg13_reg[7]_i_2_n_0 ;
+  wire \parityreg14_reg[7]_i_2_n_0 ;
+  wire \parityreg15_reg[7]_i_2_n_0 ;
+  wire \parityreg2_reg[7]_i_2_n_0 ;
+  wire \parityreg3_reg[7]_i_2_n_0 ;
+  wire \parityreg4_reg[7]_i_2_n_0 ;
+  wire \parityreg5_reg[7]_i_2_n_0 ;
+  wire \parityreg6_reg[7]_i_2_n_0 ;
+  wire \parityreg7_reg[7]_i_2_n_0 ;
+  wire \parityreg8_reg[7]_i_2_n_0 ;
+  wire \parityreg9_reg[7]_i_2_n_0 ;
+  wire reset_n;
+
+  assign ce_out = clk_enable;
+  FDCE gftablereg16_reg_i_10
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_1),
+        .Q(gftablereg16_reg_i_10_n_0));
+  top_RS_Enc_0_0_RS_Enc inst
+       (.RS_End(RS_End),
+        .RS_In(RS_In),
+        .RS_Out(RS_Out),
+        .RS_Start(RS_Start),
+        .RS_VLD(RS_VLD),
+        .Trigger(Trigger),
+        .clk(clk),
+        .clk_enable(clk_enable),
+        .clk_enable_0(inst_n_1),
+        .clk_enable_1(inst_n_2),
+        .clk_enable_10(inst_n_11),
+        .clk_enable_11(inst_n_12),
+        .clk_enable_12(inst_n_13),
+        .clk_enable_13(inst_n_14),
+        .clk_enable_14(inst_n_15),
+        .clk_enable_2(inst_n_3),
+        .clk_enable_3(inst_n_4),
+        .clk_enable_4(inst_n_5),
+        .clk_enable_5(inst_n_6),
+        .clk_enable_6(inst_n_7),
+        .clk_enable_7(inst_n_8),
+        .clk_enable_8(inst_n_9),
+        .clk_enable_9(inst_n_10),
+        .gftablereg2_reg(gftablereg16_reg_i_10_n_0),
+        .\parityreg10_reg[0] (\parityreg10_reg[7]_i_2_n_0 ),
+        .\parityreg11_reg[0] (\parityreg11_reg[7]_i_2_n_0 ),
+        .\parityreg12_reg[0] (\parityreg12_reg[7]_i_2_n_0 ),
+        .\parityreg13_reg[0] (\parityreg13_reg[7]_i_2_n_0 ),
+        .\parityreg14_reg[0] (\parityreg14_reg[7]_i_2_n_0 ),
+        .\parityreg15_reg[0] (\parityreg15_reg[7]_i_2_n_0 ),
+        .\parityreg2_reg[0] (\parityreg2_reg[7]_i_2_n_0 ),
+        .\parityreg3_reg[0] (\parityreg3_reg[7]_i_2_n_0 ),
+        .\parityreg4_reg[0] (\parityreg4_reg[7]_i_2_n_0 ),
+        .\parityreg5_reg[0] (\parityreg5_reg[7]_i_2_n_0 ),
+        .\parityreg6_reg[0] (\parityreg6_reg[7]_i_2_n_0 ),
+        .\parityreg7_reg[0] (\parityreg7_reg[7]_i_2_n_0 ),
+        .\parityreg8_reg[0] (\parityreg8_reg[7]_i_2_n_0 ),
+        .\parityreg9_reg[0] (\parityreg9_reg[7]_i_2_n_0 ),
+        .reset_n(reset_n),
+        .reset_n_0(inst_n_0));
+  FDCE \parityreg10_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_7),
+        .Q(\parityreg10_reg[7]_i_2_n_0 ));
+  FDCE \parityreg11_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_6),
+        .Q(\parityreg11_reg[7]_i_2_n_0 ));
+  FDCE \parityreg12_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_5),
+        .Q(\parityreg12_reg[7]_i_2_n_0 ));
+  FDCE \parityreg13_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_4),
+        .Q(\parityreg13_reg[7]_i_2_n_0 ));
+  FDCE \parityreg14_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_3),
+        .Q(\parityreg14_reg[7]_i_2_n_0 ));
+  FDCE \parityreg15_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_2),
+        .Q(\parityreg15_reg[7]_i_2_n_0 ));
+  FDCE \parityreg2_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_15),
+        .Q(\parityreg2_reg[7]_i_2_n_0 ));
+  FDCE \parityreg3_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_14),
+        .Q(\parityreg3_reg[7]_i_2_n_0 ));
+  FDCE \parityreg4_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_13),
+        .Q(\parityreg4_reg[7]_i_2_n_0 ));
+  FDCE \parityreg5_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_12),
+        .Q(\parityreg5_reg[7]_i_2_n_0 ));
+  FDCE \parityreg6_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_11),
+        .Q(\parityreg6_reg[7]_i_2_n_0 ));
+  FDCE \parityreg7_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_10),
+        .Q(\parityreg7_reg[7]_i_2_n_0 ));
+  FDCE \parityreg8_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_9),
+        .Q(\parityreg8_reg[7]_i_2_n_0 ));
+  FDCE \parityreg9_reg[7]_i_2 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(inst_n_0),
+        .D(inst_n_8),
+        .Q(\parityreg9_reg[7]_i_2_n_0 ));
+endmodule
+
+(* ORIG_REF_NAME = "Integer_Input_RS_Encoder_HDL_Optimized" *) 
 module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
    (E,
     reset_n_0,
@@ -39,8 +240,8 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
     \parityreg2_reg[0]_0 ,
     RS_End,
     clk_enable,
+    Trigger,
     Trigger_delayed,
-    EN,
     Q);
   output [0:0]E;
   output reset_n_0;
@@ -67,12 +268,11 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   input \parityreg2_reg[0]_0 ;
   input RS_End;
   input clk_enable;
+  input Trigger;
   input Trigger_delayed;
-  input EN;
   input [7:0]Q;
 
   wire [0:0]E;
-  wire EN;
   wire [7:0]Integer_Input_RS_Encoder_HDL_Optimized_out_1;
   wire Integer_Input_RS_Encoder_HDL_Optimized_out_10;
   wire \Integer_Input_RS_Encoder_HDL_Optimized_out_1[0]_i_3_n_0 ;
@@ -138,6 +338,7 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   wire [7:0]RS_Out;
   wire RS_Start;
   wire RS_VLD;
+  wire Trigger;
   wire Trigger_delayed;
   wire clk;
   wire clk_enable;
@@ -960,8 +1161,8 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   LUT5 #(
     .INIT(32'h40FF4000)) 
     \Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_1 
-       (.I0(EN),
-        .I1(Trigger_delayed),
+       (.I0(Trigger_delayed),
+        .I1(Trigger),
         .I2(clk_enable),
         .I3(sendparity),
         .I4(\Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_3_n_0 ),
@@ -988,11 +1189,11 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   LUT6 #(
     .INIT(64'h4440000000000000)) 
     \Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_3 
-       (.I0(EN),
+       (.I0(Trigger_delayed),
         .I1(RS_VLD),
         .I2(RS_Start),
         .I3(inpacket),
-        .I4(Trigger_delayed),
+        .I4(Trigger),
         .I5(clk_enable),
         .O(\Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_3_n_0 ));
   LUT5 #(
@@ -1134,64 +1335,64 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
     .INIT(16'hFB08)) 
     \RS_Out[0]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[0]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[0]),
         .O(RS_Out[0]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[1]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[1]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[1]),
         .O(RS_Out[1]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[2]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[2]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[2]),
         .O(RS_Out[2]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[3]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[3]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[3]),
         .O(RS_Out[3]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[4]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[4]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[4]),
         .O(RS_Out[4]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[5]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[5]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[5]),
         .O(RS_Out[5]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[6]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[6]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[6]),
         .O(RS_Out[6]));
   LUT4 #(
     .INIT(16'hFB08)) 
     \RS_Out[7]_INST_0 
        (.I0(Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(Q[7]),
         .O(RS_Out[7]));
   LUT2 #(
@@ -2077,9 +2278,9 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   LUT4 #(
     .INIT(16'h4000)) 
     gftablereg16_reg_i_1
-       (.I0(EN),
+       (.I0(Trigger_delayed),
         .I1(RS_VLD),
-        .I2(Trigger_delayed),
+        .I2(Trigger),
         .I3(clk_enable),
         .O(gftablereg160));
   LUT6 #(
@@ -3157,8 +3358,8 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
   LUT3 #(
     .INIT(8'h40)) 
     inpacket_i_1
-       (.I0(EN),
-        .I1(Trigger_delayed),
+       (.I0(Trigger_delayed),
+        .I1(Trigger),
         .I2(clk_enable),
         .O(E));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
@@ -3206,8 +3407,8 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
     .INIT(16'h0800)) 
     \paritycount_1[3]_i_1 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
-        .I2(EN),
+        .I1(Trigger),
+        .I2(Trigger_delayed),
         .I3(sendparity),
         .O(paritycount_10));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
@@ -4030,9 +4231,9 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
     .INIT(32'h32000000)) 
     \parityreg16[7]_i_1 
        (.I0(endin_valid_dly),
-        .I1(EN),
+        .I1(Trigger_delayed),
         .I2(RS_VLD),
-        .I3(Trigger_delayed),
+        .I3(Trigger),
         .I4(clk_enable),
         .O(parityreg16));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
@@ -5078,6 +5279,7 @@ module top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
         .Q(sendparity));
 endmodule
 
+(* ORIG_REF_NAME = "RS" *) 
 module top_RS_Enc_0_0_RS
    (reset_n_0,
     clk_enable_0,
@@ -5099,8 +5301,8 @@ module top_RS_Enc_0_0_RS
     clk,
     reset_n,
     clk_enable,
+    Trigger,
     RS_VLD,
-    EN,
     gftablereg2_reg,
     \parityreg15_reg[0] ,
     \parityreg14_reg[0] ,
@@ -5139,8 +5341,8 @@ module top_RS_Enc_0_0_RS
   input clk;
   input reset_n;
   input clk_enable;
+  input Trigger;
   input RS_VLD;
-  input EN;
   input gftablereg2_reg;
   input \parityreg15_reg[0] ;
   input \parityreg14_reg[0] ;
@@ -5160,13 +5362,13 @@ module top_RS_Enc_0_0_RS
   input RS_Start;
   input RS_End;
 
-  wire EN;
   wire [7:0]Integer_Input_RS_Encoder_HDL_Optimized_out1_last_value;
   wire RS_End;
   wire [7:0]RS_In;
   wire [7:0]RS_Out;
   wire RS_Start;
   wire RS_VLD;
+  wire Trigger;
   wire Trigger_delayed;
   wire Trigger_delayed_i_1_n_0;
   wire clk;
@@ -5257,161 +5459,161 @@ module top_RS_Enc_0_0_RS
   LUT3 #(
     .INIT(8'hB8)) 
     Trigger_delayed_i_1
-       (.I0(EN),
+       (.I0(Trigger),
         .I1(clk_enable),
         .I2(Trigger_delayed),
         .O(Trigger_delayed_i_1_n_0));
-  FDCE Trigger_delayed_reg
+  FDPE Trigger_delayed_reg
        (.C(clk),
         .CE(1'b1),
-        .CLR(reset_n_0),
         .D(Trigger_delayed_i_1_n_0),
+        .PRE(reset_n_0),
         .Q(Trigger_delayed));
   (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     gftablereg16_reg_i_11
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(gftablereg2_reg),
         .O(clk_enable_0));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg10[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg10_reg[0] ),
         .O(clk_enable_6));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg11[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg11_reg[0] ),
         .O(clk_enable_5));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg12[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg12_reg[0] ),
         .O(clk_enable_4));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg13[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg13_reg[0] ),
         .O(clk_enable_3));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg14[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg14_reg[0] ),
         .O(clk_enable_2));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg15[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg15_reg[0] ),
         .O(clk_enable_1));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg2[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg2_reg[0] ),
         .O(clk_enable_14));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg3[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg3_reg[0] ),
         .O(clk_enable_13));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg4[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg4_reg[0] ),
         .O(clk_enable_12));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg5[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg5_reg[0] ),
         .O(clk_enable_11));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg6[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg6_reg[0] ),
         .O(clk_enable_10));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg7[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg7_reg[0] ),
         .O(clk_enable_9));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg8[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg8_reg[0] ),
         .O(clk_enable_8));
   LUT5 #(
     .INIT(32'hFFFF0080)) 
     \parityreg9[7]_i_3 
        (.I0(clk_enable),
-        .I1(Trigger_delayed),
+        .I1(Trigger),
         .I2(RS_VLD),
-        .I3(EN),
+        .I3(Trigger_delayed),
         .I4(\parityreg9_reg[0] ),
         .O(clk_enable_7));
   top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized u_Integer_Input_RS_Encoder_HDL_Optimized
        (.E(enb_gated),
-        .EN(EN),
         .Q(Integer_Input_RS_Encoder_HDL_Optimized_out1_last_value),
         .RS_End(RS_End),
         .RS_In(RS_In),
         .RS_Out(RS_Out),
         .RS_Start(RS_Start),
         .RS_VLD(RS_VLD),
+        .Trigger(Trigger),
         .Trigger_delayed(Trigger_delayed),
         .clk(clk),
         .clk_enable(clk_enable),
@@ -5434,6 +5636,7 @@ module top_RS_Enc_0_0_RS
         .reset_n_0(reset_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "RS_Enc" *) 
 module top_RS_Enc_0_0_RS_Enc
    (reset_n_0,
     clk_enable_0,
@@ -5455,8 +5658,8 @@ module top_RS_Enc_0_0_RS_Enc
     clk,
     reset_n,
     clk_enable,
+    Trigger,
     RS_VLD,
-    EN,
     gftablereg2_reg,
     \parityreg15_reg[0] ,
     \parityreg14_reg[0] ,
@@ -5495,8 +5698,8 @@ module top_RS_Enc_0_0_RS_Enc
   input clk;
   input reset_n;
   input clk_enable;
+  input Trigger;
   input RS_VLD;
-  input EN;
   input gftablereg2_reg;
   input \parityreg15_reg[0] ;
   input \parityreg14_reg[0] ;
@@ -5516,12 +5719,12 @@ module top_RS_Enc_0_0_RS_Enc
   input RS_Start;
   input RS_End;
 
-  wire EN;
   wire RS_End;
   wire [7:0]RS_In;
   wire [7:0]RS_Out;
   wire RS_Start;
   wire RS_VLD;
+  wire Trigger;
   wire clk;
   wire clk_enable;
   wire clk_enable_0;
@@ -5558,12 +5761,12 @@ module top_RS_Enc_0_0_RS_Enc
   wire reset_n_0;
 
   top_RS_Enc_0_0_RS u_RS
-       (.EN(EN),
-        .RS_End(RS_End),
+       (.RS_End(RS_End),
         .RS_In(RS_In),
         .RS_Out(RS_Out),
         .RS_Start(RS_Start),
         .RS_VLD(RS_VLD),
+        .Trigger(Trigger),
         .clk(clk),
         .clk_enable(clk_enable),
         .clk_enable_0(clk_enable_0),
@@ -5598,206 +5801,6 @@ module top_RS_Enc_0_0_RS_Enc
         .\parityreg9_reg[0] (\parityreg9_reg[0] ),
         .reset_n(reset_n),
         .reset_n_0(reset_n_0));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "top_RS_Enc_0_0,RS_Enc,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "RS_Enc,Vivado 2023.2" *) 
-(* NotValidForBitStream *)
-module top_RS_Enc_0_0
-   (clk,
-    reset_n,
-    clk_enable,
-    EN,
-    RS_In,
-    RS_Start,
-    RS_End,
-    RS_VLD,
-    ce_out,
-    RS_Out);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
-  input clk_enable;
-  input EN;
-  input [7:0]RS_In;
-  input RS_Start;
-  input RS_End;
-  input RS_VLD;
-  output ce_out;
-  output [7:0]RS_Out;
-
-  wire EN;
-  wire RS_End;
-  wire [7:0]RS_In;
-  wire [7:0]RS_Out;
-  wire RS_Start;
-  wire RS_VLD;
-  wire clk;
-  wire clk_enable;
-  wire gftablereg16_reg_i_10_n_0;
-  wire inst_n_0;
-  wire inst_n_1;
-  wire inst_n_10;
-  wire inst_n_11;
-  wire inst_n_12;
-  wire inst_n_13;
-  wire inst_n_14;
-  wire inst_n_15;
-  wire inst_n_2;
-  wire inst_n_3;
-  wire inst_n_4;
-  wire inst_n_5;
-  wire inst_n_6;
-  wire inst_n_7;
-  wire inst_n_8;
-  wire inst_n_9;
-  wire \parityreg10_reg[7]_i_2_n_0 ;
-  wire \parityreg11_reg[7]_i_2_n_0 ;
-  wire \parityreg12_reg[7]_i_2_n_0 ;
-  wire \parityreg13_reg[7]_i_2_n_0 ;
-  wire \parityreg14_reg[7]_i_2_n_0 ;
-  wire \parityreg15_reg[7]_i_2_n_0 ;
-  wire \parityreg2_reg[7]_i_2_n_0 ;
-  wire \parityreg3_reg[7]_i_2_n_0 ;
-  wire \parityreg4_reg[7]_i_2_n_0 ;
-  wire \parityreg5_reg[7]_i_2_n_0 ;
-  wire \parityreg6_reg[7]_i_2_n_0 ;
-  wire \parityreg7_reg[7]_i_2_n_0 ;
-  wire \parityreg8_reg[7]_i_2_n_0 ;
-  wire \parityreg9_reg[7]_i_2_n_0 ;
-  wire reset_n;
-
-  assign ce_out = clk_enable;
-  FDCE gftablereg16_reg_i_10
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_1),
-        .Q(gftablereg16_reg_i_10_n_0));
-  top_RS_Enc_0_0_RS_Enc inst
-       (.EN(EN),
-        .RS_End(RS_End),
-        .RS_In(RS_In),
-        .RS_Out(RS_Out),
-        .RS_Start(RS_Start),
-        .RS_VLD(RS_VLD),
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .clk_enable_0(inst_n_1),
-        .clk_enable_1(inst_n_2),
-        .clk_enable_10(inst_n_11),
-        .clk_enable_11(inst_n_12),
-        .clk_enable_12(inst_n_13),
-        .clk_enable_13(inst_n_14),
-        .clk_enable_14(inst_n_15),
-        .clk_enable_2(inst_n_3),
-        .clk_enable_3(inst_n_4),
-        .clk_enable_4(inst_n_5),
-        .clk_enable_5(inst_n_6),
-        .clk_enable_6(inst_n_7),
-        .clk_enable_7(inst_n_8),
-        .clk_enable_8(inst_n_9),
-        .clk_enable_9(inst_n_10),
-        .gftablereg2_reg(gftablereg16_reg_i_10_n_0),
-        .\parityreg10_reg[0] (\parityreg10_reg[7]_i_2_n_0 ),
-        .\parityreg11_reg[0] (\parityreg11_reg[7]_i_2_n_0 ),
-        .\parityreg12_reg[0] (\parityreg12_reg[7]_i_2_n_0 ),
-        .\parityreg13_reg[0] (\parityreg13_reg[7]_i_2_n_0 ),
-        .\parityreg14_reg[0] (\parityreg14_reg[7]_i_2_n_0 ),
-        .\parityreg15_reg[0] (\parityreg15_reg[7]_i_2_n_0 ),
-        .\parityreg2_reg[0] (\parityreg2_reg[7]_i_2_n_0 ),
-        .\parityreg3_reg[0] (\parityreg3_reg[7]_i_2_n_0 ),
-        .\parityreg4_reg[0] (\parityreg4_reg[7]_i_2_n_0 ),
-        .\parityreg5_reg[0] (\parityreg5_reg[7]_i_2_n_0 ),
-        .\parityreg6_reg[0] (\parityreg6_reg[7]_i_2_n_0 ),
-        .\parityreg7_reg[0] (\parityreg7_reg[7]_i_2_n_0 ),
-        .\parityreg8_reg[0] (\parityreg8_reg[7]_i_2_n_0 ),
-        .\parityreg9_reg[0] (\parityreg9_reg[7]_i_2_n_0 ),
-        .reset_n(reset_n),
-        .reset_n_0(inst_n_0));
-  FDCE \parityreg10_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_7),
-        .Q(\parityreg10_reg[7]_i_2_n_0 ));
-  FDCE \parityreg11_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_6),
-        .Q(\parityreg11_reg[7]_i_2_n_0 ));
-  FDCE \parityreg12_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_5),
-        .Q(\parityreg12_reg[7]_i_2_n_0 ));
-  FDCE \parityreg13_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_4),
-        .Q(\parityreg13_reg[7]_i_2_n_0 ));
-  FDCE \parityreg14_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_3),
-        .Q(\parityreg14_reg[7]_i_2_n_0 ));
-  FDCE \parityreg15_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_2),
-        .Q(\parityreg15_reg[7]_i_2_n_0 ));
-  FDCE \parityreg2_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_15),
-        .Q(\parityreg2_reg[7]_i_2_n_0 ));
-  FDCE \parityreg3_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_14),
-        .Q(\parityreg3_reg[7]_i_2_n_0 ));
-  FDCE \parityreg4_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_13),
-        .Q(\parityreg4_reg[7]_i_2_n_0 ));
-  FDCE \parityreg5_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_12),
-        .Q(\parityreg5_reg[7]_i_2_n_0 ));
-  FDCE \parityreg6_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_11),
-        .Q(\parityreg6_reg[7]_i_2_n_0 ));
-  FDCE \parityreg7_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_10),
-        .Q(\parityreg7_reg[7]_i_2_n_0 ));
-  FDCE \parityreg8_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_9),
-        .Q(\parityreg8_reg[7]_i_2_n_0 ));
-  FDCE \parityreg9_reg[7]_i_2 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(inst_n_0),
-        .D(inst_n_8),
-        .Q(\parityreg9_reg[7]_i_2_n_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

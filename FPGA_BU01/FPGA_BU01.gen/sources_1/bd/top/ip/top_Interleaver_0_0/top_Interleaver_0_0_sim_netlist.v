@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 31 20:30:57 2024
+// Date        : Thu Jun  6 15:09:48 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_Interleaver_0_0 -prefix
-//               top_Interleaver_0_0_ top_Interleaver_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0_sim_netlist.v
 // Design      : top_Interleaver_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,6 +13,43 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "top_Interleaver_0_0,Interleaver,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "Interleaver,Vivado 2023.2" *) 
+(* NotValidForBitStream *)
+module top_Interleaver_0_0
+   (clk,
+    reset_n,
+    clk_enable,
+    Trigger,
+    DataIn,
+    ce_out,
+    InterOut);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
+  input clk_enable;
+  input Trigger;
+  input [7:0]DataIn;
+  output ce_out;
+  output [7:0]InterOut;
+
+  wire [7:0]DataIn;
+  wire [7:0]InterOut;
+  wire Trigger;
+  wire clk;
+  wire clk_enable;
+  wire reset_n;
+
+  assign ce_out = clk_enable;
+  top_Interleaver_0_0_Interleaver inst
+       (.DataIn(DataIn),
+        .InterOut(InterOut),
+        .Trigger(Trigger),
+        .clk(clk),
+        .clk_enable(clk_enable),
+        .reset_n(reset_n));
+endmodule
+
+(* ORIG_REF_NAME = "Con_Interleaver" *) 
 module top_Interleaver_0_0_Con_Interleaver
    (InterOut,
     clk,
@@ -113,6 +150,7 @@ module top_Interleaver_0_0_Con_Interleaver
         .reset_n_0(u_Convolutional_Interleaver_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "Convolutional_Interleaver" *) 
 module top_Interleaver_0_0_Convolutional_Interleaver
    (reset_n_0,
     enb_gated,
@@ -13907,6 +13945,7 @@ module top_Interleaver_0_0_Convolutional_Interleaver
         .Q(branch_val_reg[3]));
 endmodule
 
+(* ORIG_REF_NAME = "Interleaver" *) 
 module top_Interleaver_0_0_Interleaver
    (InterOut,
     clk,
@@ -13929,42 +13968,6 @@ module top_Interleaver_0_0_Interleaver
   wire reset_n;
 
   top_Interleaver_0_0_Con_Interleaver u_Con_Interleaver
-       (.DataIn(DataIn),
-        .InterOut(InterOut),
-        .Trigger(Trigger),
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .reset_n(reset_n));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "top_Interleaver_0_0,Interleaver,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "Interleaver,Vivado 2023.2" *) 
-(* NotValidForBitStream *)
-module top_Interleaver_0_0
-   (clk,
-    reset_n,
-    clk_enable,
-    Trigger,
-    DataIn,
-    ce_out,
-    InterOut);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
-  input clk_enable;
-  input Trigger;
-  input [7:0]DataIn;
-  output ce_out;
-  output [7:0]InterOut;
-
-  wire [7:0]DataIn;
-  wire [7:0]InterOut;
-  wire Trigger;
-  wire clk;
-  wire clk_enable;
-  wire reset_n;
-
-  assign ce_out = clk_enable;
-  top_Interleaver_0_0_Interleaver inst
        (.DataIn(DataIn),
         .InterOut(InterOut),
         .Trigger(Trigger),

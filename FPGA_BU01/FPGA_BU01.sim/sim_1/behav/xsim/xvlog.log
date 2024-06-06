@@ -16,12 +16,20 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVB
 INFO: [VRFC 10-311] analyzing module CLKdivide
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Detect_Rise_Positive
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Detect_Rise_Positive1
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Detect_Rise_Positive_block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Detect_Rise_Positive_block
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/HeaderProcess.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HeaderProcess
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/MATLAB_Function.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MATLAB_Function
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Positive
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive_block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Positive_block
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/Positive_block1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Positive_block1
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/RS_Gen.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RS_Gen
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/HDL_Gen/DVBS/myScrambler.v" into library xil_defaultlib
@@ -56,13 +64,9 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/F
 INFO: [VRFC 10-311] analyzing module top_dec2bin_0_3
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_Interleaver_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_ila_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.ip_user_files/bd/top/sim/top.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_wrapper
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.srcs/sim_1/new/top_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:31:53 2024
+-- Date        : Wed Jun  5 21:27:34 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top top_mult_gen_0_0 -prefix
---               top_mult_gen_0_0_ top_mult_gen_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0_stub.vhdl
 -- Design      : top_mult_gen_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7k325tffg900-2

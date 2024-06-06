@@ -1,0 +1,139 @@
+# do {top_tb_compile.do}
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/work".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim".
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "modelsim_lib/msim/xil_defaultlib".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:16 on Jun 06,2024
+# vlog -incr -mfcu -work xil_defaultlib ../../../../../HDL_Gen/DVBS/Convolutional_Encoder2.v ../../../../../HDL_Gen/DVBS/Con_Encoder.v ../../../../FPGA_BU01.srcs/sources_1/new/PolarityShift.v ../../../../FPGA_BU01.srcs/sources_1/new/terminal.v ../../../../../HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v ../../../../../HDL_Gen/DVBS/RS.v ../../../../../HDL_Gen/DVBS/RS_Enc.v ../../../../../HDL_Gen/DVBS/CLKdivide.v ../../../../../HDL_Gen/DVBS/Detect_Rise_Positive.v ../../../../../HDL_Gen/DVBS/Detect_Rise_Positive1.v ../../../../../HDL_Gen/DVBS/Detect_Rise_Positive_block.v ../../../../../HDL_Gen/DVBS/HeaderProcess.v ../../../../../HDL_Gen/DVBS/MATLAB_Function.v ../../../../../HDL_Gen/DVBS/Positive.v ../../../../../HDL_Gen/DVBS/Positive_block.v ../../../../../HDL_Gen/DVBS/Positive_block1.v ../../../../../HDL_Gen/DVBS/RS_Gen.v ../../../../../HDL_Gen/DVBS/myScrambler.v ../../../../../HDL_Gen/DVBS/sigSource.v ../../../../../HDL_Gen/DVBS/DataSource_Scrambler.v ../../../../../HDL_Gen/DVBS/dec2bin.v ../../../../../HDL_Gen/DVBS/Con_Interleaver.v ../../../../../HDL_Gen/DVBS/Convolutional_Interleaver.v ../../../../../HDL_Gen/DVBS/Interleaver.v 
+# -- Skipping module Convolutional_Encoder2
+# -- Skipping module Con_Encoder
+# -- Skipping module PolarityShift
+# -- Skipping module terminal
+# -- Skipping module Integer_Input_RS_Encoder_HDL_Optimized
+# -- Compiling module RS
+# -- Skipping module RS_Enc
+# -- Skipping module CLKdivide
+# -- Skipping module Detect_Rise_Positive
+# -- Skipping module Detect_Rise_Positive1
+# -- Skipping module Detect_Rise_Positive_block
+# -- Compiling module HeaderProcess
+# -- Skipping module MATLAB_Function
+# -- Skipping module Positive
+# -- Skipping module Positive_block
+# -- Skipping module Positive_block1
+# -- Compiling module RS_Gen
+# -- Skipping module myScrambler
+# -- Compiling module sigSource
+# -- Compiling module DataSource_Scrambler
+# -- Skipping module dec2bin
+# -- Skipping module Con_Interleaver
+# -- Skipping module Convolutional_Interleaver
+# -- Skipping module Interleaver
+# 
+# Top level modules:
+# 	Con_Encoder
+# 	PolarityShift
+# 	terminal
+# 	RS_Enc
+# 	DataSource_Scrambler
+# 	dec2bin
+# 	Interleaver
+# End time: 18:32:16 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:16 on Jun 06,2024
+# vcom -93 -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_util_ds_buf_0_0/util_ds_buf.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_util_ds_buf_0_0/sim/top_util_ds_buf_0_0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity util_ds_buf
+# -- Compiling architecture IMP of util_ds_buf
+# -- Compiling entity top_util_ds_buf_0_0
+# -- Compiling architecture top_util_ds_buf_0_0_arch of top_util_ds_buf_0_0
+# End time: 18:32:17 on Jun 06,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:17 on Jun 06,2024
+# vlog -incr -mfcu -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_Con_Encoder_0_0/sim/top_Con_Encoder_0_0.v 
+# -- Skipping module top_Con_Encoder_0_0
+# 
+# Top level modules:
+# 	top_Con_Encoder_0_0
+# End time: 18:32:17 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:17 on Jun 06,2024
+# vcom -93 -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_dds_compiler_0_0/sim/top_dds_compiler_0_0.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_fir_compiler_0_0/sim/top_fir_compiler_0_0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_dds_compiler_0_0
+# -- Compiling architecture top_dds_compiler_0_0_arch of top_dds_compiler_0_0
+# -- Compiling entity top_fir_compiler_0_0
+# -- Compiling architecture top_fir_compiler_0_0_arch of top_fir_compiler_0_0
+# End time: 18:32:17 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:18 on Jun 06,2024
+# vlog -incr -mfcu -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_PolarityShift_0_0/sim/top_PolarityShift_0_0.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_PolarityShift_1_0/sim/top_PolarityShift_1_0.v 
+# -- Skipping module top_PolarityShift_0_0
+# -- Skipping module top_PolarityShift_1_0
+# 
+# Top level modules:
+# 	top_PolarityShift_0_0
+# 	top_PolarityShift_1_0
+# End time: 18:32:18 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:18 on Jun 06,2024
+# vcom -93 -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_fir_compiler_0_2/sim/top_fir_compiler_0_2.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_dds_compiler_0_1/sim/top_dds_compiler_0_1.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_mult_gen_0_0/sim/top_mult_gen_0_0.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_mult_gen_0_1/sim/top_mult_gen_0_1.vhd ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_c_addsub_0_0/sim/top_c_addsub_0_0.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_fir_compiler_0_2
+# -- Compiling architecture top_fir_compiler_0_2_arch of top_fir_compiler_0_2
+# -- Compiling entity top_dds_compiler_0_1
+# -- Compiling architecture top_dds_compiler_0_1_arch of top_dds_compiler_0_1
+# -- Compiling entity top_mult_gen_0_0
+# -- Compiling architecture top_mult_gen_0_0_arch of top_mult_gen_0_0
+# -- Compiling entity top_mult_gen_0_1
+# -- Compiling architecture top_mult_gen_0_1_arch of top_mult_gen_0_1
+# -- Compiling entity top_c_addsub_0_0
+# -- Compiling architecture top_c_addsub_0_0_arch of top_c_addsub_0_0
+# End time: 18:32:18 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:18 on Jun 06,2024
+# vlog -incr -mfcu -work xil_defaultlib ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_terminal_0_0/sim/top_terminal_0_0.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_DataSource_Scrambler_0_1/sim/top_DataSource_Scrambler_0_1.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_dec2bin_0_3/sim/top_dec2bin_0_3.v ../../../../FPGA_BU01.ip_user_files/bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v ../../../../FPGA_BU01.gen/sources_1/bd/top/hdl/top_wrapper.v ../../../../FPGA_BU01.srcs/sim_1/new/top_tb.v 
+# -- Skipping module top_terminal_0_0
+# -- Skipping module top_xlconstant_0_0
+# -- Skipping module top_RS_Enc_0_0
+# -- Skipping module top_DataSource_Scrambler_0_1
+# -- Skipping module top_dec2bin_0_3
+# -- Skipping module top_Interleaver_0_0
+# -- Compiling module top
+# -- Skipping module top_wrapper
+# -- Skipping module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 18:32:18 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 18:32:18 on Jun 06,2024
+# vlog -work xil_defaultlib glbl.v 
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# End time: 18:32:18 on Jun 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

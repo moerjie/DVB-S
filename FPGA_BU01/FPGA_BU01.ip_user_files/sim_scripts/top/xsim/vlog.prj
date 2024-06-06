@@ -1,4 +1,4 @@
-verilog xil_defaultlib --include "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/e2ba/hdl/verilog" --include "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/a29c/hdl/verilog" --include "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/ae90/hdl/verilog" --include "../../../../FPGA_BU01.gen/sources_1/bd/top/ipshared/0e59/hdl/verilog" \
+verilog xil_defaultlib  \
 "../../../bd/top/ip/top_Con_Encoder_0_0/sim/top_Con_Encoder_0_0.v" \
 "../../../bd/top/ip/top_PolarityShift_0_0/sim/top_PolarityShift_0_0.v" \
 "../../../bd/top/ip/top_PolarityShift_1_0/sim/top_PolarityShift_1_0.v" \
@@ -8,7 +8,6 @@ verilog xil_defaultlib --include "../../../../FPGA_BU01.gen/sources_1/bd/top/ips
 "../../../bd/top/ip/top_DataSource_Scrambler_0_1/sim/top_DataSource_Scrambler_0_1.v" \
 "../../../bd/top/ip/top_dec2bin_0_3/sim/top_dec2bin_0_3.v" \
 "../../../bd/top/ip/top_Interleaver_0_0/sim/top_Interleaver_0_0.v" \
-"../../../bd/top/ip/top_ila_0_0/sim/top_ila_0_0.v" \
 "../../../bd/top/sim/top.v" \
 
 verilog xil_defaultlib "glbl.v"

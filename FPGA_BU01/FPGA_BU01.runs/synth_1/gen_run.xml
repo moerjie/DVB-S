@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1717230972" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_wrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1717672015" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_wrapper.dcp">
   <File Type="PA-TCL" Name="top_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_wrapper_reports.tcl"/>
@@ -74,6 +74,20 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../HDL_Gen/DVBS/Detect_Rise_Positive1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../HDL_Gen/DVBS/Detect_Rise_Positive_block.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../HDL_Gen/DVBS/HeaderProcess.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -89,6 +103,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../HDL_Gen/DVBS/Positive.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../HDL_Gen/DVBS/Positive_block.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../HDL_Gen/DVBS/Positive_block1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -296,5 +324,19 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="top_DataSource_Scrambler_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="top_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_util_ds_buf_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_dds_compiler_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_c_addsub_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_Con_Encoder_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_dds_compiler_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_PolarityShift_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_fir_compiler_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_PolarityShift_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_mult_gen_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_mult_gen_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_terminal_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_fir_compiler_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_dec2bin_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_Interleaver_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_RS_Enc_0_0"/>
 </GenRun>

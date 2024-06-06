@@ -32,7 +32,7 @@ module top_tb(
         CLK_IN_D_0_clk_n=1'b0;
         CLK_IN_D_0_clk_p=1'b1;
         rst_n_0=1'b0;
-        #100
+        #1000
         rst_n_0=1'b1;
 
     end

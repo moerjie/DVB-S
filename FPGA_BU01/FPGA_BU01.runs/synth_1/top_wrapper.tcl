@@ -70,7 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
+set_param simulator.modelsimInstallPath F:/FPGA/Modelsim2020/win64
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k325tffg900-2
@@ -81,7 +82,6 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.cache/wt [current_project]
 set_property parent.project_path F:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.cache/ip [current_project]
@@ -102,10 +102,6 @@ set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_0/top_mult_gen_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_mult_gen_0_1/top_mult_gen_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_c_addsub_0_0/top_c_addsub_0_0_ooc.xdc]
-set_property used_in_synthesis false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_ila_0_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_ila_0_0/top_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/top_ooc.xdc]
 
 OPTRACE "Adding files" END { }

@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:30:57 2024
+-- Date        : Thu Jun  6 15:09:48 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_Interleaver_0_0 -prefix
---               top_Interleaver_0_0_ top_Interleaver_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0_sim_netlist.vhdl
 -- Design      : top_Interleaver_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,6 +28,8 @@ entity top_Interleaver_0_0_Convolutional_Interleaver is
     Trigger_delayed : in STD_LOGIC;
     clk_enable : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_Interleaver_0_0_Convolutional_Interleaver : entity is "Convolutional_Interleaver";
 end top_Interleaver_0_0_Convolutional_Interleaver;
 
 architecture STRUCTURE of top_Interleaver_0_0_Convolutional_Interleaver is
@@ -17469,6 +17471,8 @@ entity top_Interleaver_0_0_Con_Interleaver is
     clk_enable : in STD_LOGIC;
     reset_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_Interleaver_0_0_Con_Interleaver : entity is "Con_Interleaver";
 end top_Interleaver_0_0_Con_Interleaver;
 
 architecture STRUCTURE of top_Interleaver_0_0_Con_Interleaver is
@@ -17589,6 +17593,8 @@ entity top_Interleaver_0_0_Interleaver is
     clk_enable : in STD_LOGIC;
     reset_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_Interleaver_0_0_Interleaver : entity is "Interleaver";
 end top_Interleaver_0_0_Interleaver;
 
 architecture STRUCTURE of top_Interleaver_0_0_Interleaver is

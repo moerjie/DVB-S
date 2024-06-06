@@ -2,36 +2,16 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 31 20:31:43 2024
+// Date        : Wed Jun  5 21:28:21 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_terminal_0_0 -prefix
-//               top_terminal_0_0_ top_terminal_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_terminal_0_0/top_terminal_0_0_sim_netlist.v
 // Design      : top_terminal_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
-
-module top_terminal_0_0_terminal
-   (OUT_port,
-    IN_port,
-    clk);
-  output OUT_port;
-  input [0:0]IN_port;
-  input clk;
-
-  wire [0:0]IN_port;
-  wire OUT_port;
-  wire clk;
-
-  FDRE OUT_port_reg
-       (.C(clk),
-        .CE(1'b1),
-        .D(IN_port),
-        .Q(OUT_port),
-        .R(1'b0));
-endmodule
 
 (* CHECK_LICENSE_TYPE = "top_terminal_0_0,terminal,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
 (* X_CORE_INFO = "terminal,Vivado 2023.2" *) 
@@ -52,6 +32,27 @@ module top_terminal_0_0
        (.IN_port(IN_port[0]),
         .OUT_port(OUT_port),
         .clk(clk));
+endmodule
+
+(* ORIG_REF_NAME = "terminal" *) 
+module top_terminal_0_0_terminal
+   (OUT_port,
+    IN_port,
+    clk);
+  output OUT_port;
+  input [0:0]IN_port;
+  input clk;
+
+  wire [0:0]IN_port;
+  wire OUT_port;
+  wire clk;
+
+  FDRE OUT_port_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(IN_port),
+        .Q(OUT_port),
+        .R(1'b0));
 endmodule
 `ifndef GLBL
 `define GLBL

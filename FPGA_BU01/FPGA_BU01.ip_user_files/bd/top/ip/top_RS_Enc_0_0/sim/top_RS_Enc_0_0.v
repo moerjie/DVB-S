@@ -58,7 +58,7 @@ module top_RS_Enc_0_0 (
   clk,
   reset_n,
   clk_enable,
-  EN,
+  Trigger,
   RS_In,
   RS_Start,
   RS_End,
@@ -74,7 +74,7 @@ input wire clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *)
 input wire reset_n;
 input wire clk_enable;
-input wire EN;
+input wire Trigger;
 input wire [7 : 0] RS_In;
 input wire RS_Start;
 input wire RS_End;
@@ -86,7 +86,7 @@ output wire [7 : 0] RS_Out;
     .clk(clk),
     .reset_n(reset_n),
     .clk_enable(clk_enable),
-    .EN(EN),
+    .Trigger(Trigger),
     .RS_In(RS_In),
     .RS_Start(RS_Start),
     .RS_End(RS_End),

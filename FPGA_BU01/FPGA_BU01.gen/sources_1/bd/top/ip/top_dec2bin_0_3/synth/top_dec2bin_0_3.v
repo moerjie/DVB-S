@@ -60,6 +60,7 @@ module top_dec2bin_0_3 (
   reset_n,
   clk_enable,
   DEC_IN,
+  BinGen,
   ce_out,
   BIN_OUT
 );
@@ -72,6 +73,7 @@ input wire clk;
 input wire reset_n;
 input wire clk_enable;
 input wire [7 : 0] DEC_IN;
+input wire BinGen;
 output wire ce_out;
 output wire BIN_OUT;
 
@@ -80,6 +82,7 @@ output wire BIN_OUT;
     .reset_n(reset_n),
     .clk_enable(clk_enable),
     .DEC_IN(DEC_IN),
+    .BinGen(BinGen),
     .ce_out(ce_out),
     .BIN_OUT(BIN_OUT)
   );

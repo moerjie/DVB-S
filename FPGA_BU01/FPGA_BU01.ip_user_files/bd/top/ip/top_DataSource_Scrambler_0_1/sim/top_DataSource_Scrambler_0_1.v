@@ -64,8 +64,7 @@ module top_DataSource_Scrambler_0_1 (
   simEN,
   ScramblerOut,
   BinEn,
-  DataGenEn,
-  TSout
+  DataGenEn
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *)
@@ -82,7 +81,6 @@ output wire simEN;
 output wire [7 : 0] ScramblerOut;
 output wire BinEn;
 output wire DataGenEn;
-output wire [7 : 0] TSout;
 
   DataSource_Scrambler inst (
     .clk(clk),
@@ -94,7 +92,6 @@ output wire [7 : 0] TSout;
     .simEN(simEN),
     .ScramblerOut(ScramblerOut),
     .BinEn(BinEn),
-    .DataGenEn(DataGenEn),
-    .TSout(TSout)
+    .DataGenEn(DataGenEn)
   );
 endmodule

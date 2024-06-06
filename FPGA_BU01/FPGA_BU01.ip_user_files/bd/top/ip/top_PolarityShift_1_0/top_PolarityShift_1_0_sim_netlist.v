@@ -2,51 +2,16 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 31 20:30:47 2024
+// Date        : Wed Jun  5 21:27:17 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_PolarityShift_1_0 -prefix
-//               top_PolarityShift_1_0_ top_PolarityShift_1_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_1_0/top_PolarityShift_1_0_sim_netlist.v
 // Design      : top_PolarityShift_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7k325tffg900-2
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
-
-module top_PolarityShift_1_0_PolarityShift
-   (m_axis_data_tdata,
-    singleIn,
-    clk,
-    rst_n);
-  output [1:0]m_axis_data_tdata;
-  input singleIn;
-  input clk;
-  input rst_n;
-
-  wire clk;
-  wire \dataTemp[7]_i_1_n_0 ;
-  wire [1:0]m_axis_data_tdata;
-  wire rst_n;
-  wire singleIn;
-
-  LUT1 #(
-    .INIT(2'h1)) 
-    \dataTemp[7]_i_1 
-       (.I0(rst_n),
-        .O(\dataTemp[7]_i_1_n_0 ));
-  FDCE \dataTemp_reg[0] 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(\dataTemp[7]_i_1_n_0 ),
-        .D(1'b1),
-        .Q(m_axis_data_tdata[0]));
-  FDCE \dataTemp_reg[7] 
-       (.C(clk),
-        .CE(1'b1),
-        .CLR(\dataTemp[7]_i_1_n_0 ),
-        .D(singleIn),
-        .Q(m_axis_data_tdata[1]));
-endmodule
 
 (* CHECK_LICENSE_TYPE = "top_PolarityShift_1_0,PolarityShift,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
 (* X_CORE_INFO = "PolarityShift,Vivado 2023.2" *) 
@@ -85,6 +50,42 @@ module top_PolarityShift_1_0
         .m_axis_data_tdata({\^m_axis_data_tdata [6],\^m_axis_data_tdata [0]}),
         .rst_n(rst_n),
         .singleIn(singleIn));
+endmodule
+
+(* ORIG_REF_NAME = "PolarityShift" *) 
+module top_PolarityShift_1_0_PolarityShift
+   (m_axis_data_tdata,
+    singleIn,
+    clk,
+    rst_n);
+  output [1:0]m_axis_data_tdata;
+  input singleIn;
+  input clk;
+  input rst_n;
+
+  wire clk;
+  wire \dataTemp[7]_i_1_n_0 ;
+  wire [1:0]m_axis_data_tdata;
+  wire rst_n;
+  wire singleIn;
+
+  LUT1 #(
+    .INIT(2'h1)) 
+    \dataTemp[7]_i_1 
+       (.I0(rst_n),
+        .O(\dataTemp[7]_i_1_n_0 ));
+  FDCE \dataTemp_reg[0] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(\dataTemp[7]_i_1_n_0 ),
+        .D(1'b1),
+        .Q(m_axis_data_tdata[0]));
+  FDCE \dataTemp_reg[7] 
+       (.C(clk),
+        .CE(1'b1),
+        .CLR(\dataTemp[7]_i_1_n_0 ),
+        .D(singleIn),
+        .Q(m_axis_data_tdata[1]));
 endmodule
 `ifndef GLBL
 `define GLBL

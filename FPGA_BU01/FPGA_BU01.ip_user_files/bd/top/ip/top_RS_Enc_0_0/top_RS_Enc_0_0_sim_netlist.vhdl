@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:30:52 2024
+-- Date        : Thu Jun  6 18:58:33 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_RS_Enc_0_0 -prefix
---               top_RS_Enc_0_0_ top_RS_Enc_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_RS_Enc_0_0/top_RS_Enc_0_0_sim_netlist.vhdl
 -- Design      : top_RS_Enc_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -42,10 +42,12 @@ entity top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized is
     \parityreg2_reg[0]_0\ : in STD_LOGIC;
     RS_End : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
+    Trigger : in STD_LOGIC;
     Trigger_delayed : in STD_LOGIC;
-    EN : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized : entity is "Integer_Input_RS_Encoder_HDL_Optimized";
 end top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized;
 
 architecture STRUCTURE of top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized is
@@ -1239,8 +1241,8 @@ begin
       INIT => X"40FF4000"
     )
         port map (
-      I0 => EN,
-      I1 => Trigger_delayed,
+      I0 => Trigger_delayed,
+      I1 => Trigger,
       I2 => clk_enable,
       I3 => sendparity,
       I4 => \Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_3_n_0\,
@@ -1276,11 +1278,11 @@ begin
       INIT => X"4440000000000000"
     )
         port map (
-      I0 => EN,
+      I0 => Trigger_delayed,
       I1 => RS_VLD,
       I2 => RS_Start,
       I3 => inpacket,
-      I4 => Trigger_delayed,
+      I4 => Trigger,
       I5 => clk_enable,
       O => \Integer_Input_RS_Encoder_HDL_Optimized_out_1[7]_i_3_n_0\
     );
@@ -1471,8 +1473,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(0),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(0),
       O => RS_Out(0)
     );
@@ -1482,8 +1484,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(1),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(1),
       O => RS_Out(1)
     );
@@ -1493,8 +1495,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(2),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(2),
       O => RS_Out(2)
     );
@@ -1504,8 +1506,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(3),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(3),
       O => RS_Out(3)
     );
@@ -1515,8 +1517,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(4),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(4),
       O => RS_Out(4)
     );
@@ -1526,8 +1528,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(5),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(5),
       O => RS_Out(5)
     );
@@ -1537,8 +1539,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(6),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(6),
       O => RS_Out(6)
     );
@@ -1548,8 +1550,8 @@ begin
     )
         port map (
       I0 => Integer_Input_RS_Encoder_HDL_Optimized_out_1(7),
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => Q(7),
       O => RS_Out(7)
     );
@@ -2464,9 +2466,9 @@ gftablereg16_reg_i_1: unisim.vcomponents.LUT4
       INIT => X"4000"
     )
         port map (
-      I0 => EN,
+      I0 => Trigger_delayed,
       I1 => RS_VLD,
-      I2 => Trigger_delayed,
+      I2 => Trigger,
       I3 => clk_enable,
       O => gftablereg160
     );
@@ -3595,8 +3597,8 @@ inpacket_i_1: unisim.vcomponents.LUT3
       INIT => X"40"
     )
         port map (
-      I0 => EN,
-      I1 => Trigger_delayed,
+      I0 => Trigger_delayed,
+      I1 => Trigger,
       I2 => clk_enable,
       O => \^e\(0)
     );
@@ -3660,8 +3662,8 @@ inpacket_reg: unisim.vcomponents.FDCE
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
-      I2 => EN,
+      I1 => Trigger,
+      I2 => Trigger_delayed,
       I3 => sendparity,
       O => paritycount_10
     );
@@ -4751,9 +4753,9 @@ inpacket_reg: unisim.vcomponents.FDCE
     )
         port map (
       I0 => endin_valid_dly,
-      I1 => EN,
+      I1 => Trigger_delayed,
       I2 => RS_VLD,
-      I3 => Trigger_delayed,
+      I3 => Trigger,
       I4 => clk_enable,
       O => parityreg16
     );
@@ -6170,8 +6172,8 @@ entity top_RS_Enc_0_0_RS is
     clk : in STD_LOGIC;
     reset_n : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
+    Trigger : in STD_LOGIC;
     RS_VLD : in STD_LOGIC;
-    EN : in STD_LOGIC;
     gftablereg2_reg : in STD_LOGIC;
     \parityreg15_reg[0]\ : in STD_LOGIC;
     \parityreg14_reg[0]\ : in STD_LOGIC;
@@ -6191,6 +6193,8 @@ entity top_RS_Enc_0_0_RS is
     RS_Start : in STD_LOGIC;
     RS_End : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_RS_Enc_0_0_RS : entity is "RS";
 end top_RS_Enc_0_0_RS;
 
 architecture STRUCTURE of top_RS_Enc_0_0_RS is
@@ -6275,17 +6279,17 @@ Trigger_delayed_i_1: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => EN,
+      I0 => Trigger,
       I1 => clk_enable,
       I2 => Trigger_delayed,
       O => Trigger_delayed_i_1_n_0
     );
-Trigger_delayed_reg: unisim.vcomponents.FDCE
+Trigger_delayed_reg: unisim.vcomponents.FDPE
      port map (
       C => clk,
       CE => '1',
-      CLR => \^reset_n_0\,
       D => Trigger_delayed_i_1_n_0,
+      PRE => \^reset_n_0\,
       Q => Trigger_delayed
     );
 gftablereg16_reg_i_11: unisim.vcomponents.LUT5
@@ -6294,9 +6298,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => gftablereg2_reg,
       O => clk_enable_0
     );
@@ -6306,9 +6310,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg10_reg[0]\,
       O => clk_enable_6
     );
@@ -6318,9 +6322,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg11_reg[0]\,
       O => clk_enable_5
     );
@@ -6330,9 +6334,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg12_reg[0]\,
       O => clk_enable_4
     );
@@ -6342,9 +6346,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg13_reg[0]\,
       O => clk_enable_3
     );
@@ -6354,9 +6358,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg14_reg[0]\,
       O => clk_enable_2
     );
@@ -6366,9 +6370,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg15_reg[0]\,
       O => clk_enable_1
     );
@@ -6378,9 +6382,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg2_reg[0]\,
       O => clk_enable_14
     );
@@ -6390,9 +6394,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg3_reg[0]\,
       O => clk_enable_13
     );
@@ -6402,9 +6406,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg4_reg[0]\,
       O => clk_enable_12
     );
@@ -6414,9 +6418,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg5_reg[0]\,
       O => clk_enable_11
     );
@@ -6426,9 +6430,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg6_reg[0]\,
       O => clk_enable_10
     );
@@ -6438,9 +6442,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg7_reg[0]\,
       O => clk_enable_9
     );
@@ -6450,9 +6454,9 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg8_reg[0]\,
       O => clk_enable_8
     );
@@ -6462,22 +6466,22 @@ gftablereg16_reg_i_11: unisim.vcomponents.LUT5
     )
         port map (
       I0 => clk_enable,
-      I1 => Trigger_delayed,
+      I1 => Trigger,
       I2 => RS_VLD,
-      I3 => EN,
+      I3 => Trigger_delayed,
       I4 => \parityreg9_reg[0]\,
       O => clk_enable_7
     );
 u_Integer_Input_RS_Encoder_HDL_Optimized: entity work.top_RS_Enc_0_0_Integer_Input_RS_Encoder_HDL_Optimized
      port map (
       E(0) => enb_gated,
-      EN => EN,
       Q(7 downto 0) => Integer_Input_RS_Encoder_HDL_Optimized_out1_last_value(7 downto 0),
       RS_End => RS_End,
       RS_In(7 downto 0) => RS_In(7 downto 0),
       RS_Out(7 downto 0) => \^rs_out\(7 downto 0),
       RS_Start => RS_Start,
       RS_VLD => RS_VLD,
+      Trigger => Trigger,
       Trigger_delayed => Trigger_delayed,
       clk => clk,
       clk_enable => clk_enable,
@@ -6526,8 +6530,8 @@ entity top_RS_Enc_0_0_RS_Enc is
     clk : in STD_LOGIC;
     reset_n : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
+    Trigger : in STD_LOGIC;
     RS_VLD : in STD_LOGIC;
-    EN : in STD_LOGIC;
     gftablereg2_reg : in STD_LOGIC;
     \parityreg15_reg[0]\ : in STD_LOGIC;
     \parityreg14_reg[0]\ : in STD_LOGIC;
@@ -6547,18 +6551,20 @@ entity top_RS_Enc_0_0_RS_Enc is
     RS_Start : in STD_LOGIC;
     RS_End : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_RS_Enc_0_0_RS_Enc : entity is "RS_Enc";
 end top_RS_Enc_0_0_RS_Enc;
 
 architecture STRUCTURE of top_RS_Enc_0_0_RS_Enc is
 begin
 u_RS: entity work.top_RS_Enc_0_0_RS
      port map (
-      EN => EN,
       RS_End => RS_End,
       RS_In(7 downto 0) => RS_In(7 downto 0),
       RS_Out(7 downto 0) => RS_Out(7 downto 0),
       RS_Start => RS_Start,
       RS_VLD => RS_VLD,
+      Trigger => Trigger,
       clk => clk,
       clk_enable => clk_enable,
       clk_enable_0 => clk_enable_0,
@@ -6604,7 +6610,7 @@ entity top_RS_Enc_0_0 is
     clk : in STD_LOGIC;
     reset_n : in STD_LOGIC;
     clk_enable : in STD_LOGIC;
-    EN : in STD_LOGIC;
+    Trigger : in STD_LOGIC;
     RS_In : in STD_LOGIC_VECTOR ( 7 downto 0 );
     RS_Start : in STD_LOGIC;
     RS_End : in STD_LOGIC;
@@ -6676,12 +6682,12 @@ gftablereg16_reg_i_10: unisim.vcomponents.FDCE
     );
 inst: entity work.top_RS_Enc_0_0_RS_Enc
      port map (
-      EN => EN,
       RS_End => RS_End,
       RS_In(7 downto 0) => RS_In(7 downto 0),
       RS_Out(7 downto 0) => RS_Out(7 downto 0),
       RS_Start => RS_Start,
       RS_VLD => RS_VLD,
+      Trigger => Trigger,
       clk => clk,
       clk_enable => \^clk_enable\,
       clk_enable_0 => inst_n_1,

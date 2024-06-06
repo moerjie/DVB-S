@@ -40,6 +40,7 @@
         "reset_n": [ { "direction": "in" } ],
         "clk_enable": [ { "direction": "in" } ],
         "In1": [ { "direction": "in" } ],
+        "VldIn": [ { "direction": "in" } ],
         "ce_out": [ { "direction": "out" } ],
         "ConvOut_0": [ { "direction": "out" } ],
         "ConvOut_1": [ { "direction": "out" } ]

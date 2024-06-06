@@ -2,11 +2,11 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Fri May 31 20:30:47 2024
+-- Date        : Wed Jun  5 21:27:16 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top top_PolarityShift_0_0 -prefix
---               top_PolarityShift_0_0_ top_PolarityShift_1_0_sim_netlist.vhdl
--- Design      : top_PolarityShift_1_0
+-- Command     : write_vhdl -force -mode funcsim
+--               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_PolarityShift_0_0/top_PolarityShift_0_0_sim_netlist.vhdl
+-- Design      : top_PolarityShift_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7k325tffg900-2
@@ -22,6 +22,8 @@ entity top_PolarityShift_0_0_PolarityShift is
     clk : in STD_LOGIC;
     rst_n : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of top_PolarityShift_0_0_PolarityShift : entity is "PolarityShift";
 end top_PolarityShift_0_0_PolarityShift;
 
 architecture STRUCTURE of top_PolarityShift_0_0_PolarityShift is
@@ -67,7 +69,7 @@ entity top_PolarityShift_0_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of top_PolarityShift_0_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of top_PolarityShift_0_0 : entity is "top_PolarityShift_1_0,PolarityShift,{}";
+  attribute CHECK_LICENSE_TYPE of top_PolarityShift_0_0 : entity is "top_PolarityShift_0_0,PolarityShift,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of top_PolarityShift_0_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;

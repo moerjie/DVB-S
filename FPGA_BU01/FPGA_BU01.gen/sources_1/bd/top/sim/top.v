@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-//Date        : Sat Jun  1 16:30:19 2024
+//Date        : Thu Jun  6 18:57:43 2024
 //Host        : MOERJIE_PC running 64-bit major release  (build 9200)
 //Command     : generate_target top.bd
 //Design      : top
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=18,numReposBlks=18,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
+(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
 module top
    (CLK_IN_D_0_clk_n,
     CLK_IN_D_0_clk_p,
@@ -25,9 +25,9 @@ module top
   wire [0:0]CLK_IN_D_0_1_CLK_P;
   wire Con_Encoder_0_ConvOut_0;
   wire Con_Encoder_0_ConvOut_1;
+  wire DataSource_Scrambler_0_BinEn;
   wire DataSource_Scrambler_0_DataGenEn;
   wire [7:0]DataSource_Scrambler_0_ScramblerOut;
-  wire [7:0]DataSource_Scrambler_0_TSout;
   wire DataSource_Scrambler_0_ce_out;
   wire DataSource_Scrambler_0_simEN;
   wire DataSource_Scrambler_0_simEnd;
@@ -62,13 +62,14 @@ module top
        (.ConvOut_0(Con_Encoder_0_ConvOut_0),
         .ConvOut_1(Con_Encoder_0_ConvOut_1),
         .In1(dec2bin_0_BIN_OUT),
+        .VldIn(dec2bin_0_ce_out),
         .clk(util_ds_buf_0_IBUF_OUT),
         .clk_enable(dec2bin_0_ce_out),
         .reset_n(rst_n_0_1));
   top_DataSource_Scrambler_0_1 DataSource_Scrambler_0
-       (.DataGenEn(DataSource_Scrambler_0_DataGenEn),
+       (.BinEn(DataSource_Scrambler_0_BinEn),
+        .DataGenEn(DataSource_Scrambler_0_DataGenEn),
         .ScramblerOut(DataSource_Scrambler_0_ScramblerOut),
-        .TSout(DataSource_Scrambler_0_TSout),
         .ce_out(DataSource_Scrambler_0_ce_out),
         .clk(util_ds_buf_0_IBUF_OUT),
         .clk_enable(xlconstant_0_dout),
@@ -97,12 +98,12 @@ module top
         .rst_n(rst_n_0_1),
         .singleIn(Con_Encoder_0_ConvOut_1));
   top_RS_Enc_0_0 RS_Enc_0
-       (.EN(DataSource_Scrambler_0_DataGenEn),
-        .RS_End(DataSource_Scrambler_0_simEnd),
+       (.RS_End(DataSource_Scrambler_0_simEnd),
         .RS_In(DataSource_Scrambler_0_ScramblerOut),
         .RS_Out(RS_Enc_0_RS_Out),
         .RS_Start(DataSource_Scrambler_0_simStart),
         .RS_VLD(DataSource_Scrambler_0_simEN),
+        .Trigger(DataSource_Scrambler_0_DataGenEn),
         .ce_out(RS_Enc_0_ce_out),
         .clk(util_ds_buf_0_IBUF_OUT),
         .clk_enable(DataSource_Scrambler_0_ce_out),
@@ -120,6 +121,7 @@ module top
         .m_axis_data_tdata(dds_compiler_1_m_axis_data_tdata));
   top_dec2bin_0_3 dec2bin_0
        (.BIN_OUT(dec2bin_0_BIN_OUT),
+        .BinGen(DataSource_Scrambler_0_BinEn),
         .DEC_IN(Interleaver_0_InterOut),
         .ce_out(dec2bin_0_ce_out),
         .clk(util_ds_buf_0_IBUF_OUT),
@@ -135,13 +137,6 @@ module top
         .m_axis_data_tdata(fir_compiler_1_m_axis_data_tdata),
         .s_axis_data_tdata(PolarityShift_1_m_axis_data_TDATA),
         .s_axis_data_tvalid(PolarityShift_1_m_axis_data_TVALID));
-  top_ila_0_0 ila_0
-       (.clk(util_ds_buf_0_IBUF_OUT),
-        .probe0(DataSource_Scrambler_0_TSout),
-        .probe1(DataSource_Scrambler_0_ScramblerOut),
-        .probe2(RS_Enc_0_RS_Out),
-        .probe3(Interleaver_0_InterOut),
-        .probe4(dec2bin_0_BIN_OUT));
   top_mult_gen_0_0 mult_gen_0
        (.A(dds_compiler_0_m_axis_data_tdata),
         .B(fir_compiler_0_m_axis_data_tdata),

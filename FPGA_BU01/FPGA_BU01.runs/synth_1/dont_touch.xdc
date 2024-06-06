@@ -57,7 +57,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_dec2bin
 # IP: bd/top/ip/top_Interleaver_0_0/top_Interleaver_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_Interleaver_0_0 || ORIG_REF_NAME==top_Interleaver_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_ila_0_0/top_ila_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_ila_0_0 || ORIG_REF_NAME==top_ila_0_0} -quiet] -quiet
-
 # XDC: f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/top_ooc.xdc
