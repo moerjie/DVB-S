@@ -1,0 +1,251 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x225E4990225E4990",
+      "device": "xc7k325tffg900-2",
+      "gen_directory": "../../../../RStest.gen/sources_1/bd/top",
+      "name": "top",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "DataSource_Scrambler_0": "",
+      "sim_clk_gen_0": "",
+      "xlconstant_0": "",
+      "RS_Enc_0": ""
+    },
+    "ports": {
+      "RS_Out_0": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "ce_out_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "DataSource_Scrambler_0": {
+        "vlnv": "xilinx.com:module_ref:DataSource_Scrambler:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_DataSource_Scrambler_0_0",
+        "xci_path": "ip\\top_DataSource_Scrambler_0_0\\top_DataSource_Scrambler_0_0.xci",
+        "inst_hier_path": "DataSource_Scrambler_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DataSource_Scrambler",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "200000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_sim_clk_gen_0_0_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "simStart": {
+            "direction": "O"
+          },
+          "simEnd": {
+            "direction": "O"
+          },
+          "simEN": {
+            "direction": "O"
+          },
+          "ScramblerOut": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "BinEn": {
+            "direction": "O"
+          },
+          "DataGenEn": {
+            "direction": "O"
+          }
+        }
+      },
+      "sim_clk_gen_0": {
+        "vlnv": "xilinx.com:ip:sim_clk_gen:1.0",
+        "ip_revision": "3",
+        "xci_name": "top_sim_clk_gen_0_0",
+        "xci_path": "ip\\top_sim_clk_gen_0_0\\top_sim_clk_gen_0_0.xci",
+        "inst_hier_path": "sim_clk_gen_0",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "200000000"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "ip_revision": "8",
+        "xci_name": "top_xlconstant_0_0",
+        "xci_path": "ip\\top_xlconstant_0_0\\top_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      },
+      "RS_Enc_0": {
+        "vlnv": "xilinx.com:module_ref:RS_Enc:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_RS_Enc_0_0",
+        "xci_path": "ip\\top_RS_Enc_0_0\\top_RS_Enc_0_0.xci",
+        "inst_hier_path": "RS_Enc_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RS_Enc",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "200000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_sim_clk_gen_0_0_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "clk_enable": {
+            "direction": "I"
+          },
+          "Trigger": {
+            "direction": "I"
+          },
+          "RS_In": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "RS_Start": {
+            "direction": "I"
+          },
+          "RS_End": {
+            "direction": "I"
+          },
+          "RS_VLD": {
+            "direction": "I"
+          },
+          "ce_out": {
+            "direction": "O"
+          },
+          "RS_Out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "DataSource_Scrambler_0_DataGenEn": {
+        "ports": [
+          "DataSource_Scrambler_0/DataGenEn",
+          "RS_Enc_0/Trigger"
+        ]
+      },
+      "DataSource_Scrambler_0_ScramblerOut": {
+        "ports": [
+          "DataSource_Scrambler_0/ScramblerOut",
+          "RS_Enc_0/RS_In"
+        ]
+      },
+      "DataSource_Scrambler_0_ce_out": {
+        "ports": [
+          "DataSource_Scrambler_0/ce_out",
+          "RS_Enc_0/clk_enable"
+        ]
+      },
+      "DataSource_Scrambler_0_simEN": {
+        "ports": [
+          "DataSource_Scrambler_0/simEN",
+          "RS_Enc_0/RS_VLD"
+        ]
+      },
+      "DataSource_Scrambler_0_simEnd": {
+        "ports": [
+          "DataSource_Scrambler_0/simEnd",
+          "RS_Enc_0/RS_End"
+        ]
+      },
+      "DataSource_Scrambler_0_simStart": {
+        "ports": [
+          "DataSource_Scrambler_0/simStart",
+          "RS_Enc_0/RS_Start"
+        ]
+      },
+      "RS_Enc_0_RS_Out": {
+        "ports": [
+          "RS_Enc_0/RS_Out",
+          "RS_Out_0"
+        ]
+      },
+      "RS_Enc_0_ce_out": {
+        "ports": [
+          "RS_Enc_0/ce_out",
+          "ce_out_0"
+        ]
+      },
+      "sim_clk_gen_0_clk": {
+        "ports": [
+          "sim_clk_gen_0/clk",
+          "RS_Enc_0/clk",
+          "DataSource_Scrambler_0/clk"
+        ]
+      },
+      "sim_clk_gen_0_sync_rst": {
+        "ports": [
+          "sim_clk_gen_0/sync_rst",
+          "RS_Enc_0/reset_n",
+          "DataSource_Scrambler_0/reset_n"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "DataSource_Scrambler_0/clk_enable"
+        ]
+      }
+    }
+  }
+}

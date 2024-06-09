@@ -5,19 +5,18 @@
    <db_ref_list>
       <db_ref path="top_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="glbl" />
             <top_module name="top_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="118.880000 us"></ZoomStartTime>
-      <ZoomEndTime time="242.380001 us"></ZoomEndTime>
-      <Cursor1Time time="205.875000 us"></Cursor1Time>
+      <ZoomStartTime time="25,852.834 ns"></ZoomStartTime>
+      <ZoomEndTime time="26,527.835 ns"></ZoomEndTime>
+      <Cursor1Time time="26,160.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
    <wvobject fp_name="group27" type="group">
@@ -80,11 +79,6 @@
    <wvobject fp_name="group18" type="group">
       <obj_property name="label">scramble</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/TSout" type="array">
-         <obj_property name="ElementShortName">TSout[7:0]</obj_property>
-         <obj_property name="ObjectShortName">TSout[7:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/inst/ScramblerOut" type="array">
          <obj_property name="ElementShortName">ScramblerOut[7:0]</obj_property>
          <obj_property name="ObjectShortName">ScramblerOut[7:0]</obj_property>
@@ -92,14 +86,6 @@
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/clk_enable" type="logic">
          <obj_property name="ElementShortName">clk_enable</obj_property>
          <obj_property name="ObjectShortName">clk_enable</obj_property>
-      </wvobject>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/BinEn" type="logic">
-         <obj_property name="ElementShortName">BinEn</obj_property>
-         <obj_property name="ObjectShortName">BinEn</obj_property>
-      </wvobject>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/DataGenEn" type="logic">
-         <obj_property name="ElementShortName">DataGenEn</obj_property>
-         <obj_property name="ObjectShortName">DataGenEn</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/clk_enable" type="logic">
@@ -113,7 +99,6 @@
    <wvobject fp_name="group33" type="group">
       <obj_property name="label">RS</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_In" type="array">
          <obj_property name="ElementShortName">RS_In[7:0]</obj_property>
          <obj_property name="ObjectShortName">RS_In[7:0]</obj_property>
@@ -130,9 +115,17 @@
          <obj_property name="ElementShortName">simEnd</obj_property>
          <obj_property name="ObjectShortName">simEnd</obj_property>
       </wvobject>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/simEN" type="logic">
-         <obj_property name="ElementShortName">simEN</obj_property>
-         <obj_property name="ObjectShortName">simEN</obj_property>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_Start" type="logic">
+         <obj_property name="ElementShortName">RS_Start</obj_property>
+         <obj_property name="ObjectShortName">RS_Start</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_End" type="logic">
+         <obj_property name="ElementShortName">RS_End</obj_property>
+         <obj_property name="ObjectShortName">RS_End</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_VLD" type="logic">
+         <obj_property name="ElementShortName">RS_VLD</obj_property>
+         <obj_property name="ObjectShortName">RS_VLD</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group34" type="group">
@@ -147,15 +140,22 @@
    <wvobject fp_name="group35" type="group">
       <obj_property name="label">Dec2Bin</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/BIN_OUT" type="logic">
-         <obj_property name="ElementShortName">BIN_OUT</obj_property>
-         <obj_property name="ObjectShortName">BIN_OUT</obj_property>
-      </wvobject>
       <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/DEC_IN" type="array">
          <obj_property name="ElementShortName">DEC_IN[7:0]</obj_property>
          <obj_property name="ObjectShortName">DEC_IN[7:0]</obj_property>
          <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/DataGenEn" type="logic">
+         <obj_property name="ElementShortName">DataGenEn</obj_property>
+         <obj_property name="ObjectShortName">DataGenEn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/dec2bin_0/BIN_OUT" type="logic">
+         <obj_property name="ElementShortName">BIN_OUT</obj_property>
+         <obj_property name="ObjectShortName">BIN_OUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_tb/u_top_wrapper/top_i/DataSource_Scrambler_0/BinEn" type="logic">
+         <obj_property name="ElementShortName">BinEn</obj_property>
+         <obj_property name="ObjectShortName">BinEn</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

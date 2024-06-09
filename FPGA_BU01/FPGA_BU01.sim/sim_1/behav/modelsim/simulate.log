@@ -1,0 +1,293 @@
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do {top_tb_simulate.do}
+# vsim -voptargs=""+acc"" -L xil_defaultlib -L xbip_utils_v3_0_11 -L axi_utils_v2_0_7 -L xbip_pipe_v3_0_7 -L xbip_bram18k_v3_0_7 -L mult_gen_v12_0_19 -L xbip_dsp48_wrapper_v3_0_5 -L xbip_dsp48_addsub_v3_0_7 -L xbip_dsp48_multadd_v3_0_7 -L dds_compiler_v6_0_23 -L fir_compiler_v7_2_20 -L c_reg_fd_v12_0_7 -L xbip_addsub_v3_0_7 -L c_addsub_v12_0_16 -L xlconstant_v1_1_8 -L unisims_ver -L unimacro_ver -L secureip -L xpm -lib xil_defaultlib xil_defaultlib.top_tb xil_defaultlib.glbl 
+# Start time: 22:03:15 on Jun 08,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v(61): (vopt-2685) [TFMPC] - Too few port connections for 'Con_Encoder_0'.  Expected 8, found 7.
+# ** Warning: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v(61): (vopt-2718) [TFMPC] - Missing connection for port 'ce_out'.
+# ** Warning: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v(69): (vopt-2685) [TFMPC] - Too few port connections for 'DataSource_Scrambler_0'.  Expected 11, found 10.
+# ** Warning: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v(69): (vopt-2718) [TFMPC] - Missing connection for port 'TSout'.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 2 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 2 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 2 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 2 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 1 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 2 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\mult_gen_v12_0\hdl\mult_gen_v12_0_vh_rfs.vhd(87): (vopt-1152) Index value 3 is out of index range -1 to 0 of mult_gen_v12_0_19.dsp(xilinx).ZD_ARRAY.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\dds_compiler_v6_0\hdl\dds_compiler_v6_0_vh_rfs.vhd(87): (vopt-1167) Index value 29 (of type ieee.std_logic_1164.STD_LOGIC_VECTOR) is out of range 12 downto 0.
+# ** Warning: F:\FPGA\Vivado23\Vivado\2023.2\data\ip\xilinx\dds_compiler_v6_0\hdl\dds_compiler_v6_0_vh_rfs.vhd(87): (vopt-1167) Index value 29 (of type ieee.std_logic_1164.STD_LOGIC_VECTOR) is out of range 12 downto 0.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=25.
+# Loading work.top_tb(fast)
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_Con_Encoder_0_0(fast)
+# Loading work.Con_Encoder(fast)
+# Loading work.Convolutional_Encoder2(fast)
+# Loading work.top_DataSource_Scrambler_0_1(fast)
+# Loading work.DataSource_Scrambler(fast)
+# Loading work.CLKdivide(fast)
+# Loading work.Detect_Rise_Positive(fast)
+# Loading work.Positive(fast)
+# Loading work.RS_Ctrl(fast)
+# Loading work.sigSource(fast)
+# Loading work.HeaderProcess(fast)
+# Loading work.myScrambler(fast)
+# Loading work.top_Interleaver_0_0(fast)
+# Loading work.Interleaver(fast)
+# Loading work.Con_Interleaver(fast)
+# Loading work.Convolutional_Interleaver(fast)
+# Loading work.top_PolarityShift_0_0(fast)
+# Loading work.PolarityShift(fast)
+# Loading work.top_PolarityShift_1_0(fast)
+# Loading work.top_RS_Enc_0_0(fast)
+# Loading work.RS_Enc(fast)
+# Loading work.RS(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_dec2bin_0_3(fast)
+# Loading work.dec2bin(fast)
+# Loading work.top_terminal_0_0(fast)
+# Loading work.terminal(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_8.xlconstant_v1_1_8_xlconstant(fast)
+# Loading work.glbl(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_c_addsub_0_0(top_c_addsub_0_0_arch)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading unisim.vpkg(body)
+# Loading unisim.dsp48e1(dsp48e1_v)#1
+# Loading work.top_dds_compiler_0_0(top_dds_compiler_0_0_arch)#1
+# Loading ieee.math_real(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.top_dds_compiler_0_1(top_dds_compiler_0_1_arch)#1
+# Loading work.top_fir_compiler_0_0(top_fir_compiler_0_0_arch)#1
+# Loading ieee.std_logic_textio(body)
+# Loading unisim.dsp48e1(dsp48e1_v)#2
+# Loading work.top_fir_compiler_0_2(top_fir_compiler_0_2_arch)#1
+# Loading work.top_mult_gen_0_0(top_mult_gen_0_0_arch)#1
+# Loading work.top_mult_gen_0_1(top_mult_gen_0_1_arch)#1
+# Loading work.top_util_ds_buf_0_0(top_util_ds_buf_0_0_arch)#1
+# Loading work.util_ds_buf(imp)#1
+# Loading unisim.ibufds(ibufds_v)#1
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/dds_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 116
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/dds_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 119
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 's_axis_data_tready'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 130
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 130
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 's_axis_data_tready'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 135
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 135
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# 1
+# 1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_In
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_Start
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_End
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_VLD
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/ce_out
+add wave -position end  sim:/top_tb/u_top_wrapper/top_i/RS_Enc_0/RS_Out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=25.
+# Loading work.top_tb(fast)
+# Loading work.top_wrapper(fast)
+# Loading work.top(fast)
+# Loading work.top_Con_Encoder_0_0(fast)
+# Loading work.Con_Encoder(fast)
+# Loading work.Convolutional_Encoder2(fast)
+# Loading work.top_DataSource_Scrambler_0_1(fast)
+# Loading work.DataSource_Scrambler(fast)
+# Loading work.CLKdivide(fast)
+# Loading work.Detect_Rise_Positive(fast)
+# Loading work.Positive(fast)
+# Loading work.RS_Ctrl(fast)
+# Loading work.sigSource(fast)
+# Loading work.HeaderProcess(fast)
+# Loading work.myScrambler(fast)
+# Loading work.top_Interleaver_0_0(fast)
+# Loading work.Interleaver(fast)
+# Loading work.Con_Interleaver(fast)
+# Loading work.Convolutional_Interleaver(fast)
+# Loading work.top_PolarityShift_0_0(fast)
+# Loading work.PolarityShift(fast)
+# Loading work.top_PolarityShift_1_0(fast)
+# Loading work.top_RS_Enc_0_0(fast)
+# Loading work.RS_Enc(fast)
+# Loading work.RS(fast)
+# Loading work.Integer_Input_RS_Encoder_HDL_Optimized(fast)
+# Loading work.top_dec2bin_0_3(fast)
+# Loading work.dec2bin(fast)
+# Loading work.top_terminal_0_0(fast)
+# Loading work.terminal(fast)
+# Loading work.top_xlconstant_0_0(fast)
+# Loading xlconstant_v1_1_8.xlconstant_v1_1_8_xlconstant(fast)
+# Loading work.glbl(fast)
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/dds_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 116
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/dds_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 119
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 's_axis_data_tready'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 130
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_0 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 130
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 's_axis_data_tready'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 135
+# ** Warning: (vsim-8822) [TFMPC] - Missing Verilog connection for formal VHDL port 'm_axis_data_tvalid'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/u_top_wrapper/top_i/fir_compiler_1 File: ../../../../FPGA_BU01.ip_user_files/bd/top/sim/top.v Line: 135
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_0/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /top_tb/u_top_wrapper/top_i/dds_compiler_1/U0/<protected>/<protected>/<protected>(0) has no driver.
+# This port will contribute value (U) to the signal network.
+run

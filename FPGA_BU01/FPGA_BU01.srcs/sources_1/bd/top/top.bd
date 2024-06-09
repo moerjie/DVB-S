@@ -223,10 +223,10 @@
             "value": "Systolic_Multiply_Accumulate"
           },
           "Output_Rounding_Mode": {
-            "value": "Truncate_LSBs"
+            "value": "Full_Precision"
           },
           "Output_Width": {
-            "value": "20"
+            "value": "21"
           },
           "Quantization": {
             "value": "Integer_Coefficients"
@@ -489,10 +489,10 @@
             "value": "Systolic_Multiply_Accumulate"
           },
           "Output_Rounding_Mode": {
-            "value": "Truncate_LSBs"
+            "value": "Full_Precision"
           },
           "Output_Width": {
-            "value": "20"
+            "value": "21"
           },
           "Quantization": {
             "value": "Integer_Coefficients"
@@ -807,6 +807,11 @@
           },
           "DataGenEn": {
             "direction": "O"
+          },
+          "TSout": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
           }
         }
       },
@@ -1074,8 +1079,8 @@
           "Interleaver_0/reset_n",
           "dec2bin_0/reset_n",
           "Con_Encoder_0/reset_n",
-          "RS_Enc_0/reset_n",
-          "DataSource_Scrambler_0/reset_n"
+          "DataSource_Scrambler_0/reset_n",
+          "RS_Enc_0/reset_n"
         ]
       },
       "terminal_0_OUT_port": {
@@ -1100,8 +1105,8 @@
           "Interleaver_0/clk",
           "dec2bin_0/clk",
           "Con_Encoder_0/clk",
-          "RS_Enc_0/clk",
-          "DataSource_Scrambler_0/clk"
+          "DataSource_Scrambler_0/clk",
+          "RS_Enc_0/clk"
         ]
       },
       "xlconstant_0_dout": {

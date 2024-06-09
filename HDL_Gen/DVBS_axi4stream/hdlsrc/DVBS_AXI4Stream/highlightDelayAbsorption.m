@@ -1,0 +1,10 @@
+open_system('DVBS_AXI4Stream');
+open_system('gm_DVBS_AXI4Stream');
+cs.HiliteType = 'user1';
+cs.ForegroundColor = 'black';
+cs.BackgroundColor = 'cyan';
+set_param(0, 'HiliteAncestorsData', cs);
+hilite_system('gm_DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/HeaderProcess/Multiport Switch', 'user1');
+annotate_port('gm_DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/HeaderProcess/Multiport Switch', 0, 1, 'Blocks delay absorption: 1 cycles');
+hilite_system('DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/HeaderProcess/Multiport Switch', 'user1');
+annotate_port('DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/HeaderProcess/Multiport Switch', 0, 1, 'Blocks delay absorption: 1 cycles');

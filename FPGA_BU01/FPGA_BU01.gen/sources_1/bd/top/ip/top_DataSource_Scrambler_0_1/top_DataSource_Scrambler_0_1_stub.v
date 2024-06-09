@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Thu Jun  6 18:58:37 2024
+// Date        : Sun Jun  9 10:20:52 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1_stub.v
@@ -16,8 +16,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "DataSource_Scrambler,Vivado 2023.2" *)
 module top_DataSource_Scrambler_0_1(clk, reset_n, clk_enable, ce_out, simStart, simEnd, 
-  simEN, ScramblerOut, BinEn, DataGenEn)
-/* synthesis syn_black_box black_box_pad_pin="reset_n,clk_enable,ce_out,simStart,simEnd,simEN,ScramblerOut[7:0],BinEn,DataGenEn" */
+  simEN, ScramblerOut, BinEn, DataGenEn, TSout)
+/* synthesis syn_black_box black_box_pad_pin="reset_n,clk_enable,ce_out,simStart,simEnd,simEN,ScramblerOut[7:0],BinEn,DataGenEn,TSout[7:0]" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input reset_n;
@@ -29,4 +29,5 @@ module top_DataSource_Scrambler_0_1(clk, reset_n, clk_enable, ce_out, simStart, 
   output [7:0]ScramblerOut;
   output BinEn;
   output DataGenEn;
+  output [7:0]TSout;
 endmodule

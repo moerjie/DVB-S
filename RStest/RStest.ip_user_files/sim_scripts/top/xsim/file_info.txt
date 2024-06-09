@@ -1,0 +1,6 @@
+top_DataSource_Scrambler_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_DataSource_Scrambler_0_0/sim/top_DataSource_Scrambler_0_0.v,
+top_sim_clk_gen_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v,
+top_xlconstant_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v,
+top_RS_Enc_0_0.v,verilog,xil_defaultlib,../../../bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v,
+top.v,verilog,xil_defaultlib,../../../bd/top/sim/top.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

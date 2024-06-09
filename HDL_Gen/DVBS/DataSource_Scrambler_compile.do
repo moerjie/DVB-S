@@ -2,13 +2,9 @@ vlib work
 vlog  Positive.v
 vlog  Detect_Rise_Positive.v
 vlog  CLKdivide.v
-vlog  Positive_block.v
-vlog  Detect_Rise_Positive_block.v
-vlog  Positive_block1.v
-vlog  Detect_Rise_Positive1.v
+vlog  RS_Ctrl.v
+vlog  bit_sys.v
 vlog  myScrambler.v
-vlog  MATLAB_Function.v
-vlog  RS_Gen.v
 vlog  sigSource.v
 vlog  HeaderProcess.v
 vlog  DataSource_Scrambler.v

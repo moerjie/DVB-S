@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+Delay Balancing Report for DVBS_AXI4Stream
+</title>
+
+</head>
+<body bgcolor="#ffffff" link="0033CC" vlink="#666666" onload="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdDelayBalancing'); else local_onload();}} catch(err) {};">
+<font SIZE="+2" COLOR="#000066">
+Delay Balancing Report for DVBS_AXI4Stream
+</font>
+<br /><br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeee">
+<th align="left" valign="top" style="border-style: none">
+<b>
+Port
+</b>
+
+</th>
+<th align="left" valign="top" style="border-style: none">
+<b>
+Pipeline Latency
+</b>
+
+</th>
+<th align="left" valign="top" style="border-style: none">
+<b>
+Phase Delay
+</b>
+
+</th>
+
+</tr>
+<tr style="background-color: #ffffff">
+<td align="left" valign="top" style="border-style: none">
+DVBS_AXI4Stream/DVB-S/ConvOut
+</td>
+<td align="left" valign="top" style="border-style: none">
+1
+</td>
+<td align="left" valign="top" style="border-style: none">
+0
+</td>
+
+</tr>
+
+</table>
+<br /><br /><br /><br /><a name="Delay Absorption Summary">
+<font size="+1" color="#000066">
+<b class="midprod">
+Delay Absorption Summary
+</b>
+
+</font>
+
+</a>
+<br /><br />Design delays may not be fully utilized to absorb delays introduced by optimizations and block implementations because there are blockers that inhibit delay absorption. Consider <a href="matlab:configset.internal.open('DVBS_AXI4Stream','PipelineDistributionPriority')">changing the priority to 'Performance'</a> to allow delay absorption across the blockers. Note that this can lead to validation model mismatches during the initialization cycles or whole simulation time if the model has feedback loops.<br /><br /><a href="matlab:run('F:\Git_Repository\DVB-S\HDL_Gen\DVBS_axi4stream\hdlsrc\DVBS_AXI4Stream\highlightDelayAbsorption.m')">
+Highlight delay absorption blockers and design delays excluded from absorption
+</a>
+<br /><a href="matlab:run('F:\Git_Repository\DVB-S\HDL_Gen\DVBS_axi4stream\hdlsrc\DVBS_AXI4Stream\clearhighlighting.m')">
+Clear highlighting
+</a>
+<br /><br /><a name="Delay Absorption Detailed Report">
+<font size="+1" color="#000066">
+<b class="midprod">
+Delay Absorption Detailed Report
+</b>
+
+</font>
+
+</a>
+<br /><br />List of delays used for absorption, delays excluded from absorption, and delay absorption blockers. To exclude specific block from being used for absorption, turn off block property 'AllowDelayDistribution'.<br /><p><hr /></p><h5>
+Report for Subsystem:    <a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1013')" name="code2model" class="code2model">
+HeaderProcess
+</a>
+
+</h5>
+<table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1023')" name="code2model" class="code2model">
+Multiport
+Switch
+</a>
+
+</td>
+<td align="left" valign="top" style="border-style: none">
+1 cycles of extra latency cannot be absorbed because of this blocker
+</td>
+
+</tr>
+
+</table>
+<br /><br /><br /><br />
+</body>
+
+</html>

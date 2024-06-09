@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
--- Date        : Thu Jun  6 18:58:37 2024
+-- Date        : Sun Jun  9 10:20:52 2024
 -- Host        : MOERJIE_PC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1_stub.vhdl
@@ -24,7 +24,8 @@ entity top_DataSource_Scrambler_0_1 is
     simEN : out STD_LOGIC;
     ScramblerOut : out STD_LOGIC_VECTOR ( 7 downto 0 );
     BinEn : out STD_LOGIC;
-    DataGenEn : out STD_LOGIC
+    DataGenEn : out STD_LOGIC;
+    TSout : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 
 end top_DataSource_Scrambler_0_1;
@@ -33,7 +34,7 @@ architecture stub of top_DataSource_Scrambler_0_1 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,reset_n,clk_enable,ce_out,simStart,simEnd,simEN,ScramblerOut[7:0],BinEn,DataGenEn";
+attribute black_box_pad_pin of stub : architecture is "clk,reset_n,clk_enable,ce_out,simStart,simEnd,simEN,ScramblerOut[7:0],BinEn,DataGenEn,TSout[7:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "DataSource_Scrambler,Vivado 2023.2";
 begin

@@ -1,7 +1,0 @@
-# compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"top_tb_time_impl.v" \
-"../../../../../FPGA_BU01.srcs/sim_1/new/top_tb.v" \
-
-# Do not sort compile order
-nosort

@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Thu Jun  6 18:58:37 2024
+// Date        : Sun Jun  9 10:20:52 2024
 // Host        : MOERJIE_PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               f:/Git_Repository/DVB-S/FPGA_BU01/FPGA_BU01.gen/sources_1/bd/top/ip/top_DataSource_Scrambler_0_1/top_DataSource_Scrambler_0_1_sim_netlist.v
@@ -26,7 +26,8 @@ module top_DataSource_Scrambler_0_1
     simEN,
     ScramblerOut,
     BinEn,
-    DataGenEn);
+    DataGenEn,
+    TSout);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_util_ds_buf_0_0_IBUF_OUT, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_n RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_n, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset_n;
   input clk_enable;
@@ -37,12 +38,14 @@ module top_DataSource_Scrambler_0_1
   output [7:0]ScramblerOut;
   output BinEn;
   output DataGenEn;
+  output [7:0]TSout;
 
   wire BinEn;
   wire DataGenEn;
   wire \Delay10_out1[7]_i_3_n_0 ;
   wire \Delay10_out1_reg[7]_i_2_n_0 ;
   wire [7:0]ScramblerOut;
+  wire [7:0]TSout;
   wire clk;
   wire clk_enable;
   wire inst_n_0;
@@ -69,6 +72,7 @@ module top_DataSource_Scrambler_0_1
         .DataGenEn(DataGenEn),
         .\Delay10_out1_reg[7]_0 (\Delay10_out1_reg[7]_i_2_n_0 ),
         .ScramblerOut(ScramblerOut),
+        .TSout(TSout),
         .clk(clk),
         .clk_enable(clk_enable),
         .reset_n(reset_n),
@@ -88,8 +92,8 @@ module top_DataSource_Scrambler_0_1_CLKdivide
     \HDL_Counter_out_reg[0]_0 ,
     \HDL_Counter_out_reg[2]_0 ,
     U_k_1_reg,
+    enb_gated,
     HDL_Counter_out1,
-    HDL_Counter1_out1,
     CLKdivide_out1,
     \HDL_Counter_out_reg[0]_1 ,
     HDL_Counter_ctrl_delay_out_reg_0,
@@ -106,8 +110,8 @@ module top_DataSource_Scrambler_0_1_CLKdivide
   output \HDL_Counter_out_reg[0]_0 ;
   output \HDL_Counter_out_reg[2]_0 ;
   output U_k_1_reg;
+  output enb_gated;
   output HDL_Counter_out1;
-  output HDL_Counter1_out1;
   output CLKdivide_out1;
   output \HDL_Counter_out_reg[0]_1 ;
   output HDL_Counter_ctrl_delay_out_reg_0;
@@ -121,7 +125,6 @@ module top_DataSource_Scrambler_0_1_CLKdivide
   wire [1:0]D;
   wire Delay7_out1;
   wire Delay_out1;
-  wire HDL_Counter1_out1;
   wire [7:0]HDL_Counter2_out;
   wire \HDL_Counter2_out[1]_i_2_n_0 ;
   wire \HDL_Counter2_out[3]_i_2_n_0 ;
@@ -150,11 +153,12 @@ module top_DataSource_Scrambler_0_1_CLKdivide
   wire clk_enable;
   wire [7:0]count_2;
   wire [7:0]count_value;
+  wire enb_gated;
   wire need_to_wrap;
 
   LUT6 #(
     .INIT(64'h0000000000008000)) 
-    Delay_out1_i_1
+    Delay_out1_i_1__0
        (.I0(HDL_Counter_ctrl_delay_out),
         .I1(HDL_Counter2_out[4]),
         .I2(HDL_Counter2_out[3]),
@@ -543,7 +547,6 @@ module top_DataSource_Scrambler_0_1_CLKdivide
         .CLKdivide_out1_1_reg(HDL_Counter_ctrl_delay_out),
         .D(D),
         .Delay7_out1(Delay7_out1),
-        .HDL_Counter1_out1(HDL_Counter1_out1),
         .HDL_Counter_out1(HDL_Counter_out1),
         .\HDL_Counter_out_reg[0] (\HDL_Counter_out_reg[0]_0 ),
         .\HDL_Counter_out_reg[2] (\HDL_Counter_out_reg[2]_0 ),
@@ -554,7 +557,8 @@ module top_DataSource_Scrambler_0_1_CLKdivide
         .U_k_1_reg_2(U_k_1_reg_0),
         .U_k_1_reg_3(\HDL_Counter_out_reg[6]_0 ),
         .clk(clk),
-        .clk_enable(clk_enable));
+        .clk_enable(clk_enable),
+        .enb_gated(enb_gated));
 endmodule
 
 (* ORIG_REF_NAME = "DataSource_Scrambler" *) 
@@ -563,9 +567,10 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
     simStart,
     simEnd,
     simEN,
-    ScramblerOut,
     BinEn,
     DataGenEn,
+    ScramblerOut,
+    TSout,
     clk_enable,
     clk,
     reset_n,
@@ -574,52 +579,45 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
   output simStart;
   output simEnd;
   output simEN;
-  output [7:0]ScramblerOut;
   output BinEn;
   output DataGenEn;
+  output [7:0]ScramblerOut;
+  output [7:0]TSout;
   input clk_enable;
   input clk;
   input reset_n;
   input \Delay10_out1_reg[7]_0 ;
 
   wire BinEn;
-  wire [7:0]Bitwise_Operator2_out1_hold;
   wire CLKdivide_out1;
   wire DataGenEn;
-  wire [7:0]Delay10_out1;
   wire \Delay10_out1_reg[7]_0 ;
-  wire Delay1_out1;
-  wire \Delay1_reg_reg_n_0_[0] ;
-  wire Delay2_out1;
+  wire Delay1_out1_hold;
+  wire Delay2_out1_hold;
   wire Delay4_out1;
   wire Delay5_out1;
   wire Delay7_out1;
   wire Delay8_out1;
   wire Delay9_out1;
   wire Delay_out1;
-  wire Delay_out1_reg_n_0;
-  wire Detect_Rise_Positive1_out1;
-  wire Detect_Rise_Positive_out1;
-  wire HDL_Counter1_out1;
+  wire Delay_out1_hold;
   wire HDL_Counter_ctrl_delay_out;
   wire HDL_Counter_out1;
   wire HeaderProcess_out2;
   wire HeaderProcess_out2_1;
   wire HeaderProcess_out3_1;
   wire [7:0]HeaderProcess_out4;
-  wire RS_Gen_out3_1;
   wire [7:0]ScramblerOut;
-  wire U_k_1;
-  wire U_k_1_0;
-  wire U_k_1_1;
+  wire [7:0]TSout;
+  wire alpha1_D_Lookup_Table1_table_data;
+  wire alpha1_D_Lookup_Table2_table_data;
+  wire alpha1_D_Lookup_Table3_table_data;
   wire clk;
   wire clk_enable;
-  wire [0:0]delayMatch3_reg;
-  wire [0:0]delayMatch4_reg;
+  wire enb_gated;
+  wire enb_gated_0;
   wire reset_n;
   wire reset_n_0;
-  wire sigSource_out1;
-  wire sigSource_out2;
   wire simEN;
   wire simEnd;
   wire simStart;
@@ -631,21 +629,21 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
   wire u_CLKdivide_n_6;
   wire u_CLKdivide_n_7;
   wire u_CLKdivide_n_8;
+  wire \u_Detect_Rise_Positive/U_k_1 ;
   wire u_HeaderProcess_n_10;
   wire u_HeaderProcess_n_11;
   wire u_HeaderProcess_n_12;
   wire u_HeaderProcess_n_13;
   wire u_HeaderProcess_n_16;
-  wire \u_RS_Gen/enb_gated ;
-  wire u_sigSource_n_10;
-  wire u_sigSource_n_11;
-  wire u_sigSource_n_14;
+  wire u_sigSource_n_0;
+  wire u_sigSource_n_1;
+  wire u_sigSource_n_2;
+  wire u_sigSource_n_3;
   wire u_sigSource_n_4;
   wire u_sigSource_n_5;
   wire u_sigSource_n_6;
   wire u_sigSource_n_7;
   wire u_sigSource_n_8;
-  wire u_sigSource_n_9;
 
   FDCE CLKdivide_out1_1_reg
        (.C(clk),
@@ -658,133 +656,79 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[0]),
-        .Q(Delay10_out1[0]));
+        .Q(TSout[0]));
   FDCE \Delay10_out1_reg[1] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[1]),
-        .Q(Delay10_out1[1]));
+        .Q(TSout[1]));
   FDCE \Delay10_out1_reg[2] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[2]),
-        .Q(Delay10_out1[2]));
+        .Q(TSout[2]));
   FDCE \Delay10_out1_reg[3] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[3]),
-        .Q(Delay10_out1[3]));
+        .Q(TSout[3]));
   FDCE \Delay10_out1_reg[4] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[4]),
-        .Q(Delay10_out1[4]));
+        .Q(TSout[4]));
   FDCE \Delay10_out1_reg[5] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[5]),
-        .Q(Delay10_out1[5]));
+        .Q(TSout[5]));
   FDCE \Delay10_out1_reg[6] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[6]),
-        .Q(Delay10_out1[6]));
+        .Q(TSout[6]));
   FDCE \Delay10_out1_reg[7] 
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out4[7]),
-        .Q(Delay10_out1[7]));
-  FDCE Delay1_out1_1_reg
+        .Q(TSout[7]));
+  FDCE Delay1_out1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
-        .D(Delay1_out1),
+        .D(Delay1_out1_hold),
         .Q(simEnd));
-  FDCE \Delay1_reg_reg[0] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Detect_Rise_Positive1_out1),
-        .Q(\Delay1_reg_reg_n_0_[0] ));
-  FDCE \Delay1_reg_reg[1] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(\Delay1_reg_reg_n_0_[0] ),
-        .Q(Delay1_out1));
-  FDCE Delay2_out1_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Delay2_out1),
-        .Q(simEN));
   FDCE Delay2_out1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
-        .D(RS_Gen_out3_1),
-        .Q(Delay2_out1));
-  FDCE \Delay3_out1_reg[0] 
+        .D(Delay2_out1_hold),
+        .Q(simEN));
+  FDCE Delay4_out1_1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[0]),
-        .Q(ScramblerOut[0]));
-  FDCE \Delay3_out1_reg[1] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[1]),
-        .Q(ScramblerOut[1]));
-  FDCE \Delay3_out1_reg[2] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[2]),
-        .Q(ScramblerOut[2]));
-  FDCE \Delay3_out1_reg[3] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[3]),
-        .Q(ScramblerOut[3]));
-  FDCE \Delay3_out1_reg[4] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[4]),
-        .Q(ScramblerOut[4]));
-  FDCE \Delay3_out1_reg[5] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[5]),
-        .Q(ScramblerOut[5]));
-  FDCE \Delay3_out1_reg[6] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[6]),
-        .Q(ScramblerOut[6]));
-  FDCE \Delay3_out1_reg[7] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Bitwise_Operator2_out1_hold[7]),
-        .Q(ScramblerOut[7]));
+        .D(Delay4_out1),
+        .Q(BinEn));
   FDCE Delay4_out1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(Delay_out1),
         .Q(Delay4_out1));
+  FDCE Delay5_out1_1_reg
+       (.C(clk),
+        .CE(clk_enable),
+        .CLR(reset_n_0),
+        .D(Delay5_out1),
+        .Q(DataGenEn));
   FDCE Delay8_out1_reg
        (.C(clk),
         .CE(clk_enable),
@@ -797,54 +741,23 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
         .CLR(reset_n_0),
         .D(HeaderProcess_out3_1),
         .Q(Delay9_out1));
-  FDCE Delay_out1_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Delay_out1_reg_n_0),
-        .Q(simStart));
   FDCE Delay_out1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
-        .D(Detect_Rise_Positive_out1),
-        .Q(Delay_out1_reg_n_0));
+        .D(Delay_out1_hold),
+        .Q(simStart));
   FDCE HeaderProcess_out2_1_reg
        (.C(clk),
         .CE(clk_enable),
         .CLR(reset_n_0),
         .D(HeaderProcess_out2),
         .Q(HeaderProcess_out2_1));
-  FDCE \delayMatch3_reg_reg[0] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Delay4_out1),
-        .Q(delayMatch3_reg));
-  FDCE \delayMatch3_reg_reg[1] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(delayMatch3_reg),
-        .Q(BinEn));
-  FDCE \delayMatch4_reg_reg[0] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(Delay5_out1),
-        .Q(delayMatch4_reg));
-  FDCE \delayMatch4_reg_reg[1] 
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(delayMatch4_reg),
-        .Q(DataGenEn));
   top_DataSource_Scrambler_0_1_CLKdivide u_CLKdivide
        (.CLKdivide_out1(CLKdivide_out1),
         .D({u_CLKdivide_n_4,u_CLKdivide_n_5}),
         .Delay7_out1(Delay7_out1),
         .Delay_out1(Delay_out1),
-        .HDL_Counter1_out1(HDL_Counter1_out1),
         .HDL_Counter_ctrl_delay_out(HDL_Counter_ctrl_delay_out),
         .HDL_Counter_ctrl_delay_out_reg_0(u_CLKdivide_n_13),
         .HDL_Counter_out1(HDL_Counter_out1),
@@ -853,38 +766,26 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
         .\HDL_Counter_out_reg[2]_0 (u_CLKdivide_n_7),
         .\HDL_Counter_out_reg[6]_0 (u_CLKdivide_n_3),
         .Q({u_HeaderProcess_n_10,u_HeaderProcess_n_11,u_HeaderProcess_n_12,u_HeaderProcess_n_13}),
-        .U_k_1(U_k_1),
+        .U_k_1(\u_Detect_Rise_Positive/U_k_1 ),
         .U_k_1_reg(u_CLKdivide_n_8),
         .U_k_1_reg_0(reset_n_0),
         .clk(clk),
-        .clk_enable(clk_enable));
-  top_DataSource_Scrambler_0_1_Detect_Rise_Positive_block u_Detect_Rise_Positive
-       (.U_k_1(U_k_1_0),
-        .U_k_1_reg_0(reset_n_0),
-        .clk(clk),
         .clk_enable(clk_enable),
-        .sigSource_out1(sigSource_out1));
-  top_DataSource_Scrambler_0_1_Detect_Rise_Positive1 u_Detect_Rise_Positive1
-       (.U_k_1(U_k_1_1),
-        .U_k_1_reg_0(reset_n_0),
-        .clk(clk),
-        .clk_enable(clk_enable),
-        .sigSource_out2(sigSource_out2));
+        .enb_gated(enb_gated));
   top_DataSource_Scrambler_0_1_HeaderProcess u_HeaderProcess
        (.D(HeaderProcess_out4),
-        .DATA_IN_out1_reg_0_0(u_sigSource_n_14),
-        .DOADO(u_sigSource_n_4),
-        .\Delay10_out1_reg[1] (u_sigSource_n_5),
-        .\Delay10_out1_reg[2] (u_sigSource_n_6),
-        .\Delay10_out1_reg[3] (u_sigSource_n_7),
-        .\Delay10_out1_reg[4] (u_sigSource_n_8),
-        .\Delay10_out1_reg[5] (u_sigSource_n_9),
-        .\Delay10_out1_reg[6] (u_sigSource_n_10),
+        .DATA_IN_out1_reg_0_0(u_sigSource_n_8),
+        .DOADO(u_sigSource_n_0),
+        .\Delay10_out1_reg[1] (u_sigSource_n_1),
+        .\Delay10_out1_reg[2] (u_sigSource_n_2),
+        .\Delay10_out1_reg[3] (u_sigSource_n_3),
+        .\Delay10_out1_reg[4] (u_sigSource_n_4),
+        .\Delay10_out1_reg[5] (u_sigSource_n_5),
+        .\Delay10_out1_reg[6] (u_sigSource_n_6),
         .\Delay10_out1_reg[7] (\Delay10_out1_reg[7]_0 ),
-        .\Delay10_out1_reg[7]_0 (u_sigSource_n_11),
+        .\Delay10_out1_reg[7]_0 (u_sigSource_n_7),
         .Delay7_out1(Delay7_out1),
-        .E(\u_RS_Gen/enb_gated ),
-        .HDL_Counter1_out1(HDL_Counter1_out1),
+        .E(enb_gated_0),
         .\HDL_Counter1_out1_reg[0]_0 (reset_n_0),
         .HDL_Counter_ctrl_delay_out(HDL_Counter_ctrl_delay_out),
         .\HDL_Counter_out[7]_i_4_0 (u_CLKdivide_n_3),
@@ -898,43 +799,54 @@ module top_DataSource_Scrambler_0_1_DataSource_Scrambler
         .HeaderProcess_out3_1(HeaderProcess_out3_1),
         .Q({u_HeaderProcess_n_10,u_HeaderProcess_n_11,u_HeaderProcess_n_12,u_HeaderProcess_n_13}),
         .Relational_Operator_out1_reg_0(u_HeaderProcess_n_16),
-        .U_k_1(U_k_1),
+        .U_k_1(\u_Detect_Rise_Positive/U_k_1 ),
         .clk(clk),
-        .clk_enable(clk_enable));
+        .clk_enable(clk_enable),
+        .enb_gated(enb_gated));
+  top_DataSource_Scrambler_0_1_RS_Ctrl u_RS_Ctrl
+       (.alpha1_D_Lookup_Table1_table_data(alpha1_D_Lookup_Table1_table_data),
+        .alpha1_D_Lookup_Table2_table_data(alpha1_D_Lookup_Table2_table_data),
+        .alpha1_D_Lookup_Table3_table_data(alpha1_D_Lookup_Table3_table_data),
+        .clk(clk),
+        .enb_gated(enb_gated),
+        .reset_n(reset_n),
+        .reset_n_0(reset_n_0));
+  top_DataSource_Scrambler_0_1_bit_sys u_bit_sys
+       (.Delay1_out1_hold(Delay1_out1_hold),
+        .Delay2_out1_hold(Delay2_out1_hold),
+        .Delay_out1_hold(Delay_out1_hold),
+        .Delay_out1_hold_reg_0(reset_n_0),
+        .alpha1_D_Lookup_Table1_table_data(alpha1_D_Lookup_Table1_table_data),
+        .alpha1_D_Lookup_Table2_table_data(alpha1_D_Lookup_Table2_table_data),
+        .alpha1_D_Lookup_Table3_table_data(alpha1_D_Lookup_Table3_table_data),
+        .clk(clk),
+        .enb_gated(enb_gated));
   top_DataSource_Scrambler_0_1_myScrambler u_myScrambler
-       (.\Bitwise_Operator2_out1_hold_reg[7]_0 (Delay10_out1),
-        .D(Delay5_out1),
+       (.\Bitwise_Operator2_out1_hold_reg[0]_0 (reset_n_0),
+        .Delay5_out1(Delay5_out1),
         .Delay8_out1(Delay8_out1),
         .Delay9_out1(Delay9_out1),
-        .Q(Bitwise_Operator2_out1_hold),
-        .\alpha15_switch_delay_reg[0]_0 (reset_n_0),
+        .ScramblerOut(ScramblerOut),
+        .TSout(TSout),
         .clk(clk),
         .clk_enable(clk_enable));
   top_DataSource_Scrambler_0_1_sigSource u_sigSource
-       (.D(Detect_Rise_Positive1_out1),
-        .DATA_IN_out1_reg_0_0_0(u_HeaderProcess_n_16),
-        .DATA_IN_out1_reg_0_1_0(u_sigSource_n_5),
-        .DATA_IN_out1_reg_0_2_0(u_sigSource_n_6),
-        .DATA_IN_out1_reg_0_3_0(u_sigSource_n_7),
-        .DATA_IN_out1_reg_0_4_0(u_sigSource_n_8),
-        .DATA_IN_out1_reg_0_5_0(u_sigSource_n_9),
-        .DATA_IN_out1_reg_0_6_0(u_sigSource_n_10),
-        .DATA_IN_out1_reg_0_7_0(u_sigSource_n_11),
-        .DOADO(u_sigSource_n_4),
+       (.DATA_IN_out1_reg_0_0_0(u_HeaderProcess_n_16),
+        .DATA_IN_out1_reg_0_1_0(u_sigSource_n_1),
+        .DATA_IN_out1_reg_0_2_0(u_sigSource_n_2),
+        .DATA_IN_out1_reg_0_3_0(u_sigSource_n_3),
+        .DATA_IN_out1_reg_0_4_0(u_sigSource_n_4),
+        .DATA_IN_out1_reg_0_5_0(u_sigSource_n_5),
+        .DATA_IN_out1_reg_0_6_0(u_sigSource_n_6),
+        .DATA_IN_out1_reg_0_7_0(u_sigSource_n_7),
+        .DOADO(u_sigSource_n_0),
         .Delay7_out1(Delay7_out1),
-        .Detect_Rise_Positive_out1(Detect_Rise_Positive_out1),
-        .E(\u_RS_Gen/enb_gated ),
+        .E(enb_gated_0),
         .HDL_Counter_out1(HDL_Counter_out1),
-        .\HDL_Counter_out1_reg[19]_0 (u_sigSource_n_14),
-        .RS_Gen_out3_1(RS_Gen_out3_1),
-        .U_k_1(U_k_1_0),
-        .U_k_1_0(U_k_1_1),
+        .\HDL_Counter_out1_reg[0]_0 (reset_n_0),
+        .\HDL_Counter_out1_reg[19]_0 (u_sigSource_n_8),
         .clk(clk),
-        .clk_enable(clk_enable),
-        .reset_n(reset_n),
-        .reset_n_0(reset_n_0),
-        .sigSource_out1(sigSource_out1),
-        .sigSource_out2(sigSource_out2));
+        .clk_enable(clk_enable));
 endmodule
 
 (* ORIG_REF_NAME = "Detect_Rise_Positive" *) 
@@ -944,8 +856,8 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
     \HDL_Counter_out_reg[0] ,
     \HDL_Counter_out_reg[2] ,
     U_k_1_reg_1,
+    enb_gated,
     HDL_Counter_out1,
-    HDL_Counter1_out1,
     CLKdivide_out1,
     clk_enable,
     clk,
@@ -960,8 +872,8 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
   output \HDL_Counter_out_reg[0] ;
   output \HDL_Counter_out_reg[2] ;
   output U_k_1_reg_1;
+  output enb_gated;
   output HDL_Counter_out1;
-  output HDL_Counter1_out1;
   output CLKdivide_out1;
   input clk_enable;
   input clk;
@@ -976,7 +888,6 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
   wire CLKdivide_out1_1_reg;
   wire [1:0]D;
   wire Delay7_out1;
-  wire HDL_Counter1_out1;
   wire HDL_Counter_out1;
   wire \HDL_Counter_out_reg[0] ;
   wire \HDL_Counter_out_reg[2] ;
@@ -988,6 +899,7 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
   wire U_k_1_reg_3;
   wire clk;
   wire clk_enable;
+  wire enb_gated;
   wire need_to_wrap_1;
 
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
@@ -999,20 +911,20 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
         .O(CLKdivide_out1));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
-    .INIT(8'h08)) 
-    \HDL_Counter1_out1[0]_i_1 
-       (.I0(clk_enable),
+    .INIT(8'h40)) 
+    Delay_out1_hold_i_1
+       (.I0(\HDL_Counter_out_reg[0] ),
         .I1(CLKdivide_out1_1_reg),
-        .I2(\HDL_Counter_out_reg[0] ),
-        .O(HDL_Counter1_out1));
+        .I2(clk_enable),
+        .O(enb_gated));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
-    .INIT(16'h0080)) 
+    .INIT(16'h0800)) 
     \HDL_Counter_out1[0]_i_1 
-       (.I0(CLKdivide_out1_1_reg),
+       (.I0(clk_enable),
         .I1(Delay7_out1),
-        .I2(clk_enable),
-        .I3(\HDL_Counter_out_reg[0] ),
+        .I2(\HDL_Counter_out_reg[0] ),
+        .I3(CLKdivide_out1_1_reg),
         .O(HDL_Counter_out1));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
@@ -1077,60 +989,6 @@ module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
         .Q(U_k_1_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "Detect_Rise_Positive1" *) 
-module top_DataSource_Scrambler_0_1_Detect_Rise_Positive1
-   (U_k_1,
-    clk_enable,
-    sigSource_out2,
-    clk,
-    U_k_1_reg_0);
-  output U_k_1;
-  input clk_enable;
-  input sigSource_out2;
-  input clk;
-  input U_k_1_reg_0;
-
-  wire U_k_1;
-  wire U_k_1_reg_0;
-  wire clk;
-  wire clk_enable;
-  wire sigSource_out2;
-
-  FDCE U_k_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(U_k_1_reg_0),
-        .D(sigSource_out2),
-        .Q(U_k_1));
-endmodule
-
-(* ORIG_REF_NAME = "Detect_Rise_Positive_block" *) 
-module top_DataSource_Scrambler_0_1_Detect_Rise_Positive_block
-   (U_k_1,
-    clk_enable,
-    sigSource_out1,
-    clk,
-    U_k_1_reg_0);
-  output U_k_1;
-  input clk_enable;
-  input sigSource_out1;
-  input clk;
-  input U_k_1_reg_0;
-
-  wire U_k_1;
-  wire U_k_1_reg_0;
-  wire clk;
-  wire clk_enable;
-  wire sigSource_out1;
-
-  FDCE U_k_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(U_k_1_reg_0),
-        .D(sigSource_out1),
-        .Q(U_k_1));
-endmodule
-
 (* ORIG_REF_NAME = "HeaderProcess" *) 
 module top_DataSource_Scrambler_0_1_HeaderProcess
    (Delay7_out1,
@@ -1143,7 +1001,7 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
     clk_enable,
     clk,
     \HDL_Counter1_out1_reg[0]_0 ,
-    HDL_Counter1_out1,
+    enb_gated,
     DOADO,
     \Delay10_out1_reg[7] ,
     \Delay10_out1_reg[1] ,
@@ -1173,7 +1031,7 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
   input clk_enable;
   input clk;
   input \HDL_Counter1_out1_reg[0]_0 ;
-  input HDL_Counter1_out1;
+  input enb_gated;
   input [0:0]DOADO;
   input \Delay10_out1_reg[7] ;
   input [0:0]\Delay10_out1_reg[1] ;
@@ -1207,28 +1065,27 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
   wire [0:0]\Delay10_out1_reg[7]_0 ;
   wire Delay7_out1;
   wire [0:0]E;
-  wire HDL_Counter1_out1;
+  wire \HDL_Counter1_out1[0]_i_2_n_0 ;
   wire \HDL_Counter1_out1[0]_i_3_n_0 ;
   wire \HDL_Counter1_out1[0]_i_4_n_0 ;
   wire \HDL_Counter1_out1[0]_i_5_n_0 ;
-  wire \HDL_Counter1_out1[0]_i_6_n_0 ;
+  wire \HDL_Counter1_out1[0]_i_6__0_n_0 ;
   wire \HDL_Counter1_out1[0]_i_7_n_0 ;
   wire \HDL_Counter1_out1[0]_i_8_n_0 ;
-  wire \HDL_Counter1_out1[0]_i_9_n_0 ;
   wire \HDL_Counter1_out1[4]_i_2_n_0 ;
   wire \HDL_Counter1_out1[4]_i_3_n_0 ;
   wire \HDL_Counter1_out1[8]_i_2_n_0 ;
   wire \HDL_Counter1_out1[8]_i_3_n_0 ;
   wire [15:0]HDL_Counter1_out1_reg;
   wire \HDL_Counter1_out1_reg[0]_0 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_0 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_1 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_2 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_3 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_4 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_5 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_6 ;
-  wire \HDL_Counter1_out1_reg[0]_i_2_n_7 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_0 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_1 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_2 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_3 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_4 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_5 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_6 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1_n_7 ;
   wire \HDL_Counter1_out1_reg[12]_i_1_n_1 ;
   wire \HDL_Counter1_out1_reg[12]_i_1_n_2 ;
   wire \HDL_Counter1_out1_reg[12]_i_1_n_3 ;
@@ -1294,6 +1151,7 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
   wire U_k_1;
   wire clk;
   wire clk_enable;
+  wire enb_gated;
   wire [3:3]\NLW_HDL_Counter1_out1_reg[12]_i_1_CO_UNCONNECTED ;
 
   (* SOFT_HLUTNM = "soft_lutpair18" *) 
@@ -1377,69 +1235,69 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .O(D[7]));
   LUT6 #(
     .INIT(64'hFF00BF00FF00FF00)) 
-    \HDL_Counter1_out1[0]_i_3 
-       (.I0(\HDL_Counter1_out1[0]_i_8_n_0 ),
+    \HDL_Counter1_out1[0]_i_2 
+       (.I0(\HDL_Counter1_out1[0]_i_7_n_0 ),
         .I1(HDL_Counter1_out1_reg[2]),
         .I2(HDL_Counter1_out1_reg[1]),
         .I3(HDL_Counter1_out1_reg[0]),
         .I4(Relational_Operator1_out1_i_2_n_0),
         .I5(HDL_Counter1_out1_reg[10]),
-        .O(\HDL_Counter1_out1[0]_i_3_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hC4CCCCCC)) 
-    \HDL_Counter1_out1[0]_i_4 
+    \HDL_Counter1_out1[0]_i_3 
        (.I0(HDL_Counter1_out1_reg[4]),
         .I1(HDL_Counter1_out1_reg[3]),
-        .I2(\HDL_Counter1_out1[0]_i_9_n_0 ),
+        .I2(\HDL_Counter1_out1[0]_i_8_n_0 ),
         .I3(HDL_Counter1_out1_reg[9]),
         .I4(HDL_Counter1_out1_reg[6]),
-        .O(\HDL_Counter1_out1[0]_i_4_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hFBFFFFFF00000000)) 
-    \HDL_Counter1_out1[0]_i_5 
-       (.I0(\HDL_Counter1_out1[0]_i_8_n_0 ),
+    \HDL_Counter1_out1[0]_i_4 
+       (.I0(\HDL_Counter1_out1[0]_i_7_n_0 ),
         .I1(HDL_Counter1_out1_reg[0]),
         .I2(Relational_Operator1_out1_i_2_n_0),
         .I3(HDL_Counter1_out1_reg[10]),
         .I4(HDL_Counter1_out1_reg[1]),
         .I5(HDL_Counter1_out1_reg[2]),
-        .O(\HDL_Counter1_out1[0]_i_5_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFBFFFFFF00000000)) 
-    \HDL_Counter1_out1[0]_i_6 
-       (.I0(\HDL_Counter1_out1[0]_i_8_n_0 ),
+    \HDL_Counter1_out1[0]_i_5 
+       (.I0(\HDL_Counter1_out1[0]_i_7_n_0 ),
         .I1(HDL_Counter1_out1_reg[0]),
         .I2(Relational_Operator1_out1_i_2_n_0),
         .I3(HDL_Counter1_out1_reg[10]),
         .I4(HDL_Counter1_out1_reg[2]),
         .I5(HDL_Counter1_out1_reg[1]),
-        .O(\HDL_Counter1_out1[0]_i_6_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_5_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \HDL_Counter1_out1[0]_i_7 
+    \HDL_Counter1_out1[0]_i_6__0 
        (.I0(HDL_Counter1_out1_reg[0]),
-        .O(\HDL_Counter1_out1[0]_i_7_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_6__0_n_0 ));
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \HDL_Counter1_out1[0]_i_8 
+    \HDL_Counter1_out1[0]_i_7 
        (.I0(HDL_Counter1_out1_reg[4]),
         .I1(HDL_Counter1_out1_reg[3]),
         .I2(HDL_Counter1_out1_reg[9]),
         .I3(HDL_Counter1_out1_reg[6]),
-        .O(\HDL_Counter1_out1[0]_i_8_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'hDFFFFFFF)) 
-    \HDL_Counter1_out1[0]_i_9 
+    \HDL_Counter1_out1[0]_i_8 
        (.I0(HDL_Counter1_out1_reg[0]),
         .I1(Relational_Operator1_out1_i_2_n_0),
         .I2(HDL_Counter1_out1_reg[10]),
         .I3(HDL_Counter1_out1_reg[2]),
         .I4(HDL_Counter1_out1_reg[1]),
-        .O(\HDL_Counter1_out1[0]_i_9_n_0 ));
+        .O(\HDL_Counter1_out1[0]_i_8_n_0 ));
   LUT5 #(
     .INIT(32'hBFFF0000)) 
     \HDL_Counter1_out1[4]_i_2 
-       (.I0(\HDL_Counter1_out1[0]_i_9_n_0 ),
+       (.I0(\HDL_Counter1_out1[0]_i_8_n_0 ),
         .I1(HDL_Counter1_out1_reg[4]),
         .I2(HDL_Counter1_out1_reg[3]),
         .I3(HDL_Counter1_out1_reg[9]),
@@ -1450,7 +1308,7 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
     \HDL_Counter1_out1[4]_i_3 
        (.I0(HDL_Counter1_out1_reg[3]),
         .I1(HDL_Counter1_out1_reg[4]),
-        .I2(\HDL_Counter1_out1[0]_i_9_n_0 ),
+        .I2(\HDL_Counter1_out1[0]_i_8_n_0 ),
         .I3(HDL_Counter1_out1_reg[9]),
         .I4(HDL_Counter1_out1_reg[6]),
         .O(\HDL_Counter1_out1[4]_i_3_n_0 ));
@@ -1460,14 +1318,14 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
        (.I0(Relational_Operator1_out1_i_2_n_0),
         .I1(HDL_Counter1_out1_reg[1]),
         .I2(HDL_Counter1_out1_reg[2]),
-        .I3(\HDL_Counter1_out1[0]_i_8_n_0 ),
+        .I3(\HDL_Counter1_out1[0]_i_7_n_0 ),
         .I4(HDL_Counter1_out1_reg[0]),
         .I5(HDL_Counter1_out1_reg[10]),
         .O(\HDL_Counter1_out1[8]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hBFFF0000)) 
     \HDL_Counter1_out1[8]_i_3 
-       (.I0(\HDL_Counter1_out1[0]_i_9_n_0 ),
+       (.I0(\HDL_Counter1_out1[0]_i_8_n_0 ),
         .I1(HDL_Counter1_out1_reg[4]),
         .I2(HDL_Counter1_out1_reg[3]),
         .I3(HDL_Counter1_out1_reg[6]),
@@ -1475,33 +1333,33 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .O(\HDL_Counter1_out1[8]_i_3_n_0 ));
   FDCE \HDL_Counter1_out1_reg[0] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
-        .D(\HDL_Counter1_out1_reg[0]_i_2_n_7 ),
+        .D(\HDL_Counter1_out1_reg[0]_i_1_n_7 ),
         .Q(HDL_Counter1_out1_reg[0]));
   (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \HDL_Counter1_out1_reg[0]_i_2 
+  CARRY4 \HDL_Counter1_out1_reg[0]_i_1 
        (.CI(1'b0),
-        .CO({\HDL_Counter1_out1_reg[0]_i_2_n_0 ,\HDL_Counter1_out1_reg[0]_i_2_n_1 ,\HDL_Counter1_out1_reg[0]_i_2_n_2 ,\HDL_Counter1_out1_reg[0]_i_2_n_3 }),
+        .CO({\HDL_Counter1_out1_reg[0]_i_1_n_0 ,\HDL_Counter1_out1_reg[0]_i_1_n_1 ,\HDL_Counter1_out1_reg[0]_i_1_n_2 ,\HDL_Counter1_out1_reg[0]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,\HDL_Counter1_out1[0]_i_3_n_0 }),
-        .O({\HDL_Counter1_out1_reg[0]_i_2_n_4 ,\HDL_Counter1_out1_reg[0]_i_2_n_5 ,\HDL_Counter1_out1_reg[0]_i_2_n_6 ,\HDL_Counter1_out1_reg[0]_i_2_n_7 }),
-        .S({\HDL_Counter1_out1[0]_i_4_n_0 ,\HDL_Counter1_out1[0]_i_5_n_0 ,\HDL_Counter1_out1[0]_i_6_n_0 ,\HDL_Counter1_out1[0]_i_7_n_0 }));
+        .DI({1'b0,1'b0,1'b0,\HDL_Counter1_out1[0]_i_2_n_0 }),
+        .O({\HDL_Counter1_out1_reg[0]_i_1_n_4 ,\HDL_Counter1_out1_reg[0]_i_1_n_5 ,\HDL_Counter1_out1_reg[0]_i_1_n_6 ,\HDL_Counter1_out1_reg[0]_i_1_n_7 }),
+        .S({\HDL_Counter1_out1[0]_i_3_n_0 ,\HDL_Counter1_out1[0]_i_4_n_0 ,\HDL_Counter1_out1[0]_i_5_n_0 ,\HDL_Counter1_out1[0]_i_6__0_n_0 }));
   FDCE \HDL_Counter1_out1_reg[10] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[8]_i_1_n_5 ),
         .Q(HDL_Counter1_out1_reg[10]));
   FDCE \HDL_Counter1_out1_reg[11] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[8]_i_1_n_4 ),
         .Q(HDL_Counter1_out1_reg[11]));
   FDCE \HDL_Counter1_out1_reg[12] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[12]_i_1_n_7 ),
         .Q(HDL_Counter1_out1_reg[12]));
@@ -1515,49 +1373,49 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .S(HDL_Counter1_out1_reg[15:12]));
   FDCE \HDL_Counter1_out1_reg[13] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[12]_i_1_n_6 ),
         .Q(HDL_Counter1_out1_reg[13]));
   FDCE \HDL_Counter1_out1_reg[14] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[12]_i_1_n_5 ),
         .Q(HDL_Counter1_out1_reg[14]));
   FDCE \HDL_Counter1_out1_reg[15] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[12]_i_1_n_4 ),
         .Q(HDL_Counter1_out1_reg[15]));
   FDCE \HDL_Counter1_out1_reg[1] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
-        .D(\HDL_Counter1_out1_reg[0]_i_2_n_6 ),
+        .D(\HDL_Counter1_out1_reg[0]_i_1_n_6 ),
         .Q(HDL_Counter1_out1_reg[1]));
   FDCE \HDL_Counter1_out1_reg[2] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
-        .D(\HDL_Counter1_out1_reg[0]_i_2_n_5 ),
+        .D(\HDL_Counter1_out1_reg[0]_i_1_n_5 ),
         .Q(HDL_Counter1_out1_reg[2]));
   FDCE \HDL_Counter1_out1_reg[3] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
-        .D(\HDL_Counter1_out1_reg[0]_i_2_n_4 ),
+        .D(\HDL_Counter1_out1_reg[0]_i_1_n_4 ),
         .Q(HDL_Counter1_out1_reg[3]));
   FDCE \HDL_Counter1_out1_reg[4] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[4]_i_1_n_7 ),
         .Q(HDL_Counter1_out1_reg[4]));
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \HDL_Counter1_out1_reg[4]_i_1 
-       (.CI(\HDL_Counter1_out1_reg[0]_i_2_n_0 ),
+       (.CI(\HDL_Counter1_out1_reg[0]_i_1_n_0 ),
         .CO({\HDL_Counter1_out1_reg[4]_i_1_n_0 ,\HDL_Counter1_out1_reg[4]_i_1_n_1 ,\HDL_Counter1_out1_reg[4]_i_1_n_2 ,\HDL_Counter1_out1_reg[4]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
@@ -1565,25 +1423,25 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .S({HDL_Counter1_out1_reg[7],\HDL_Counter1_out1[4]_i_2_n_0 ,HDL_Counter1_out1_reg[5],\HDL_Counter1_out1[4]_i_3_n_0 }));
   FDCE \HDL_Counter1_out1_reg[5] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[4]_i_1_n_6 ),
         .Q(HDL_Counter1_out1_reg[5]));
   FDCE \HDL_Counter1_out1_reg[6] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[4]_i_1_n_5 ),
         .Q(HDL_Counter1_out1_reg[6]));
   FDCE \HDL_Counter1_out1_reg[7] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[4]_i_1_n_4 ),
         .Q(HDL_Counter1_out1_reg[7]));
   FDCE \HDL_Counter1_out1_reg[8] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[8]_i_1_n_7 ),
         .Q(HDL_Counter1_out1_reg[8]));
@@ -1597,10 +1455,17 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .S({HDL_Counter1_out1_reg[11],\HDL_Counter1_out1[8]_i_2_n_0 ,\HDL_Counter1_out1[8]_i_3_n_0 ,HDL_Counter1_out1_reg[8]}));
   FDCE \HDL_Counter1_out1_reg[9] 
        (.C(clk),
-        .CE(HDL_Counter1_out1),
+        .CE(enb_gated),
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(\HDL_Counter1_out1_reg[8]_i_1_n_6 ),
         .Q(HDL_Counter1_out1_reg[9]));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \HDL_Counter_out1_last_value[31]_i_1 
+       (.I0(Delay7_out1),
+        .I1(clk_enable),
+        .O(E));
   LUT6 #(
     .INIT(64'hFFFFFFFFDCFC0000)) 
     \HDL_Counter_out[2]_i_1 
@@ -1885,360 +1750,1570 @@ module top_DataSource_Scrambler_0_1_HeaderProcess
         .CLR(\HDL_Counter1_out1_reg[0]_0 ),
         .D(HeaderProcess_out1),
         .Q(Delay7_out1));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \cycle[7]_i_1 
-       (.I0(Delay7_out1),
-        .I1(clk_enable),
-        .O(E));
 endmodule
 
-(* ORIG_REF_NAME = "MATLAB_Function" *) 
-module top_DataSource_Scrambler_0_1_MATLAB_Function
+(* ORIG_REF_NAME = "RS_Ctrl" *) 
+module top_DataSource_Scrambler_0_1_RS_Ctrl
    (reset_n_0,
-    enable_1,
-    endSignal_1,
-    start_1,
-    reset_n,
-    enable_last_value,
-    Delay7_out1,
-    endSignal_last_value,
-    start_last_value,
-    E,
-    clk);
+    alpha1_D_Lookup_Table1_table_data,
+    alpha1_D_Lookup_Table2_table_data,
+    alpha1_D_Lookup_Table3_table_data,
+    enb_gated,
+    clk,
+    reset_n);
   output reset_n_0;
-  output [0:0]enable_1;
-  output [0:0]endSignal_1;
-  output [0:0]start_1;
-  input reset_n;
-  input [0:0]enable_last_value;
-  input Delay7_out1;
-  input [0:0]endSignal_last_value;
-  input [0:0]start_last_value;
-  input [0:0]E;
+  output alpha1_D_Lookup_Table1_table_data;
+  output alpha1_D_Lookup_Table2_table_data;
+  output alpha1_D_Lookup_Table3_table_data;
+  input enb_gated;
   input clk;
+  input reset_n;
 
-  wire Delay7_out1;
-  wire [0:0]E;
+  wire Delay1_out1_hold_i_2_n_0;
+  wire Delay1_out1_hold_i_3_n_0;
+  wire Delay1_out1_hold_i_4_n_0;
+  wire Delay1_out1_hold_i_5_n_0;
+  wire Delay1_out1_hold_i_6_n_0;
+  wire Delay1_out1_hold_i_7_n_0;
+  wire Delay1_out1_hold_i_8_n_0;
+  wire Delay1_out1_hold_i_9_n_0;
+  wire Delay2_out1_hold_i_2_n_0;
+  wire Delay2_out1_hold_i_3_n_0;
+  wire Delay2_out1_hold_i_4_n_0;
+  wire Delay2_out1_hold_i_5_n_0;
+  wire Delay2_out1_hold_i_6_n_0;
+  wire Delay2_out1_hold_i_7_n_0;
+  wire Delay2_out1_hold_i_8_n_0;
+  wire Delay2_out1_hold_i_9_n_0;
+  wire Delay_out1_hold_i_10_n_0;
+  wire Delay_out1_hold_i_3_n_0;
+  wire Delay_out1_hold_i_4_n_0;
+  wire Delay_out1_hold_i_5_n_0;
+  wire Delay_out1_hold_i_6_n_0;
+  wire Delay_out1_hold_i_7_n_0;
+  wire Delay_out1_hold_i_8_n_0;
+  wire Delay_out1_hold_i_9_n_0;
+  wire \HDL_Counter1_out1[0]_i_2__0_n_0 ;
+  wire \HDL_Counter1_out1[0]_i_3__0_n_0 ;
+  wire \HDL_Counter1_out1[0]_i_4__0_n_0 ;
+  wire \HDL_Counter1_out1[0]_i_5__0_n_0 ;
+  wire \HDL_Counter1_out1[0]_i_6_n_0 ;
+  wire \HDL_Counter1_out1[4]_i_2__0_n_0 ;
+  wire \HDL_Counter1_out1[4]_i_3__0_n_0 ;
+  wire \HDL_Counter1_out1[4]_i_4_n_0 ;
+  wire \HDL_Counter1_out1[4]_i_5_n_0 ;
+  wire [31:0]HDL_Counter1_out1_reg;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_0 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_1 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_2 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_3 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_4 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_5 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_6 ;
+  wire \HDL_Counter1_out1_reg[0]_i_1__0_n_7 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_0 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_1 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_2 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_3 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_4 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_5 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_6 ;
+  wire \HDL_Counter1_out1_reg[12]_i_1__0_n_7 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_0 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_1 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_2 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_3 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_4 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_5 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_6 ;
+  wire \HDL_Counter1_out1_reg[16]_i_1_n_7 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_0 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_1 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_2 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_3 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_4 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_5 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_6 ;
+  wire \HDL_Counter1_out1_reg[20]_i_1_n_7 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_0 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_1 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_2 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_3 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_4 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_5 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_6 ;
+  wire \HDL_Counter1_out1_reg[24]_i_1_n_7 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_1 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_2 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_3 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_4 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_5 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_6 ;
+  wire \HDL_Counter1_out1_reg[28]_i_1_n_7 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_0 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_1 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_2 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_3 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_4 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_5 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_6 ;
+  wire \HDL_Counter1_out1_reg[4]_i_1__0_n_7 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_0 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_1 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_2 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_3 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_4 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_5 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_6 ;
+  wire \HDL_Counter1_out1_reg[8]_i_1__0_n_7 ;
+  wire \HDL_Counter2_out1[0]_i_2_n_0 ;
+  wire \HDL_Counter2_out1[0]_i_3_n_0 ;
+  wire \HDL_Counter2_out1[0]_i_4_n_0 ;
+  wire \HDL_Counter2_out1[0]_i_5_n_0 ;
+  wire \HDL_Counter2_out1[0]_i_6_n_0 ;
+  wire \HDL_Counter2_out1[4]_i_2_n_0 ;
+  wire \HDL_Counter2_out1[4]_i_3_n_0 ;
+  wire [31:0]HDL_Counter2_out1_reg;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[0]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[12]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[16]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[20]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[24]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[28]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[4]_i_1_n_7 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_0 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_1 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_2 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_3 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_4 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_5 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_6 ;
+  wire \HDL_Counter2_out1_reg[8]_i_1_n_7 ;
+  wire \HDL_Counter3_out1[0]_i_2_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_3_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_4_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_5_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_6_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_7_n_0 ;
+  wire \HDL_Counter3_out1[0]_i_8_n_0 ;
+  wire \HDL_Counter3_out1[4]_i_2_n_0 ;
+  wire \HDL_Counter3_out1[4]_i_3_n_0 ;
+  wire [31:0]HDL_Counter3_out1_reg;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[0]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[12]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[16]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[20]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[24]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[28]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[4]_i_1_n_7 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_0 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_1 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_2 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_3 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_4 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_5 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_6 ;
+  wire \HDL_Counter3_out1_reg[8]_i_1_n_7 ;
+  wire alpha1_D_Lookup_Table1_table_data;
+  wire alpha1_D_Lookup_Table2_table_data;
+  wire alpha1_D_Lookup_Table3_table_data;
   wire clk;
-  wire [7:0]cycle;
-  wire \cycle[3]_i_2_n_0 ;
-  wire \cycle[6]_i_2_n_0 ;
-  wire \cycle[7]_i_3_n_0 ;
-  wire [7:0]cycle_temp;
-  wire [0:0]enable_1;
-  wire [0:0]enable_last_value;
-  wire \enable_last_value[0]_i_2_n_0 ;
-  wire \enable_last_value[0]_i_3_n_0 ;
-  wire [0:0]endSignal_1;
-  wire [0:0]endSignal_last_value;
+  wire enb_gated;
   wire reset_n;
   wire reset_n_0;
-  wire [0:0]start_1;
-  wire [0:0]start_last_value;
-  wire \start_last_value[0]_i_2_n_0 ;
+  wire [3:3]\NLW_HDL_Counter1_out1_reg[28]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_HDL_Counter2_out1_reg[28]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_HDL_Counter3_out1_reg[28]_i_1_CO_UNCONNECTED ;
 
-  LUT1 #(
-    .INIT(2'h1)) 
-    Delay_out1_1_i_1
-       (.I0(reset_n),
-        .O(reset_n_0));
-  LUT6 #(
-    .INIT(64'h40000000FFFFFFFF)) 
-    \cycle[0]_i_1 
-       (.I0(\cycle[3]_i_2_n_0 ),
-        .I1(cycle[3]),
-        .I2(cycle[6]),
-        .I3(cycle[2]),
-        .I4(cycle[1]),
-        .I5(cycle[0]),
-        .O(cycle_temp[0]));
-  LUT6 #(
-    .INIT(64'h75555555AAAAAAAA)) 
-    \cycle[1]_i_1 
-       (.I0(cycle[0]),
-        .I1(\cycle[3]_i_2_n_0 ),
-        .I2(cycle[3]),
-        .I3(cycle[6]),
-        .I4(cycle[2]),
-        .I5(cycle[1]),
-        .O(cycle_temp[1]));
-  LUT6 #(
-    .INIT(64'h08FDFF00FF00FF00)) 
-    \cycle[2]_i_1 
-       (.I0(cycle[3]),
-        .I1(cycle[6]),
-        .I2(\cycle[3]_i_2_n_0 ),
-        .I3(cycle[2]),
-        .I4(cycle[0]),
-        .I5(cycle[1]),
-        .O(cycle_temp[2]));
-  LUT6 #(
-    .INIT(64'h4FE0F0F0F0F0F0F0)) 
-    \cycle[3]_i_1 
-       (.I0(\cycle[3]_i_2_n_0 ),
-        .I1(cycle[6]),
-        .I2(cycle[3]),
-        .I3(cycle[2]),
-        .I4(cycle[1]),
-        .I5(cycle[0]),
-        .O(cycle_temp[3]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
-    \cycle[3]_i_2 
-       (.I0(cycle[5]),
-        .I1(cycle[4]),
-        .I2(cycle[7]),
-        .O(\cycle[3]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAEA6A4A6A6A6A6A6)) 
-    \cycle[4]_i_1 
-       (.I0(cycle[4]),
-        .I1(cycle[2]),
-        .I2(\cycle[7]_i_3_n_0 ),
-        .I3(cycle[7]),
-        .I4(cycle[6]),
-        .I5(cycle[5]),
-        .O(cycle_temp[4]));
-  LUT6 #(
-    .INIT(64'hCCCCCCCCEC646C6C)) 
-    \cycle[5]_i_1 
-       (.I0(cycle[4]),
-        .I1(cycle[5]),
-        .I2(cycle[2]),
-        .I3(cycle[6]),
-        .I4(cycle[7]),
-        .I5(\cycle[7]_i_3_n_0 ),
-        .O(cycle_temp[5]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
-  LUT5 #(
-    .INIT(32'hAAAAEA6A)) 
-    \cycle[6]_i_1 
-       (.I0(cycle[6]),
-        .I1(cycle[5]),
-        .I2(cycle[4]),
-        .I3(cycle[7]),
-        .I4(\cycle[6]_i_2_n_0 ),
-        .O(cycle_temp[6]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT4 #(
-    .INIT(16'h7FFF)) 
-    \cycle[6]_i_2 
-       (.I0(cycle[3]),
-        .I1(cycle[0]),
-        .I2(cycle[1]),
-        .I3(cycle[2]),
-        .O(\cycle[6]_i_2_n_0 ));
+    .INIT(16'h4000)) 
+    Delay1_out1_hold_i_1
+       (.I0(Delay1_out1_hold_i_2_n_0),
+        .I1(Delay1_out1_hold_i_3_n_0),
+        .I2(HDL_Counter2_out1_reg[3]),
+        .I3(HDL_Counter2_out1_reg[1]),
+        .O(alpha1_D_Lookup_Table2_table_data));
   LUT6 #(
-    .INIT(64'hAEAAAAAAA8AAAAAA)) 
-    \cycle[7]_i_2 
-       (.I0(cycle[7]),
-        .I1(cycle[2]),
-        .I2(\cycle[7]_i_3_n_0 ),
-        .I3(cycle[5]),
-        .I4(cycle[4]),
-        .I5(cycle[6]),
-        .O(cycle_temp[7]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
-    \cycle[7]_i_3 
-       (.I0(cycle[1]),
-        .I1(cycle[0]),
-        .I2(cycle[3]),
-        .O(\cycle[7]_i_3_n_0 ));
-  FDCE \cycle_reg[0] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[0]),
-        .Q(cycle[0]));
-  FDCE \cycle_reg[1] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[1]),
-        .Q(cycle[1]));
-  FDCE \cycle_reg[2] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[2]),
-        .Q(cycle[2]));
-  FDCE \cycle_reg[3] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[3]),
-        .Q(cycle[3]));
-  FDCE \cycle_reg[4] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[4]),
-        .Q(cycle[4]));
-  FDCE \cycle_reg[5] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[5]),
-        .Q(cycle[5]));
-  FDCE \cycle_reg[6] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[6]),
-        .Q(cycle[6]));
-  FDCE \cycle_reg[7] 
-       (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(cycle_temp[7]),
-        .Q(cycle[7]));
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    Delay1_out1_hold_i_2
+       (.I0(Delay1_out1_hold_i_4_n_0),
+        .I1(Delay1_out1_hold_i_5_n_0),
+        .I2(Delay1_out1_hold_i_6_n_0),
+        .I3(Delay1_out1_hold_i_7_n_0),
+        .I4(Delay1_out1_hold_i_8_n_0),
+        .I5(Delay1_out1_hold_i_9_n_0),
+        .O(Delay1_out1_hold_i_2_n_0));
+  LUT5 #(
+    .INIT(32'h00800000)) 
+    Delay1_out1_hold_i_3
+       (.I0(HDL_Counter2_out1_reg[0]),
+        .I1(HDL_Counter2_out1_reg[4]),
+        .I2(HDL_Counter2_out1_reg[5]),
+        .I3(HDL_Counter2_out1_reg[6]),
+        .I4(HDL_Counter2_out1_reg[7]),
+        .O(Delay1_out1_hold_i_3_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay1_out1_hold_i_4
+       (.I0(HDL_Counter2_out1_reg[23]),
+        .I1(HDL_Counter2_out1_reg[22]),
+        .I2(HDL_Counter2_out1_reg[25]),
+        .I3(HDL_Counter2_out1_reg[24]),
+        .O(Delay1_out1_hold_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay1_out1_hold_i_5
+       (.I0(HDL_Counter2_out1_reg[27]),
+        .I1(HDL_Counter2_out1_reg[26]),
+        .I2(HDL_Counter2_out1_reg[29]),
+        .I3(HDL_Counter2_out1_reg[28]),
+        .O(Delay1_out1_hold_i_5_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay1_out1_hold_i_6
+       (.I0(HDL_Counter2_out1_reg[15]),
+        .I1(HDL_Counter2_out1_reg[14]),
+        .I2(HDL_Counter2_out1_reg[17]),
+        .I3(HDL_Counter2_out1_reg[16]),
+        .O(Delay1_out1_hold_i_6_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay1_out1_hold_i_7
+       (.I0(HDL_Counter2_out1_reg[19]),
+        .I1(HDL_Counter2_out1_reg[18]),
+        .I2(HDL_Counter2_out1_reg[21]),
+        .I3(HDL_Counter2_out1_reg[20]),
+        .O(Delay1_out1_hold_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay1_out1_hold_i_8
+       (.I0(HDL_Counter2_out1_reg[11]),
+        .I1(HDL_Counter2_out1_reg[10]),
+        .I2(HDL_Counter2_out1_reg[13]),
+        .I3(HDL_Counter2_out1_reg[12]),
+        .O(Delay1_out1_hold_i_8_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    Delay1_out1_hold_i_9
+       (.I0(HDL_Counter2_out1_reg[2]),
+        .I1(HDL_Counter2_out1_reg[30]),
+        .I2(HDL_Counter2_out1_reg[31]),
+        .I3(HDL_Counter2_out1_reg[9]),
+        .I4(HDL_Counter2_out1_reg[8]),
+        .O(Delay1_out1_hold_i_9_n_0));
   LUT6 #(
-    .INIT(64'hCCCCAAAAFCFFAAAA)) 
-    \enable_last_value[0]_i_1 
-       (.I0(enable_last_value),
-        .I1(\enable_last_value[0]_i_2_n_0 ),
-        .I2(\enable_last_value[0]_i_3_n_0 ),
-        .I3(cycle[3]),
-        .I4(Delay7_out1),
-        .I5(cycle[6]),
-        .O(enable_1));
-  LUT3 #(
-    .INIT(8'h1F)) 
-    \enable_last_value[0]_i_2 
-       (.I0(cycle[6]),
-        .I1(cycle[2]),
-        .I2(cycle[7]),
-        .O(\enable_last_value[0]_i_2_n_0 ));
+    .INIT(64'h000000005555DFFF)) 
+    Delay2_out1_hold_i_1
+       (.I0(HDL_Counter3_out1_reg[7]),
+        .I1(Delay2_out1_hold_i_2_n_0),
+        .I2(HDL_Counter3_out1_reg[2]),
+        .I3(HDL_Counter3_out1_reg[4]),
+        .I4(HDL_Counter3_out1_reg[6]),
+        .I5(Delay2_out1_hold_i_3_n_0),
+        .O(alpha1_D_Lookup_Table3_table_data));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h7)) 
-    \enable_last_value[0]_i_3 
-       (.I0(cycle[4]),
-        .I1(cycle[5]),
-        .O(\enable_last_value[0]_i_3_n_0 ));
+    Delay2_out1_hold_i_2
+       (.I0(HDL_Counter3_out1_reg[3]),
+        .I1(HDL_Counter3_out1_reg[5]),
+        .O(Delay2_out1_hold_i_2_n_0));
   LUT6 #(
-    .INIT(64'h0001FFFF00010000)) 
-    \endSignal_last_value[0]_i_1 
-       (.I0(\cycle[3]_i_2_n_0 ),
-        .I1(cycle[2]),
-        .I2(cycle[6]),
-        .I3(\cycle[7]_i_3_n_0 ),
-        .I4(Delay7_out1),
-        .I5(endSignal_last_value),
-        .O(endSignal_1));
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    Delay2_out1_hold_i_3
+       (.I0(Delay2_out1_hold_i_4_n_0),
+        .I1(Delay2_out1_hold_i_5_n_0),
+        .I2(Delay2_out1_hold_i_6_n_0),
+        .I3(Delay2_out1_hold_i_7_n_0),
+        .I4(Delay2_out1_hold_i_8_n_0),
+        .I5(Delay2_out1_hold_i_9_n_0),
+        .O(Delay2_out1_hold_i_3_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_4
+       (.I0(HDL_Counter3_out1_reg[25]),
+        .I1(HDL_Counter3_out1_reg[24]),
+        .I2(HDL_Counter3_out1_reg[27]),
+        .I3(HDL_Counter3_out1_reg[26]),
+        .O(Delay2_out1_hold_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_5
+       (.I0(HDL_Counter3_out1_reg[29]),
+        .I1(HDL_Counter3_out1_reg[28]),
+        .I2(HDL_Counter3_out1_reg[31]),
+        .I3(HDL_Counter3_out1_reg[30]),
+        .O(Delay2_out1_hold_i_5_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_6
+       (.I0(HDL_Counter3_out1_reg[17]),
+        .I1(HDL_Counter3_out1_reg[16]),
+        .I2(HDL_Counter3_out1_reg[19]),
+        .I3(HDL_Counter3_out1_reg[18]),
+        .O(Delay2_out1_hold_i_6_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_7
+       (.I0(HDL_Counter3_out1_reg[21]),
+        .I1(HDL_Counter3_out1_reg[20]),
+        .I2(HDL_Counter3_out1_reg[23]),
+        .I3(HDL_Counter3_out1_reg[22]),
+        .O(Delay2_out1_hold_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_8
+       (.I0(HDL_Counter3_out1_reg[13]),
+        .I1(HDL_Counter3_out1_reg[12]),
+        .I2(HDL_Counter3_out1_reg[15]),
+        .I3(HDL_Counter3_out1_reg[14]),
+        .O(Delay2_out1_hold_i_8_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay2_out1_hold_i_9
+       (.I0(HDL_Counter3_out1_reg[9]),
+        .I1(HDL_Counter3_out1_reg[8]),
+        .I2(HDL_Counter3_out1_reg[11]),
+        .I3(HDL_Counter3_out1_reg[10]),
+        .O(Delay2_out1_hold_i_9_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay_out1_hold_i_10
+       (.I0(HDL_Counter1_out1_reg[23]),
+        .I1(HDL_Counter1_out1_reg[22]),
+        .I2(HDL_Counter1_out1_reg[25]),
+        .I3(HDL_Counter1_out1_reg[24]),
+        .O(Delay_out1_hold_i_10_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT4 #(
+    .INIT(16'h0002)) 
+    Delay_out1_hold_i_2
+       (.I0(Delay_out1_hold_i_3_n_0),
+        .I1(Delay_out1_hold_i_4_n_0),
+        .I2(Delay_out1_hold_i_5_n_0),
+        .I3(Delay_out1_hold_i_6_n_0),
+        .O(alpha1_D_Lookup_Table1_table_data));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
-    .INIT(32'h0A0A0ACA)) 
-    \start_last_value[0]_i_1 
-       (.I0(start_last_value),
-        .I1(\start_last_value[0]_i_2_n_0 ),
-        .I2(Delay7_out1),
-        .I3(cycle[6]),
-        .I4(cycle[2]),
-        .O(start_1));
+    .INIT(32'h00000001)) 
+    Delay_out1_hold_i_3
+       (.I0(HDL_Counter1_out1_reg[0]),
+        .I1(HDL_Counter1_out1_reg[1]),
+        .I2(HDL_Counter1_out1_reg[3]),
+        .I3(HDL_Counter1_out1_reg[7]),
+        .I4(HDL_Counter1_out1_reg[6]),
+        .O(Delay_out1_hold_i_3_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    Delay_out1_hold_i_4
+       (.I0(HDL_Counter1_out1_reg[31]),
+        .I1(HDL_Counter1_out1_reg[30]),
+        .I2(HDL_Counter1_out1_reg[2]),
+        .I3(Delay_out1_hold_i_7_n_0),
+        .I4(Delay_out1_hold_i_8_n_0),
+        .O(Delay_out1_hold_i_4_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    Delay_out1_hold_i_5
+       (.I0(HDL_Counter1_out1_reg[12]),
+        .I1(HDL_Counter1_out1_reg[13]),
+        .I2(HDL_Counter1_out1_reg[10]),
+        .I3(HDL_Counter1_out1_reg[11]),
+        .I4(Delay_out1_hold_i_9_n_0),
+        .O(Delay_out1_hold_i_5_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    Delay_out1_hold_i_6
+       (.I0(HDL_Counter1_out1_reg[20]),
+        .I1(HDL_Counter1_out1_reg[21]),
+        .I2(HDL_Counter1_out1_reg[18]),
+        .I3(HDL_Counter1_out1_reg[19]),
+        .I4(Delay_out1_hold_i_10_n_0),
+        .O(Delay_out1_hold_i_6_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay_out1_hold_i_7
+       (.I0(HDL_Counter1_out1_reg[27]),
+        .I1(HDL_Counter1_out1_reg[26]),
+        .I2(HDL_Counter1_out1_reg[29]),
+        .I3(HDL_Counter1_out1_reg[28]),
+        .O(Delay_out1_hold_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay_out1_hold_i_8
+       (.I0(HDL_Counter1_out1_reg[5]),
+        .I1(HDL_Counter1_out1_reg[4]),
+        .I2(HDL_Counter1_out1_reg[9]),
+        .I3(HDL_Counter1_out1_reg[8]),
+        .O(Delay_out1_hold_i_8_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    Delay_out1_hold_i_9
+       (.I0(HDL_Counter1_out1_reg[15]),
+        .I1(HDL_Counter1_out1_reg[14]),
+        .I2(HDL_Counter1_out1_reg[17]),
+        .I3(HDL_Counter1_out1_reg[16]),
+        .O(Delay_out1_hold_i_9_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    Delay_out1_i_1
+       (.I0(reset_n),
+        .O(reset_n_0));
+  LUT5 #(
+    .INIT(32'hCCCC4CCC)) 
+    \HDL_Counter1_out1[0]_i_2__0 
+       (.I0(HDL_Counter1_out1_reg[1]),
+        .I1(HDL_Counter1_out1_reg[0]),
+        .I2(HDL_Counter1_out1_reg[6]),
+        .I3(HDL_Counter1_out1_reg[3]),
+        .I4(\HDL_Counter1_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter1_out1[0]_i_2__0_n_0 ));
+  LUT5 #(
+    .INIT(32'hCCCC4CCC)) 
+    \HDL_Counter1_out1[0]_i_3__0 
+       (.I0(HDL_Counter1_out1_reg[6]),
+        .I1(HDL_Counter1_out1_reg[3]),
+        .I2(HDL_Counter1_out1_reg[1]),
+        .I3(HDL_Counter1_out1_reg[0]),
+        .I4(\HDL_Counter1_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter1_out1[0]_i_3__0_n_0 ));
+  LUT5 #(
+    .INIT(32'hCCCC4CCC)) 
+    \HDL_Counter1_out1[0]_i_4__0 
+       (.I0(HDL_Counter1_out1_reg[0]),
+        .I1(HDL_Counter1_out1_reg[1]),
+        .I2(HDL_Counter1_out1_reg[6]),
+        .I3(HDL_Counter1_out1_reg[3]),
+        .I4(\HDL_Counter1_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter1_out1[0]_i_4__0_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \HDL_Counter1_out1[0]_i_5__0 
+       (.I0(HDL_Counter1_out1_reg[0]),
+        .O(\HDL_Counter1_out1[0]_i_5__0_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT4 #(
+    .INIT(16'hFEFF)) 
+    \HDL_Counter1_out1[0]_i_6 
+       (.I0(Delay_out1_hold_i_4_n_0),
+        .I1(Delay_out1_hold_i_5_n_0),
+        .I2(Delay_out1_hold_i_6_n_0),
+        .I3(HDL_Counter1_out1_reg[7]),
+        .O(\HDL_Counter1_out1[0]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    \start_last_value[0]_i_2 
-       (.I0(cycle[3]),
-        .I1(cycle[4]),
-        .I2(cycle[0]),
-        .I3(cycle[1]),
-        .I4(cycle[7]),
-        .I5(cycle[5]),
-        .O(\start_last_value[0]_i_2_n_0 ));
+    .INIT(64'hFFFF0000EFFF0000)) 
+    \HDL_Counter1_out1[4]_i_2__0 
+       (.I0(Delay_out1_hold_i_4_n_0),
+        .I1(\HDL_Counter1_out1[4]_i_4_n_0 ),
+        .I2(HDL_Counter1_out1_reg[6]),
+        .I3(HDL_Counter1_out1_reg[3]),
+        .I4(HDL_Counter1_out1_reg[7]),
+        .I5(\HDL_Counter1_out1[4]_i_5_n_0 ),
+        .O(\HDL_Counter1_out1[4]_i_2__0_n_0 ));
+  LUT5 #(
+    .INIT(32'hCCCC4CCC)) 
+    \HDL_Counter1_out1[4]_i_3__0 
+       (.I0(HDL_Counter1_out1_reg[3]),
+        .I1(HDL_Counter1_out1_reg[6]),
+        .I2(HDL_Counter1_out1_reg[1]),
+        .I3(HDL_Counter1_out1_reg[0]),
+        .I4(\HDL_Counter1_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter1_out1[4]_i_3__0_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    \HDL_Counter1_out1[4]_i_4 
+       (.I0(Delay_out1_hold_i_9_n_0),
+        .I1(HDL_Counter1_out1_reg[11]),
+        .I2(HDL_Counter1_out1_reg[10]),
+        .I3(HDL_Counter1_out1_reg[13]),
+        .I4(HDL_Counter1_out1_reg[12]),
+        .I5(Delay_out1_hold_i_6_n_0),
+        .O(\HDL_Counter1_out1[4]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \HDL_Counter1_out1[4]_i_5 
+       (.I0(HDL_Counter1_out1_reg[0]),
+        .I1(HDL_Counter1_out1_reg[1]),
+        .O(\HDL_Counter1_out1[4]_i_5_n_0 ));
+  FDCE \HDL_Counter1_out1_reg[0] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[0]_i_1__0_n_7 ),
+        .Q(HDL_Counter1_out1_reg[0]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[0]_i_1__0 
+       (.CI(1'b0),
+        .CO({\HDL_Counter1_out1_reg[0]_i_1__0_n_0 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_1 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_2 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,\HDL_Counter1_out1[0]_i_2__0_n_0 }),
+        .O({\HDL_Counter1_out1_reg[0]_i_1__0_n_4 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_5 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_6 ,\HDL_Counter1_out1_reg[0]_i_1__0_n_7 }),
+        .S({\HDL_Counter1_out1[0]_i_3__0_n_0 ,HDL_Counter1_out1_reg[2],\HDL_Counter1_out1[0]_i_4__0_n_0 ,\HDL_Counter1_out1[0]_i_5__0_n_0 }));
+  FDCE \HDL_Counter1_out1_reg[10] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[8]_i_1__0_n_5 ),
+        .Q(HDL_Counter1_out1_reg[10]));
+  FDCE \HDL_Counter1_out1_reg[11] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[8]_i_1__0_n_4 ),
+        .Q(HDL_Counter1_out1_reg[11]));
+  FDCE \HDL_Counter1_out1_reg[12] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[12]_i_1__0_n_7 ),
+        .Q(HDL_Counter1_out1_reg[12]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[12]_i_1__0 
+       (.CI(\HDL_Counter1_out1_reg[8]_i_1__0_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[12]_i_1__0_n_0 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_1 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_2 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[12]_i_1__0_n_4 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_5 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_6 ,\HDL_Counter1_out1_reg[12]_i_1__0_n_7 }),
+        .S(HDL_Counter1_out1_reg[15:12]));
+  FDCE \HDL_Counter1_out1_reg[13] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[12]_i_1__0_n_6 ),
+        .Q(HDL_Counter1_out1_reg[13]));
+  FDCE \HDL_Counter1_out1_reg[14] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[12]_i_1__0_n_5 ),
+        .Q(HDL_Counter1_out1_reg[14]));
+  FDCE \HDL_Counter1_out1_reg[15] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[12]_i_1__0_n_4 ),
+        .Q(HDL_Counter1_out1_reg[15]));
+  FDCE \HDL_Counter1_out1_reg[16] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[16]_i_1_n_7 ),
+        .Q(HDL_Counter1_out1_reg[16]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[16]_i_1 
+       (.CI(\HDL_Counter1_out1_reg[12]_i_1__0_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[16]_i_1_n_0 ,\HDL_Counter1_out1_reg[16]_i_1_n_1 ,\HDL_Counter1_out1_reg[16]_i_1_n_2 ,\HDL_Counter1_out1_reg[16]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[16]_i_1_n_4 ,\HDL_Counter1_out1_reg[16]_i_1_n_5 ,\HDL_Counter1_out1_reg[16]_i_1_n_6 ,\HDL_Counter1_out1_reg[16]_i_1_n_7 }),
+        .S(HDL_Counter1_out1_reg[19:16]));
+  FDCE \HDL_Counter1_out1_reg[17] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[16]_i_1_n_6 ),
+        .Q(HDL_Counter1_out1_reg[17]));
+  FDCE \HDL_Counter1_out1_reg[18] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[16]_i_1_n_5 ),
+        .Q(HDL_Counter1_out1_reg[18]));
+  FDCE \HDL_Counter1_out1_reg[19] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[16]_i_1_n_4 ),
+        .Q(HDL_Counter1_out1_reg[19]));
+  FDCE \HDL_Counter1_out1_reg[1] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[0]_i_1__0_n_6 ),
+        .Q(HDL_Counter1_out1_reg[1]));
+  FDCE \HDL_Counter1_out1_reg[20] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[20]_i_1_n_7 ),
+        .Q(HDL_Counter1_out1_reg[20]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[20]_i_1 
+       (.CI(\HDL_Counter1_out1_reg[16]_i_1_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[20]_i_1_n_0 ,\HDL_Counter1_out1_reg[20]_i_1_n_1 ,\HDL_Counter1_out1_reg[20]_i_1_n_2 ,\HDL_Counter1_out1_reg[20]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[20]_i_1_n_4 ,\HDL_Counter1_out1_reg[20]_i_1_n_5 ,\HDL_Counter1_out1_reg[20]_i_1_n_6 ,\HDL_Counter1_out1_reg[20]_i_1_n_7 }),
+        .S(HDL_Counter1_out1_reg[23:20]));
+  FDCE \HDL_Counter1_out1_reg[21] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[20]_i_1_n_6 ),
+        .Q(HDL_Counter1_out1_reg[21]));
+  FDCE \HDL_Counter1_out1_reg[22] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[20]_i_1_n_5 ),
+        .Q(HDL_Counter1_out1_reg[22]));
+  FDCE \HDL_Counter1_out1_reg[23] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[20]_i_1_n_4 ),
+        .Q(HDL_Counter1_out1_reg[23]));
+  FDCE \HDL_Counter1_out1_reg[24] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[24]_i_1_n_7 ),
+        .Q(HDL_Counter1_out1_reg[24]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[24]_i_1 
+       (.CI(\HDL_Counter1_out1_reg[20]_i_1_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[24]_i_1_n_0 ,\HDL_Counter1_out1_reg[24]_i_1_n_1 ,\HDL_Counter1_out1_reg[24]_i_1_n_2 ,\HDL_Counter1_out1_reg[24]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[24]_i_1_n_4 ,\HDL_Counter1_out1_reg[24]_i_1_n_5 ,\HDL_Counter1_out1_reg[24]_i_1_n_6 ,\HDL_Counter1_out1_reg[24]_i_1_n_7 }),
+        .S(HDL_Counter1_out1_reg[27:24]));
+  FDCE \HDL_Counter1_out1_reg[25] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[24]_i_1_n_6 ),
+        .Q(HDL_Counter1_out1_reg[25]));
+  FDCE \HDL_Counter1_out1_reg[26] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[24]_i_1_n_5 ),
+        .Q(HDL_Counter1_out1_reg[26]));
+  FDCE \HDL_Counter1_out1_reg[27] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[24]_i_1_n_4 ),
+        .Q(HDL_Counter1_out1_reg[27]));
+  FDCE \HDL_Counter1_out1_reg[28] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[28]_i_1_n_7 ),
+        .Q(HDL_Counter1_out1_reg[28]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[28]_i_1 
+       (.CI(\HDL_Counter1_out1_reg[24]_i_1_n_0 ),
+        .CO({\NLW_HDL_Counter1_out1_reg[28]_i_1_CO_UNCONNECTED [3],\HDL_Counter1_out1_reg[28]_i_1_n_1 ,\HDL_Counter1_out1_reg[28]_i_1_n_2 ,\HDL_Counter1_out1_reg[28]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[28]_i_1_n_4 ,\HDL_Counter1_out1_reg[28]_i_1_n_5 ,\HDL_Counter1_out1_reg[28]_i_1_n_6 ,\HDL_Counter1_out1_reg[28]_i_1_n_7 }),
+        .S(HDL_Counter1_out1_reg[31:28]));
+  FDCE \HDL_Counter1_out1_reg[29] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[28]_i_1_n_6 ),
+        .Q(HDL_Counter1_out1_reg[29]));
+  FDCE \HDL_Counter1_out1_reg[2] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[0]_i_1__0_n_5 ),
+        .Q(HDL_Counter1_out1_reg[2]));
+  FDCE \HDL_Counter1_out1_reg[30] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[28]_i_1_n_5 ),
+        .Q(HDL_Counter1_out1_reg[30]));
+  FDCE \HDL_Counter1_out1_reg[31] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[28]_i_1_n_4 ),
+        .Q(HDL_Counter1_out1_reg[31]));
+  FDCE \HDL_Counter1_out1_reg[3] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[0]_i_1__0_n_4 ),
+        .Q(HDL_Counter1_out1_reg[3]));
+  FDCE \HDL_Counter1_out1_reg[4] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[4]_i_1__0_n_7 ),
+        .Q(HDL_Counter1_out1_reg[4]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[4]_i_1__0 
+       (.CI(\HDL_Counter1_out1_reg[0]_i_1__0_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[4]_i_1__0_n_0 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_1 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_2 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[4]_i_1__0_n_4 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_5 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_6 ,\HDL_Counter1_out1_reg[4]_i_1__0_n_7 }),
+        .S({\HDL_Counter1_out1[4]_i_2__0_n_0 ,\HDL_Counter1_out1[4]_i_3__0_n_0 ,HDL_Counter1_out1_reg[5:4]}));
+  FDCE \HDL_Counter1_out1_reg[5] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[4]_i_1__0_n_6 ),
+        .Q(HDL_Counter1_out1_reg[5]));
+  FDCE \HDL_Counter1_out1_reg[6] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[4]_i_1__0_n_5 ),
+        .Q(HDL_Counter1_out1_reg[6]));
+  FDCE \HDL_Counter1_out1_reg[7] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[4]_i_1__0_n_4 ),
+        .Q(HDL_Counter1_out1_reg[7]));
+  FDCE \HDL_Counter1_out1_reg[8] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[8]_i_1__0_n_7 ),
+        .Q(HDL_Counter1_out1_reg[8]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter1_out1_reg[8]_i_1__0 
+       (.CI(\HDL_Counter1_out1_reg[4]_i_1__0_n_0 ),
+        .CO({\HDL_Counter1_out1_reg[8]_i_1__0_n_0 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_1 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_2 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter1_out1_reg[8]_i_1__0_n_4 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_5 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_6 ,\HDL_Counter1_out1_reg[8]_i_1__0_n_7 }),
+        .S(HDL_Counter1_out1_reg[11:8]));
+  FDCE \HDL_Counter1_out1_reg[9] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter1_out1_reg[8]_i_1__0_n_6 ),
+        .Q(HDL_Counter1_out1_reg[9]));
+  LUT6 #(
+    .INIT(64'hCCCCCCCC4CCCCCCC)) 
+    \HDL_Counter2_out1[0]_i_2 
+       (.I0(HDL_Counter2_out1_reg[6]),
+        .I1(HDL_Counter2_out1_reg[0]),
+        .I2(HDL_Counter2_out1_reg[3]),
+        .I3(HDL_Counter2_out1_reg[1]),
+        .I4(HDL_Counter2_out1_reg[7]),
+        .I5(\HDL_Counter2_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter2_out1[0]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hCCCCCCCC4CCCCCCC)) 
+    \HDL_Counter2_out1[0]_i_3 
+       (.I0(HDL_Counter2_out1_reg[1]),
+        .I1(HDL_Counter2_out1_reg[3]),
+        .I2(HDL_Counter2_out1_reg[6]),
+        .I3(HDL_Counter2_out1_reg[0]),
+        .I4(HDL_Counter2_out1_reg[7]),
+        .I5(\HDL_Counter2_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter2_out1[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hCCCCCCCC4CCCCCCC)) 
+    \HDL_Counter2_out1[0]_i_4 
+       (.I0(HDL_Counter2_out1_reg[3]),
+        .I1(HDL_Counter2_out1_reg[1]),
+        .I2(HDL_Counter2_out1_reg[6]),
+        .I3(HDL_Counter2_out1_reg[0]),
+        .I4(HDL_Counter2_out1_reg[7]),
+        .I5(\HDL_Counter2_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter2_out1[0]_i_4_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \HDL_Counter2_out1[0]_i_5 
+       (.I0(HDL_Counter2_out1_reg[0]),
+        .O(\HDL_Counter2_out1[0]_i_5_n_0 ));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \HDL_Counter2_out1[0]_i_6 
+       (.I0(HDL_Counter2_out1_reg[5]),
+        .I1(HDL_Counter2_out1_reg[4]),
+        .I2(Delay1_out1_hold_i_2_n_0),
+        .O(\HDL_Counter2_out1[0]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hBF00FF00FF00FF00)) 
+    \HDL_Counter2_out1[4]_i_2 
+       (.I0(\HDL_Counter2_out1[0]_i_6_n_0 ),
+        .I1(HDL_Counter2_out1_reg[6]),
+        .I2(HDL_Counter2_out1_reg[0]),
+        .I3(HDL_Counter2_out1_reg[7]),
+        .I4(HDL_Counter2_out1_reg[1]),
+        .I5(HDL_Counter2_out1_reg[3]),
+        .O(\HDL_Counter2_out1[4]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hCCCCCCCC4CCCCCCC)) 
+    \HDL_Counter2_out1[4]_i_3 
+       (.I0(HDL_Counter2_out1_reg[0]),
+        .I1(HDL_Counter2_out1_reg[6]),
+        .I2(HDL_Counter2_out1_reg[3]),
+        .I3(HDL_Counter2_out1_reg[1]),
+        .I4(HDL_Counter2_out1_reg[7]),
+        .I5(\HDL_Counter2_out1[0]_i_6_n_0 ),
+        .O(\HDL_Counter2_out1[4]_i_3_n_0 ));
+  FDCE \HDL_Counter2_out1_reg[0] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[0]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[0]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[0]_i_1 
+       (.CI(1'b0),
+        .CO({\HDL_Counter2_out1_reg[0]_i_1_n_0 ,\HDL_Counter2_out1_reg[0]_i_1_n_1 ,\HDL_Counter2_out1_reg[0]_i_1_n_2 ,\HDL_Counter2_out1_reg[0]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,\HDL_Counter2_out1[0]_i_2_n_0 }),
+        .O({\HDL_Counter2_out1_reg[0]_i_1_n_4 ,\HDL_Counter2_out1_reg[0]_i_1_n_5 ,\HDL_Counter2_out1_reg[0]_i_1_n_6 ,\HDL_Counter2_out1_reg[0]_i_1_n_7 }),
+        .S({\HDL_Counter2_out1[0]_i_3_n_0 ,HDL_Counter2_out1_reg[2],\HDL_Counter2_out1[0]_i_4_n_0 ,\HDL_Counter2_out1[0]_i_5_n_0 }));
+  FDCE \HDL_Counter2_out1_reg[10] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[8]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[10]));
+  FDCE \HDL_Counter2_out1_reg[11] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[8]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[11]));
+  FDCE \HDL_Counter2_out1_reg[12] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[12]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[12]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[12]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[8]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[12]_i_1_n_0 ,\HDL_Counter2_out1_reg[12]_i_1_n_1 ,\HDL_Counter2_out1_reg[12]_i_1_n_2 ,\HDL_Counter2_out1_reg[12]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[12]_i_1_n_4 ,\HDL_Counter2_out1_reg[12]_i_1_n_5 ,\HDL_Counter2_out1_reg[12]_i_1_n_6 ,\HDL_Counter2_out1_reg[12]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[15:12]));
+  FDCE \HDL_Counter2_out1_reg[13] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[12]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[13]));
+  FDCE \HDL_Counter2_out1_reg[14] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[12]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[14]));
+  FDCE \HDL_Counter2_out1_reg[15] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[12]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[15]));
+  FDCE \HDL_Counter2_out1_reg[16] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[16]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[16]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[16]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[12]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[16]_i_1_n_0 ,\HDL_Counter2_out1_reg[16]_i_1_n_1 ,\HDL_Counter2_out1_reg[16]_i_1_n_2 ,\HDL_Counter2_out1_reg[16]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[16]_i_1_n_4 ,\HDL_Counter2_out1_reg[16]_i_1_n_5 ,\HDL_Counter2_out1_reg[16]_i_1_n_6 ,\HDL_Counter2_out1_reg[16]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[19:16]));
+  FDCE \HDL_Counter2_out1_reg[17] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[16]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[17]));
+  FDCE \HDL_Counter2_out1_reg[18] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[16]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[18]));
+  FDCE \HDL_Counter2_out1_reg[19] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[16]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[19]));
+  FDCE \HDL_Counter2_out1_reg[1] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[0]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[1]));
+  FDCE \HDL_Counter2_out1_reg[20] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[20]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[20]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[20]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[16]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[20]_i_1_n_0 ,\HDL_Counter2_out1_reg[20]_i_1_n_1 ,\HDL_Counter2_out1_reg[20]_i_1_n_2 ,\HDL_Counter2_out1_reg[20]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[20]_i_1_n_4 ,\HDL_Counter2_out1_reg[20]_i_1_n_5 ,\HDL_Counter2_out1_reg[20]_i_1_n_6 ,\HDL_Counter2_out1_reg[20]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[23:20]));
+  FDCE \HDL_Counter2_out1_reg[21] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[20]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[21]));
+  FDCE \HDL_Counter2_out1_reg[22] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[20]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[22]));
+  FDCE \HDL_Counter2_out1_reg[23] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[20]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[23]));
+  FDCE \HDL_Counter2_out1_reg[24] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[24]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[24]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[24]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[20]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[24]_i_1_n_0 ,\HDL_Counter2_out1_reg[24]_i_1_n_1 ,\HDL_Counter2_out1_reg[24]_i_1_n_2 ,\HDL_Counter2_out1_reg[24]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[24]_i_1_n_4 ,\HDL_Counter2_out1_reg[24]_i_1_n_5 ,\HDL_Counter2_out1_reg[24]_i_1_n_6 ,\HDL_Counter2_out1_reg[24]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[27:24]));
+  FDCE \HDL_Counter2_out1_reg[25] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[24]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[25]));
+  FDCE \HDL_Counter2_out1_reg[26] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[24]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[26]));
+  FDCE \HDL_Counter2_out1_reg[27] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[24]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[27]));
+  FDCE \HDL_Counter2_out1_reg[28] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[28]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[28]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[28]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[24]_i_1_n_0 ),
+        .CO({\NLW_HDL_Counter2_out1_reg[28]_i_1_CO_UNCONNECTED [3],\HDL_Counter2_out1_reg[28]_i_1_n_1 ,\HDL_Counter2_out1_reg[28]_i_1_n_2 ,\HDL_Counter2_out1_reg[28]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[28]_i_1_n_4 ,\HDL_Counter2_out1_reg[28]_i_1_n_5 ,\HDL_Counter2_out1_reg[28]_i_1_n_6 ,\HDL_Counter2_out1_reg[28]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[31:28]));
+  FDCE \HDL_Counter2_out1_reg[29] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[28]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[29]));
+  FDCE \HDL_Counter2_out1_reg[2] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[0]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[2]));
+  FDCE \HDL_Counter2_out1_reg[30] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[28]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[30]));
+  FDCE \HDL_Counter2_out1_reg[31] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[28]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[31]));
+  FDCE \HDL_Counter2_out1_reg[3] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[0]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[3]));
+  FDCE \HDL_Counter2_out1_reg[4] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[4]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[4]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[4]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[0]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[4]_i_1_n_0 ,\HDL_Counter2_out1_reg[4]_i_1_n_1 ,\HDL_Counter2_out1_reg[4]_i_1_n_2 ,\HDL_Counter2_out1_reg[4]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[4]_i_1_n_4 ,\HDL_Counter2_out1_reg[4]_i_1_n_5 ,\HDL_Counter2_out1_reg[4]_i_1_n_6 ,\HDL_Counter2_out1_reg[4]_i_1_n_7 }),
+        .S({\HDL_Counter2_out1[4]_i_2_n_0 ,\HDL_Counter2_out1[4]_i_3_n_0 ,HDL_Counter2_out1_reg[5:4]}));
+  FDCE \HDL_Counter2_out1_reg[5] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[4]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[5]));
+  FDCE \HDL_Counter2_out1_reg[6] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[4]_i_1_n_5 ),
+        .Q(HDL_Counter2_out1_reg[6]));
+  FDCE \HDL_Counter2_out1_reg[7] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[4]_i_1_n_4 ),
+        .Q(HDL_Counter2_out1_reg[7]));
+  FDCE \HDL_Counter2_out1_reg[8] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[8]_i_1_n_7 ),
+        .Q(HDL_Counter2_out1_reg[8]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter2_out1_reg[8]_i_1 
+       (.CI(\HDL_Counter2_out1_reg[4]_i_1_n_0 ),
+        .CO({\HDL_Counter2_out1_reg[8]_i_1_n_0 ,\HDL_Counter2_out1_reg[8]_i_1_n_1 ,\HDL_Counter2_out1_reg[8]_i_1_n_2 ,\HDL_Counter2_out1_reg[8]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter2_out1_reg[8]_i_1_n_4 ,\HDL_Counter2_out1_reg[8]_i_1_n_5 ,\HDL_Counter2_out1_reg[8]_i_1_n_6 ,\HDL_Counter2_out1_reg[8]_i_1_n_7 }),
+        .S(HDL_Counter2_out1_reg[11:8]));
+  FDCE \HDL_Counter2_out1_reg[9] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter2_out1_reg[8]_i_1_n_6 ),
+        .Q(HDL_Counter2_out1_reg[9]));
+  LUT6 #(
+    .INIT(64'hF0F0F0F0F0B0F0F0)) 
+    \HDL_Counter3_out1[0]_i_2 
+       (.I0(HDL_Counter3_out1_reg[5]),
+        .I1(HDL_Counter3_out1_reg[3]),
+        .I2(HDL_Counter3_out1_reg[0]),
+        .I3(\HDL_Counter3_out1[0]_i_6_n_0 ),
+        .I4(HDL_Counter3_out1_reg[7]),
+        .I5(\HDL_Counter3_out1[0]_i_7_n_0 ),
+        .O(\HDL_Counter3_out1[0]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hF0F0F0F0F0B0F0F0)) 
+    \HDL_Counter3_out1[0]_i_3 
+       (.I0(HDL_Counter3_out1_reg[5]),
+        .I1(HDL_Counter3_out1_reg[0]),
+        .I2(HDL_Counter3_out1_reg[3]),
+        .I3(\HDL_Counter3_out1[0]_i_6_n_0 ),
+        .I4(HDL_Counter3_out1_reg[7]),
+        .I5(\HDL_Counter3_out1[0]_i_7_n_0 ),
+        .O(\HDL_Counter3_out1[0]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hCCCCC4CC)) 
+    \HDL_Counter3_out1[0]_i_4 
+       (.I0(HDL_Counter3_out1_reg[6]),
+        .I1(HDL_Counter3_out1_reg[1]),
+        .I2(\HDL_Counter3_out1[0]_i_8_n_0 ),
+        .I3(HDL_Counter3_out1_reg[7]),
+        .I4(\HDL_Counter3_out1[0]_i_7_n_0 ),
+        .O(\HDL_Counter3_out1[0]_i_4_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \HDL_Counter3_out1[0]_i_5 
+       (.I0(HDL_Counter3_out1_reg[0]),
+        .O(\HDL_Counter3_out1[0]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    \HDL_Counter3_out1[0]_i_6 
+       (.I0(HDL_Counter3_out1_reg[1]),
+        .I1(HDL_Counter3_out1_reg[6]),
+        .O(\HDL_Counter3_out1[0]_i_6_n_0 ));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \HDL_Counter3_out1[0]_i_7 
+       (.I0(HDL_Counter3_out1_reg[4]),
+        .I1(HDL_Counter3_out1_reg[2]),
+        .I2(Delay2_out1_hold_i_3_n_0),
+        .O(\HDL_Counter3_out1[0]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT3 #(
+    .INIT(8'hDF)) 
+    \HDL_Counter3_out1[0]_i_8 
+       (.I0(HDL_Counter3_out1_reg[3]),
+        .I1(HDL_Counter3_out1_reg[5]),
+        .I2(HDL_Counter3_out1_reg[0]),
+        .O(\HDL_Counter3_out1[0]_i_8_n_0 ));
+  LUT5 #(
+    .INIT(32'hFF00BF00)) 
+    \HDL_Counter3_out1[4]_i_2 
+       (.I0(\HDL_Counter3_out1[0]_i_7_n_0 ),
+        .I1(HDL_Counter3_out1_reg[6]),
+        .I2(HDL_Counter3_out1_reg[1]),
+        .I3(HDL_Counter3_out1_reg[7]),
+        .I4(\HDL_Counter3_out1[0]_i_8_n_0 ),
+        .O(\HDL_Counter3_out1[4]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hCCCCC4CC)) 
+    \HDL_Counter3_out1[4]_i_3 
+       (.I0(HDL_Counter3_out1_reg[1]),
+        .I1(HDL_Counter3_out1_reg[6]),
+        .I2(\HDL_Counter3_out1[0]_i_8_n_0 ),
+        .I3(HDL_Counter3_out1_reg[7]),
+        .I4(\HDL_Counter3_out1[0]_i_7_n_0 ),
+        .O(\HDL_Counter3_out1[4]_i_3_n_0 ));
+  FDCE \HDL_Counter3_out1_reg[0] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[0]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[0]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[0]_i_1 
+       (.CI(1'b0),
+        .CO({\HDL_Counter3_out1_reg[0]_i_1_n_0 ,\HDL_Counter3_out1_reg[0]_i_1_n_1 ,\HDL_Counter3_out1_reg[0]_i_1_n_2 ,\HDL_Counter3_out1_reg[0]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,\HDL_Counter3_out1[0]_i_2_n_0 }),
+        .O({\HDL_Counter3_out1_reg[0]_i_1_n_4 ,\HDL_Counter3_out1_reg[0]_i_1_n_5 ,\HDL_Counter3_out1_reg[0]_i_1_n_6 ,\HDL_Counter3_out1_reg[0]_i_1_n_7 }),
+        .S({\HDL_Counter3_out1[0]_i_3_n_0 ,HDL_Counter3_out1_reg[2],\HDL_Counter3_out1[0]_i_4_n_0 ,\HDL_Counter3_out1[0]_i_5_n_0 }));
+  FDCE \HDL_Counter3_out1_reg[10] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[8]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[10]));
+  FDCE \HDL_Counter3_out1_reg[11] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[8]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[11]));
+  FDCE \HDL_Counter3_out1_reg[12] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[12]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[12]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[12]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[8]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[12]_i_1_n_0 ,\HDL_Counter3_out1_reg[12]_i_1_n_1 ,\HDL_Counter3_out1_reg[12]_i_1_n_2 ,\HDL_Counter3_out1_reg[12]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[12]_i_1_n_4 ,\HDL_Counter3_out1_reg[12]_i_1_n_5 ,\HDL_Counter3_out1_reg[12]_i_1_n_6 ,\HDL_Counter3_out1_reg[12]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[15:12]));
+  FDCE \HDL_Counter3_out1_reg[13] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[12]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[13]));
+  FDCE \HDL_Counter3_out1_reg[14] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[12]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[14]));
+  FDCE \HDL_Counter3_out1_reg[15] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[12]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[15]));
+  FDCE \HDL_Counter3_out1_reg[16] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[16]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[16]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[16]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[12]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[16]_i_1_n_0 ,\HDL_Counter3_out1_reg[16]_i_1_n_1 ,\HDL_Counter3_out1_reg[16]_i_1_n_2 ,\HDL_Counter3_out1_reg[16]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[16]_i_1_n_4 ,\HDL_Counter3_out1_reg[16]_i_1_n_5 ,\HDL_Counter3_out1_reg[16]_i_1_n_6 ,\HDL_Counter3_out1_reg[16]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[19:16]));
+  FDCE \HDL_Counter3_out1_reg[17] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[16]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[17]));
+  FDCE \HDL_Counter3_out1_reg[18] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[16]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[18]));
+  FDCE \HDL_Counter3_out1_reg[19] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[16]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[19]));
+  FDCE \HDL_Counter3_out1_reg[1] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[0]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[1]));
+  FDCE \HDL_Counter3_out1_reg[20] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[20]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[20]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[20]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[16]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[20]_i_1_n_0 ,\HDL_Counter3_out1_reg[20]_i_1_n_1 ,\HDL_Counter3_out1_reg[20]_i_1_n_2 ,\HDL_Counter3_out1_reg[20]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[20]_i_1_n_4 ,\HDL_Counter3_out1_reg[20]_i_1_n_5 ,\HDL_Counter3_out1_reg[20]_i_1_n_6 ,\HDL_Counter3_out1_reg[20]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[23:20]));
+  FDCE \HDL_Counter3_out1_reg[21] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[20]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[21]));
+  FDCE \HDL_Counter3_out1_reg[22] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[20]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[22]));
+  FDCE \HDL_Counter3_out1_reg[23] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[20]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[23]));
+  FDCE \HDL_Counter3_out1_reg[24] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[24]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[24]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[24]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[20]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[24]_i_1_n_0 ,\HDL_Counter3_out1_reg[24]_i_1_n_1 ,\HDL_Counter3_out1_reg[24]_i_1_n_2 ,\HDL_Counter3_out1_reg[24]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[24]_i_1_n_4 ,\HDL_Counter3_out1_reg[24]_i_1_n_5 ,\HDL_Counter3_out1_reg[24]_i_1_n_6 ,\HDL_Counter3_out1_reg[24]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[27:24]));
+  FDCE \HDL_Counter3_out1_reg[25] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[24]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[25]));
+  FDCE \HDL_Counter3_out1_reg[26] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[24]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[26]));
+  FDCE \HDL_Counter3_out1_reg[27] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[24]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[27]));
+  FDCE \HDL_Counter3_out1_reg[28] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[28]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[28]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[28]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[24]_i_1_n_0 ),
+        .CO({\NLW_HDL_Counter3_out1_reg[28]_i_1_CO_UNCONNECTED [3],\HDL_Counter3_out1_reg[28]_i_1_n_1 ,\HDL_Counter3_out1_reg[28]_i_1_n_2 ,\HDL_Counter3_out1_reg[28]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[28]_i_1_n_4 ,\HDL_Counter3_out1_reg[28]_i_1_n_5 ,\HDL_Counter3_out1_reg[28]_i_1_n_6 ,\HDL_Counter3_out1_reg[28]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[31:28]));
+  FDCE \HDL_Counter3_out1_reg[29] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[28]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[29]));
+  FDCE \HDL_Counter3_out1_reg[2] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[0]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[2]));
+  FDCE \HDL_Counter3_out1_reg[30] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[28]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[30]));
+  FDCE \HDL_Counter3_out1_reg[31] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[28]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[31]));
+  FDCE \HDL_Counter3_out1_reg[3] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[0]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[3]));
+  FDCE \HDL_Counter3_out1_reg[4] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[4]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[4]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[4]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[0]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[4]_i_1_n_0 ,\HDL_Counter3_out1_reg[4]_i_1_n_1 ,\HDL_Counter3_out1_reg[4]_i_1_n_2 ,\HDL_Counter3_out1_reg[4]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[4]_i_1_n_4 ,\HDL_Counter3_out1_reg[4]_i_1_n_5 ,\HDL_Counter3_out1_reg[4]_i_1_n_6 ,\HDL_Counter3_out1_reg[4]_i_1_n_7 }),
+        .S({\HDL_Counter3_out1[4]_i_2_n_0 ,\HDL_Counter3_out1[4]_i_3_n_0 ,HDL_Counter3_out1_reg[5:4]}));
+  FDCE \HDL_Counter3_out1_reg[5] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[4]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[5]));
+  FDCE \HDL_Counter3_out1_reg[6] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[4]_i_1_n_5 ),
+        .Q(HDL_Counter3_out1_reg[6]));
+  FDCE \HDL_Counter3_out1_reg[7] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[4]_i_1_n_4 ),
+        .Q(HDL_Counter3_out1_reg[7]));
+  FDCE \HDL_Counter3_out1_reg[8] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[8]_i_1_n_7 ),
+        .Q(HDL_Counter3_out1_reg[8]));
+  (* ADDER_THRESHOLD = "11" *) 
+  CARRY4 \HDL_Counter3_out1_reg[8]_i_1 
+       (.CI(\HDL_Counter3_out1_reg[4]_i_1_n_0 ),
+        .CO({\HDL_Counter3_out1_reg[8]_i_1_n_0 ,\HDL_Counter3_out1_reg[8]_i_1_n_1 ,\HDL_Counter3_out1_reg[8]_i_1_n_2 ,\HDL_Counter3_out1_reg[8]_i_1_n_3 }),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\HDL_Counter3_out1_reg[8]_i_1_n_4 ,\HDL_Counter3_out1_reg[8]_i_1_n_5 ,\HDL_Counter3_out1_reg[8]_i_1_n_6 ,\HDL_Counter3_out1_reg[8]_i_1_n_7 }),
+        .S(HDL_Counter3_out1_reg[11:8]));
+  FDCE \HDL_Counter3_out1_reg[9] 
+       (.C(clk),
+        .CE(enb_gated),
+        .CLR(reset_n_0),
+        .D(\HDL_Counter3_out1_reg[8]_i_1_n_6 ),
+        .Q(HDL_Counter3_out1_reg[9]));
 endmodule
 
-(* ORIG_REF_NAME = "RS_Gen" *) 
-module top_DataSource_Scrambler_0_1_RS_Gen
-   (start_1,
-    reset_n_0,
-    endSignal_1,
-    enable_1,
-    E,
+(* ORIG_REF_NAME = "bit_sys" *) 
+module top_DataSource_Scrambler_0_1_bit_sys
+   (Delay_out1_hold,
+    Delay1_out1_hold,
+    Delay2_out1_hold,
+    enb_gated,
+    alpha1_D_Lookup_Table1_table_data,
     clk,
-    reset_n,
-    Delay7_out1);
-  output [0:0]start_1;
-  output reset_n_0;
-  output [0:0]endSignal_1;
-  output [0:0]enable_1;
-  input [0:0]E;
+    Delay_out1_hold_reg_0,
+    alpha1_D_Lookup_Table2_table_data,
+    alpha1_D_Lookup_Table3_table_data);
+  output Delay_out1_hold;
+  output Delay1_out1_hold;
+  output Delay2_out1_hold;
+  input enb_gated;
+  input alpha1_D_Lookup_Table1_table_data;
   input clk;
-  input reset_n;
-  input Delay7_out1;
+  input Delay_out1_hold_reg_0;
+  input alpha1_D_Lookup_Table2_table_data;
+  input alpha1_D_Lookup_Table3_table_data;
 
-  wire Delay7_out1;
-  wire [0:0]E;
+  wire Delay1_out1_hold;
+  wire Delay2_out1_hold;
+  wire Delay_out1_hold;
+  wire Delay_out1_hold_reg_0;
+  wire alpha1_D_Lookup_Table1_table_data;
+  wire alpha1_D_Lookup_Table2_table_data;
+  wire alpha1_D_Lookup_Table3_table_data;
   wire clk;
-  wire [0:0]enable_1;
-  wire [0:0]enable_last_value;
-  wire [0:0]endSignal_1;
-  wire [0:0]endSignal_last_value;
-  wire reset_n;
-  wire reset_n_0;
-  wire [0:0]start_1;
-  wire [0:0]start_last_value;
+  wire enb_gated;
 
-  FDCE \enable_last_value_reg[0] 
+  FDCE Delay1_out1_hold_reg
        (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(enable_1),
-        .Q(enable_last_value));
-  FDCE \endSignal_last_value_reg[0] 
+        .CE(enb_gated),
+        .CLR(Delay_out1_hold_reg_0),
+        .D(alpha1_D_Lookup_Table2_table_data),
+        .Q(Delay1_out1_hold));
+  FDCE Delay2_out1_hold_reg
        (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(endSignal_1),
-        .Q(endSignal_last_value));
-  FDCE \start_last_value_reg[0] 
+        .CE(enb_gated),
+        .CLR(Delay_out1_hold_reg_0),
+        .D(alpha1_D_Lookup_Table3_table_data),
+        .Q(Delay2_out1_hold));
+  FDCE Delay_out1_hold_reg
        (.C(clk),
-        .CE(E),
-        .CLR(reset_n_0),
-        .D(start_1),
-        .Q(start_last_value));
-  top_DataSource_Scrambler_0_1_MATLAB_Function u_MATLAB_Function
-       (.Delay7_out1(Delay7_out1),
-        .E(E),
-        .clk(clk),
-        .enable_1(enable_1),
-        .enable_last_value(enable_last_value),
-        .endSignal_1(endSignal_1),
-        .endSignal_last_value(endSignal_last_value),
-        .reset_n(reset_n),
-        .reset_n_0(reset_n_0),
-        .start_1(start_1),
-        .start_last_value(start_last_value));
+        .CE(enb_gated),
+        .CLR(Delay_out1_hold_reg_0),
+        .D(alpha1_D_Lookup_Table1_table_data),
+        .Q(Delay_out1_hold));
 endmodule
 
 (* ORIG_REF_NAME = "myScrambler" *) 
 module top_DataSource_Scrambler_0_1_myScrambler
-   (Q,
+   (ScramblerOut,
     clk_enable,
-    D,
+    Delay5_out1,
     clk,
-    \alpha15_switch_delay_reg[0]_0 ,
-    \Bitwise_Operator2_out1_hold_reg[7]_0 ,
+    \Bitwise_Operator2_out1_hold_reg[0]_0 ,
+    TSout,
     Delay9_out1,
     Delay8_out1);
-  output [7:0]Q;
+  output [7:0]ScramblerOut;
   input clk_enable;
-  input [0:0]D;
+  input Delay5_out1;
   input clk;
-  input \alpha15_switch_delay_reg[0]_0 ;
-  input [7:0]\Bitwise_Operator2_out1_hold_reg[7]_0 ;
+  input \Bitwise_Operator2_out1_hold_reg[0]_0 ;
+  input [7:0]TSout;
   input Delay9_out1;
   input Delay8_out1;
 
   wire [0:0]Bitwise_Operator2_out1;
-  wire [7:0]\Bitwise_Operator2_out1_hold_reg[7]_0 ;
-  wire [0:0]D;
+  wire \Bitwise_Operator2_out1_hold_reg[0]_0 ;
+  wire Delay5_out1;
   wire Delay8_out1;
   wire Delay9_out1;
-  wire [7:0]Q;
+  wire [7:0]ScramblerOut;
+  wire [7:0]TSout;
   wire Trigger_delayed;
   wire [0:0]alpha10_switch_delay;
   wire \alpha10_switch_delay[0]_i_1_n_0 ;
@@ -2251,10 +3326,8 @@ module top_DataSource_Scrambler_0_1_myScrambler
   wire [0:0]alpha14_switch_delay;
   wire \alpha14_switch_delay[0]_i_1_n_0 ;
   wire [0:0]alpha15_switch_delay;
-  wire \alpha15_switch_delay_reg[0]_0 ;
   wire \alpha15_switch_delay_reg_n_0_[0] ;
   wire [0:0]alpha1_switch_delay;
-  wire \alpha1_switch_delay[0]_i_2_n_0 ;
   wire [0:0]alpha2_switch_delay;
   wire \alpha2_switch_delay[0]_i_1_n_0 ;
   wire [0:0]alpha3_switch_delay;
@@ -2274,72 +3347,80 @@ module top_DataSource_Scrambler_0_1_myScrambler
   wire clk;
   wire clk_enable;
   wire enb_gated;
+  wire [0:0]p_0_in;
 
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'hAAA6AA6A)) 
     \Bitwise_Operator2_out1_hold[0]_i_1 
-       (.I0(\Bitwise_Operator2_out1_hold_reg[7]_0 [0]),
+       (.I0(TSout[0]),
         .I1(Delay8_out1),
         .I2(\alpha15_switch_delay_reg_n_0_[0] ),
         .I3(Delay9_out1),
         .I4(alpha14_switch_delay),
         .O(Bitwise_Operator2_out1));
+  LUT3 #(
+    .INIT(8'h08)) 
+    \Bitwise_Operator2_out1_hold[7]_i_1 
+       (.I0(clk_enable),
+        .I1(Delay5_out1),
+        .I2(Trigger_delayed),
+        .O(enb_gated));
   FDCE \Bitwise_Operator2_out1_hold_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(Bitwise_Operator2_out1),
-        .Q(Q[0]));
+        .Q(ScramblerOut[0]));
   FDCE \Bitwise_Operator2_out1_hold_reg[1] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [1]),
-        .Q(Q[1]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[1]),
+        .Q(ScramblerOut[1]));
   FDCE \Bitwise_Operator2_out1_hold_reg[2] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [2]),
-        .Q(Q[2]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[2]),
+        .Q(ScramblerOut[2]));
   FDCE \Bitwise_Operator2_out1_hold_reg[3] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [3]),
-        .Q(Q[3]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[3]),
+        .Q(ScramblerOut[3]));
   FDCE \Bitwise_Operator2_out1_hold_reg[4] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [4]),
-        .Q(Q[4]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[4]),
+        .Q(ScramblerOut[4]));
   FDCE \Bitwise_Operator2_out1_hold_reg[5] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [5]),
-        .Q(Q[5]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[5]),
+        .Q(ScramblerOut[5]));
   FDCE \Bitwise_Operator2_out1_hold_reg[6] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [6]),
-        .Q(Q[6]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[6]),
+        .Q(ScramblerOut[6]));
   FDCE \Bitwise_Operator2_out1_hold_reg[7] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
-        .D(\Bitwise_Operator2_out1_hold_reg[7]_0 [7]),
-        .Q(Q[7]));
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
+        .D(TSout[7]),
+        .Q(ScramblerOut[7]));
   FDPE Trigger_delayed_reg
        (.C(clk),
         .CE(clk_enable),
-        .D(D),
-        .PRE(\alpha15_switch_delay_reg[0]_0 ),
+        .D(Delay5_out1),
+        .PRE(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .Q(Trigger_delayed));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha10_switch_delay[0]_i_1 
@@ -2349,10 +3430,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha10_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha10_switch_delay[0]_i_1_n_0 ),
         .Q(alpha10_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha11_switch_delay[0]_i_1 
@@ -2362,10 +3443,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha11_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha11_switch_delay[0]_i_1_n_0 ),
         .Q(alpha11_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha12_switch_delay[0]_i_1 
@@ -2375,10 +3456,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha12_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha12_switch_delay[0]_i_1_n_0 ),
         .Q(alpha12_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha13_switch_delay[0]_i_1 
@@ -2388,10 +3469,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha13_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha13_switch_delay[0]_i_1_n_0 ),
         .Q(alpha13_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha14_switch_delay[0]_i_1 
@@ -2401,10 +3482,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha14_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha14_switch_delay[0]_i_1_n_0 ),
         .Q(alpha14_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha15_switch_delay[0]_i_1 
@@ -2414,31 +3495,24 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha15_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(alpha15_switch_delay),
         .Q(\alpha15_switch_delay_reg_n_0_[0] ));
-  LUT3 #(
-    .INIT(8'h08)) 
-    \alpha1_switch_delay[0]_i_1 
-       (.I0(clk_enable),
-        .I1(D),
-        .I2(Trigger_delayed),
-        .O(enb_gated));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT3 #(
     .INIT(8'hF6)) 
-    \alpha1_switch_delay[0]_i_2 
+    \alpha1_switch_delay[0]_i_1 
        (.I0(alpha14_switch_delay),
         .I1(\alpha15_switch_delay_reg_n_0_[0] ),
         .I2(Delay9_out1),
-        .O(\alpha1_switch_delay[0]_i_2_n_0 ));
+        .O(p_0_in));
   FDPE \alpha1_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .D(\alpha1_switch_delay[0]_i_2_n_0 ),
-        .PRE(\alpha15_switch_delay_reg[0]_0 ),
+        .D(p_0_in),
+        .PRE(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .Q(alpha1_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha2_switch_delay[0]_i_1 
@@ -2448,10 +3522,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha2_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha2_switch_delay[0]_i_1_n_0 ),
         .Q(alpha2_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha3_switch_delay[0]_i_1 
@@ -2461,10 +3535,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha3_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha3_switch_delay[0]_i_1_n_0 ),
         .Q(alpha3_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \alpha4_switch_delay[0]_i_1 
@@ -2475,9 +3549,9 @@ module top_DataSource_Scrambler_0_1_myScrambler
        (.C(clk),
         .CE(enb_gated),
         .D(\alpha4_switch_delay[0]_i_1_n_0 ),
-        .PRE(\alpha15_switch_delay_reg[0]_0 ),
+        .PRE(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .Q(alpha4_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha5_switch_delay[0]_i_1 
@@ -2487,10 +3561,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha5_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha5_switch_delay[0]_i_1_n_0 ),
         .Q(alpha5_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \alpha6_switch_delay[0]_i_1 
@@ -2501,9 +3575,9 @@ module top_DataSource_Scrambler_0_1_myScrambler
        (.C(clk),
         .CE(enb_gated),
         .D(\alpha6_switch_delay[0]_i_1_n_0 ),
-        .PRE(\alpha15_switch_delay_reg[0]_0 ),
+        .PRE(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .Q(alpha6_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha7_switch_delay[0]_i_1 
@@ -2513,10 +3587,10 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha7_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha7_switch_delay[0]_i_1_n_0 ),
         .Q(alpha7_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \alpha8_switch_delay[0]_i_1 
@@ -2527,9 +3601,9 @@ module top_DataSource_Scrambler_0_1_myScrambler
        (.C(clk),
         .CE(enb_gated),
         .D(\alpha8_switch_delay[0]_i_1_n_0 ),
-        .PRE(\alpha15_switch_delay_reg[0]_0 ),
+        .PRE(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .Q(alpha8_switch_delay));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \alpha9_switch_delay[0]_i_1 
@@ -2539,18 +3613,14 @@ module top_DataSource_Scrambler_0_1_myScrambler
   FDCE \alpha9_switch_delay_reg[0] 
        (.C(clk),
         .CE(enb_gated),
-        .CLR(\alpha15_switch_delay_reg[0]_0 ),
+        .CLR(\Bitwise_Operator2_out1_hold_reg[0]_0 ),
         .D(\alpha9_switch_delay[0]_i_1_n_0 ),
         .Q(alpha9_switch_delay));
 endmodule
 
 (* ORIG_REF_NAME = "sigSource" *) 
 module top_DataSource_Scrambler_0_1_sigSource
-   (reset_n_0,
-    sigSource_out1,
-    sigSource_out2,
-    RS_Gen_out3_1,
-    DOADO,
+   (DOADO,
     DATA_IN_out1_reg_0_1_0,
     DATA_IN_out1_reg_0_2_0,
     DATA_IN_out1_reg_0_3_0,
@@ -2558,22 +3628,14 @@ module top_DataSource_Scrambler_0_1_sigSource
     DATA_IN_out1_reg_0_5_0,
     DATA_IN_out1_reg_0_6_0,
     DATA_IN_out1_reg_0_7_0,
-    Detect_Rise_Positive_out1,
-    D,
     \HDL_Counter_out1_reg[19]_0 ,
-    E,
     clk,
     clk_enable,
     HDL_Counter_out1,
-    reset_n,
-    U_k_1,
-    U_k_1_0,
+    \HDL_Counter_out1_reg[0]_0 ,
     Delay7_out1,
-    DATA_IN_out1_reg_0_0_0);
-  output reset_n_0;
-  output sigSource_out1;
-  output sigSource_out2;
-  output RS_Gen_out3_1;
+    DATA_IN_out1_reg_0_0_0,
+    E);
   output [0:0]DOADO;
   output [0:0]DATA_IN_out1_reg_0_1_0;
   output [0:0]DATA_IN_out1_reg_0_2_0;
@@ -2582,20 +3644,15 @@ module top_DataSource_Scrambler_0_1_sigSource
   output [0:0]DATA_IN_out1_reg_0_5_0;
   output [0:0]DATA_IN_out1_reg_0_6_0;
   output [0:0]DATA_IN_out1_reg_0_7_0;
-  output Detect_Rise_Positive_out1;
-  output [0:0]D;
   output \HDL_Counter_out1_reg[19]_0 ;
-  input [0:0]E;
   input clk;
   input clk_enable;
   input HDL_Counter_out1;
-  input reset_n;
-  input U_k_1;
-  input U_k_1_0;
+  input \HDL_Counter_out1_reg[0]_0 ;
   input Delay7_out1;
   input DATA_IN_out1_reg_0_0_0;
+  input [0:0]E;
 
-  wire [0:0]D;
   wire DATA_IN_out1_reg_0_0_0;
   wire DATA_IN_out1_reg_0_0_i_16_n_0;
   wire DATA_IN_out1_reg_0_0_i_19_n_0;
@@ -2640,7 +3697,6 @@ module top_DataSource_Scrambler_0_1_sigSource
   wire [0:0]DATA_IN_out1_reg_0_7_0;
   wire [0:0]DOADO;
   wire Delay7_out1;
-  wire Detect_Rise_Positive_out1;
   wire [0:0]E;
   wire HDL_Counter_out1;
   wire \HDL_Counter_out1[0]_i_3_n_0 ;
@@ -2657,7 +3713,12 @@ module top_DataSource_Scrambler_0_1_sigSource
   wire \HDL_Counter_out1[8]_i_2_n_0 ;
   wire \HDL_Counter_out1[8]_i_3_n_0 ;
   wire [31:0]HDL_Counter_out1_last_value;
+  wire \HDL_Counter_out1_last_value[0]_i_1_n_0 ;
+  wire \HDL_Counter_out1_last_value[1]_i_1_n_0 ;
+  wire \HDL_Counter_out1_last_value[2]_i_1_n_0 ;
+  wire \HDL_Counter_out1_last_value[3]_i_1_n_0 ;
   wire [31:0]HDL_Counter_out1_reg;
+  wire \HDL_Counter_out1_reg[0]_0 ;
   wire \HDL_Counter_out1_reg[0]_i_2_n_0 ;
   wire \HDL_Counter_out1_reg[0]_i_2_n_1 ;
   wire \HDL_Counter_out1_reg[0]_i_2_n_2 ;
@@ -2722,20 +3783,9 @@ module top_DataSource_Scrambler_0_1_sigSource
   wire \HDL_Counter_out1_reg[8]_i_1_n_5 ;
   wire \HDL_Counter_out1_reg[8]_i_1_n_6 ;
   wire \HDL_Counter_out1_reg[8]_i_1_n_7 ;
-  wire RS_Gen_out3_1;
-  wire U_k_1;
-  wire U_k_1_0;
   wire clk;
   wire clk_enable;
-  wire [0:0]enable_1;
-  wire [0:0]endSignal_1;
   wire [14:0]prelookup_idx;
-  wire reset_n;
-  wire reset_n_0;
-  wire [3:0]sel0;
-  wire sigSource_out1;
-  wire sigSource_out2;
-  wire [0:0]start_1;
   wire NLW_DATA_IN_out1_reg_0_0_CASCADEOUTA_UNCONNECTED;
   wire NLW_DATA_IN_out1_reg_0_0_CASCADEOUTB_UNCONNECTED;
   wire NLW_DATA_IN_out1_reg_0_0_DBITERR_UNCONNECTED;
@@ -3081,7 +4131,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(DATA_IN_out1_reg_0_0_i_16_n_0),
         .I3(DATA_IN_out1_reg_0_0_i_32_n_0),
         .I4(DATA_IN_out1_reg_0_0_i_33_n_0),
-        .I5(sel0[3]),
+        .I5(\HDL_Counter_out1_last_value[3]_i_1_n_0 ),
         .O(prelookup_idx[3]));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFB8)) 
@@ -3091,7 +4141,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(DATA_IN_out1_reg_0_0_i_16_n_0),
         .I3(DATA_IN_out1_reg_0_0_i_32_n_0),
         .I4(DATA_IN_out1_reg_0_0_i_33_n_0),
-        .I5(sel0[2]),
+        .I5(\HDL_Counter_out1_last_value[2]_i_1_n_0 ),
         .O(prelookup_idx[2]));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFB8)) 
@@ -3101,7 +4151,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(DATA_IN_out1_reg_0_0_i_16_n_0),
         .I3(DATA_IN_out1_reg_0_0_i_32_n_0),
         .I4(DATA_IN_out1_reg_0_0_i_33_n_0),
-        .I5(sel0[1]),
+        .I5(\HDL_Counter_out1_last_value[1]_i_1_n_0 ),
         .O(prelookup_idx[1]));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFB8)) 
@@ -3111,7 +4161,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(DATA_IN_out1_reg_0_0_i_16_n_0),
         .I3(DATA_IN_out1_reg_0_0_i_32_n_0),
         .I4(DATA_IN_out1_reg_0_0_i_33_n_0),
-        .I5(sel0[0]),
+        .I5(\HDL_Counter_out1_last_value[0]_i_1_n_0 ),
         .O(prelookup_idx[0]));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
@@ -3150,7 +4200,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I4(HDL_Counter_out1_last_value[13]),
         .I5(HDL_Counter_out1_last_value[14]),
         .O(prelookup_idx[13]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT2 #(
     .INIT(4'hE)) 
     DATA_IN_out1_reg_0_0_i_20
@@ -3175,7 +4225,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(HDL_Counter_out1_reg[13]),
         .I3(HDL_Counter_out1_reg[14]),
         .O(DATA_IN_out1_reg_0_0_i_22_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT4 #(
     .INIT(16'h01FF)) 
     DATA_IN_out1_reg_0_0_i_23
@@ -3184,7 +4234,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(HDL_Counter_out1_last_value[13]),
         .I3(HDL_Counter_out1_last_value[14]),
         .O(DATA_IN_out1_reg_0_0_i_23_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'hFFA800A8)) 
     DATA_IN_out1_reg_0_0_i_24
@@ -3299,7 +4349,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I3(HDL_Counter_out1_last_value[17]),
         .I4(HDL_Counter_out1_last_value[16]),
         .O(DATA_IN_out1_reg_0_0_i_34_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     DATA_IN_out1_reg_0_0_i_35
@@ -3352,7 +4402,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I4(Delay7_out1),
         .I5(\HDL_Counter_out1_reg[19]_0 ),
         .O(prelookup_idx[11]));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     DATA_IN_out1_reg_0_0_i_40
@@ -3387,21 +4437,21 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I4(HDL_Counter_out1_reg[12]),
         .I5(HDL_Counter_out1_reg[13]),
         .O(DATA_IN_out1_reg_0_0_i_43_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT2 #(
     .INIT(4'hE)) 
     DATA_IN_out1_reg_0_0_i_44
        (.I0(HDL_Counter_out1_last_value[9]),
         .I1(HDL_Counter_out1_last_value[10]),
         .O(DATA_IN_out1_reg_0_0_i_44_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT2 #(
     .INIT(4'hE)) 
     DATA_IN_out1_reg_0_0_i_45
        (.I0(HDL_Counter_out1_reg[12]),
         .I1(HDL_Counter_out1_reg[13]),
         .O(DATA_IN_out1_reg_0_0_i_45_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'hFFF8)) 
     DATA_IN_out1_reg_0_0_i_46
@@ -3410,7 +4460,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(HDL_Counter_out1_last_value[10]),
         .I3(HDL_Counter_out1_last_value[9]),
         .O(DATA_IN_out1_reg_0_0_i_46_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'h40)) 
     DATA_IN_out1_reg_0_0_i_47
@@ -3418,7 +4468,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I1(HDL_Counter_out1_last_value[14]),
         .I2(HDL_Counter_out1_last_value[11]),
         .O(DATA_IN_out1_reg_0_0_i_47_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     DATA_IN_out1_reg_0_0_i_48
@@ -3442,7 +4492,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I4(DATA_IN_out1_reg_0_0_i_23_n_0),
         .I5(HDL_Counter_out1_last_value[10]),
         .O(prelookup_idx[10]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     DATA_IN_out1_reg_0_0_i_50
@@ -3451,7 +4501,7 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I2(HDL_Counter_out1_reg[10]),
         .I3(HDL_Counter_out1_reg[9]),
         .O(DATA_IN_out1_reg_0_0_i_50_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     DATA_IN_out1_reg_0_0_i_51
@@ -4970,18 +6020,6 @@ module top_DataSource_Scrambler_0_1_sigSource
         .SBITERR(NLW_DATA_IN_out1_reg_0_7_SBITERR_UNCONNECTED),
         .WEA({1'b0,1'b0,1'b0,1'b0}),
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \Delay1_reg[0]_i_1 
-       (.I0(sigSource_out2),
-        .I1(U_k_1_0),
-        .O(D));
-  LUT2 #(
-    .INIT(4'h2)) 
-    Delay_out1_i_1__0
-       (.I0(sigSource_out1),
-        .I1(U_k_1),
-        .O(Detect_Rise_Positive_out1));
   LUT6 #(
     .INIT(64'hFF00BF00FF00FF00)) 
     \HDL_Counter_out1[0]_i_3 
@@ -5107,234 +6145,234 @@ module top_DataSource_Scrambler_0_1_sigSource
         .I4(HDL_Counter_out1_reg[11]),
         .I5(HDL_Counter_out1_reg[14]),
         .O(\HDL_Counter_out1[8]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \HDL_Counter_out1_last_value[0]_i_1 
        (.I0(HDL_Counter_out1_reg[0]),
         .I1(Delay7_out1),
         .I2(HDL_Counter_out1_last_value[0]),
-        .O(sel0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+        .O(\HDL_Counter_out1_last_value[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \HDL_Counter_out1_last_value[1]_i_1 
        (.I0(HDL_Counter_out1_reg[1]),
         .I1(Delay7_out1),
         .I2(HDL_Counter_out1_last_value[1]),
-        .O(sel0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+        .O(\HDL_Counter_out1_last_value[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \HDL_Counter_out1_last_value[2]_i_1 
        (.I0(HDL_Counter_out1_reg[2]),
         .I1(Delay7_out1),
         .I2(HDL_Counter_out1_last_value[2]),
-        .O(sel0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+        .O(\HDL_Counter_out1_last_value[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \HDL_Counter_out1_last_value[3]_i_1 
        (.I0(HDL_Counter_out1_reg[3]),
         .I1(Delay7_out1),
         .I2(HDL_Counter_out1_last_value[3]),
-        .O(sel0[3]));
+        .O(\HDL_Counter_out1_last_value[3]_i_1_n_0 ));
   FDCE \HDL_Counter_out1_last_value_reg[0] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
-        .D(sel0[0]),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
+        .D(\HDL_Counter_out1_last_value[0]_i_1_n_0 ),
         .Q(HDL_Counter_out1_last_value[0]));
   FDCE \HDL_Counter_out1_last_value_reg[10] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[10]),
         .Q(HDL_Counter_out1_last_value[10]));
   FDCE \HDL_Counter_out1_last_value_reg[11] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[11]),
         .Q(HDL_Counter_out1_last_value[11]));
   FDCE \HDL_Counter_out1_last_value_reg[12] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[12]),
         .Q(HDL_Counter_out1_last_value[12]));
   FDCE \HDL_Counter_out1_last_value_reg[13] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[13]),
         .Q(HDL_Counter_out1_last_value[13]));
   FDCE \HDL_Counter_out1_last_value_reg[14] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[14]),
         .Q(HDL_Counter_out1_last_value[14]));
   FDCE \HDL_Counter_out1_last_value_reg[15] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[15]),
         .Q(HDL_Counter_out1_last_value[15]));
   FDCE \HDL_Counter_out1_last_value_reg[16] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[16]),
         .Q(HDL_Counter_out1_last_value[16]));
   FDCE \HDL_Counter_out1_last_value_reg[17] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[17]),
         .Q(HDL_Counter_out1_last_value[17]));
   FDCE \HDL_Counter_out1_last_value_reg[18] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[18]),
         .Q(HDL_Counter_out1_last_value[18]));
   FDCE \HDL_Counter_out1_last_value_reg[19] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[19]),
         .Q(HDL_Counter_out1_last_value[19]));
   FDCE \HDL_Counter_out1_last_value_reg[1] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
-        .D(sel0[1]),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
+        .D(\HDL_Counter_out1_last_value[1]_i_1_n_0 ),
         .Q(HDL_Counter_out1_last_value[1]));
   FDCE \HDL_Counter_out1_last_value_reg[20] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[20]),
         .Q(HDL_Counter_out1_last_value[20]));
   FDCE \HDL_Counter_out1_last_value_reg[21] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[21]),
         .Q(HDL_Counter_out1_last_value[21]));
   FDCE \HDL_Counter_out1_last_value_reg[22] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[22]),
         .Q(HDL_Counter_out1_last_value[22]));
   FDCE \HDL_Counter_out1_last_value_reg[23] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[23]),
         .Q(HDL_Counter_out1_last_value[23]));
   FDCE \HDL_Counter_out1_last_value_reg[24] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[24]),
         .Q(HDL_Counter_out1_last_value[24]));
   FDCE \HDL_Counter_out1_last_value_reg[25] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[25]),
         .Q(HDL_Counter_out1_last_value[25]));
   FDCE \HDL_Counter_out1_last_value_reg[26] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[26]),
         .Q(HDL_Counter_out1_last_value[26]));
   FDCE \HDL_Counter_out1_last_value_reg[27] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[27]),
         .Q(HDL_Counter_out1_last_value[27]));
   FDCE \HDL_Counter_out1_last_value_reg[28] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[28]),
         .Q(HDL_Counter_out1_last_value[28]));
   FDCE \HDL_Counter_out1_last_value_reg[29] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[29]),
         .Q(HDL_Counter_out1_last_value[29]));
   FDCE \HDL_Counter_out1_last_value_reg[2] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
-        .D(sel0[2]),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
+        .D(\HDL_Counter_out1_last_value[2]_i_1_n_0 ),
         .Q(HDL_Counter_out1_last_value[2]));
   FDCE \HDL_Counter_out1_last_value_reg[30] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[30]),
         .Q(HDL_Counter_out1_last_value[30]));
   FDCE \HDL_Counter_out1_last_value_reg[31] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[31]),
         .Q(HDL_Counter_out1_last_value[31]));
   FDCE \HDL_Counter_out1_last_value_reg[3] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
-        .D(sel0[3]),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
+        .D(\HDL_Counter_out1_last_value[3]_i_1_n_0 ),
         .Q(HDL_Counter_out1_last_value[3]));
   FDCE \HDL_Counter_out1_last_value_reg[4] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[4]),
         .Q(HDL_Counter_out1_last_value[4]));
   FDCE \HDL_Counter_out1_last_value_reg[5] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[5]),
         .Q(HDL_Counter_out1_last_value[5]));
   FDCE \HDL_Counter_out1_last_value_reg[6] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[6]),
         .Q(HDL_Counter_out1_last_value[6]));
   FDCE \HDL_Counter_out1_last_value_reg[7] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[7]),
         .Q(HDL_Counter_out1_last_value[7]));
   FDCE \HDL_Counter_out1_last_value_reg[8] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[8]),
         .Q(HDL_Counter_out1_last_value[8]));
   FDCE \HDL_Counter_out1_last_value_reg[9] 
        (.C(clk),
         .CE(E),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(HDL_Counter_out1_reg[9]),
         .Q(HDL_Counter_out1_last_value[9]));
   FDCE \HDL_Counter_out1_reg[0] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[0]_i_2_n_7 ),
         .Q(HDL_Counter_out1_reg[0]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5348,19 +6386,19 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[10] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[8]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[10]));
   FDCE \HDL_Counter_out1_reg[11] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[8]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[11]));
   FDCE \HDL_Counter_out1_reg[12] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[12]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[12]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5374,25 +6412,25 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[13] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[12]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[13]));
   FDCE \HDL_Counter_out1_reg[14] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[12]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[14]));
   FDCE \HDL_Counter_out1_reg[15] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[12]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[15]));
   FDCE \HDL_Counter_out1_reg[16] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[16]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[16]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5406,31 +6444,31 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[17] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[16]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[17]));
   FDCE \HDL_Counter_out1_reg[18] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[16]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[18]));
   FDCE \HDL_Counter_out1_reg[19] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[16]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[19]));
   FDCE \HDL_Counter_out1_reg[1] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[0]_i_2_n_6 ),
         .Q(HDL_Counter_out1_reg[1]));
   FDCE \HDL_Counter_out1_reg[20] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[20]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[20]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5444,25 +6482,25 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[21] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[20]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[21]));
   FDCE \HDL_Counter_out1_reg[22] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[20]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[22]));
   FDCE \HDL_Counter_out1_reg[23] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[20]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[23]));
   FDCE \HDL_Counter_out1_reg[24] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[24]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[24]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5476,25 +6514,25 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[25] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[24]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[25]));
   FDCE \HDL_Counter_out1_reg[26] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[24]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[26]));
   FDCE \HDL_Counter_out1_reg[27] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[24]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[27]));
   FDCE \HDL_Counter_out1_reg[28] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[28]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[28]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5508,37 +6546,37 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[29] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[28]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[29]));
   FDCE \HDL_Counter_out1_reg[2] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[0]_i_2_n_5 ),
         .Q(HDL_Counter_out1_reg[2]));
   FDCE \HDL_Counter_out1_reg[30] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[28]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[30]));
   FDCE \HDL_Counter_out1_reg[31] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[28]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[31]));
   FDCE \HDL_Counter_out1_reg[3] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[0]_i_2_n_4 ),
         .Q(HDL_Counter_out1_reg[3]));
   FDCE \HDL_Counter_out1_reg[4] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[4]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[4]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5552,25 +6590,25 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[5] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[4]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[5]));
   FDCE \HDL_Counter_out1_reg[6] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[4]_i_1_n_5 ),
         .Q(HDL_Counter_out1_reg[6]));
   FDCE \HDL_Counter_out1_reg[7] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[4]_i_1_n_4 ),
         .Q(HDL_Counter_out1_reg[7]));
   FDCE \HDL_Counter_out1_reg[8] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[8]_i_1_n_7 ),
         .Q(HDL_Counter_out1_reg[8]));
   (* ADDER_THRESHOLD = "11" *) 
@@ -5584,36 +6622,9 @@ module top_DataSource_Scrambler_0_1_sigSource
   FDCE \HDL_Counter_out1_reg[9] 
        (.C(clk),
         .CE(HDL_Counter_out1),
-        .CLR(reset_n_0),
+        .CLR(\HDL_Counter_out1_reg[0]_0 ),
         .D(\HDL_Counter_out1_reg[8]_i_1_n_6 ),
         .Q(HDL_Counter_out1_reg[9]));
-  FDCE RS_Gen_out1_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(start_1),
-        .Q(sigSource_out1));
-  FDCE RS_Gen_out2_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(endSignal_1),
-        .Q(sigSource_out2));
-  FDCE RS_Gen_out3_1_reg
-       (.C(clk),
-        .CE(clk_enable),
-        .CLR(reset_n_0),
-        .D(enable_1),
-        .Q(RS_Gen_out3_1));
-  top_DataSource_Scrambler_0_1_RS_Gen u_RS_Gen
-       (.Delay7_out1(Delay7_out1),
-        .E(E),
-        .clk(clk),
-        .enable_1(enable_1),
-        .endSignal_1(endSignal_1),
-        .reset_n(reset_n),
-        .reset_n_0(reset_n_0),
-        .start_1(start_1));
 endmodule
 `ifndef GLBL
 `define GLBL

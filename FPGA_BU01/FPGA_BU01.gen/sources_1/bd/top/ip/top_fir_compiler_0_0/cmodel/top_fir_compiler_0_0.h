@@ -72,8 +72,8 @@
 // num_paths: 1
 // data_width: 2
 // data_fract_width: 0
-// output_rounding_mode: 1
-// output_width: 20
+// output_rounding_mode: 0
+// output_width: 21
 // output_fract_width: 0
 // config_method: 0
 
@@ -104,8 +104,8 @@ static xip_fir_v7_2_config gen_top_fir_compiler_0_0_config() {
   config.num_paths           = 1;
   config.data_width          = 2;
   config.data_fract_width    = 0;
-  config.output_rounding_mode= XIP_FIR_TRUNCATE_LSBS;
-  config.output_width        = 20;
+  config.output_rounding_mode= XIP_FIR_FULL_PRECISION;
+  config.output_width        = 21;
   config.output_fract_width  = 0,
   config.config_method       = XIP_FIR_CONFIG_SINGLE;
   return config;

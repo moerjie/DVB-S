@@ -1,0 +1,17 @@
+DVBS_AXI4Stream/DVB-S/Con_Encoder/Convolutional Encoder --> Convolutional_Encoder
+DVBS_AXI4Stream/DVB-S/Con_Encoder --> Con_Encoder
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/CLKdivide/Detect Rise Positive/Positive --> Positive
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/CLKdivide/Detect Rise Positive --> Detect_Rise_Positive
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/CLKdivide --> CLKdivide
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/myScrambler --> myScrambler
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/sigSource --> sigSource
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler/HeaderProcess --> HeaderProcess
+DVBS_AXI4Stream/DVB-S/DataSource_Scrambler --> DataSource_Scrambler
+DVBS_AXI4Stream/DVB-S/Interleaver/Con_Interleaver/Convolutional Interleaver --> Convolutional_Interleaver
+DVBS_AXI4Stream/DVB-S/Interleaver/Con_Interleaver --> Con_Interleaver
+DVBS_AXI4Stream/DVB-S/Interleaver --> Interleaver
+DVBS_AXI4Stream/DVB-S/RS_Enc/RS/Integer-Input RS Encoder HDL Optimized --> Integer_Input_RS_Encoder_HDL_Optimized
+DVBS_AXI4Stream/DVB-S/RS_Enc/RS --> RS
+DVBS_AXI4Stream/DVB-S/RS_Enc --> RS_Enc
+DVBS_AXI4Stream/DVB-S/dec2bin --> dec2bin
+DVBS_AXI4Stream/DVB-S --> DVB_S

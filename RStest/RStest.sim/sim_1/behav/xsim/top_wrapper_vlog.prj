@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../HDL_Gen/DVBS/CLKdivide.v" \
+"../../../../../HDL_Gen/DVBS/Detect_Rise_Positive.v" \
+"../../../../../HDL_Gen/DVBS/Detect_Rise_Positive1.v" \
+"../../../../../HDL_Gen/DVBS/Detect_Rise_Positive_block.v" \
+"../../../../../HDL_Gen/DVBS/HeaderProcess.v" \
+"../../../../../HDL_Gen/DVBS/MATLAB_Function.v" \
+"../../../../../HDL_Gen/DVBS/Positive.v" \
+"../../../../../HDL_Gen/DVBS/Positive_block.v" \
+"../../../../../HDL_Gen/DVBS/Positive_block1.v" \
+"../../../../../HDL_Gen/DVBS/RS_Gen.v" \
+"../../../../../HDL_Gen/DVBS/myScrambler.v" \
+"../../../../../HDL_Gen/DVBS/sigSource.v" \
+"../../../../../HDL_Gen/DVBS/DataSource_Scrambler.v" \
+"../../../../../HDL_Gen/DVBS/Integer_Input_RS_Encoder_HDL_Optimized.v" \
+"../../../../../HDL_Gen/DVBS/RS.v" \
+"../../../../../HDL_Gen/DVBS/RS_Enc.v" \
+"../../../../RStest.ip_user_files/bd/top/ip/top_DataSource_Scrambler_0_0/sim/top_DataSource_Scrambler_0_0.v" \
+"../../../../RStest.ip_user_files/bd/top/ip/top_sim_clk_gen_0_0/sim/top_sim_clk_gen_0_0.v" \
+"../../../../RStest.ip_user_files/bd/top/ip/top_xlconstant_0_0/sim/top_xlconstant_0_0.v" \
+"../../../../RStest.ip_user_files/bd/top/ip/top_RS_Enc_0_0/sim/top_RS_Enc_0_0.v" \
+"../../../../RStest.ip_user_files/bd/top/sim/top.v" \
+"../../../../RStest.gen/sources_1/bd/top/hdl/top_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

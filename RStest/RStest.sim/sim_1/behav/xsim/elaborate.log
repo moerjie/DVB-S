@@ -1,0 +1,35 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: F:/FPGA/Vivado23/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L sim_clk_gen_v1_0_3 -L xlconstant_v1_1_8 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot top_wrapper_behav xil_defaultlib.top_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Positive
+Compiling module xil_defaultlib.Detect_Rise_Positive
+Compiling module xil_defaultlib.CLKdivide
+Compiling module xil_defaultlib.HeaderProcess
+Compiling module xil_defaultlib.sigSource
+Compiling module xil_defaultlib.Positive_block
+Compiling module xil_defaultlib.Detect_Rise_Positive_block
+Compiling module xil_defaultlib.Positive_block1
+Compiling module xil_defaultlib.Detect_Rise_Positive1
+Compiling module xil_defaultlib.myScrambler
+Compiling module xil_defaultlib.DataSource_Scrambler
+Compiling module xil_defaultlib.top_DataSource_Scrambler_0_0
+Compiling module xil_defaultlib.Integer_Input_RS_Encoder_HDL_Opt...
+Compiling module xil_defaultlib.RS
+Compiling module xil_defaultlib.RS_Enc
+Compiling module xil_defaultlib.top_RS_Enc_0_0
+Compiling module sim_clk_gen_v1_0_3.sim_clk_gen(CLOCK_PERIOD=5.0,RES...
+Compiling module xil_defaultlib.top_sim_clk_gen_0_0
+Compiling module xlconstant_v1_1_8.xlconstant_v1_1_8_xlconstant(CON...
+Compiling module xil_defaultlib.top_xlconstant_0_0
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.top_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_wrapper_behav

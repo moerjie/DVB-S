@@ -1,0 +1,379 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="rtwreport.css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>
+Hierarchy Flattening Report for DVBS_AXI4Stream
+</title>
+
+</head>
+<body bgcolor="#ffffff" link="0033CC" vlink="#666666" onload="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdFlattenHierarchy'); else local_onload();}} catch(err) {};">
+<font SIZE="+2" COLOR="#000066">
+Hierarchy Flattening Report for DVBS_AXI4Stream
+</font>
+<br /><br /><br /><script>
+<!--
+function hdlTableShrink(o,tagNameStr)
+{
+var temp = document.getElementsByName(tagNameStr);
+if (temp[0].style.display == "")
+{
+	temp[0].style.display = "none";
+	o.innerHTML = '<span style="font-family:monospace">[+]</span>';
+}
+else
+{
+	temp[0].style.display = "";
+	o.innerHTML = '<span style="font-family:monospace">[-]</span>';
+}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableCollapseAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "none";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[+]</span>';
+	}
+}
+// -->
+</script>
+<script>
+<!--
+function hdlTableExpandAll(o, numNtks, numComps)
+{
+	var id = "";
+	for (i = 1; i <= numNtks; i++)
+	{
+		for (j = 1; j <= numComps; j++)
+		{
+			id = "Multiply" + "_" + i + "_" + j;
+			var temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Adder" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Subtractor" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Register" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "RAM" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+			id = "Multiplexer" + "_" + i + "_" + j;
+			temp = document.getElementsByName(id);
+			if (temp != null && temp.length > 0)
+			{
+				temp[0].style.display = "";
+			}
+		}
+	}
+	var collapsibles = document.getElementsByName('collapsible');
+	for (i = 0; i < collapsibles.length; i++)
+	{
+		collapsibles[i].innerHTML = '<span style="font-family:monospace">[-]</span>';
+	}
+}
+// -->
+</script>
+<a name="List of subsystems:">
+<font size="+1" color="#000066">
+<b class="midprod">
+List of subsystems:
+</b>
+
+</font>
+
+</a>
+<br /><br /><b>
+<li>'FlattenHierarchy' turned 'on':</li>
+</b>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'onList')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span name="onList" id="onList" style="display: none;">
+<ul class="SystemdefinedCollapse" id="29040188-ae0a-4103-8031-5cac29161445" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1007')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1008')" name="code2model" class="code2model">
+HDL Counter2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1020')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1021')" name="code2model" class="code2model">
+HDL Counter1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1059')" name="code2model" class="code2model">
+1-D Lookup
+Table
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1427')" name="code2model" class="code2model">
+1-D Lookup
+Table1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1430')" name="code2model" class="code2model">
+1-D Lookup
+Table2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1433')" name="code2model" class="code2model">
+1-D Lookup
+Table3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1067')" name="code2model" class="code2model">
+HDL Counter
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1429')" name="code2model" class="code2model">
+HDL Counter1
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1432')" name="code2model" class="code2model">
+HDL Counter2
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1435')" name="code2model" class="code2model">
+HDL Counter3
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1192')" name="code2model" class="code2model">
+HDL Counter1
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onmouseover="this.style.cursor = 'pointer'">
+&#8743; 更少
+</span>
+<br />
+</span>
+<br /><br /><b>
+<li>'FlattenHierarchy' turned 'off':</li>
+</b>
+<span name="collapsible" id="collapsible" style="font-family:monospace" onclick="hdlTableShrink(this, 'offList')" onmouseover="this.style.cursor = 'pointer'">
+[+]
+</span>
+<span name="offList" id="offList" style="display: none;">
+<ul class="SystemdefinedCollapse" id="11e4adc5-d39f-4693-b35b-9830c25a1314" dataCollapse="off">
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:407')" name="code2model" class="code2model">
+dec2bin
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:72')" name="code2model" class="code2model">
+RS
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1081')" name="code2model" class="code2model">
+RS_Enc
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:782')" name="code2model" class="code2model">
+Con_Interleaver
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1221')" name="code2model" class="code2model">
+Interleaver
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1056')" name="code2model" class="code2model">
+sigSource
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1031')" name="code2model" class="code2model">
+myScrambler
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1013')" name="code2model" class="code2model">
+HeaderProcess
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1006:8')" name="code2model" class="code2model">
+Positive
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1006')" name="code2model" class="code2model">
+Detect Rise
+Positive
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1002')" name="code2model" class="code2model">
+CLKdivide
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1001')" name="code2model" class="code2model">
+DataSource_Scrambler
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:778')" name="code2model" class="code2model">
+Con_Encoder
+</a>
+
+</li>
+<li>
+<a href="matlab:coder.internal.code2model('DVBS_AXI4Stream:1437')" name="code2model" class="code2model">
+DVB-S
+</a>
+
+</li>
+
+</ul>
+<span class="SDCollapseControl" onmouseover="this.style.cursor = 'pointer'">
+&#8743; 更少
+</span>
+<br />
+</span>
+<br /><br /><a name="Flattening Status:">
+<font size="+1" color="#000066">
+<b class="midprod">
+Flattening Status:
+</b>
+
+</font>
+
+</a>
+<br /><br />'Hierarchical flattening' was successful.<br /><br /><a name="Generated Model">
+<font size="+1" color="#000066">
+<b class="midprod">
+Generated Model
+</b>
+
+</font>
+
+</a>
+<br /><br /><table width="100%" border="1">
+<tr style="background-color: #eeeeff">
+<td align="left" valign="top" style="border-style: none">
+Generated model after the transformation
+</td>
+<td align="left" valign="top" style="border-style: none">
+<a href="matlab:open_system('F:\Git_Repository\DVB-S\matlab\F:\Git_Repository\DVB-S\HDL_Gen\DVBS_axi4stream\hdlsrc\DVBS_AXI4Stream\gm_DVBS_AXI4Stream')" class="callMATLAB" name="callMATLAB">gm_DVBS_AXI4Stream</a>
+</td>
+
+</tr>
+
+</table>
+<br />
+</body>
+
+</html>

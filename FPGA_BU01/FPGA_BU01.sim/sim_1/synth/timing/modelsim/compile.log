@@ -3,7 +3,7 @@
 # vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-# Start time: 14:29:55 on Jun 06,2024
+# Start time: 11:17:02 on Jun 09,2024
 # vlog -incr -mfcu -work xil_defaultlib top_tb_time_synth.v ../../../../../FPGA_BU01.srcs/sim_1/new/top_tb.v 
 # -- Compiling module top
 # -- Compiling module top_Con_Encoder_0_0
@@ -13,11 +13,9 @@
 # -- Compiling module top_DataSource_Scrambler_0_1_CLKdivide
 # -- Compiling module top_DataSource_Scrambler_0_1_DataSource_Scrambler
 # -- Compiling module top_DataSource_Scrambler_0_1_Detect_Rise_Positive
-# -- Compiling module top_DataSource_Scrambler_0_1_Detect_Rise_Positive1
-# -- Compiling module top_DataSource_Scrambler_0_1_Detect_Rise_Positive_block
 # -- Compiling module top_DataSource_Scrambler_0_1_HeaderProcess
-# -- Compiling module top_DataSource_Scrambler_0_1_MATLAB_Function
-# -- Compiling module top_DataSource_Scrambler_0_1_RS_Gen
+# -- Compiling module top_DataSource_Scrambler_0_1_RS_Ctrl
+# -- Compiling module top_DataSource_Scrambler_0_1_bit_sys
 # -- Compiling module top_DataSource_Scrambler_0_1_myScrambler
 # -- Compiling module top_DataSource_Scrambler_0_1_sigSource
 # -- Compiling module top_Interleaver_0_0
@@ -46,11 +44,12 @@
 # -- Compiling module top_util_ds_buf_0_0
 # -- Compiling module top_util_ds_buf_0_0_util_ds_buf
 # -- Compiling module top_wrapper
+# -- Compiling module xVIA
 # -- Compiling module glbl
 # -- Compiling module top_tb
 # 
 # Top level modules:
 # 	glbl
 # 	top_tb
-# End time: 14:29:56 on Jun 06,2024, Elapsed time: 0:00:01
+# End time: 11:17:03 on Jun 09,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
